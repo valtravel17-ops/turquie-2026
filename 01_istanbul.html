@@ -160,9 +160,22 @@ a:hover{border-bottom-color:transparent}
 .lul{font-size:10px;color:var(--t3)}
 
 @media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.hotel-box{margin:10px 14px 0}}
+
+.site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.snav-btn.home{background:#1a3a5c;color:#fff}
+.snav-btn:active{opacity:.7}
+.snav-center{font-size:13px;font-weight:700;color:#1a1916;text-align:center;flex:1;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
 <body>
+<div class="site-nav">
+  <span style="width:80px"></span>
+  <a class="snav-btn home" href="index.html">🏠 Accueil</a>
+  <div class="snav-center">🕌 Istanbul</div>
+  <a class="snav-btn" href="02_selcuk.html">Selçuk →</a>
+</div>
+
 
 <!-- PROMPT BASE44 — replié par défaut -->
 <div class="pw">

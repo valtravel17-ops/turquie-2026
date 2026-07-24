@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛠️ Outils pratiques — Turquie 2026</title>
+<style>
+:root{--bg:#f5f2ed;--surface:#fff;--border:#e5e2da;--text:#1a1916;--t2:#5a5751;--r:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Segoe UI',system-ui,sans-serif;padding-bottom:40px}
+.site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333}
+.snav-btn.home{background:#1a3a5c;color:#fff}
+.hero{background:linear-gradient(135deg,#444,#666);color:#fff;padding:24px 16px 18px}
+.hero h1{font-size:20px;font-weight:700;margin-bottom:4px}
+.hero p{font-size:13px;opacity:.85}
+.tabs-wrap{overflow-x:auto;display:flex;gap:8px;padding:12px 16px 8px;background:#fff;border-bottom:1px solid var(--border);white-space:nowrap}
+.tab{background:#f0ece6;border:none;border-radius:20px;padding:8px 16px;font-size:13px;font-weight:500;cursor:pointer;color:#555;flex-shrink:0;text-decoration:none}
+.tab.active{background:#1a3a5c;color:#fff;font-weight:700}
+.section{display:none;padding:16px}
+.section.active{display:block}
+/* Budget */
+.jauge-wrap{background:var(--surface);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.jauge-row{display:flex;justify-content:space-between;margin-bottom:8px}
+.jauge-bar{height:12px;background:#f0ece6;border-radius:6px;overflow:hidden}
+.jauge-fill{height:100%;border-radius:6px;background:#27ae60;transition:width .4s}
+.jauge-legend{display:flex;justify-content:space-between;font-size:10px;color:#888;margin-top:4px}
+.poste-card{background:var(--surface);border-radius:var(--r);padding:12px 14px;margin-bottom:8px}
+.poste-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.poste-label{font-size:13px;font-weight:600}
+.poste-detail{font-size:11px;color:var(--t2);margin-top:2px}
+.poste-right{text-align:right}
+.poste-prevu{font-size:11px;color:#888}
+.poste-realise{font-size:14px;font-weight:700}
+.mini-bar{height:6px;background:#f0ece6;border-radius:3px}
+.mini-fill{height:100%;border-radius:3px;transition:width .3s}
+.dep-form{background:var(--surface);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.dep-form input,.dep-form select{width:100%;border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13px;margin-bottom:8px;background:#fff}
+.dep-form .row{display:flex;gap:8px}
+.dep-form .row input{margin-bottom:0}
+.btn-add{background:#2d6a4f;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0}
+.dep-item{background:var(--surface);border-radius:10px;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.dep-info{}
+.dep-name{font-size:13px;font-weight:600}
+.dep-meta{font-size:11px;color:#888;margin-top:2px}
+.dep-right{display:flex;gap:8px;align-items:center}
+.dep-amt{font-weight:700;color:#e74c3c;font-size:14px}
+.btn-del{background:#fce8e0;border:none;border-radius:6px;padding:4px 8px;cursor:pointer;font-size:11px;color:#e74c3c}
+.total-box{background:#1a3a5c;border-radius:var(--r);padding:14px 16px;color:#fff;display:flex;justify-content:space-between;margin-bottom:16px}
+.total-col{}
+.total-lbl{font-size:11px;opacity:.7;margin-bottom:4px}
+.total-val{font-size:20px;font-weight:700}
+/* Checklist */
+.chk-cat{margin-bottom:20px}
+.chk-cat-header{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-radius:10px;margin-bottom:8px;border-left:3px solid #1a4a7a}
+.chk-cat-name{font-size:13px;font-weight:700}
+.chk-cat-count{font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;background:#fff}
+.chk-item{background:var(--surface);border-radius:10px;padding:10px 14px;margin-bottom:5px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:opacity .15s}
+.chk-item.done{opacity:.55}
+.chk-box{width:22px;height:22px;border-radius:6px;border:2px solid #ddd;background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .15s}
+.chk-box.checked{background:#1a4a7a;border-color:#1a4a7a}
+.chk-text{font-size:13px;line-height:1.5;color:var(--text)}
+.chk-text.done{text-decoration:line-through;color:#999}
+.chk-poids{font-size:11px;color:#2d6a8f;margin-left:6px;flex-shrink:0}
+.progress-bar{background:var(--surface);border-radius:var(--r);padding:14px;margin-bottom:16px}
+.progress-row{display:flex;justify-content:space-between;margin-bottom:8px}
+.progress-fill{height:10px;background:#f0ece6;border-radius:5px}
+.progress-inner{height:100%;border-radius:5px;transition:width .3s}
+/* Convertisseur */
+.conv-box{background:var(--surface);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.conv-label{font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.conv-input{width:100%;border:2px solid var(--border);border-radius:10px;padding:14px 16px;font-size:24px;font-weight:700}
+.conv-input.eur{border-color:#7a1a3a;color:#7a1a3a}
+.conv-sep{text-align:center;font-size:26px;color:#888;margin:14px 0}
+.ref-item{background:var(--surface);border-radius:10px;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.ref-name{font-size:13px}
+.ref-right{text-align:right}
+.ref-try{font-size:12px;color:#888}
+.ref-eur{font-size:13px;font-weight:700;color:#2d6a4f}
+/* Infos */
+.info-item{background:var(--surface);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;font-size:14px;line-height:1.6;color:var(--text)}
+.gloss-item{background:var(--surface);border-radius:10px;padding:9px 14px;margin-bottom:5px;display:flex;justify-content:space-between}
+.gloss-fr{font-size:13px;color:#444}
+.gloss-tr{font-size:13px;font-weight:700;color:#c0392b}
+/* Pré-départ */
+.pre-cat-header{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-radius:10px;margin-bottom:8px;border-left:3px solid #1a4a7a}
+.badge-urgent{font-size:10px;background:#fce8e0;color:#e74c3c;padding:2px 8px;border-radius:20px;font-weight:700}
+.reset-btn{width:100%;background:#f0ece6;border:none;border-radius:10px;padding:12px;font-size:13px;cursor:pointer;color:#666;margin-top:8px}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <a class="snav-btn home" href="index.html">🏠 Accueil</a>
+  <span style="font-size:13px;font-weight:700;color:#1a1916">⚙️ Outils pratiques</span>
+  <span style="width:80px"></span>
+</div>
+
+<div class="hero">
+  <h1>⚙️ Outils pratiques</h1>
+  <p>Budget · Valise · Pré-départ · Convertisseur · Infos</p>
+</div>
+
+<div class="tabs-wrap">
+  <a class="tab active" href="#budget" onclick="showTab('budget',this)">💰 Budget</a>
+  <a class="tab" href="#valise" onclick="showTab('valise',this)">🧳 Valise</a>
+  <a class="tab" href="#predep" onclick="showTab('predep',this)">✅ Pré-départ</a>
+  <a class="tab" href="#convertisseur" onclick="showTab('convertisseur',this)">💱 Convertisseur</a>
+  <a class="tab" href="#infos" onclick="showTab('infos',this)">ℹ️ Infos</a>
+</div>
+
+<!-- ===================== BUDGET ===================== -->
+<div id="budget" class="section active">
+  <div class="jauge-wrap">
+    <div class="jauge-row">
+      <span style="font-size:13px;font-weight:700">Dépensé : <span id="total-dep">0</span>€</span>
+      <span style="font-size:13px;font-weight:700;color:#27ae60">Reste : <span id="total-reste">1800</span>€</span>
+    </div>
+    <div class="jauge-bar"><div class="jauge-fill" id="jauge-fill" style="width:0%"></div></div>
+    <div class="jauge-legend"><span>0€</span><span style="color:#27ae60">1 800€ cible</span><span style="color:#e74c3c">2 000€ max</span></div>
+  </div>
+
+  <div class="section-label">Comparaison prévisionnel vs réalisé</div>
+  <div id="postes-list"></div>
+
+  <div class="total-box">
+    <div class="total-col"><div class="total-lbl">Prévu total</div><div class="total-val">1 800€</div></div>
+    <div class="total-col" style="text-align:right"><div class="total-lbl">Réalisé</div><div class="total-val" id="total-realise" style="color:#6bcb77">0€</div></div>
+  </div>
+
+  <div class="section-label">Ajouter une dépense</div>
+  <div class="dep-form">
+    <input type="text" id="dep-label" placeholder="Description (ex: hôtel Istanbul)">
+    <select id="dep-cat">
+      <option value="">Catégorie (optionnel)</option>
+      <option>🏨 Hébergement</option>
+      <option>🚌 Bus inter-étapes</option>
+      <option>⭐ Activités & entrées</option>
+      <option>🍽️ Repas</option>
+      <option>🚐 Transport local</option>
+      <option>🎲 Imprévus</option>
+    </select>
+    <div class="row">
+      <input type="number" id="dep-montant" placeholder="Montant €" style="flex:1">
+      <button class="btn-add" onclick="ajouterDep()">+ Ajouter</button>
+    </div>
+  </div>
+  <div id="dep-list"></div>
+</div>
+
+<!-- ===================== VALISE ===================== -->
+<div id="valise" class="section">
+  <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:10px 14px;font-size:12px;color:#856404;margin-bottom:12px">
+    ⚠️ <strong>Retour EasyJet + SunExpress</strong> — Pas de bagage cabine 10kg. Tout en soute (20kg) + sac perso 4kg + sacoche CPAP.
+  </div>
+  <div class="progress-bar">
+    <div class="progress-row">
+      <span style="font-size:13px;font-weight:700">Valise préparée</span>
+      <span style="font-size:13px;font-weight:700;color:#6b4a1a" id="valise-pct">0%</span>
+    </div>
+    <div class="progress-fill"><div class="progress-inner" id="valise-bar" style="width:0%;background:#6b4a1a"></div></div>
+  </div>
+  <div id="valise-list"></div>
+  <button class="reset-btn" onclick="resetValise()">🔄 Tout décocher</button>
+</div>
+
+<!-- ===================== PRÉ-DÉPART ===================== -->
+<div id="predep" class="section">
+  <div class="progress-bar">
+    <div class="progress-row">
+      <span style="font-size:13px;font-weight:700">Progression pré-départ</span>
+      <span style="font-size:13px;font-weight:700;color:#1a4a7a" id="predep-pct">0%</span>
+    </div>
+    <div class="progress-fill"><div class="progress-inner" id="predep-bar" style="width:0%;background:#1a4a7a"></div></div>
+  </div>
+  <div id="predep-list"></div>
+  <button class="reset-btn" onclick="resetPredep()">🔄 Tout décocher</button>
+</div>
+
+<!-- ===================== CONVERTISSEUR ===================== -->
+<div id="convertisseur" class="section">
+  <div class="conv-box">
+    <div class="conv-label">Lires turques (TL)</div>
+    <input type="number" class="conv-input" id="try-input" placeholder="Ex: 1000" oninput="convFromTry(this.value)">
+    <div class="conv-sep">⇅</div>
+    <div class="conv-label">Euros (€)</div>
+    <input type="number" class="conv-input eur" id="eur-input" placeholder="Ex: 26" oninput="convFromEur(this.value)">
+  </div>
+  <div style="font-size:12px;color:#888;text-align:center;margin-bottom:16px">Taux estimé : 1€ = 37,5 TL · août 2026</div>
+  <div class="section-label">Prix de référence</div>
+  <div class="ref-item"><span class="ref-name">Dolmuş (minibus)</span><div class="ref-right"><div class="ref-try">~75 TL</div><div class="ref-eur">~2€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Repas lokanta</span><div class="ref-right"><div class="ref-try">~300 TL</div><div class="ref-eur">~8€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Çay (thé turc)</span><div class="ref-right"><div class="ref-try">~20–40 TL</div><div class="ref-eur">~0,50–1€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Bière Efes (bar)</span><div class="ref-right"><div class="ref-try">~150–200 TL</div><div class="ref-eur">~4–5€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Sandwich balık ekmek</span><div class="ref-right"><div class="ref-try">~100–150 TL</div><div class="ref-eur">~3–4€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Entrée Éphèse</span><div class="ref-right"><div class="ref-try">EN EUROS</div><div class="ref-eur">40€ fixe</div></div></div>
+  <div class="ref-item"><span class="ref-name">Entrée Pamukkale</span><div class="ref-right"><div class="ref-try">~1 125 TL</div><div class="ref-eur">~30€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Piscine Cléopâtre</span><div class="ref-right"><div class="ref-try">~490 TL</div><div class="ref-eur">~13€</div></div></div>
+  <div class="ref-item"><span class="ref-name">SIM Turkcell 30Go</span><div class="ref-right"><div class="ref-try">~900 TL</div><div class="ref-eur">~25€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Taxi BiTaksi (base)</span><div class="ref-right"><div class="ref-try">~150 TL</div><div class="ref-eur">~4€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Hamam kese + köpük</span><div class="ref-right"><div class="ref-try">~750–1 500 TL</div><div class="ref-eur">~20–40€</div></div></div>
+  <div class="ref-item"><span class="ref-name">Nargile (chicha)</span><div class="ref-right"><div class="ref-try">~200–300 TL</div><div class="ref-eur">~5–8€</div></div></div>
+</div>
+
+<!-- ===================== INFOS PRATIQUES ===================== -->
+<div id="infos" class="section">
+  <div class="tabs-wrap" style="padding:0 0 12px">
+    <a class="tab active" href="#" onclick="showInfoTab('argent',this);return false" style="font-size:12px;padding:6px 12px">💳 Argent</a>
+    <a class="tab" href="#" onclick="showInfoTab('apps',this);return false" style="font-size:12px;padding:6px 12px">📱 Apps</a>
+    <a class="tab" href="#" onclick="showInfoTab('urgences',this);return false" style="font-size:12px;padding:6px 12px">🚨 Urgences</a>
+    <a class="tab" href="#" onclick="showInfoTab('glossaire',this);return false" style="font-size:12px;padding:6px 12px">🗣️ Turc</a>
+  </div>
+  <div id="info-argent" class="info-sub">
+    <div class="info-item">💳 <strong>Fortuneo Fospho</strong> : 0 frais à l'étranger — paiement et retrait au taux bancaire</div>
+    <div class="info-item">✅ <strong>DAB recommandés</strong> : Ziraat Bankası · İş Bankası uniquement</div>
+    <div class="info-item">❌ <strong>Éviter absolument</strong> : Euronet · DnB · bureaux de change touristiques</div>
+    <div class="info-item">💱 <strong>Taux estimé</strong> : ~1€ = ~37–38 TL (août 2026)</div>
+    <div class="info-item">💶 <strong>Éphèse</strong> = 40€ EN EUROS — avoir du cash TRY ou payer par carte étrangère</div>
+    <div class="info-item">💵 <strong>Prévoir ~100€</strong> en espèces TRY pour les premiers jours (dolmuş, marchés, petits sites)</div>
+    <div class="info-item">🏦 <strong>Pourboires</strong> : ~10% au restaurant si pas inclus · arrondir au supérieur en taxi · 1-2€/nuit hôtel</div>
+  </div>
+  <div id="info-apps" class="info-sub" style="display:none">
+    <div class="info-item">🚌 <strong>obilet.com</strong> — réservation TOUS les bus inter-villes (indispensable)</div>
+    <div class="info-item">🚕 <strong>BiTaksi</strong> — taxis officiels turcs avec compteur (comme Uber)</div>
+    <div class="info-item">🗺️ <strong>Yandex Maps</strong> — meilleur que Google Maps pour les dolmuş locaux</div>
+    <div class="info-item">⛴ <strong>Şehir Hatları</strong> — app ferry Istanbul (horaires en temps réel)</div>
+    <div class="info-item">🕌 <strong>Pray Watch</strong> — horaires des 5 prières quotidiennes (anticiper fermetures mosquées)</div>
+    <div class="info-item">🎵 <strong>songkick.com</strong> — concerts en temps réel par ville · biletix.com pour billetterie</div>
+    <div class="info-item">📱 <strong>SIM Turkcell</strong> à l'aéroport IST dès l'arrivée · ~25€/30Go/30j · meilleure couverture</div>
+    <div class="info-item">🔒 <strong>VPN NordVPN / ExpressVPN</strong> — installer ET tester avant le départ depuis la France !</div>
+    <div class="info-item">🗺️ <strong>Google Maps hors-ligne</strong> : télécharger Istanbul, Izmir, Denizli, Fethiye, Antalya avant départ</div>
+    <div class="info-item">🌊 <strong>seakayakturkiye.com</strong> — réserver le kayak Kekova avant le départ (places limitées en août)</div>
+  </div>
+  <div id="info-urgences" class="info-sub" style="display:none">
+    <div class="info-item">🚨 <strong>Police</strong> : 155 · <strong>SAMU</strong> : 112 · <strong>Pompiers</strong> : 110 · <strong>Gendarmerie</strong> : 156</div>
+    <div class="info-item">🏥 <strong>Pharmacie (eczane)</strong> : nombreuses, bien fournies · certains médicaments sans ordonnance</div>
+    <div class="info-item">🇫🇷 <strong>Consulat France Istanbul</strong> : +90 212 334 87 30</div>
+    <div class="info-item">🇫🇷 <strong>Ambassade France Ankara</strong> : +90 312 455 45 45</div>
+    <div class="info-item">🏦 <strong>Ne pas boire l'eau du robinet</strong> — acheter eau en bouteille (~0,50€/1,5L)</div>
+    <div class="info-item">🔌 <strong>Prises turques = Type F</strong> identiques à France — aucun adaptateur nécessaire ✓</div>
+    <div class="info-item">☀️ <strong>Météo août</strong> : 30–42°C selon étape · sortir tôt le matin (avant 10h) et après 17h</div>
+    <div class="info-item">💊 <strong>Trousse pharmacie</strong> : Imodium (turista), Doliprane, électrolytes, pansements, répulsif moustiques</div>
+  </div>
+  <div id="info-glossaire" class="info-sub" style="display:none">
+    <div class="section-label" style="margin-bottom:8px">Mots turcs essentiels</div>
+    <div class="gloss-item"><span class="gloss-fr">Bonjour</span><span class="gloss-tr">Merhaba</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Merci</span><span class="gloss-tr">Teşekkürler</span></div>
+    <div class="gloss-item"><span class="gloss-fr">S'il vous plaît</span><span class="gloss-tr">Lütfen</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Combien ?</span><span class="gloss-tr">Ne kadar?</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Trop cher</span><span class="gloss-tr">Çok pahalı</span></div>
+    <div class="gloss-item"><span class="gloss-fr">L'addition</span><span class="gloss-tr">Hesap lütfen</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Eau</span><span class="gloss-tr">Su</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Thé</span><span class="gloss-tr">Çay (tchai)</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Bière</span><span class="gloss-tr">Bira</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Bus</span><span class="gloss-tr">Otobüs</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Gare routière</span><span class="gloss-tr">Otogar</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Minibus collectif</span><span class="gloss-tr">Dolmuş</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Aller simple</span><span class="gloss-tr">Tek yön</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Aller-retour</span><span class="gloss-tr">Gidiş-dönüş</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Toilettes</span><span class="gloss-tr">Tuvalet</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Pharmacie</span><span class="gloss-tr">Eczane</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Hôpital</span><span class="gloss-tr">Hastane</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Au secours !</span><span class="gloss-tr">İmdat !</span></div>
+    <div class="gloss-item"><span class="gloss-fr">C'est délicieux</span><span class="gloss-tr">Çok lezzetli</span></div>
+    <div class="gloss-item"><span class="gloss-fr">Marchandage</span><span class="gloss-tr">Pazarlık</span></div>
+  </div>
+</div>
+
+<script>
+const RATE = 37.5;
+const BUDGET = 1800;
+const BUDGET_MAX = 2000;
+
+const POSTES = [
+  {label:"🏨 Hébergement", montant:735, detail:"35€/nuit × 21 nuits"},
+  {label:"🚌 Bus inter-étapes", montant:148, detail:"Istanbul→Selçuk 70,50€ + 5 trajets"},
+  {label:"⭐ Activités & entrées", montant:400, detail:"Kayak 120€ · Rafting 74€ · Éphèse 110€ · Pamukkale 86€"},
+  {label:"🍽️ Repas", montant:350, detail:"~8€/pers/jour × 2 × 21 jours"},
+  {label:"🚐 Transport local", montant:100, detail:"Dolmuş, tramway, ferry"},
+  {label:"🎲 Imprévus", montant:67, detail:"~3-4% budget de sécurité"},
+];
+
+const VALISE = [
+  {cat:"🧔 Vêtements Valentin", color:"#1a6b8a", bg:"#e8f4f8", items:[
+    {t:"T-shirts légers séchage rapide ×6", p:"0,6kg"},
+    {t:"Shorts / pantalon léger ×3", p:"0,6kg"},
+    {t:"Sous-vêtements ×7", p:"0,3kg"},
+    {t:"Chaussettes fines ×4", p:"0,2kg"},
+    {t:"Maillots de bain ×2", p:"0,2kg"},
+    {t:"Tenue soirée / mosquée ×1", p:"0,3kg"},
+    {t:"Veste légère (clim bus de nuit) ×1", p:"0,3kg"},
+  ]},
+  {cat:"👩 Vêtements Ludyvine", color:"#7a1a3a", bg:"#f8e0e8", items:[
+    {t:"Robes / tops légers ×6", p:"0,6kg"},
+    {t:"Shorts / pantalon léger ×2", p:"0,3kg"},
+    {t:"Sous-vêtements + soutiens ×7", p:"0,4kg"},
+    {t:"Maillots de bain ×2", p:"0,3kg"},
+    {t:"Foulard léger (mosquées) ×1", p:"0,1kg"},
+    {t:"Tenue soirée ×1", p:"0,2kg"},
+    {t:"Veste légère (clim bus de nuit) ×1", p:"0,2kg"},
+  ]},
+  {cat:"👟 Chaussures", color:"#555", bg:"#f0ece6", items:[
+    {t:"Chaussures marche (portées dans l'avion !)", p:"0kg valise"},
+    {t:"Sandales légères Valentin ×1 paire", p:"0,4kg"},
+    {t:"Sandales légères Ludyvine ×1 paire", p:"0,3kg"},
+    {t:"Chaussures fermées canyon Saklıkent ×2", p:"0,6kg"},
+  ]},
+  {cat:"🧴 Toilette & Santé", color:"#2d6a4f", bg:"#d8f3dc", items:[
+    {t:"Déodorant ×2", p:"0,2kg"},
+    {t:"Dentifrice + brosses à dents ×2", p:"0,2kg"},
+    {t:"Rasoir", p:"0,1kg"},
+    {t:"Crème solaire SPF50 ← ACHETER SUR PLACE (moins chère)", p:"0kg"},
+    {t:"Shampoing / gel solide ← ACHETER SUR PLACE", p:"0kg"},
+    {t:"Serviette microfibre ×2", p:"0,4kg"},
+    {t:"Pharmacie : Imodium, Doliprane, électrolytes, pansements", p:"0,3kg"},
+    {t:"Répulsif moustiques", p:"0,1kg"},
+    {t:"Masque + tuba snorkeling ×2 (indispensable !)", p:"0,4kg"},
+  ]},
+  {cat:"💊 CPAP & Médical (sacoche séparée)", color:"#e74c3c", bg:"#fce8e0", items:[
+    {t:"Appareil CPAP + masque", p:"1,3kg"},
+    {t:"Câble CPAP + adaptateur universel", p:"0,3kg"},
+    {t:"Ordonnance CPAP pour l'aéroport ⚠️", p:"0kg"},
+    {t:"Mode sans humidificateur (eau distillée introuvable en Turquie)", p:""},
+  ]},
+  {cat:"📱 Électronique (en CABINE uniquement !)", color:"#f39c12", bg:"#fef9e7", items:[
+    {t:"Téléphones + câbles USB ×2", p:"0,4kg"},
+    {t:"Chargeurs ×2", p:"0,3kg"},
+    {t:"Batterie externe ⚠️ JAMAIS EN SOUTE", p:"0,3kg"},
+    {t:"iPad + chargeur", p:"0,7kg"},
+    {t:"Écouteurs / AirPods ×2", p:"0,1kg"},
+  ]},
+  {cat:"📄 Documents", color:"#1a3a5c", bg:"#e8f0fb", items:[
+    {t:"Passeports ×2", p:""},
+    {t:"Cartes d'identité ×2 (pour Kastellorizo/Samos)", p:""},
+    {t:"Carte Fortuneo Fospho ×2", p:""},
+    {t:"Réservations hôtels PDF hors-ligne", p:""},
+    {t:"Billets bus obilet PDF hors-ligne", p:""},
+  ]},
+  {cat:"🎒 Divers & Indispensables", color:"#6b4a1a", bg:"#f5ede0", items:[
+    {t:"Sac à dos pliable léger ×1 (excursions)", p:"0,2kg"},
+    {t:"Cadenas valise ×1", p:"0,1kg"},
+    {t:"Sacs ziploc ×5 (protéger téléphone canyon + plongée)", p:"0kg"},
+    {t:"Lunettes de soleil polarisées ×2 (travertins + kayak)", p:"0,1kg"},
+    {t:"Casquette / chapeau ×2 (soleil très violent en août)", p:"0,2kg"},
+    {t:"Masque de nuit + bouchons oreilles (bus de nuit 8h15)", p:"0,1kg"},
+    {t:"Gourde isotherme 1,5L ×2 (sites sans point d'eau)", p:"0,3kg"},
+    {t:"Petite lampe frontale (grottes, Termessos)", p:"0,1kg"},
+    {t:"Marge souvenirs ~3kg réservés", p:""},
+  ]},
+];
+
+const PREDEP = [
+  {cat:"🔒 Numérique", urgent:true, color:"#1a4a7a", bg:"#e8f0fb", items:[
+    "Installer ET TESTER NordVPN / ExpressVPN depuis la France",
+    "Télécharger Google Maps hors-ligne : Istanbul, Izmir, Denizli, Fethiye, Antalya",
+    "Télécharger Google Traduction turc hors-ligne",
+    "Télécharger Yandex Maps (meilleur pour les dolmuş locaux)",
+    "Sauvegarder réservations hôtels en PDF hors-ligne",
+    "Sauvegarder billets bus obilet en PDF hors-ligne",
+    "Installer BiTaksi (taxis officiels turcs)",
+    "Installer Şehir Hatları (ferries Istanbul)",
+    "Installer Pray Watch (horaires prières mosquées)",
+  ]},
+  {cat:"🚌 Transport & Réservations", urgent:true, color:"#e74c3c", bg:"#fce8e0", items:[
+    "⚠️ Réserver bus de nuit Istanbul → Selçuk sur obilet.com (NON RÉSERVÉ !)",
+    "⚠️ Réserver kayak Kekova : seakayakturkiye.com (places limitées en août)",
+    "Vérifier horaires bus Selçuk → Denizli (3 août soir)",
+    "Vérifier horaires Denizli → Fethiye (3 août soir)",
+    "Vérifier premier tramway AntRay vers AYT le 17 août (~5h)",
+    "Contacter hôtels pour signaler arrivée tardive (Fethiye ~23h, Antalya ~20h)",
+  ]},
+  {cat:"💊 CPAP & Médical", urgent:true, color:"#c0392b", bg:"#fce8e0", items:[
+    "Contacter Vueling : déclarer CPAP comme bagage médical exempt",
+    "Obtenir lettre médecin / ordonnance pour le CPAP (en anglais si possible)",
+    "Vérifier tension CPAP : compatible 100-240V ? (universel = OK)",
+    "Configurer mode sans humidificateur (eau distillée introuvable en Turquie)",
+    "Préparer trousse pharmacie : Imodium, Doliprane, électrolytes, pansements",
+    "Acheter répulsif moustiques avant le départ (moins cher en France)",
+  ]},
+  {cat:"💳 Argent", urgent:false, color:"#2d6a4f", bg:"#d8f3dc", items:[
+    "Vérifier solde Fortuneo Fospho",
+    "Prévoir ~100€ en espèces TRY pour les premiers jours",
+    "Mémoriser : retirer UNIQUEMENT Ziraat Bankası ou İş Bankası",
+    "Acheter SIM Turkcell à l'aéroport IST dès l'arrivée (~25€/30Go/30j)",
+  ]},
+  {cat:"📦 Valise & Bagages", urgent:false, color:"#6b4a1a", bg:"#f5ede0", items:[
+    "Peser la valise avant le départ (max 20kg soute, sac perso 4kg)",
+    "Batterie externe EN CABINE uniquement — jamais en soute ⚠️",
+    "Chaussures de marche : les PORTER dans l'avion (gain de poids valise)",
+    "CPAP dans sacoche séparée — bagage médical déclaré",
+    "Réserver ~3kg dans la valise pour souvenirs au retour",
+    "Retour EasyJet + SunExpress : pas de bagage cabine 10kg ⚠️",
+  ]},
+  {cat:"🎒 Trousseau — À emporter impérativement", urgent:false, color:"#1a7a4a", bg:"#d8f3dc", items:[
+    "Masque + tuba snorkeling ×2 (bien moins cher qu'en location)",
+    "Lunettes de soleil polarisées ×2 (travertins + kayak Kekova)",
+    "Gourde isotherme 1,5L ×2 (sites archéologiques = aucun point d'eau)",
+    "Casquette / chapeau ×2 (soleil turc très violent en août)",
+    "Chaussures fermées pour le canyon Saklıkent (pas de tongs !)",
+    "Sacs ziploc ×5 (protéger téléphone dans le canyon + plongée)",
+    "Serviette microfibre ×2 (légère, sèche vite, multi-usage)",
+    "Masque de nuit + bouchons oreilles (bus de nuit 8h15)",
+    "Foulard léger Ludyvine (mosquées)",
+    "Cadenas valise ×1",
+    "Sac à dos pliable léger ×1 (excursions à la journée)",
+    "Petite lampe frontale (grottes, Termessos en forêt)",
+  ]},
+  {cat:"🛍️ À acheter sur place en Turquie", urgent:false, color:"#7a1a3a", bg:"#f8e0e8", items:[
+    "SIM Turkcell — à l'aéroport IST dès l'arrivée (~25€/30Go) ✓",
+    "Crème solaire SPF50 — acheter à Istanbul (moins chère qu'en France)",
+    "Eau en bouteille — dès l'arrivée (ne jamais boire l'eau du robinet)",
+    "Eau distillée CPAP — introuvable, utiliser eau en bouteille ou mode sans humidificateur",
+    "Chaussures à louer Saklıkent — sur place si besoin (~3€)",
+    "Foulard/voile si oublié — s'achète partout à Istanbul (~2-3€)",
+    "Produits locaux souvenirs : safran, épices, thé, céramiques",
+  ]},
+  {cat:"📋 Checklist J-1 (veille du départ)", urgent:false, color:"#6b4a1a", bg:"#fff3cd", items:[
+    "Recharger toutes les batteries (téléphones, iPad, batterie externe)",
+    "Télécharger les guides hors-ligne (Google Maps 5 régions)",
+    "Mettre les passeports + cartes d'identité dans le sac à main",
+    "Imprimer / PDF : billets avion, réservations hôtels, bus obilet",
+    "Donner clés + infos à quelqu'un de confiance",
+    "Vérifier heure et terminal vol Lyon → Istanbul",
+    "Alarme matinale vérifiée ✓",
+  ]},
+];
+
+// ---- État global ----
+let depenses = JSON.parse(localStorage.getItem('dep') || '[]');
+let valiseChecked = JSON.parse(localStorage.getItem('val') || '{}');
+let predepChecked = JSON.parse(localStorage.getItem('pre') || '{}');
+
+// ---- Onglets principaux ----
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tabs-wrap .tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  return false;
+}
+
+// ---- Onglets infos ----
+function showInfoTab(id, el) {
+  document.querySelectorAll('.info-sub').forEach(s => s.style.display = 'none');
+  document.querySelectorAll('#infos .tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('info-' + id).style.display = 'block';
+  el.classList.add('active');
+}
+
+// ---- Budget ----
+function renderBudget() {
+  const total = depenses.reduce((a, d) => a + parseFloat(d.montant || 0), 0);
+  const reste = BUDGET - total;
+  const pct = Math.min(100, (total / BUDGET_MAX) * 100);
+  const fillColor = total > BUDGET_MAX ? '#e74c3c' : total > BUDGET ? '#f39c12' : '#27ae60';
+
+  document.getElementById('total-dep').textContent = total.toFixed(2);
+  document.getElementById('total-reste').textContent = reste.toFixed(2);
+  document.getElementById('total-reste').style.color = reste >= 0 ? '#27ae60' : '#e74c3c';
+  document.getElementById('jauge-fill').style.width = pct + '%';
+  document.getElementById('jauge-fill').style.background = fillColor;
+  document.getElementById('total-realise').textContent = total.toFixed(2) + '€';
+  document.getElementById('total-realise').style.color = total > BUDGET_MAX ? '#ff6b6b' : total > BUDGET ? '#ffd93d' : '#6bcb77';
+
+  // Postes
+  const container = document.getElementById('postes-list');
+  container.innerHTML = POSTES.map(p => {
+    const catDeps = depenses.filter(d => d.cat === p.label).reduce((a, d) => a + parseFloat(d.montant || 0), 0);
+    const pct = Math.min(100, (catDeps / p.montant) * 100);
+    const over = catDeps > p.montant;
+    return `<div class="poste-card">
+      <div class="poste-row">
+        <div><div class="poste-label">${p.label}</div><div class="poste-detail">${p.detail}</div></div>
+        <div class="poste-right"><div class="poste-prevu">prévu ${p.montant}€</div>${catDeps > 0 ? `<div class="poste-realise" style="color:${over ? '#e74c3c' : '#27ae60'}">${catDeps.toFixed(0)}€</div>` : ''}</div>
+      </div>
+      <div class="mini-bar"><div class="mini-fill" style="width:${pct}%;background:${over ? '#e74c3c' : '#2d6a4f'}"></div></div>
+      ${over ? `<div style="font-size:11px;color:#e74c3c;margin-top:4px">⚠️ Dépassement de ${(catDeps - p.montant).toFixed(0)}€</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Liste dépenses
+  const depList = document.getElementById('dep-list');
+  if (depenses.length === 0) { depList.innerHTML = ''; return; }
+  depList.innerHTML = '<div class="section-label" style="margin-top:16px">Dépenses saisies</div>' +
+    depenses.map((d, i) => `
+      <div class="dep-item">
+        <div class="dep-info">
+          <div class="dep-name">${d.label}</div>
+          <div class="dep-meta">${d.date}${d.cat ? ' · ' + d.cat : ''}</div>
+        </div>
+        <div class="dep-right">
+          <span class="dep-amt">${parseFloat(d.montant).toFixed(2)}€</span>
+          <button class="btn-del" onclick="suppDep(${i})">✕</button>
+        </div>
+      </div>`).join('');
+}
+
+function ajouterDep() {
+  const label = document.getElementById('dep-label').value.trim();
+  const montant = document.getElementById('dep-montant').value;
+  const cat = document.getElementById('dep-cat').value;
+  if (!label || !montant) return;
+  depenses.push({ label, montant, cat, date: new Date().toLocaleDateString('fr') });
+  localStorage.setItem('dep', JSON.stringify(depenses));
+  document.getElementById('dep-label').value = '';
+  document.getElementById('dep-montant').value = '';
+  document.getElementById('dep-cat').value = '';
+  renderBudget();
+}
+
+function suppDep(i) {
+  depenses.splice(i, 1);
+  localStorage.setItem('dep', JSON.stringify(depenses));
+  renderBudget();
+}
+
+// ---- Valise ----
+function renderValise() {
+  const allItems = VALISE.reduce((a, c) => a + c.items.length, 0);
+  const doneItems = Object.values(valiseChecked).filter(Boolean).length;
+  const pct = Math.round((doneItems / allItems) * 100);
+  document.getElementById('valise-pct').textContent = pct + '%';
+  document.getElementById('valise-bar').style.width = pct + '%';
+
+  document.getElementById('valise-list').innerHTML = VALISE.map((cat, ci) => {
+    const done = cat.items.filter((_, ii) => valiseChecked[`${ci}-${ii}`]).length;
+    return `<div class="chk-cat">
+      <div class="chk-cat-header" style="background:${cat.bg};border-left-color:${cat.color}">
+        <span class="chk-cat-name" style="color:${cat.color}">${cat.cat}</span>
+        <span class="chk-cat-count" style="color:${done === cat.items.length ? '#27ae60' : '#888'}">${done}/${cat.items.length}</span>
+      </div>
+      ${cat.items.map((item, ii) => {
+        const key = `${ci}-${ii}`;
+        const checked = valiseChecked[key];
+        return `<div class="chk-item${checked ? ' done' : ''}" onclick="toggleValise('${key}')">
+          <div class="chk-box${checked ? ' checked' : ''}" style="${checked ? 'background:' + cat.color + ';border-color:' + cat.color : ''}">${checked ? '✓' : ''}</div>
+          <span class="chk-text${checked ? ' done' : ''}">${item.t}</span>
+          ${item.p ? `<span class="chk-poids">${item.p}</span>` : ''}
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+function toggleValise(key) {
+  valiseChecked[key] = !valiseChecked[key];
+  localStorage.setItem('val', JSON.stringify(valiseChecked));
+  renderValise();
+}
+
+function resetValise() {
+  valiseChecked = {};
+  localStorage.setItem('val', JSON.stringify(valiseChecked));
+  renderValise();
+}
+
+// ---- Pré-départ ----
+function renderPredep() {
+  const allItems = PREDEP.reduce((a, c) => a + c.items.length, 0);
+  const doneItems = Object.values(predepChecked).filter(Boolean).length;
+  const pct = Math.round((doneItems / allItems) * 100);
+  document.getElementById('predep-pct').textContent = pct + '%';
+  document.getElementById('predep-bar').style.width = pct + '%';
+
+  document.getElementById('predep-list').innerHTML = PREDEP.map((cat, ci) => {
+    const done = cat.items.filter((_, ii) => predepChecked[`${ci}-${ii}`]).length;
+    return `<div class="chk-cat">
+      <div class="pre-cat-header" style="background:${cat.bg};border-left-color:${cat.color}">
+        <span class="chk-cat-name" style="color:${cat.color}">${cat.cat}</span>
+        <div style="display:flex;gap:6px;align-items:center">
+          <span class="chk-cat-count" style="color:${done === cat.items.length ? '#27ae60' : '#888'}">${done}/${cat.items.length}</span>
+          ${cat.urgent ? '<span class="badge-urgent">URGENT</span>' : ''}
+        </div>
+      </div>
+      ${cat.items.map((item, ii) => {
+        const key = `${ci}-${ii}`;
+        const checked = predepChecked[key];
+        return `<div class="chk-item${checked ? ' done' : ''}" onclick="togglePredep('${key}')">
+          <div class="chk-box${checked ? ' checked' : ''}" style="${checked ? 'background:' + cat.color + ';border-color:' + cat.color : 'border-color:' + cat.color + '44'}">${checked ? '✓' : ''}</div>
+          <span class="chk-text${checked ? ' done' : ''}">${item}</span>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+function togglePredep(key) {
+  predepChecked[key] = !predepChecked[key];
+  localStorage.setItem('pre', JSON.stringify(predepChecked));
+  renderPredep();
+}
+
+function resetPredep() {
+  predepChecked = {};
+  localStorage.setItem('pre', JSON.stringify(predepChecked));
+  renderPredep();
+}
+
+// ---- Convertisseur ----
+function convFromTry(v) {
+  document.getElementById('eur-input').value = v ? (parseFloat(v) / RATE).toFixed(2) : '';
+}
+function convFromEur(v) {
+  document.getElementById('try-input').value = v ? (parseFloat(v) * RATE).toFixed(0) : '';
+}
+
+// ---- Hash navigation ----
+function initFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const tab = document.querySelector(`.tabs-wrap .tab[href="#${hash}"]`);
+    if (tab) showTab(hash, tab);
+  }
+}
+
+// ---- Init ----
+document.addEventListener('DOMContentLoaded', () => {
+  renderBudget();
+  renderValise();
+  renderPredep();
+  initFromHash();
+});
+</script>
+</body>
+</html>
