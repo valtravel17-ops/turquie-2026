@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fethiye / Ölüdeniz — Guide complet · 5–9 août</title>
+<style>
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;--s2:#e8e4dc;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr p{font-size:13px;color:var(--t2)}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
+.pill.gn{background:var(--gbg);border-color:var(--gn2);color:var(--gt)}
+.pill.bl{background:var(--bbg);border-color:var(--bl);color:var(--bt)}
+.pill.rd{background:var(--rbg);border-color:var(--rd);color:var(--rt)}
+.pill.pu{background:var(--pubg);border-color:var(--pu);color:var(--put)}
+.pill.go{background:var(--gobg);border-color:var(--go);color:var(--got)}
+
+.transit-in{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
+.ti-title{font-size:12px;font-weight:600;color:var(--put);margin-bottom:8px}
+.ti-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.ti-row{background:rgba(255,255,255,.7);border-radius:8px;padding:6px 10px;font-size:11px}
+.ti-l{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.ti-v{color:var(--put);font-weight:500}
+
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+
+.dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
+.dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.dh .ds{font-size:12px;color:var(--t2);margin-bottom:8px}
+.dgeo{display:block;width:fit-content;background:var(--bbg);border:1px solid var(--bl);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--bt);margin-bottom:5px}
+.dbudg{font-size:12px;color:var(--t2);margin-top:5px}
+.dbudg strong{color:var(--gn)}
+.dtot{display:flex;justify-content:space-between;align-items:center;background:var(--s1);border-radius:var(--r);padding:8px 13px;margin-top:10px;font-size:12px;color:var(--t2)}
+.dtot strong{color:var(--tx)}
+
+.blk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;margin-bottom:6px}
+.bh{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.tm{background:var(--s1);border:1px solid var(--bd2);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--t2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.bt2{font-size:13px;font-weight:500;color:var(--tx);flex:1}
+.ptag{font-size:11px;border-radius:20px;padding:2px 9px;white-space:nowrap;font-weight:500;flex-shrink:0}
+.free{background:#dcfce7;color:#155724}
+.paid{background:var(--rbg);color:var(--rt)}
+.cheap{background:var(--bbg);color:var(--bt)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.th{background:var(--pubg);color:var(--put);border-color:var(--pu)}
+.tn{background:var(--gbg);color:var(--gt);border-color:var(--gn2)}
+.tb{background:var(--bbg);color:var(--bt);border-color:var(--bl)}
+.ta{background:var(--gobg);color:var(--got);border-color:#c8a020}
+.bdesc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:5px}
+.btip{font-size:11px;color:var(--t3);border-left:2px solid var(--gn2);padding-left:8px;margin-top:6px;line-height:1.5}
+.bln{font-size:11px;margin-top:5px}
+
+.excursion-box{background:var(--gobg);border:1px solid #c8a020;border-radius:var(--r);padding:11px 14px;margin-bottom:8px}
+.exc-title{font-size:12px;font-weight:600;color:var(--got);margin-bottom:8px}
+.exc-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.07)}
+.exc-row:last-child{border-bottom:none}
+.exc-left{flex:1}
+.exc-name{font-size:12px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.exc-detail{font-size:11px;color:var(--t2);line-height:1.5}
+.exc-right{text-align:right;flex-shrink:0}
+.exc-dist{background:var(--s1);border-radius:20px;padding:2px 9px;font-size:10px;color:var(--t2);display:block;margin-bottom:3px;white-space:nowrap}
+.exc-price{font-size:10px;color:var(--gn);font-weight:600;white-space:nowrap}
+
+.ts{display:flex;align-items:flex-start;gap:8px;padding:6px 0 6px 8px;margin:2px 0;border-left:2px dashed var(--bd2)}
+.tsi{width:24px;height:24px;border-radius:50%;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tst{flex:1;font-size:11px;color:var(--t2)}
+.tsm{color:var(--tx);font-size:12px;font-weight:500}
+.tsd{background:var(--bbg);color:var(--bt);border-radius:20px;padding:1px 7px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tsp{background:var(--gbg);color:var(--gt);border-radius:20px;padding:1px 7px;font-size:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+.tc{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:13px 15px;margin-top:14px}
+.tct{font-size:13px;font-weight:600;color:var(--put);margin-bottom:10px}
+.tcg{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:6px}
+.tcr{background:rgba(255,255,255,.75);border-radius:8px;padding:7px 10px;font-size:11px}
+.tcl{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.tcv{color:var(--put);font-weight:500}
+
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+.gems{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gem{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.gem-t{font-size:12px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.gem-p{font-size:11px;color:var(--gn);font-weight:500;margin-bottom:4px}
+.gem-d{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.gem-when{font-size:10px;padding:2px 9px;border-radius:20px;display:inline-block;font-weight:500}
+.gem-planned{background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd}
+.gem-todo{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+
+.wb{background:var(--rbg);border:1px solid #cc6040;border-radius:var(--r);padding:10px 13px;margin-bottom:7px}
+.wbt{font-size:12px;font-weight:600;color:var(--rt);margin-bottom:3px}
+.wb p{font-size:12px;color:var(--rt)}
+
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+.ar{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.ar:last-child{border-bottom:none}
+.ai2{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--s1);border:1px solid var(--bd)}
+.an{font-size:13px;font-weight:500;color:var(--tx)}
+.an a{color:var(--bl);border-bottom:1px dotted var(--bl)}
+.ad{font-size:11px;color:var(--t2);margin-top:1px}
+.ab2{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--gbg);color:var(--gt);white-space:nowrap;flex-shrink:0}
+
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
+</style>
+</head>
+<body>
+
+<!-- PROMPT -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 4/6 : Fethiye / Ölüdeniz (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 04_fethiye.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Fethiye / Ölüdeniz (5–9 août, 4 nuits)</strong> du voyage Turquie 2026, couple, transport en commun uniquement.<br><br>
+      <strong>Arrivée :</strong> Bus Denizli → Fethiye · ~3h30 · ~12€/pers · Kamil Koç · Arrivée soirée du 5 août<br><br>
+      <strong>Base logistique :</strong> Loger à Fethiye ville ou Ölüdeniz (village du lagon) · Les deux sont valables · Dolmuş (minibus collectif) entre les deux toutes les 20 min · ~1,50€<br><br>
+      <strong>Activités clés :</strong> Ölüdeniz Mavi Lagünü (Lagon Bleu, entrée ~5€) · Tour des 12 Adalar (îles) en bateau (~15–20€/pers, déjeuner inclus) · Saklıkent Kanyonu (gorge aquatique, entrée 250 TL/~6,50€, dolmuş depuis Fethiye) · Kayaköy (village fantôme grec, gratuit) · Kayak de mer depuis Ölüdeniz<br><br>
+      <strong>Prochain transit :</strong> Dolmuş (minibus) Fethiye → Kaş · ~2h · ~6€/pers · Matin du 9 août
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>🏖 Fethiye · Ölüdeniz</h1>
+  <p>5–9 août · 4 nuits · Étape 4 sur 6</p>
+  <div class="hdr-meta">
+    <span class="pill rd">32–38°C · Chaud · Brise marine</span>
+    <span class="pill pu">Lagon Bleu UNESCO</span>
+    <span class="pill gn">Parapente · Kayak · Canyon</span>
+    <span class="pill bl">Dolmuş partout</span>
+    <span class="pill go">Côte lycienne</span>
+  </div>
+</div>
+
+<!-- TRANSIT ENTRANT -->
+<div class="transit-in">
+  <div class="ti-title">🚌 Transit entrant — Pamukkale → Fethiye · Soir du 5 août</div>
+  <div class="ti-grid">
+    <div class="ti-row"><div class="ti-l">Compagnie</div><div class="ti-v">Kamil Koç</div></div>
+    <div class="ti-row"><div class="ti-l">Départ</div><div class="ti-v">Denizli Otogarı (gare routière) · 19h–20h</div></div>
+    <div class="ti-row"><div class="ti-l">Arrivée</div><div class="ti-v">Fethiye Otogarı · ~22h30–23h30</div></div>
+    <div class="ti-row"><div class="ti-l">Durée / Prix</div><div class="ti-v">~3h30 · ~12€/pers</div></div>
+    <div class="ti-row"><div class="ti-l">Hébergement</div><div class="ti-v">Fethiye ou Ölüdeniz · <a href="https://www.booking.com/city/tr/fethiye.fr.html" target="_blank">Booking Fethiye</a></div></div>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<div class="snav">
+  <button class="snb on" onclick="showSub('j1',this)">J1 · 6 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · 7 août · 12 îles</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · 8 août</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · 9 août + départ</button>
+  <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
+  <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
+  <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
+  <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
+</div>
+
+<div class="cnt">
+
+<!-- J1 -->
+<div id="j1" class="spg vis">
+  <div class="dh">
+    <h2>Jour 1 — 6 août · Ölüdeniz & Lagon Bleu</h2>
+    <div class="ds">Arrivée la veille au soir · Journée plage et lagon · Rythme détendu</div>
+    <div class="dgeo">📍 Dolmuş (minibus) Fethiye → Ölüdeniz · 20 min · ~1,50€ · Toutes les 20 min</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~15–25€</strong></div>
+  </div>
+
+  <div class="al warn">
+    <div class="ali">😴</div>
+    <div class="alb"><strong>Arrivée la veille tard (22h30–23h30)</strong> — Journée J1 volontairement légère. Plage, lagon, décompression. C'est Ölüdeniz — c'est fait pour ça.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Dolmuş vers Ölüdeniz + Mavi Lagün (Lagon Bleu)</span><span class="ptag paid">~5€ entrée lagon</span></div>
+    <div class="tags"><span class="tag th">L'une des plus belles plages de Méditerranée</span><span class="tag tn">Eau turquoise 28°C</span><span class="tag">Parc naturel protégé</span></div>
+    <div class="bdesc">Ölüdeniz (littéralement "mer morte" en turc — eau calme et protégée) et son Mavi Lagün (Lagon Bleu) sont classés parmi les plus belles plages de Méditerranée. Eau turquoise cristalline dans une baie fermée par une langue de sable. Le lagon est une zone protégée (doğal park = parc naturel) — petite entrée payante pour y accéder. La grande plage de Belcekız à côté est gratuite.</div>
+    <div class="btip">💡 Le Mavi Lagün (lagon) est dans la zone protégée payante (~5€). La plage de Belcekız juste à côté est gratuite et tout aussi belle. Arriver tôt — bondé après 11h en août.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Plage libre · Baignade · Flânerie Ölüdeniz village</span><span class="ptag free">Gratuit</span></div>
+    <div class="bdesc">Après-midi entièrement libre sur la plage. Le petit köy (village) d'Ölüdeniz a quelques restaurants, cafés et boutiques d'activités (kayak, plongée, excursions) — idéal pour repérer et réserver le tour des 12 îles pour le lendemain depuis le port de Fethiye.</div>
+    <div class="btip">💡 Le soir, aller dîner à Fethiye centre plutôt qu'à Ölüdeniz — restaurants locaux bien meilleurs et moins chers, ambiance port animée.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15–25€</strong></div>
+</div>
+
+<!-- J2 -->
+<div id="j2" class="spg">
+  <div class="dh">
+    <h2>Jour 2 — 7 août · Tour des 12 Adalar (îles) ⭐⭐</h2>
+    <div class="ds">Journée en bateau · Criques isolées · Snorkeling · Déjeuner à bord</div>
+    <div class="dgeo">📍 Départ port de Fethiye (Fethiye Limanı) · 10h–18h · Bateau collectif</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong> (bateau tout compris)</div>
+  </div>
+
+  <div class="al info">
+    <div class="ali">⛵</div>
+    <div class="alb"><strong>Réserver la veille au port de Fethiye</strong> — Le tour des On İki Ada (douze îles) part chaque matin à 10h depuis le port. Prix fixe ~15–20€/pers selon les bateaux, déjeuner souvent inclus. Plusieurs bateaux proposent la même chose — comparer et choisir le moins chargé. Apporter crème solaire, masque et tuba.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h30</span><span class="bt2">Départ port de Fethiye — embarquement</span><span class="ptag cheap">~15–20€/pers tout compris</span></div>
+    <div class="tags"><span class="tag tn">Journée entière en mer</span><span class="tag">Déjeuner inclus</span><span class="tag th">Criques lyciennes</span></div>
+    <div class="bdesc">Le tour des On İki Ada (douze îles) est la journée bateau classique de Fethiye — et pour une bonne raison. Le bateau navigue de crique en crique le long de la côte lycienne : Yassıcalar Adaları, Tersane Adası (île aux chantiers navals byzantins abandonnés), Domuz Adası, Kızıl Ada. Plusieurs arrêts baignade et snorkeling dans des eaux turquoise de 5 à 20m de fond. Déjeuner chaud servi à bord vers 13h.</div>
+    <div class="btip">💡 Apporter masque et tuba — la visibilité sous-marine sur certaines criques est exceptionnelle. Crème solaire waterproof obligatoire : 8h de soleil direct sur l'eau.</div>
+    <div class="bln"><a href="https://www.fethiye12islands.com/" target="_blank">fethiye12islands.com</a> — infos sur le tour</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">18h</span><span class="bt2">Retour port · Dîner à Fethiye centre</span><span class="ptag cheap">10–15€/pers</span></div>
+    <div class="bdesc">Retour au port vers 18h. Dîner dans le vieux centre de Fethiye (Eski Çarşı = vieux marché) plutôt qu'à Ölüdeniz — bien moins cher, plus animé, excellents restaurants de poisson autour du port. Les tombes lyciennes rupestres illuminées en soirée valent le détour (gratuites depuis la rue).</div>
+    <div class="btip">💡 Les tombes lyciennes (kaya mezarları) taillées dans la falaise au-dessus de Fethiye centre sont une pépite souvent oubliée — visibles et illuminées le soir depuis la rue, entrée gratuite.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~25–35€ (bateau + dîner)</strong></div>
+</div>
+
+<!-- J3 -->
+<div id="j3" class="spg">
+  <div class="dh">
+    <h2>Jour 3 — 8 août · Saklıkent Kanyonu (gorge aquatique) 🛶</h2>
+    <div class="ds">Canyon aquatique spectaculaire · Eau glacée · Journée nature et fraîcheur</div>
+    <div class="dgeo">📍 Dolmuş (minibus) depuis Fethiye Otogarı → Saklıkent · 45–60 min · ~3–4€ · Toutes les 30 min</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~20–30€</strong></div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">🛶</div>
+    <div class="alb"><strong>Expérience canoë/kayak n°1 de Fethiye</strong> — Saklıkent n'est pas du kayak à proprement parler mais une marche aquatique dans un canyon d'eau glacée entre des falaises de 300m. Eau à 12°C en pleine chaleur d'août — rafraîchissant et physique. Parfait pour les amateurs de nature et d'aventure en rivière.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Saklıkent Kanyonu (Gorge de Saklıkent)</span><span class="ptag paid">250 TL / ~6,50€ entrée</span></div>
+    <div class="tags"><span class="tag tn">Canyon aquatique · Eau à 12°C</span><span class="tag th">18 km · Parois 300m</span><span class="tag">45 km de Fethiye · Dolmuş direct</span></div>
+    <div class="bdesc">Saklıkent (littéralement "ville cachée" en turc) est un canyon (kanyon) taillé dans le calcaire par la rivière Karaçay. Les parois (duvarlar) atteignent 300m de hauteur et se resserrent par endroits à 2–4m de largeur seulement. Marcher dans le lit de la rivière, eau glacée jusqu'aux genoux/à la taille, entre des falaises vertigineuses. Les premiers kilomètres se font sur une passerelle (tahta köprü = pont en bois) en bord de falaise, puis on entre dans l'eau froide.<br><br>Des activités supplémentaires disponibles sur place : tyrolienne (tirolyen = zip-line), tubing (flotteur gonflable sur la rivière), rafting sur la rivière après la sortie du canyon.</div>
+    <div class="btip">💡 Prendre des chaussures aquatiques (su ayakkabısı) ou sandales qui restent aux pieds dans l'eau — le fond est glissant. On peut en louer sur place pour quelques TL. Le dolmuş (minibus) depuis Fethiye part de l'otogar (gare routière) — dernier retour ~19h30, vérifier l'heure sur place.</div>
+    <div class="bln"><a href="https://www.fethiyetours.com/best-of-fethiye/saklikent-gorge/" target="_blank">fethiyetours.com</a> — guide complet Saklıkent 2026</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Retour Fethiye · Balade vieille ville · Tombes lyciennes</span><span class="ptag free">Gratuit</span></div>
+    <div class="bdesc">Retour en dolmuş vers Fethiye. Se promener dans le vieux Fethiye : Kaya mezarları (tombes rupestres lyciennes) taillées dans la falaise au-dessus de la ville — visibles depuis les rues, entrée gratuite. Çarşı (marché local) et port de Fethiye animé le soir. Dîner de poisson (balık) sur le front de mer.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~20–30€</strong></div>
+</div>
+
+<!-- J4 -->
+<div id="j4" class="spg">
+  <div class="dh">
+    <h2>Jour 4 — 9 août · Kayaköy + après-midi libre + départ Kaş 17h</h2>
+    <div class="ds">Matin : village fantôme grec · Après-midi libre à Fethiye · Dolmuş 17h vers Kaş · Arrivée 19h</div>
+    <div class="dgeo">📍 Dolmuş Fethiye → Kayaköy (20 min) · puis dolmuş Fethiye → Kaş à 17h (2h de trajet)</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~15€ + dolmuş ~6€</strong></div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">💡</div>
+    <div class="alb"><strong>Partir à 16h30–17h vers Kaş</strong> — 2h de dolmuş sur la route côtière D400 = arrivée à Kaş vers 18h30–19h, encore de jour. Temps de s'installer et de découvrir le village au coucher du soleil. Toute la journée reste disponible avant le départ.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Kayaköy — Village fantôme grec abandonné en 1923</span><span class="ptag cheap">~3–5€</span></div>
+    <div class="tags"><span class="tag th">Village grec abandonné · Échange de populations 1923</span><span class="tag">20 min de Fethiye · Dolmuş direct</span><span class="tag tn">Peu touristique · Atmosphère unique</span></div>
+    <div class="bdesc">Kayaköy (anciennement Levissi en grec) était un village grec orthodoxe de 3 500 habitants jusqu'en 1923. Lors de l'échange forcé de populations (nüfus mübadelesi) entre Grèce et Turquie, tous les résidents grecs durent partir. Le village fut ensuite abandonné et jamais réoccupé — il reste aujourd'hui tel quel, des centaines d'evler (maisons) en pierre avec leurs kiliseler (églises) effondrées, envahies par la végétation méditerranéenne. Atmosphère hors du temps, mélancolique et fascinante.</div>
+    <div class="btip">💡 Kayaköy a inspiré le roman "Les oiseaux sans ailes" de Louis de Bernières (2004) — magnifique pour s'immerger dans l'histoire de ce village avant ou pendant le voyage.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">11h30</span><span class="bt2">Retour Fethiye · Déjeuner · Après-midi libre</span><span class="ptag cheap">Repas ~10€</span></div>
+    <div class="bdesc">Retour à Fethiye. Déjeuner tranquille dans une lokanta (restaurant local) du port. Après-midi libre : balade sur le front de mer, çarşı (marché) de Fethiye, kaya mezarları (tombes lyciennes) illuminées en fin de journée. Récupérer les bagages à l'hébergement vers 16h.</div>
+  </div>
+
+  <div class="ts">
+    <div class="tsi">🚌</div>
+    <div class="tst">
+      <div class="tsm">Dolmuş (minibus) Fethiye Otogarı → Kaş · Route côtière D400</div>
+      <div>Paysages côtiers magnifiques · Falaises, criques, mer turquoise tout le long</div>
+    </div>
+    <span class="tsd">~2h</span>
+    <span class="tsp">~6€/pers</span>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">16h30–17h</span><span class="bt2">Départ dolmuş vers Kaş · Arrivée ~18h30–19h</span><span class="ptag paid">~6€/pers</span></div>
+    <div class="bdesc">Dolmuş (minibus collectif) depuis Fethiye Otogarı (gare routière) en direction de Kaş sur la D400 (route côtière). 2h de trajet avec des vues époustouflantes sur la côte lycienne. Arrivée à Kaş en fin d'après-midi — encore de jour pour s'installer et explorer le village au coucher du soleil.</div>
+    <div class="btip">💡 Vérifier l'heure exacte du dernier dolmuş direct à l'otogar (gare routière) de Fethiye le matin. En haute saison, départs généralement toutes les 30–60 min jusqu'en soirée.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15€ + dolmuş Kaş ~6€</strong></div>
+
+  <div class="tc">
+    <div class="tct">🚌 Transit sortant — Fethiye → Kaş · 9 août vers 16h30–17h</div>
+    <div class="tcg">
+      <div class="tcr"><div class="tcl">Transport</div><div class="tcv">Dolmuş (minibus collectif) · Route côtière D400</div></div>
+      <div class="tcr"><div class="tcl">Départ conseillé</div><div class="tcv">16h30–17h depuis Fethiye Otogarı</div></div>
+      <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Kaş · ~18h30–19h · Encore de jour</div></div>
+      <div class="tcr"><div class="tcl">Durée / Prix</div><div class="tcv">~2h · ~6€/pers</div></div>
+      <div class="tcr"><div class="tcl">Note</div><div class="tcv">Pas besoin de réserver — dolmuş fréquent en saison</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXCURSIONS ±1H -->
+<div id="excursions" class="spg">
+  <div class="al info">
+    <div class="ali">🗺</div>
+    <div class="alb"><strong>Excursions accessibles depuis Fethiye/Ölüdeniz en transport en commun</strong> — Fethiye est une excellente base avec des dolmuş (minibus) dans toutes les directions. Toutes les suggestions ci-dessous sont faisables sans voiture.</div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 20–30 min depuis Fethiye (dolmuş direct)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Ölüdeniz — Mavi Lagün (Lagon Bleu)</div>
+        <div class="exc-detail">Dolmuş toutes les 20 min depuis le centre de Fethiye · L'une des plus belles plages de Méditerranée · Planifié J1 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">20 min · ~1,50€</span><span class="exc-price">~5€ entrée lagon</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kayaköy — Village fantôme grec</div>
+        <div class="exc-detail">Dolmuş direct depuis Fethiye · Village grec abandonné en 1923, ruines envahies par la végétation · Atmosphère unique · Planifié J4 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">20 min · ~2€</span><span class="exc-price">~3–5€ entrée</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Çalış Plajı (Plage de Çalış)</div>
+        <div class="exc-detail">Dolmuş fréquent · Longue plage de galets et sable, très locale, bien moins bondée qu'Ölüdeniz · Vue sur les îles · Tortues de mer en été</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">15 min · ~1€</span><span class="exc-price">Gratuit</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 45–60 min depuis Fethiye (dolmuş + marche)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Saklıkent Kanyonu (Gorge de Saklıkent)</div>
+        <div class="exc-detail">Dolmuş depuis Fethiye otogar · Canyon aquatique 18 km · Parois 300m · Eau glacée à 12°C · Planifié J3 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">45–60 min · ~3–4€</span><span class="exc-price">250 TL / ~6,50€</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kelebekler Vadisi (Butterfly Valley — Vallée des Papillons)</div>
+        <div class="exc-detail">Bateau-taxi depuis Ölüdeniz (tekneci = taxi boat) · Crique sauvage inaccessible à pied, falaises de 350m, sources d'eau douce, papillons exotiques · Atmosphère paradisiaque</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">20 min bateau · ~10€ A/R</span><span class="exc-price">Gratuit (entrée)</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Tlos — Cité lycienne sur la colline</div>
+        <div class="exc-detail">Dolmuş vers Saklıkent + arrêt Tlos · Citadelle lycienne sur une colline rocheuse, nécropole (cimetière antique) rupestre, théâtre romain · Souvent combiné avec Saklıkent</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">45 min · ~3€</span><span class="exc-price">~3–5€</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kayak de mer depuis Ölüdeniz</div>
+        <div class="exc-detail">Location ou excursion organisée depuis la plage d'Ölüdeniz · Grottes marines, côte sauvage, criques inaccessibles autrement · Demi-journée ou journée complète</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">Depuis Ölüdeniz</span><span class="exc-price">~30–50€ demi-journée</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 1h–1h30 depuis Fethiye (limite recommandée)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Dalyan — Bateaux sur la rivière + tortues Caretta</div>
+        <div class="exc-detail">Bus depuis Fethiye otogar → Ortaca + dolmuş → Dalyan · Bateau (tekne) sur la rivière Dalyan entre les roseaux, tombes lyciennes rupestres en falaise, plage İztuzu (tortues Caretta Caretta protégées), bains de boue thermaux. Journée complète idéale.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h30 · ~6€</span><span class="exc-price">~25–35€ bateau</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Tour des 12 Adalar (îles) en bateau depuis Fethiye</div>
+        <div class="exc-detail">Excursion en tekne (bateau de bois turc) depuis le port de Fethiye · Journée entière · Criques isolées, snorkeling, repas de poisson à bord · Très populaire · Réserver la veille sur le port</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">Depuis Fethiye port</span><span class="exc-price">~15–20€/pers</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Xanthos + Letoon (UNESCO)</div>
+        <div class="exc-detail">Bus Fethiye → Kinik · Xanthos = ancienne capitale de la Lycie (région historique), Tombeau des Harpies. Letoon = sanctuaire lycien UNESCO, temples d'Artémis, Apollon et Létô. Souvent combinés.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h · ~4€ bus</span><span class="exc-price">~5–8€/site</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box" style="background:var(--rbg);border-color:#cc6040">
+    <div class="exc-title" style="color:var(--rt)">⚠️ Difficile ou déconseillé sans voiture</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Patara — 18 km de plage sauvage + ruines lyciennes</div>
+        <div class="exc-detail">Bus Fethiye → Kalkan puis dolmuş → Patara village + marche 2 km jusqu'à la plage. Faisable mais long. Mieux fait depuis Kaş (étape suivante) où Patara est beaucoup plus proche.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h30 · Compliqué</span><span class="exc-price">Mieux depuis Kaş</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PÉPITES -->
+<div id="pep" class="spg">
+  <div class="al info" style="margin-bottom:12px">
+    <div class="ali">📅</div>
+    <div class="alb"><strong>Code couleur</strong> — <span style="background:#dbeafe;color:#1e3a5f;border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">Date et heure prévues</span> dans le planning · <span style="background:var(--gobg);border:1px solid #c8a020;color:var(--got);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">À prévoir</span> si pas encore planifié</div>
+  </div>
+  <div class="gems">
+    <div class="gem">
+      <div class="gem-t">Parapente au-dessus du Lagon Bleu</div>
+      <div class="gem-p">~15–20€/pers · Journée entière</div>
+      <div class="gem-d">Criques lyciennes isolées, snorkeling dans des eaux turquoise, île aux chantiers navals byzantins abandonnés, déjeuner à bord. La meilleure journée bateau de la côte égéenne.</div>
+      <div class="gem-when gem-planned">📅 J2 · 7 août · Départ 10h port Fethiye</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kelebekler Vadisi (Butterfly Valley)</div>
+      <div class="gem-p">~10€ A/R bateau · Inaccessible autrement</div>
+      <div class="gem-d">Crique sauvage accessible uniquement en tekneci (taxi-bateau) depuis Ölüdeniz. Falaises de 350m, sources d'eau douce, papillons Tiger (kaplan kelebeği) en été. Atmosphère paradisiaque hors du monde.</div>
+      <div class="gem-when gem-todo">À prévoir · Possible J1 après-midi ou J3</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Saklıkent — Marche aquatique dans le canyon</div>
+      <div class="gem-p">~6,50€ entrée · 45 km de Fethiye</div>
+      <div class="gem-d">Eau glacée à 12°C entre des parois de 300m à peine 2m de large. En plein août avec 38°C dehors — rafraîchissement total garanti. L'une des expériences les plus uniques de Turquie.</div>
+      <div class="gem-when gem-planned">📅 J3 · 8 août · 9h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kayaköy au lever du soleil ou tôt le matin</div>
+      <div class="gem-p">~3–5€ entrée · 20 min dolmuş</div>
+      <div class="gem-d">Village fantôme grec abandonné en 1923. Avant 9h, le site est quasi-désert et la lumière du matin donne une atmosphère irréelle aux ruines envahies par la végétation méditerranéenne.</div>
+      <div class="gem-when gem-planned">📅 J4 · 9 août · 9h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kaya mezarları (Tombes lyciennes) de Fethiye</div>
+      <div class="gem-p">Gratuites · En plein centre-ville</div>
+      <div class="gem-d">Tombes lyciennes (kaya mezarı = tombeau rupestre) du 4e siècle av. J.-C. taillées directement dans la falaise au-dessus de la ville. Visibles depuis les rues — belles à photographier la nuit quand elles sont illuminées.</div>
+      <div class="gem-when gem-planned">📅 J3 · 8 août · Après-midi en rentrant de Saklıkent</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Dalyan — Bateaux sur la rivière + tortues</div>
+      <div class="gem-p">~25–35€ bateau · Journée entière</div>
+      <div class="gem-d">Bateau dans les roseaux, tombes lyciennes en falaise au-dessus de l'eau, plage İztuzu avec les tortues Caretta (Deniz kaplumbağası = tortue de mer). Expérience unique, très nature.</div>
+      <div class="gem-when gem-todo">À prévoir · Option excursion depuis Ölüdeniz</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tour des 12 Adalar (îles) en tekne</div>
+      <div class="gem-p">~15–20€/pers · Journée entière</div>
+      <div class="gem-d">Bateau de bois turc traditionnel (gulet), criques isolées, snorkeling en eau turquoise, repas de poisson à bord. Départ du port de Fethiye — réserver la veille sur les quais.</div>
+      <div class="gem-when gem-todo">À prévoir · Jour de repos entre les activités</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Coucher de soleil depuis Ölüdeniz plage</div>
+      <div class="gem-p">Gratuit · Plage de Belcekız</div>
+      <div class="gem-d">Le soleil se couche derrière les montagnes en face du lagon — lumière dorée sur l'eau turquoise. Moment magique depuis la plage de Belcekız.</div>
+      <div class="gem-when gem-planned">📅 J1 · 6 août · 19h30</div>
+    </div>
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
+
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">🎵 Musique, street art & culture underground</span></div>
+    <div class="gem">
+      <div class="gem-t">Sugar Beach Club Ölüdeniz — reggae live</div>
+      <div class="gem-p">Entrée libre · Plage arrière du lagon</div>
+      <div class="gem-d">Bar-restaurant en plein air sur une plage privée derrière le lagon d'Ölüdeniz — ambiance chill, concerts live réguliers dont parfois du reggae en saison. Cadre unique : musique en live, pieds dans le sable, vue sur le lagon. Tourner à droite au terminus du dolmuş Ölüdeniz et continuer tout droit.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J2 · Gratuit</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Fethiye — concerts au centre culturel</div>
+      <div class="gem-p">Variable · Fethiye Merkezi Kültür Salonu</div>
+      <div class="gem-d">La salle culturelle de Fethiye organise régulièrement des concerts de musique folklorique turque et des spectacles de danses. Programmation locale et peu touristique. Vérifier les affiches en arrivant à Fethiye ou demander à l'hôtel.</div>
+      <div class="gem-when gem-todo">À prévoir · Vérifier programme à l'arrivée Fethiye</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Kayaköy — village fantôme artistique</div>
+      <div class="gem-p">Gratuit · Village abandonné</div>
+      <div class="gem-d">Le village fantôme de Kayaköy attire depuis quelques années des artistes qui peignent discrètement dans les ruines abandonnées — fresques sur les murs écroulés, installations entre les maisons sans toit. Une rencontre entre l'art contemporain et les ruines d'un village vidé en 1923.</div>
+      <div class="gem-when gem-todo">À prévoir · J4 matin à Kayaköy · Explorer les ruelles du fond</div>
+    </div>
+  
+    <div class="gem">
+      <div class="gem-t">Bar Paspatur — ruelles de Fethiye</div>
+      <div class="gem-p">Variable · Vieille ville Fethiye</div>
+      <div class="gem-d">Le quartier Paspatur autour du vieux bazar de Fethiye a plusieurs petits bars dans des ruelles en pierre avec musique live la nuit — rock, folk, alternatif turc. Atmosphère de vieille ville, moins touristique que le front de mer. Explorer les ruelles autour de Carşı Caddesi le soir.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée à Fethiye centre J3 ou J4</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art — port de Fethiye</div>
+      <div class="gem-p">Gratuit · Autour du port</div>
+      <div class="gem-d">Les murs autour du port de Fethiye et des ruelles commerçantes proches ont quelques murales et graffitis depuis quelques années — portraits de pêcheurs locaux, sujets marins, un peu de politique. Pas une scène organisée mais des pièces à trouver en flânant.</div>
+      <div class="gem-when gem-todo">À prévoir · En soirée autour du port</div>
+    </div>
+  </div>
+</div>
+      <div class="gem-p">Bateau-taxi ~8€ A/R · Crique sauvage</div>
+      <div class="gem-d">Crique encaissée entre des falaises de 350m, accessible uniquement en bateau. Cascade intérieure, centaines d'espèces de papillons en été, camping sur la plage. Quelques bungalows rudimentaires si vous voulez y dormir une nuit.</div>
+      <div class="gem-when gem-todo">À prévoir · Bateau-taxi depuis Ölüdeniz · Demi-journée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Xanthos + Letoon (UNESCO)</div>
+      <div class="gem-p">~5€/site · 60 km de Fethiye</div>
+      <div class="gem-d">Xanthos — ancienne capitale de la Lycie avec le Tombeau des Harpies. Letoon — sanctuaire lycien avec trois temples d'Artémis, Apollon et Léto à moitié immergés dans l'eau. Deux sites UNESCO quasi déserts.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion dolmuş via Kınık · Journée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Patara — 18 km de plage sauvage</div>
+      <div class="gem-p">~5€ entrée · 75 km de Fethiye</div>
+      <div class="gem-d">La plus longue plage sauvage de Turquie — protégée car lieu de ponte des tortues Caretta caretta. Ruines lyciennes juste à côté (amphithéâtre, arc de triomphe). Dolmuş depuis Fethiye via Eşen.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion journée · Meilleure base depuis Kaş</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tombes lyciennes rupestres de Fethiye</div>
+      <div class="gem-p">Gratuit depuis la rue · En ville</div>
+      <div class="gem-d">Des tombes royales lyciennes du 4e siècle av. J.-C. sont taillées directement dans la falaise en plein centre-ville de Fethiye. La nuit, elles sont illuminées — l'une des images les plus insolites de Turquie. Entrée intérieure ~3€.</div>
+      <div class="gem-when gem-todo">À prévoir · En soirée à Fethiye centre J3</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kayak de mer depuis Ölüdeniz</div>
+      <div class="gem-p">~15–25€ demi-journée · Location sur la plage</div>
+      <div class="gem-d">Location de kayak de mer sur la plage de Belcekız — longer la côte vers le lagon bleu ou vers les falaises. Pas d'excursion organisée, juste vous deux sur l'eau turquoise. Beaucoup plus libre que les tours guidés.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 ou J2 après-midi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Marché de Fethiye — mardi</div>
+      <div class="gem-p">Gratuit · Centre-ville Fethiye</div>
+      <div class="gem-d">Grand marché hebdomadaire du mardi — légumes locaux, olives, fromages, textiles, épices. Les vendeurs viennent des villages environnants. Beaucoup plus authentique que les boutiques touristiques du front de mer.</div>
+      <div class="gem-when gem-todo">À prévoir · Le 5 août (mardi) à l'arrivée ou le 12 août · Matin tôt</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Göcek — village de voiliers</div>
+      <div class="gem-p">Minibus ~2€ · 25 km de Fethiye</div>
+      <div class="gem-d">Petit village huppé de marinas — des centaines de gulets (bateaux à voile turcs traditionnels) au mouillage. Cafés sur le port, ambiance yachting détendue. Très différent de Fethiye — pour changer d'ambiance une soirée.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée libre J3 ou J4</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Randonnée Voie Lycienne</div>
+      <div class="gem-p">Gratuit · Départ Ölüdeniz</div>
+      <div class="gem-d">La Voie Lycienne (Likya Yolu) passe par Ölüdeniz — sentier de randonnée longeant les falaises avec vue plongeante sur le lagon bleu. Même 1h de marche sur le sentier donne des panoramas extraordinaires qu'on ne voit pas depuis la plage.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 fin de journée · Partir vers 17h30</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ölüdeniz après 19h</div>
+      <div class="gem-p">Gratuit · Plage de Belcekız</div>
+      <div class="gem-d">La plage d'Ölüdeniz (Belcekız) est libre d'accès et gratuite le soir après la fermeture du parc. La foule des touristes disparaît complètement. Se baigner dans la mer turquoise au coucher du soleil sans personne — moment parfait.</div>
+      <div class="gem-when gem-todo">À prévoir · Tous les soirs</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Pide (pizza turque) à Fethiye</div>
+      <div class="gem-p">~4–6€ · Fırın (four à bois)</div>
+      <div class="gem-d">Les meilleures pides (pizzas bateaux turques garnies) se mangent dans les fırın (boulangeries-pizzerias) populaires de Fethiye loin du front de mer. Kaşarlı pide (fromage), kıymalı pide (viande hachée), yumurtalı (œuf). Le repas turc le plus satisfaisant pour le prix.</div>
+      <div class="gem-when gem-todo">À prévoir · Dîner J3 ou J4 à Fethiye centre</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Snorkeling dans le lagon bleu</div>
+      <div class="gem-p">Inclus dans l'entrée lagon ~5€</div>
+      <div class="gem-d">Le lagon bleu (Mavi Lagün) a une eau complètement calme et cristalline — visibilité de 8 à 10m. Apporter masque et tuba (ou louer sur place ~3€) et plonger depuis les rochers à droite de l'entrée du lagon. Poissons de roche, faune méditerranéenne.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 dans le lagon</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Dalyan + Tortues Caretta caretta</div>
+      <div class="gem-p">~10€ boat tour · 50 km</div>
+      <div class="gem-d">Village sur une rivière avec des tombes lyciennes taillées dans la falaise vue depuis le bateau, des tortues de mer à l'embouchure et des bains de boue naturels. Excursion organisée depuis Fethiye ou minibus vers Ortaca puis bateau.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion journée entière</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PIÈGES -->
+<div id="pie" class="spg">
+  <div class="wb"><div class="wbt">⛵ Bateaux surchargés pour les 12 îles</div><p>Certains bateaux du tour des 12 îles (On İki Ada) embarquent 50+ personnes — ambiance ferry plutôt que balade. Choisir un bateau de taille moyenne (20–30 pers max) au port la veille. Regarder le bateau et poser la question directement.</p></div>
+  <div class="wb"><div class="wbt">🌊 Nager dans le Lagon sans payer</div><p>Le Mavi Lagün (lagon bleu) est dans la zone protégée (koruma alanı) — tenter d'y entrer par la plage de Belcekız sans payer est interdit et contrôlé. La plage de Belcekız gratuite juste à côté est quasi-identique — autant y rester.</p></div>
+  <div class="wb"><div class="wbt">🚌 Derniers dolmuş depuis Saklıkent</div><p>Le dernier dolmuş (minibus) retour Saklıkent → Fethiye part vers 19h30. Ne pas rater ce dernier bus sinon il faut prendre un pahalı (cher) taxi. Vérifier l'heure exacte à l'entrée du site au moment d'arriver.</p></div>
+  <div class="wb"><div class="wbt">🍽 Restaurants sur la plage d'Ölüdeniz</div><p>Les restoranlar (restaurants) directement sur la plage d'Ölüdeniz sont en moyenne 30–40% plus chers que ceux de Fethiye ville. Manger à Fethiye le soir et prendre le dolmuş — 20 min et bien moins cher.</p></div>
+  <div class="wb"><div class="wbt">📸 Faux "guides" à Kayaköy</div><p>Des personnes proposent des "visites guidées" (rehberlik) à l'entrée de Kayaköy pour des tarifs élevés. Le site se visite parfaitement seul avec une carte — pas besoin de guide payant.</p></div>
+</div>
+
+<!-- PRATIQUE -->
+<div id="pra" class="spg">
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Tarifs & activités</div>
+    <div class="fr"><div><div class="fn">Mavi Lagün (Lagon Bleu) — Ölüdeniz</div><div class="fsb">Zone protégée · Plage Belcekız à côté = gratuite</div></div><span class="fp">~5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Tour des 12 îles (On İki Ada)</div><div class="fsb">Journée bateau · Déjeuner inclus · Snorkeling · Criques lyciennes</div></div><span class="fp">~15–20€/pers</span></div>
+    <div class="fr"><div><div class="fn">Saklıkent Kanyonu (gorge) — Entrée</div><div class="fsb">250 TL adultes 2026 · Cash recommandé · Dolmuş depuis Fethiye ~3–4€</div></div><span class="fp">~6,50€/pers</span></div>
+    <div class="fr"><div><div class="fn">Kayaköy — Village fantôme</div><div class="fsb">Dolmuş direct depuis Fethiye · 20 min</div></div><span class="fp">~3–5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Kelebekler Vadisi (Butterfly Valley)</div><div class="fsb">Tekneci (bateau-taxi) depuis Ölüdeniz · A/R</div></div><span class="fp">~10€/pers</span></div>
+    <div class="fr"><div><div class="fn">Tour des 12 Adalar (îles) en tekne (bateau)</div><div class="fsb">Journée · Repas inclus · Réserver sur les quais de Fethiye</div></div><span class="fp">~15–20€/pers</span></div>
+    <div class="fr"><div><div class="fn">Kayak de mer — Demi-journée depuis Ölüdeniz</div><div class="fsb">Location ou excursion organisée · Grottes marines</div></div><span class="fp">~30–50€/pers</span></div>
+    <div class="fr"><div><div class="fn">Dalyan excursion journée</div><div class="fsb">Bus → Ortaca + dolmuş → Dalyan + bateau rivière</div></div><span class="fp">~25–35€ bateau</span></div>
+
+    <div class="slbl">Transports locaux</div>
+    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Ölüdeniz</div><div class="fsb">Toutes les 20 min en haute saison · Depuis centre Fethiye</div></div><span class="fp">~1,50€</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Saklıkent</div><div class="fsb">Depuis Fethiye Otogarı · Toutes les 30 min · Dernier retour ~19h30</div></div><span class="fp">~3–4€</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Kayaköy</div><div class="fsb">Depuis le centre de Fethiye · Fréquent</div></div><span class="fp">~2€</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Kaş (transit sortant)</div><div class="fsb">Route côtière D400 · Paysages magnifiques</div></div><span class="fp">~6€/pers · ~2h</span></div>
+
+    <div class="slbl">Applis & liens</div>
+    <div class="ar"><div class="ai2">🗺</div><div><div class="an">Google Maps + Yandex Maps hors-ligne</div><div class="ad">Télécharger région Fethiye/Ölüdeniz · Yandex meilleur pour les dolmuş</div></div><span class="ab2">Essentiel</span></div>
+    <div class="ar"><div class="ai2">⭐</div><div><div class="an"><a href="https://www.tripadvisor.fr/Tourism-g297962-Fethiye_Mugla_Province_Turkish_Aegean_Coast-Vacations.html" target="_blank">TripAdvisor Fethiye</a></div><div class="ad">Comparer les bateaux tour 12 îles · Vérifier les avis récents</div></div><span class="ab2">Recommandé</span></div>
+  </div>
+
+  <div class="lgrid">
+    <a href="https://www.fethiye12islands.com/" target="_blank" class="lcard"><span class="lico">⛵</span><div><div class="lnm">Tour 12 îles Fethiye</div><div class="lul">fethiye12islands.com</div></div></a>
+    <a href="https://www.fethiyetours.com/" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">FethiyeTours</div><div class="lul">Guide Saklıkent 2026</div></div></a>
+    <a href="https://www.booking.com/city/tr/fethiye.fr.html" target="_blank" class="lcard"><span class="lico">🏨</span><div><div class="lnm">Hébergements Fethiye</div><div class="lul">booking.com</div></div></a>
+    <a href="https://www.lonelyplanet.com/turkey/fethiye" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Lonely Planet Fethiye</div><div class="lul">lonelyplanet.com</div></div></a>
+    <a href="https://www.routard.com/guide_voyage_lieu/11291-fethiye.htm" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Routard Fethiye</div><div class="lul">routard.com</div></div></a>
+    <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">obilet.com</div><div class="lul">Bus Fethiye → Kaş</div></div></a>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+function showSub(id,btn){
+  document.querySelectorAll('.spg').forEach(p=>p.classList.remove('vis'));
+  document.querySelectorAll('.snb').forEach(b=>b.classList.remove('on'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('vis');
+  if(btn)btn.classList.add('on');
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.snb');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>

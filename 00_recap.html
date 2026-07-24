@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Récap Voyage Turquie — 27 juil–17 août 2026</title>
+<style>
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;--s2:#e8e4dc;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+/* PROMPT replié */
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+.pbox .todo{background:var(--rbg);border:1px solid var(--rd);border-radius:6px;padding:6px 10px;margin-top:8px;color:var(--rt);font-size:11px}
+
+/* HEADER */
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:20px 22px}
+.hdr h1{font-size:24px;font-weight:700;color:var(--tx);margin-bottom:4px}
+.hdr p{font-size:13px;color:var(--t2);margin-bottom:12px}
+.hdr-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
+.stat{background:var(--s1);border:1px solid var(--bd);border-radius:var(--r);padding:10px 13px;text-align:center}
+.sv{font-size:20px;font-weight:700;color:var(--tx)}
+.sl{font-size:11px;color:var(--t3);margin-top:2px}
+
+/* SUB NAV */
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+/* CONTENT */
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+
+/* ÉTAPE CARDS */
+.etape-grid{display:flex;flex-direction:column;gap:6px}
+.etape{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 15px;display:flex;gap:12px;align-items:flex-start}
+.etape:hover{border-color:var(--gn2)}
+.etape-num{font-size:12px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.etape-body{flex:1}
+.etape-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.etape-dates{font-size:11px;color:var(--t3);margin-bottom:4px}
+.etape-desc{font-size:12px;color:var(--t2);line-height:1.5}
+.etape-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.etag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.etape-nights{font-size:11px;border-radius:20px;padding:2px 10px;font-weight:600;white-space:nowrap;flex-shrink:0;margin-top:4px}
+
+/* TRANSIT SEP */
+.tsep{display:flex;align-items:center;gap:8px;padding:4px 0 4px 18px;font-size:11px;color:var(--t3);border-left:1px dashed var(--bd2);margin-left:14px}
+.tsep-badge{background:var(--pubg);border:1px solid var(--pu);border-radius:20px;padding:1px 8px;font-size:10px;color:var(--put);white-space:nowrap}
+.tsep-price{background:var(--gbg);border-radius:20px;padding:1px 7px;font-size:10px;color:var(--gt);white-space:nowrap}
+
+/* ALERTS */
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+/* MÉTÉO GRID */
+.meteo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.meteo-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--r);padding:10px 12px;text-align:center}
+.meteo-city{font-size:13px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.meteo-temp{font-size:16px;font-weight:700;color:var(--rd);margin-bottom:2px}
+.meteo-desc{font-size:11px;color:var(--t2);margin-bottom:4px}
+.meteo-tip{font-size:10px;color:var(--t3)}
+
+/* BUDGET */
+.budget-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px}
+.budget-card{background:var(--s1);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.budget-val{font-size:18px;font-weight:700;color:var(--tx)}
+.budget-lbl{font-size:11px;color:var(--t3);margin-top:2px}
+.budget-detail{font-size:11px;color:var(--t2);margin-top:4px}
+
+/* FOOD ROW */
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+/* APPS */
+.app-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--bd)}
+.app-row:last-child{border-bottom:none}
+.app-ico{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--s1);border:1px solid var(--bd)}
+.app-name{font-size:13px;font-weight:600;color:var(--tx)}
+.app-name a{color:var(--bl);border-bottom:1px dotted var(--bl)}
+.app-desc{font-size:11px;color:var(--t2);margin-top:1px}
+.app-badge{font-size:10px;padding:2px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;font-weight:500}
+.ab-must{background:var(--rbg);color:var(--rt);border:1px solid var(--rd)}
+.ab-rec{background:var(--gbg);color:var(--gt);border:1px solid var(--gn2)}
+.ab-opt{background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+
+/* LINKS */
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+/* BAGAGES */
+.bag-section{margin-bottom:14px}
+.bag-title{font-size:13px;font-weight:600;color:var(--tx);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.bag-limit{font-size:11px;background:var(--bbg);color:var(--bt);border-radius:20px;padding:2px 9px}
+.bag-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--bd);font-size:12px}
+.bag-row:last-child{border-bottom:none}
+.bag-item{color:var(--tx)}
+.bag-weight{color:var(--gn);font-weight:600;white-space:nowrap;margin-left:8px}
+.bag-note{font-size:10px;color:var(--t3);margin-top:1px}
+.bag-free{color:var(--t3);font-style:italic}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px 16px}}
+</style>
+</head>
+<body>
+
+<!-- PROMPT BASE44 — replié par défaut -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Fichier récapitulatif global (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 00_recap.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Voici le guide complet du voyage Turquie 27 juillet – 17 août 2026, couple, transport en commun uniquement. Il se compose de <strong>7 fichiers HTML</strong> à intégrer dans l'application comme suit :<br><br>
+
+      <strong>Structure des 7 fichiers :</strong><br>
+      — <strong>00_recap.html</strong> → Page d'accueil / tableau de bord (ce fichier) : planning global, budget, météo, apps, banque, sécurité, bagages<br>
+      — <strong>01_istanbul.html</strong> → Guide étape Istanbul · 27–30 juillet · 3 nuits<br>
+      — <strong>02_selcuk.html</strong> → Guide étape Selçuk/Éphèse · 30 juil–3 août · 4 nuits<br>
+      — <strong>03_pamukkale.html</strong> → Guide étape Pamukkale · 3–5 août · 2 nuits<br>
+      — <strong>04_fethiye.html</strong> → Guide étape Fethiye/Ölüdeniz · 5–9 août · 4 nuits<br>
+      — <strong>05_kas.html</strong> → Guide étape Kaş · 9–11 août · 2 nuits<br>
+      — <strong>06_antalya.html</strong> → Guide étape Antalya · 11–17 août · 6 nuits · Vol retour le 17<br><br>
+
+      <strong>Instructions d'intégration :</strong><br>
+      1. Chaque fichier est autonome et complet — ne pas fusionner leur contenu<br>
+      2. Conserver la navigation par onglets (journées + excursions + pépites + pièges + pratique) de chaque guide<br>
+      3. Le prompt Base44 replié en haut de chaque fichier peut être supprimé une fois intégré<br>
+      4. Les couleurs et styles CSS sont intégrés dans chaque fichier — fond clair, texte foncé, pas de fond noir<br>
+      5. Les termes turcs sont systématiquement traduits entre parenthèses dans chaque fichier<br><br>
+
+      <strong>Informations clés transversales :</strong><br>
+      — Couple · Transport en commun uniquement (bus, dolmuş, tramway, ferry) · Zéro voiture<br>
+      — Fortuneo Fospho = 0 frais à l'étranger · Toujours payer en TRY (lires turques)<br>
+      — Retraits espèces : Ziraat Bankası ou İş Bankası uniquement · Éviter absolument Euronet et DnB<br>
+      — VPN (NordVPN ou ExpressVPN) à installer et tester avant le départ depuis la France<br>
+      — SIM locale Turkcell ou Vodafone TR à acheter à l'aéroport IST dès l'arrivée (~25€/30Go/30j)<br>
+      — Prises turques = Type F identiques à la France · Aucun adaptateur nécessaire<br>
+      — CPAP (appareil apnée du sommeil) = bagage médical · Contacter les compagnies avant le départ<br>
+      — Réservation bus inter-villes : obilet.com (en anglais, CB acceptée)<br>
+      — Taxi officiel : BiTaksi (prix fixe, pas d'arnaque)<br><br>
+
+      <strong>3 expériences nautiques phares du voyage (dans l'ordre) :</strong><br>
+      — Saklıkent Kanyonu (marche aquatique canyon glacé, Fethiye) · ~6,50€ · J3 Fethiye<br>
+      — Kekova kayak de mer (ruines lyciennes submergées, Kaş) · ~55–65€ · J1 Kaş<br>
+      — Köprülü Kanyonu rafting (meilleur spot Turquie, Antalya) · ~37€ · J2 Antalya<br><br>
+
+      <strong>Tarifs importants corrigés par rapport aux sources classiques :</strong><br>
+      — Éphèse : 40€ (pas ~10€) · Prix fixés en euros depuis mars 2024<br>
+      — Maisons en Terrasse Éphèse : +15€ (pas +8€)<br>
+      — Pamukkale site combiné : 30€ (pas ~8€)<br>
+      — Piscine de Cléopâtre : +13€ (pas ~1€)<br>
+      — Parapente Babadağ (Fethiye) : ~150€ (pas 45–60€)<br>
+      — Rafting Köprülü : ~37€ tout compris (pas 13–17€)
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>🗺 Voyage Turquie 2026</h1>
+  <p>27 juillet – 17 août · En couple · Transport en commun uniquement · Istanbul → Antalya</p>
+  <div class="hdr-stats">
+    <div class="stat"><div class="sv">21</div><div class="sl">nuits</div></div>
+    <div class="stat"><div class="sv">6</div><div class="sl">étapes</div></div>
+    <div class="stat"><div class="sv">2</div><div class="sl">voyageurs</div></div>
+    <div class="stat"><div class="sv">~1 900 km</div><div class="sl">parcourus</div></div>
+    <div class="stat"><div class="sv">100%</div><div class="sl">bus & dolmuş</div></div>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<div class="snav">
+  <button class="snb on" onclick="showSub('planning',this)">📅 Planning</button>
+  <button class="snb" onclick="showSub('budget',this)">💶 Budget</button>
+  <button class="snb" onclick="showSub('meteo',this)">🌡 Météo</button>
+  <button class="snb" onclick="showSub('apps',this)">📱 Applis</button>
+  <button class="snb" onclick="showSub('banque',this)">💳 Banque & argent</button>
+  <button class="snb" onclick="showSub('secu',this)">🔒 Sécurité</button>
+  <button class="snb" onclick="showSub('bagages',this)">🧳 Bagages</button>
+  <button class="snb" onclick="showSub('conseils',this)">💡 Conseils généraux</button>
+</div>
+
+<div class="cnt">
+
+<!-- PLANNING -->
+<div id="planning" class="spg vis">
+  <div class="slbl" style="margin-top:0">Calendrier complet du voyage</div>
+  <div class="etape-grid">
+
+    <div class="etape">
+      <div class="etape-num" style="background:#dbeafe;color:#1e3a5f">1</div>
+      <div class="etape-body">
+        <div class="etape-title">🕌 Istanbul</div>
+        <div class="etape-dates">27–30 juillet · Arrivée soir du 27 · 2 vraies journées</div>
+        <div class="etape-desc">Sultanahmet (quartier historique), Topkapı Sarayı (Palais de Topkapi), Bosphore en vapür (ferry), Karaköy (quartier créatif), Kadıköy (rive asiatique)</div>
+        <div class="etape-tags">
+          <span class="etag">Sainte-Sophie</span><span class="etag">Topkapi</span><span class="etag">Grand Bazar</span><span class="etag">Ferry Bosphore</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#dbeafe;color:#1e3a5f">3 nuits</span>
+    </div>
+
+    <div class="tsep">
+      🚌 Bus de nuit · Pamukkale Turizm · 23h15 · Esenler Otogarı (gare routière) → Selçuk Atatürk Bulvarı
+      <span class="tsep-badge">8h15 trajet</span>
+      <span class="tsep-price">35,25€/pers</span>
+    </div>
+
+    <div class="etape">
+      <div class="etape-num" style="background:#fef3c7;color:#5c4a0a">2</div>
+      <div class="etape-body">
+        <div class="etape-title">🏛 Selçuk / Éphèse</div>
+        <div class="etape-dates">30 juillet – 3 août · Arrivée tôt le matin du 31</div>
+        <div class="etape-desc">Efes (Éphèse UNESCO), Şirince (village ottoman), Parc National Dilek (criques turquoise), Priene · Milet · Didymes (sites antiques méconnus)</div>
+        <div class="etape-tags">
+          <span class="etag">Éphèse UNESCO</span><span class="etag">Şirince</span><span class="etag">Parc Dilek</span><span class="etag">Priene · Milet · Didymes</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#fef3c7;color:#5c4a0a">4 nuits</span>
+    </div>
+
+    <div class="tsep">
+      🚌 Bus Selçuk → Denizli · Pamukkale Turizm · ~3h · puis dolmuş (minibus collectif) Denizli → Pamukkale · 20 min
+      <span class="tsep-badge">~3h30 total</span>
+      <span class="tsep-price">~13€/pers</span>
+    </div>
+
+    <div class="etape">
+      <div class="etape-num" style="background:#fce8e0;color:#7a2510">3</div>
+      <div class="etape-body">
+        <div class="etape-title">💧 Pamukkale</div>
+        <div class="etape-dates">3–5 août · 2 nuits</div>
+        <div class="etape-desc">Travertenler (terrasses de travertin blanches UNESCO), Hierapolis (cité antique), Piscine de Cléopâtre (baignade dans une piscine romaine), Laodicée (ruines lyciennes)</div>
+        <div class="etape-tags">
+          <span class="etag">Terrasses UNESCO</span><span class="etag">Hierapolis</span><span class="etag">Piscine Cléopâtre</span><span class="etag">Laodicée</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#fce8e0;color:#7a2510">2 nuits</span>
+    </div>
+
+    <div class="tsep">
+      🚌 Bus Denizli → Fethiye · Kamil Koç · ~3h30 direct
+      <span class="tsep-badge">~3h30</span>
+      <span class="tsep-price">~12€/pers</span>
+    </div>
+
+    <div class="etape">
+      <div class="etape-num" style="background:#e6f4ec;color:#154429">4</div>
+      <div class="etape-body">
+        <div class="etape-title">🏖 Fethiye / Ölüdeniz</div>
+        <div class="etape-dates">5–9 août · 4 nuits</div>
+        <div class="etape-desc">Ölüdeniz Mavi Lagünü (Lagon Bleu), parapente depuis Babadağ (mont Babadağ 1 969m), 12 Adalar (tour des 12 îles), Saklıkent Kanyonu (gorge aquatique), Kayaköy (village fantôme grec abandonné en 1923), kayak de mer</div>
+        <div class="etape-tags">
+          <span class="etag">Lagon Bleu</span><span class="etag">Parapente</span><span class="etag">12 îles</span><span class="etag">Canyon Saklıkent</span><span class="etag">Kayak mer</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#e6f4ec;color:#154429">4 nuits</span>
+    </div>
+
+    <div class="tsep">
+      🚌 Dolmuş (minibus collectif) Fethiye → Kaş · route côtière
+      <span class="tsep-badge">~2h</span>
+      <span class="tsep-price">~6€/pers</span>
+    </div>
+
+    <div class="etape">
+      <div class="etape-num" style="background:#edeafc;color:#2e2068">5</div>
+      <div class="etape-body">
+        <div class="etape-title">⛵ Kaş</div>
+        <div class="etape-dates">9–11 août · 2 nuits</div>
+        <div class="etape-desc">Kekova (île et cité lycienne engloutie, kayak de mer au-dessus des ruines submergées), Myra/Demre (nécropole (cimetière) rupestre lycienne + église Saint-Nicolas), Patara (18 km de plage sauvage + ruines lyciennes)</div>
+        <div class="etape-tags">
+          <span class="etag">Kekova kayak</span><span class="etag">Myra rupestre</span><span class="etag">Patara plage</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#edeafc;color:#2e2068">2 nuits</span>
+    </div>
+
+    <div class="tsep">
+      🚌 Bus Kaş → Antalya · Kamil Koç · route côtière
+      <span class="tsep-badge">~4h</span>
+      <span class="tsep-price">~10€/pers</span>
+    </div>
+
+    <div class="etape">
+      <div class="etape-num" style="background:#dcfce7;color:#155724">6</div>
+      <div class="etape-body">
+        <div class="etape-title">🌊 Antalya</div>
+        <div class="etape-dates">11–17 août · 6 nuits · Départ vol très tôt le 17</div>
+        <div class="etape-desc">Kaleiçi (vieille ville ottomane dans remparts romains), Köprülü Kanyonu (rafting/canoë en rivière — meilleur spot de Turquie !), Aspendos (théâtre romain le mieux conservé au monde), Termessos (cité perchée à 1050m), Phaselis, Land of Legends (parc aquatique)</div>
+        <div class="etape-tags">
+          <span class="etag">Kaleiçi</span><span class="etag">Rafting rivière</span><span class="etag">Aspendos</span><span class="etag">Termessos</span><span class="etag">Phaselis</span>
+        </div>
+      </div>
+      <span class="etape-nights" style="background:#dcfce7;color:#155724">6 nuits</span>
+    </div>
+
+    <div class="tsep">
+      ✈️ Vol retour depuis AYT (aéroport Antalya) le 17 août · À l'aéroport à 5h30 · Tramway AntRay T1 (25 min) ou taksici (taxi)
+    </div>
+
+  </div>
+
+  <div class="al ok" style="margin-top:14px">
+    <div class="ali">🛶</div>
+    <div class="alb"><strong>3 expériences canoë & kayak sur cet itinéraire</strong> — Saklıkent Kanyonu (canyon aquatique, Fethiye) · Kekova (kayak de mer sur ruines submergées, Kaş) · Köprülü Kanyonu (rafting rivière rapides classe II–III, Antalya — le meilleur !)</div>
+  </div>
+</div>
+
+<!-- BUDGET -->
+<div id="budget" class="spg">
+  <div class="al warn">
+    <div class="ali">ℹ️</div>
+    <div class="alb"><strong>Budget estimatif par personne pour 21 nuits</strong> — Ces chiffres sont des estimations. La Turquie est très abordable mais les prix varient selon la saison (août = haute saison).</div>
+  </div>
+  <div class="budget-grid">
+    <div class="budget-card">
+      <div class="budget-val">~420€</div>
+      <div class="budget-lbl">Transports inter-villes</div>
+      <div class="budget-detail">Bus, dolmuş (minibus), ferry</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-val">~600€</div>
+      <div class="budget-lbl">Hébergement</div>
+      <div class="budget-detail">21 nuits · ~30–80€/nuit moy.</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-val">~320€</div>
+      <div class="budget-lbl">Entrées & activités</div>
+      <div class="budget-detail">Sites, kayak, parapente, rafting</div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-val">~380€</div>
+      <div class="budget-lbl">Repas & vie courante</div>
+      <div class="budget-detail">~18€/jour · très abordable</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Détail transports confirmés</div>
+    <div class="fr"><div><div class="fn">Bus Istanbul → Selçuk · Pamukkale Turizm</div><div class="fsb">Bus de nuit · 23h15 · 8h15 de trajet · confirmé</div></div><span class="fp">35,25€/pers</span></div>
+    <div class="fr"><div><div class="fn">Bus Selçuk → Pamukkale (via Denizli)</div><div class="fsb">Bus + dolmuş (minibus) · ~3h30</div></div><span class="fp">~13€/pers</span></div>
+    <div class="fr"><div><div class="fn">Bus Denizli → Fethiye</div><div class="fsb">Direct · ~3h30 · Kamil Koç</div></div><span class="fp">~12€/pers</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş (minibus) Fethiye → Kaş</div><div class="fsb">Route côtière · ~2h</div></div><span class="fp">~6€/pers</span></div>
+    <div class="fr"><div><div class="fn">Bus Kaş → Antalya</div><div class="fsb">Route côtière · ~4h · Kamil Koç</div></div><span class="fp">~10€/pers</span></div>
+    <div class="fr"><div><div class="fn">Tramway AntRay vers aéroport AYT</div><div class="fsb">Depuis Kaleiçi (centre) · 25 min</div></div><span class="fp">~1€</span></div>
+
+    <div class="slbl">Activités coûteuses à prévoir</div>
+    <div class="fr"><div><div class="fn">Parapente tandem depuis Babadağ (mont)</div><div class="fsb">Vol ~20–30 min · Ölüdeniz</div></div><span class="fp">~85–130€/pers</span></div>
+    <div class="fr"><div><div class="fn">Rafting Köprülü Kanyonu (canyon)</div><div class="fsb">Excursion journée + navette · Antalya</div></div><span class="fp">~35–55€/pers</span></div>
+    <div class="fr"><div><div class="fn">Kayak de mer Kekova</div><div class="fsb">Journée · Kaş</div></div><span class="fp">~40–60€/pers</span></div>
+    <div class="fr"><div><div class="fn">Land of Legends (parc aquatique)</div><div class="fsb">Belek · ~40 min d'Antalya</div></div><span class="fp">~50–80€/pers</span></div>
+    <div class="fr"><div><div class="fn">Tour des 12 Adalar (îles) · Fethiye</div><div class="fsb">Journée en bateau · repas inclus</div></div><span class="fp">~13€/pers</span></div>
+  </div>
+</div>
+
+<!-- MÉTÉO -->
+<div id="meteo" class="spg">
+  <div class="al warn">
+    <div class="ali">🌡</div>
+    <div class="alb"><strong>Juillet–août = canicule en Turquie</strong> — Prévoir vêtements légers, chapeau, crème solaire 50+, gourde isotherme. Visiter les sites archéologiques avant 10h ou après 17h obligatoirement.</div>
+  </div>
+  <div class="meteo-grid">
+    <div class="meteo-card">
+      <div class="meteo-city">🕌 Istanbul</div>
+      <div class="meteo-temp">28–34°C</div>
+      <div class="meteo-desc">Chaud et humide</div>
+      <div class="meteo-tip">Soirées agréables · Visites intérieures l'après-midi</div>
+    </div>
+    <div class="meteo-card">
+      <div class="meteo-city">🏛 Selçuk</div>
+      <div class="meteo-temp">33–38°C</div>
+      <div class="meteo-desc">Très chaud · Sec</div>
+      <div class="meteo-tip">Éphèse avant 10h OBLIGATOIRE</div>
+    </div>
+    <div class="meteo-card">
+      <div class="meteo-city">💧 Pamukkale</div>
+      <div class="meteo-temp">32–40°C</div>
+      <div class="meteo-desc">Caniculaire</div>
+      <div class="meteo-tip">Terrasses en fin d'après-midi</div>
+    </div>
+    <div class="meteo-card">
+      <div class="meteo-city">🏖 Fethiye</div>
+      <div class="meteo-temp">32–38°C</div>
+      <div class="meteo-desc">Chaud · Brise marine</div>
+      <div class="meteo-tip">Eau 28°C · Parapente le matin</div>
+    </div>
+    <div class="meteo-card">
+      <div class="meteo-city">⛵ Kaş</div>
+      <div class="meteo-temp">33–38°C</div>
+      <div class="meteo-desc">Chaud · Parfait</div>
+      <div class="meteo-tip">Eau cristalline pour kayak</div>
+    </div>
+    <div class="meteo-card">
+      <div class="meteo-city">🌊 Antalya</div>
+      <div class="meteo-temp">34–40°C</div>
+      <div class="meteo-desc">Très chaud · Intense</div>
+      <div class="meteo-tip">Rivière glacée = paradis · Sites tôt</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:10px">
+    <div class="slbl" style="margin-top:0">Conseils météo pratiques</div>
+    <div class="fr"><div><div class="fn">Gourde isotherme</div><div class="fsb">Indispensable — 1,5L minimum par personne par journée de visite</div></div><span class="fp">Obligatoire</span></div>
+    <div class="fr"><div><div class="fn">Crème solaire SPF 50+</div><div class="fsb">Acheter en Turquie dès l'arrivée (moins cher, évite le poids en valise)</div></div><span class="fp">Sur place</span></div>
+    <div class="fr"><div><div class="fn">Chapeau / casquette</div><div class="fsb">Pour tous les sites à ciel ouvert (Éphèse, Pamukkale, Termessos...)</div></div><span class="fp">Emporter</span></div>
+    <div class="fr"><div><div class="fn">Chaussures de marche</div><div class="fsb">Légères et respirantes — sites archéologiques souvent sur terrain irrégulier</div></div><span class="fp">Emporter</span></div>
+    <div class="fr"><div><div class="fn">Veste légère pour les bus</div><div class="fsb">Klimali (climatisé) très fort dans les ottobüs (bus longue distance turcs)</div></div><span class="fp">Emporter</span></div>
+  </div>
+</div>
+
+<!-- APPS -->
+<div id="apps" class="spg">
+  <div class="card">
+    <div class="slbl" style="margin-top:0">🚌 Transport</div>
+    <div class="app-row">
+      <div class="app-ico">🚌</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://www.obilet.com" target="_blank">obilet.com</a></div>
+        <div class="app-desc">Réservation ottobüs (bus inter-villes) — en anglais, CB acceptée, billets sur téléphone. Indispensable pour tout réserver.</div>
+      </div>
+      <span class="app-badge ab-must">Indispensable</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🚕</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://www.bitaksi.com.tr" target="_blank">BiTaksi</a></div>
+        <div class="app-desc">Taksici (taxi) officiel turc — prix fixe, pas d'arnaque, équivalent Uber. Utile pour les trajets hors bus.</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🗺</div>
+      <div style="flex:1">
+        <div class="app-name">Yandex Maps</div>
+        <div class="app-desc">Meilleur que Google Maps pour les dolmuş (minibus collectifs) et transports locaux en Turquie. Télécharger les deux.</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🗺</div>
+      <div style="flex:1">
+        <div class="app-name">Google Maps hors-ligne</div>
+        <div class="app-desc">Télécharger chaque région avant le départ : Istanbul, Izmir/Selçuk, Denizli/Pamukkale, Fethiye, Antalya.</div>
+      </div>
+      <span class="app-badge ab-must">Indispensable</span>
+    </div>
+
+    <div class="slbl">🏨 Hébergement</div>
+    <div class="app-row">
+      <div class="app-ico">🏨</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://www.booking.com" target="_blank">Booking.com</a></div>
+        <div class="app-desc">Meilleure sélection pour la Turquie. Annulation gratuite souvent disponible. Réserver Istanbul, Göreme (si Cappadoce) et Antalya à l'avance (août = complet).</div>
+      </div>
+      <span class="app-badge ab-must">Indispensable</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🏡</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://www.hostelworld.com" target="_blank">Hostelworld</a></div>
+        <div class="app-desc">Pour les pansiyonlar (pensions familiales) locales — souvent moins cher que Booking, ambiance plus authentique.</div>
+      </div>
+      <span class="app-badge ab-opt">Optionnel</span>
+    </div>
+
+    <div class="slbl">🌡 Météo & horaires prière</div>
+    <div class="app-row">
+      <div class="app-ico">🌤</div>
+      <div style="flex:1">
+        <div class="app-name">AccuWeather ou Meteoblue</div>
+        <div class="app-desc">Vérifier la chaleur prévue pour planifier les visites de sites à ciel ouvert (Éphèse, Pamukkale, Termessos).</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🕌</div>
+      <div style="flex:1">
+        <div class="app-name">Pray Watch</div>
+        <div class="app-desc">Horaires des namaz (prières) quotidiennes — utile pour visiter les mosquées entre les prières (fermées aux touristes pendant ~30 min).</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+
+    <div class="slbl">🔒 Sécurité numérique</div>
+    <div class="app-row">
+      <div class="app-ico">🛡</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://nordvpn.com" target="_blank">NordVPN</a> ou <a href="https://www.expressvpn.com" target="_blank">ExpressVPN</a></div>
+        <div class="app-desc">VPN (réseau privé virtuel) à installer ET tester avant le départ depuis la France. La Turquie bloque certains VPN — vérifier que le tien fonctionne.</div>
+      </div>
+      <span class="app-badge ab-must">Installer avant</span>
+    </div>
+    <div class="app-row">
+      <div class="app-ico">🌍</div>
+      <div style="flex:1">
+        <div class="app-name">Google Traduction hors-ligne</div>
+        <div class="app-desc">Télécharger le pack turc hors-ligne. Très utile dans les zones peu touristiques (Konya, Selçuk hors-centre, Kaş).</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+
+    <div class="slbl">🍽 Restos & activités</div>
+    <div class="app-row">
+      <div class="app-ico">⭐</div>
+      <div style="flex:1">
+        <div class="app-name"><a href="https://www.tripadvisor.fr" target="_blank">TripAdvisor</a></div>
+        <div class="app-desc">Avis lokantalar (restaurants), aktiviteler (activités) et turlar (tours guidés) locaux. Fiable pour la Turquie.</div>
+      </div>
+      <span class="app-badge ab-rec">Recommandé</span>
+    </div>
+  </div>
+</div>
+
+<!-- BANQUE & ARGENT -->
+<div id="banque" class="spg">
+  <div class="al ok">
+    <div class="ali">✅</div>
+    <div class="alb"><strong>Fortuneo Fospho — Carte idéale pour ce voyage</strong> — Zéro frais à l'étranger, zéro commission sur les paiements en lires turques (TRY). Payer directement par carte partout où c'est accepté. C'est la meilleure option que vous ayez.</div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Retraits en espèces (nakit para)</div>
+    <div class="al danger" style="margin-bottom:10px">
+      <div class="ali">🚨</div>
+      <div class="alb"><strong>Éviter absolument Euronet et DnB</strong> — Ces distributeurs indépendants (omniprésents dans les zones touristiques) pratiquent des frais cachés et proposent leur propre taux de conversion catastrophique. Toujours refuser leur "offre de taux fixe".</div>
+    </div>
+    <div class="fr"><div><div class="fn">✅ Ziraat Bankası</div><div class="fsb">Banque publique turque · Distributeurs partout · Meilleurs taux</div></div><span class="fp">Priorité n°1</span></div>
+    <div class="fr"><div><div class="fn">✅ İş Bankası</div><div class="fsb">Grande banque privée turque · Très fiable</div></div><span class="fp">Priorité n°2</span></div>
+    <div class="fr"><div><div class="fn">✅ Yapı Kredi / Garanti BBVA</div><div class="fsb">Autres banques turques acceptables</div></div><span class="fp">OK</span></div>
+    <div class="fr"><div><div class="fn">❌ Euronet</div><div class="fsb">Distributeur indépendant · Frais cachés · Taux catastrophiques</div></div><span class="fp">À éviter</span></div>
+    <div class="fr"><div><div class="fn">❌ DnB / Travelex / No1Currency</div><div class="fsb">Mêmes pratiques abusives</div></div><span class="fp">À éviter</span></div>
+    <div class="fr"><div><div class="fn">❌ Bureaux de change (döviz bürosu) touristiques</div><div class="fsb">Surtout autour de Sultanahmet et Istiklal — taux très mauvais</div></div><span class="fp">À éviter</span></div>
+
+    <div class="slbl">Monnaie & paiements</div>
+    <div class="fr"><div><div class="fn">Monnaie locale</div><div class="fsb">TRY = Türk Lirası (lire turque) · ~37–38 TL pour 1€ en 2026</div></div><span class="fp">Toujours payer en TRY</span></div>
+    <div class="fr"><div><div class="fn">Paiement carte</div><div class="fsb">Très répandu dans les villes et hôtels · Moins dans les villages et dolmuş</div></div><span class="fp">Fortuneo Fospho ✅</span></div>
+    <div class="fr"><div><div class="fn">Espèces indispensables</div><div class="fsb">Dolmuş (minibus), marchés locaux, petits vendeurs de rue, pourboires</div></div><span class="fp">Garder ~50 TL sur soi</span></div>
+    <div class="fr"><div><div class="fn">Pourboire (bahşiş)</div><div class="fsb">Non obligatoire mais apprécié · ~10% dans les restos, quelques TL pour les porteurs</div></div><span class="fp">Optionnel</span></div>
+  </div>
+</div>
+
+<!-- SÉCURITÉ NUMÉRIQUE -->
+<div id="secu" class="spg">
+  <div class="al danger">
+    <div class="ali">⚠️</div>
+    <div class="alb"><strong>Wi-Fi publics turcs non sécurisés</strong> — Les réseaux Wi-Fi des hôtels, otogarlars (gares routières) et cafés sont souvent non chiffrés. Des attaques de type "man in the middle" (interception de données) existent réellement en Turquie. Ne jamais se connecter sans VPN actif.</div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Actions à faire AVANT le départ</div>
+    <div class="fr"><div><div class="fn">1. Installer et tester le VPN</div><div class="fsb">NordVPN ou ExpressVPN · Installer + tester depuis la France que ça fonctionne · La Turquie bloque certains VPN</div></div><span class="fp">Obligatoire</span></div>
+    <div class="fr"><div><div class="fn">2. Créer une adresse mail dédiée au voyage</div><div class="fsb">Gmail ou Proton Mail · Uniquement pour les confirmations de réservation · Activer la double authentification (2FA)</div></div><span class="fp">Recommandé</span></div>
+    <div class="fr"><div><div class="fn">3. Télécharger Google Maps hors-ligne</div><div class="fsb">Télécharger toutes les régions : Istanbul, Izmir, Denizli, Fethiye, Antalya</div></div><span class="fp">Obligatoire</span></div>
+    <div class="fr"><div><div class="fn">4. Sauvegarder les réservations en PDF</div><div class="fsb">Hôtels, bus, activités · Accessibles hors connexion</div></div><span class="fp">Recommandé</span></div>
+    <div class="fr"><div><div class="fn">5. SIM locale à l'arrivée</div><div class="fsb">Turkcell ou Vodafone TR · À l'aéroport IST dès l'arrivée · ~25€ pour 30 Go · 30 jours</div></div><span class="fp">Recommandé</span></div>
+
+    <div class="slbl">Règles à respecter en voyage</div>
+    <div class="fr"><div><div class="fn">VPN toujours actif sur Wi-Fi public</div><div class="fsb">Hôtels, cafés, otogar (gares) — activer dès connexion</div></div><span class="fp">Toujours</span></div>
+    <div class="fr"><div><div class="fn">Banque en ligne uniquement avec VPN</div><div class="fsb">Ne jamais accéder à Fortuneo ou n'importe quelle banque sans VPN actif</div></div><span class="fp">Obligatoire</span></div>
+    <div class="fr"><div><div class="fn">Vérifier l'URL avant de saisir des données</div><div class="fsb">Faux sites de réservation (copies de Booking, Airbnb) — vérifier l'URL exacte</div></div><span class="fp">Vigilance</span></div>
+    <div class="fr"><div><div class="fn">Adaptateur électrique</div><div class="fsb">Prises turques = Type F, identiques à la France · Aucun adaptateur nécessaire</div></div><span class="fp">Rien à faire</span></div>
+  </div>
+</div>
+
+<!-- BAGAGES -->
+<div id="bagages" class="spg">
+  <div class="al info">
+    <div class="ali">🧳</div>
+    <div class="alb"><strong>Allocation bagages Vueling (aller) / EasyJet + SunExpress (retour)</strong> — 1 valise soute 20kg + 1 bagage cabine 10kg (aller seulement) + 1 sac perso 40×30×20cm 4kg (aller et retour) + sacoche médicale CPAP (appareil apnée du sommeil, souvent exempté).</div>
+  </div>
+
+  <div class="al warn">
+    <div class="ali">⚠️</div>
+    <div class="alb"><strong>Retour différent de l'aller</strong> — Au retour (EasyJet + SunExpress), pas de bagage cabine 10kg. Tout doit rentrer dans la valise soute (20kg dont ~3kg de valise vide = 17kg utiles) + sac perso 4kg + sacoche CPAP.</div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Valise soute commune (20 kg · objectif départ ~14 kg)</div>
+    <div class="bag-section">
+      <div class="bag-title">Vêtements — lui <span class="bag-limit">~3 kg</span></div>
+      <div class="bag-row"><span class="bag-item">T-shirts / polos légers synthétiques (sèchent vite) × 6</span><span class="bag-weight">~0,6 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Shorts / pantalons légers × 3</span><span class="bag-weight">~0,6 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Sous-vêtements × 7</span><span class="bag-weight">~0,3 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Chaussettes × 4</span><span class="bag-weight">~0,2 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Maillots de bain × 2</span><span class="bag-weight">~0,2 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Tenue soirée / visite mosquée × 1</span><span class="bag-weight">~0,3 kg</span></div>
+    </div>
+    <div class="bag-section">
+      <div class="bag-title">Vêtements — elle <span class="bag-limit">~2 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Robes / tops légers × 6</span><span class="bag-weight">~0,6 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Shorts / pantalon léger × 2</span><span class="bag-weight">~0,3 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Sous-vêtements + soutiens × 7</span><span class="bag-weight">~0,4 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Maillots de bain × 2</span><span class="bag-weight">~0,3 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Foulard léger (pour les camii = mosquées) × 1</span><span class="bag-weight">~0,1 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Tenue soirée × 1</span><span class="bag-weight">~0,2 kg</span></div>
+    </div>
+    <div class="bag-section">
+      <div class="bag-title">Chaussures <span class="bag-limit">~0,7 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Chaussures de marche (portées dans l'avion — aucun poids valise)</span><span class="bag-weight bag-free">0 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Sandales légères lui × 1 paire</span><span class="bag-weight">~0,4 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Sandales légères elle × 1 paire</span><span class="bag-weight">~0,3 kg</span></div>
+    </div>
+    <div class="bag-section">
+      <div class="bag-title">Toilette & santé <span class="bag-limit">~1,5 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Crème solaire 50+</span><span class="bag-weight bag-free">À acheter sur place</span></div>
+      <div class="bag-row"><span class="bag-item">Shampoing / gel douche solide</span><span class="bag-weight bag-free">À acheter sur place</span></div>
+      <div class="bag-row"><span class="bag-item">Déodorant, dentifrice, brosse à dents × 2</span><span class="bag-weight">~0,3 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Rasoir, coton, petits soins</span><span class="bag-weight">~0,2 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Trousse pharmacie (antidiarrhéiques, paracétamol, électrolytes, pansements, répulsif)</span><span class="bag-weight">~0,4 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Serviette microfibre × 2</span><span class="bag-weight">~0,4 kg</span></div>
+    </div>
+    <div class="bag-section">
+      <div class="bag-title">Divers <span class="bag-limit">~0,5 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Adaptateur secteur</span><span class="bag-weight bag-free">Inutile ! Prises Type F identiques à la France</span></div>
+      <div class="bag-row"><span class="bag-item">Cadenas pour la valise × 1</span><span class="bag-weight">~0,1 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Sac à dos pliable léger (excursions)</span><span class="bag-weight">~0,2 kg</span></div>
+      <div class="bag-row"><span class="bag-item">Marge souvenirs (épices, ceramiques...)</span><span class="bag-weight">~3 kg réservés</span></div>
+    </div>
+    <div style="background:var(--gbg);border:1px solid var(--gn2);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--gt);margin-top:8px">
+      <strong>Total valise estimé au départ : ~11–12 kg</strong> · Marge souvenirs : ~3 kg · Total retour : ~14–15 kg ✅
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Sacoche médicale CPAP (aller ET retour)</div>
+    <div class="bag-row"><span class="bag-item">Appareil CPAP (apnée du sommeil) + masque</span><span class="bag-weight">~1,3 kg</span></div>
+    <div class="bag-row"><span class="bag-item">Câble + adaptateur universel</span><span class="bag-weight">~0,3 kg</span></div>
+    <div class="bag-row"><span class="bag-item">iPad + chargeur</span><span class="bag-weight">~0,7 kg</span></div>
+    <div class="bag-row"><span class="bag-item">Chargeurs téléphones × 2 + câbles</span><span class="bag-weight">~0,4 kg</span></div>
+    <div class="bag-row"><span class="bag-item">Batterie externe (obligatoirement en cabine, jamais en soute)</span><span class="bag-weight">~0,3 kg</span></div>
+    <div style="background:var(--bbg);border:1px solid var(--bl);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--bt);margin-top:8px">
+      <strong>⚠️ Contacter Vueling et EasyJet avant le départ</strong> pour déclarer le dispositif médical CPAP et obtenir la confirmation écrite de l'exemption de poids. Une ordonnance ou lettre du médecin peut être demandée. Prises turques = Type F (identiques à la France) — pas d'adaptateur pour le CPAP.
+    </div>
+  </div>
+</div>
+
+<!-- CONSEILS GÉNÉRAUX -->
+<div id="conseils" class="spg">
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Culture & savoir-vivre en Turquie</div>
+    <div class="fr"><div><div class="fn">Entrée dans les camii (mosquées)</div><div class="fsb">Chaussures à enlever · Foulard (voile) pour les femmes · Tenue couvrant épaules et genoux · Gratuit sauf exceptions</div></div></div>
+    <div class="fr"><div><div class="fn">Çay (thé) culture</div><div class="fsb">On vous proposera du çay (thé turc noir) partout — dans les bazars, chez les commerçants. Accepter crée du lien, refuser ne vexe pas.</div></div></div>
+    <div class="fr"><div><div class="fn">Négociation (pazarlık)</div><div class="fsb">Dans les çarşılar (marchés) et bazars, le pazarlık (marchandage) est normal. Dans les restaurants et supermarchés, le prix est fixe.</div></div></div>
+    <div class="fr"><div><div class="fn">Ramadan</div><div class="fsb">Fin du Ramadan 2026 = début mars — aucun impact sur votre voyage de juillet-août.</div></div></div>
+    <div class="fr"><div><div class="fn">Langue</div><div class="fsb">Türkçe (turc) est la langue officielle. Teşekkürler = merci · Merhaba = bonjour · Evet/Hayır = oui/non · L'anglais est parlé dans les zones touristiques.</div></div></div>
+    <div class="fr"><div><div class="fn">Eau du robinet</div><div class="fsb">Potable à Istanbul mais goût de chlore prononcé. Pas potable dans les autres villes — toujours boire de l'eau en şişe (bouteille), ~0,50€ le 1,5L.</div></div></div>
+    <div class="fr"><div><div class="fn">Pourboire (bahşiş)</div><div class="fsb">Non obligatoire mais apprécié — ~10% dans les restoranlar (restaurants), quelques TL pour les porteurs et guides.</div></div></div>
+    <div class="fr"><div><div class="fn">Urgences</div><div class="fsb">Police : 155 · Ambulance (ambulans) : 112 · Pompiers (itfaiye) : 110</div></div></div>
+
+    <div class="slbl">Mots turcs utiles en voyage</div>
+    <div class="fr"><div><div class="fn">Otogar / Otobüs terminali</div></div><span class="fp">Gare routière</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş</div></div><span class="fp">Minibus collectif (taxi partagé)</span></div>
+    <div class="fr"><div><div class="fn">Tramvay</div></div><span class="fp">Tramway</span></div>
+    <div class="fr"><div><div class="fn">Vapür / Feribot</div></div><span class="fp">Ferry (bateau public)</span></div>
+    <div class="fr"><div><div class="fn">Pansiyon</div></div><span class="fp">Pension (petit hôtel familial)</span></div>
+    <div class="fr"><div><div class="fn">Lokanta</div></div><span class="fp">Cantine / restaurant populaire</span></div>
+    <div class="fr"><div><div class="fn">Çarşı / Pazar</div></div><span class="fp">Marché / bazar</span></div>
+    <div class="fr"><div><div class="fn">Hamam</div></div><span class="fp">Bain turc traditionnel</span></div>
+    <div class="fr"><div><div class="fn">Camii</div></div><span class="fp">Mosquée</span></div>
+    <div class="fr"><div><div class="fn">Türbe</div></div><span class="fp">Tombeau / mausolée</span></div>
+    <div class="fr"><div><div class="fn">Kalıntılar / Harabe</div></div><span class="fp">Ruines archéologiques</span></div>
+    <div class="fr"><div><div class="fn">Müze</div></div><span class="fp">Musée</span></div>
+  </div>
+
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Liens ressources généraux</div>
+    <div class="lgrid">
+      <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">obilet.com</div><div class="lul">Réserver tous vos bus</div></div></a>
+      <a href="https://www.booking.com" target="_blank" class="lcard"><span class="lico">🏨</span><div><div class="lnm">Booking.com</div><div class="lul">Hébergements Turquie</div></div></a>
+      <a href="https://www.routard.com/guide/turquie" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Routard Turquie</div><div class="lul">routard.com</div></div></a>
+      <a href="https://www.lonelyplanet.com/turkey" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Lonely Planet Turkey</div><div class="lul">lonelyplanet.com</div></div></a>
+      <a href="https://nordvpn.com" target="_blank" class="lcard"><span class="lico">🛡</span><div><div class="lnm">NordVPN</div><div class="lul">nordvpn.com</div></div></a>
+      <a href="https://www.tripadvisor.fr" target="_blank" class="lcard"><span class="lico">⭐</span><div><div class="lnm">TripAdvisor</div><div class="lul">Restos & activités</div></div></a>
+    </div>
+  </div>
+</div>
+
+</div><!-- /cnt -->
+
+
+<script>
+function showSub(id,btn){
+  document.querySelectorAll('.spg').forEach(p=>p.classList.remove('vis'));
+  document.querySelectorAll('.snb').forEach(b=>b.classList.remove('on'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('vis');
+  if(btn)btn.classList.add('on');
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.snb');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>

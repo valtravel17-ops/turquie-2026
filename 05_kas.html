@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaş — Guide complet · 9–11 août</title>
+<style>
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr p{font-size:13px;color:var(--t2)}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
+.pill.gn{background:var(--gbg);border-color:var(--gn2);color:var(--gt)}
+.pill.bl{background:var(--bbg);border-color:var(--bl);color:var(--bt)}
+.pill.rd{background:var(--rbg);border-color:var(--rd);color:var(--rt)}
+.pill.pu{background:var(--pubg);border-color:var(--pu);color:var(--put)}
+.pill.go{background:var(--gobg);border-color:var(--go);color:var(--got)}
+
+.transit-in{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
+.ti-title{font-size:12px;font-weight:600;color:var(--put);margin-bottom:8px}
+.ti-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.ti-row{background:rgba(255,255,255,.7);border-radius:8px;padding:6px 10px;font-size:11px}
+.ti-l{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.ti-v{color:var(--put);font-weight:500}
+
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+
+.dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
+.dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.dh .ds{font-size:12px;color:var(--t2);margin-bottom:8px}
+.dgeo{display:block;width:fit-content;background:var(--bbg);border:1px solid var(--bl);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--bt);margin-bottom:5px}
+.dbudg{font-size:12px;color:var(--t2);margin-top:5px}
+.dbudg strong{color:var(--gn)}
+.dtot{display:flex;justify-content:space-between;align-items:center;background:var(--s1);border-radius:var(--r);padding:8px 13px;margin-top:10px;font-size:12px;color:var(--t2)}
+.dtot strong{color:var(--tx)}
+
+.blk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;margin-bottom:6px}
+.bh{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.tm{background:var(--s1);border:1px solid var(--bd2);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--t2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.bt2{font-size:13px;font-weight:500;color:var(--tx);flex:1}
+.ptag{font-size:11px;border-radius:20px;padding:2px 9px;white-space:nowrap;font-weight:500;flex-shrink:0}
+.free{background:#dcfce7;color:#155724}
+.paid{background:var(--rbg);color:var(--rt)}
+.cheap{background:var(--bbg);color:var(--bt)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.th{background:var(--pubg);color:var(--put);border-color:var(--pu)}
+.tn{background:var(--gbg);color:var(--gt);border-color:var(--gn2)}
+.tb{background:var(--bbg);color:var(--bt);border-color:var(--bl)}
+.ta{background:var(--gobg);color:var(--got);border-color:#c8a020}
+.bdesc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:5px}
+.btip{font-size:11px;color:var(--t3);border-left:2px solid var(--gn2);padding-left:8px;margin-top:6px;line-height:1.5}
+.bln{font-size:11px;margin-top:5px}
+
+.excursion-box{background:var(--gobg);border:1px solid #c8a020;border-radius:var(--r);padding:11px 14px;margin-bottom:8px}
+.exc-title{font-size:12px;font-weight:600;color:var(--got);margin-bottom:8px}
+.exc-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.07)}
+.exc-row:last-child{border-bottom:none}
+.exc-left{flex:1}
+.exc-name{font-size:12px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.exc-detail{font-size:11px;color:var(--t2);line-height:1.5}
+.exc-right{text-align:right;flex-shrink:0}
+.exc-dist{background:var(--s1);border-radius:20px;padding:2px 9px;font-size:10px;color:var(--t2);display:block;margin-bottom:3px;white-space:nowrap}
+.exc-price{font-size:10px;color:var(--gn);font-weight:600;white-space:nowrap}
+
+.ts{display:flex;align-items:flex-start;gap:8px;padding:6px 0 6px 8px;margin:2px 0;border-left:2px dashed var(--bd2)}
+.tsi{width:24px;height:24px;border-radius:50%;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tst{flex:1;font-size:11px;color:var(--t2)}
+.tsm{color:var(--tx);font-size:12px;font-weight:500}
+.tsd{background:var(--bbg);color:var(--bt);border-radius:20px;padding:1px 7px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tsp{background:var(--gbg);color:var(--gt);border-radius:20px;padding:1px 7px;font-size:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+.tc{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:13px 15px;margin-top:14px}
+.tct{font-size:13px;font-weight:600;color:var(--put);margin-bottom:10px}
+.tcg{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:6px}
+.tcr{background:rgba(255,255,255,.75);border-radius:8px;padding:7px 10px;font-size:11px}
+.tcl{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.tcv{color:var(--put);font-weight:500}
+
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+.gems{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gem{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.gem-t{font-size:12px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.gem-p{font-size:11px;color:var(--gn);font-weight:500;margin-bottom:4px}
+.gem-d{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.gem-when{font-size:10px;padding:2px 9px;border-radius:20px;display:inline-block;font-weight:500}
+.gem-planned{background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd}
+.gem-todo{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+
+.wb{background:var(--rbg);border:1px solid #cc6040;border-radius:var(--r);padding:10px 13px;margin-bottom:7px}
+.wbt{font-size:12px;font-weight:600;color:var(--rt);margin-bottom:3px}
+.wb p{font-size:12px;color:var(--rt)}
+
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+.ar{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.ar:last-child{border-bottom:none}
+.ai2{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--s1);border:1px solid var(--bd)}
+.an{font-size:13px;font-weight:500;color:var(--tx)}
+.an a{color:var(--bl);border-bottom:1px dotted var(--bl)}
+.ad{font-size:11px;color:var(--t2);margin-top:1px}
+.ab2{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--gbg);color:var(--gt);white-space:nowrap;flex-shrink:0}
+
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
+</style>
+</head>
+<body>
+
+<!-- PROMPT -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 5/6 : Kaş (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 05_kas.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Kaş (9–11 août, 2 nuits)</strong> du voyage Turquie 2026, couple, transport en commun uniquement.<br><br>
+      <strong>Arrivée :</strong> Dolmuş (minibus collectif) Fethiye → Kaş · ~2h · ~6€/pers · Arrivée ~18h30–19h le 9 août<br><br>
+      <strong>Kaş :</strong> Petit village de pêcheurs (balıkçı köyü) authentique sur la côte lycienne, face à l'île grecque de Kastellorizo (Meis en turc). Ambiance très tranquille, rues pavées, restaurants de poisson, ruines lyciennes dans les rues.<br><br>
+      <strong>Activités clés :</strong> Kayak de mer Kekova (ruines lyciennes submergées — expérience unique) ~50–60€/pers journée · Myra/Demre (nécropole rupestre + théâtre romain + église Saint-Nicolas) ~11€ entrée · Patara (18 km de plage sauvage + ruines lyciennes) ~5€<br><br>
+      <strong>Prochain transit :</strong> Bus Kaş → Antalya · ~4h · ~10€/pers · Kamil Koç · Matin du 11 août
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>⛵ Kaş</h1>
+  <p>9–11 août · 2 nuits · Étape 5 sur 6</p>
+  <div class="hdr-meta">
+    <span class="pill rd">33–38°C · Chaud · Eau cristalline</span>
+    <span class="pill pu">Côte lycienne</span>
+    <span class="pill gn">Kayak Kekova ⭐⭐</span>
+    <span class="pill bl">Village authentique</span>
+    <span class="pill go">Face à la Grèce (Kastellorizo)</span>
+  </div>
+</div>
+
+<!-- TRANSIT ENTRANT -->
+<div class="transit-in">
+  <div class="ti-title">🚌 Transit entrant — Fethiye → Kaş · 9 août ~16h30–17h</div>
+  <div class="ti-grid">
+    <div class="ti-row"><div class="ti-l">Transport</div><div class="ti-v">Dolmuş (minibus collectif) · Route côtière D400</div></div>
+    <div class="ti-row"><div class="ti-l">Départ</div><div class="ti-v">Fethiye Otogarı (gare routière) · 16h30–17h</div></div>
+    <div class="ti-row"><div class="ti-l">Arrivée</div><div class="ti-v">Kaş · ~18h30–19h · Encore de jour</div></div>
+    <div class="ti-row"><div class="ti-l">Durée / Prix</div><div class="ti-v">~2h · ~6€/pers</div></div>
+    <div class="ti-row"><div class="ti-l">Hébergement</div><div class="ti-v">Dans le village de Kaş · <a href="https://www.booking.com/city/tr/kas.fr.html" target="_blank">Booking Kaş</a></div></div>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<div class="snav">
+  <button class="snb on" onclick="showSub('j1',this)">J1 · 10 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · 11 août + départ</button>
+  <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
+  <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
+  <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
+  <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
+</div>
+
+<div class="cnt">
+
+<!-- J1 -->
+<div id="j1" class="spg vis">
+  <div class="dh">
+    <h2>Jour 1 — 10 août · Kayak de mer à Kekova ⭐⭐</h2>
+    <div class="ds">L'expérience phare de Kaş · Kayak au-dessus des ruines lyciennes submergées · Journée complète</div>
+    <div class="dgeo">📍 Minibus organisé par l'opérateur depuis Kaş → Üçağız (village) · ~30 min · Puis kayak sur Kekova</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~55–65€</strong> (kayak journée complète avec déjeuner)</div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">🛶</div>
+    <div class="alb"><strong>Expérience canoë/kayak n°2 du voyage — À ne surtout pas manquer</strong> — Kayak de mer au-dessus des ruines lyciennes submergées de Kekova : eau turquoise transparente, ruines visibles sous la surface, châteaux médiévaux, village de Simena (Kaleköy). Expérience unique au monde. Accessible aux débutants complets.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Kayak de mer — Kekova Batık Şehir (Cité engloutie de Kekova)</span><span class="ptag paid">~55–65€/pers · Déjeuner inclus</span></div>
+    <div class="tags"><span class="tag th">Ruines lyciennes submergées · Unique au monde</span><span class="tag tn">Eau turquoise transparente · Kayak 8 km</span><span class="tag">Transfert depuis Kaş inclus · Adapté débutants</span></div>
+    <div class="bdesc">Kekova (Kekova Adası = île de Kekova) est un site archéologique et naturel protégé exceptionnel. Une cité lycienne (antique) a été partiellement submergée lors d'un séisme antique — les ruines (kalıntılar) de maisons, escaliers, amphores sont encore visibles directement sous l'eau depuis le kayak. L'eau est d'une transparence absolue.<br><br>L'excursion organisée depuis Kaş inclut : transfert en minibus jusqu'au village d'Üçağız (point de départ), briefing sécurité et instruction kayak, 8 km de pagayage (kürek çekmek) le long de la côte à travers les ruines, arrêts baignade dans des criques, visite optionnelle de Simena Kalesi (château médiéval de Simena perché sur la colline), öğle yemeği (déjeuner) inclus dans un restaurant local d'Üçağız, retour minibus à Kaş.<br><br>Durée totale : journée complète (~8h avec transferts).</div>
+    <div class="btip">💡 Réserver la veille chez <a href="https://www.seakayakturkiye.com/fr" target="_blank">Sea Kayak Türkiye</a> — l'opérateur référence de Kekova, très bien noté, transfert depuis Kaş inclus. Prix ~55–65€ tout compris avec déjeuner. Apporter : maillot de bain, crème solaire, chapeau, lunettes de soleil, et une bouteille d'eau.</div>
+    <div class="bln"><a href="https://www.seakayakturkiye.com/fr" target="_blank">seakayakturkiye.com</a> — réservation en ligne</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Soir</span><span class="bt2">Retour Kaş · Dîner au port · Coucher de soleil</span><span class="ptag cheap">Dîner ~12–18€/pers</span></div>
+    <div class="bdesc">Retour à Kaş en fin d'après-midi après une journée complète en kayak. Dîner de balık (poisson) frais sur le liman (port) de Kaş face à Kastellorizo (l'île grecque visible à 3 km). Le port s'illumine au coucher du soleil — l'une des plus belles soirées du voyage.</div>
+    <div class="btip">💡 Kaş est réputée pour ses restaurants de poisson (balık lokantası) sur le port — moins chers et plus authentiques que Bodrum ou Antalya. Choisir un restaurant où le balık (poisson) est présenté frais sur glace à l'entrée.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~55–65€ (kayak tout compris) + dîner ~15€</strong></div>
+</div>
+
+<!-- J2 -->
+<div id="j2" class="spg">
+  <div class="dh">
+    <h2>Jour 2 — 11 août · Myra · Demre + départ Antalya</h2>
+    <div class="ds">Matin : Myra (nécropole rupestre + théâtre romain) · Bus de journée vers Antalya</div>
+    <div class="dgeo">📍 Dolmuş (minibus) Kaş → Demre · ~40 min · ~3€ · Puis bus Kaş/Demre → Antalya l'après-midi</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~20–30€ + bus Antalya ~10€</strong></div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">💡</div>
+    <div class="alb"><strong>Myra d'abord, bus vers Antalya l'après-midi</strong> — Dolmuş Kaş → Demre (~40 min), visite Myra le matin (~2–3h), puis bus depuis Demre ou retour Kaş pour prendre le bus vers Antalya dans l'après-midi. Arrivée Antalya en soirée.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Myra (Mire antique) — Nécropole rupestre lycienne + Théâtre romain</span><span class="ptag paid">400 TL / ~11€</span></div>
+    <div class="tags"><span class="tag th">Cité lycienne · Nécropole rupestre spectaculaire</span><span class="tag">Théâtre romain 10 000 places</span><span class="tag">2,5 km nord de Demre</span></div>
+    <div class="bdesc">Myra est l'une des six cités les plus puissantes de la Ligue Lycienne (Likya Birliği = fédération démocratique antique). Le site se divise en deux parties exceptionnelles :<br><br>• Kaya mezarları (Nécropole rupestre) : des dizaines de tombeaux (mezar) taillés directement dans la falaise verticale à des hauteurs vertigineuses. Les façades sculptées imitent des maisons lyciennes avec portiques et frises — art funéraire unique au monde. Couleur orangée magnifique.<br><br>• Büyük Tiyatro (Grand Théâtre romain) : 10 000 places, en excellent état. Masques de théâtre sculptés encore visibles sur la façade scénique (scaenae frons).<br><br>Myra est aussi le lieu où Aziz Nikola (Saint-Nicolas), le vrai Père Noël historique, fut évêque au 4e siècle.</div>
+    <div class="btip">💡 Arriver à 9h pour avoir la lumière du matin sur la falaise rouge-orangée — magnifique pour les photos. Après 11h, la lumière devient dure et les cars arrivent.</div>
+    <div class="bln"><a href="https://demre.net/myra" target="_blank">demre.net/myra</a> — guide pratique 2026</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">11h</span><span class="bt2">Aziz Nikola Kilisesi (Église Saint-Nicolas) à Demre</span><span class="ptag paid">400 TL / ~11€</span></div>
+    <div class="tags"><span class="tag th">Tombeau du vrai Père Noël · 4e siècle</span><span class="tag">Centre-ville Demre · 5 min à pied de Myra</span></div>
+    <div class="bdesc">L'église byzantine (Bizans kilisesi) du 4e siècle où repose le tombeau de Aziz Nikola (Saint-Nicolas de Myre) — le véritable évêque (piskopos) dont la légende a donné naissance au Père Noël (Noel Baba en turc). Ses reliques (kutsal kalıntılar) furent volées par des marchands italiens en 1087 et emmenées à Bari (Italie). Mosaïques et fresques byzantines partiellement conservées.</div>
+    <div class="btip">💡 Les deux sites (Myra + Église Saint-Nicolas) se font dans la même demi-journée. Myra est à 2,5 km au nord de Demre — taxi ou marche (~25 min) entre les deux.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">13h</span><span class="bt2">Déjeuner Demre · Retour Kaş ou bus direct vers Antalya</span><span class="ptag cheap">Repas ~8–12€</span></div>
+    <div class="bdesc">Déjeuner à Demre dans une lokanta (restaurant local). Puis deux options : retourner à Kaş récupérer les bagages et prendre le bus depuis Kaş otogarı (gare routière) vers Antalya, ou prendre directement un bus depuis Demre vers Antalya (vérifier les horaires sur obilet.com). Arrivée à Antalya en soirée.</div>
+    <div class="btip">💡 Si les bagages sont restés à l'hébergement de Kaş, retourner les récupérer avant de partir — le détour vaut mieux que de voyager sans ses affaires. Depuis Kaş, nombreux bus vers Antalya dans l'après-midi.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~20–30€ + bus Antalya ~10€</strong></div>
+
+  <div class="tc">
+    <div class="tct">🚌 Transit sortant — Kaş → Antalya · 11 août après-midi</div>
+    <div class="tcg">
+      <div class="tcr"><div class="tcl">Compagnie</div><div class="tcv">Kamil Koç · ou depuis Demre</div></div>
+      <div class="tcr"><div class="tcl">Départ conseillé</div><div class="tcv">14h–16h depuis Kaş Otogarı</div></div>
+      <div class="tcr"><div class="tcl">Durée / Prix</div><div class="tcv">~4h · ~10€/pers</div></div>
+      <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Antalya otogarı · soirée du 11 août</div></div>
+      <div class="tcr"><div class="tcl">Réservation</div><div class="tcv"><a href="https://www.obilet.com" target="_blank">obilet.com</a> · Vérifier horaires la veille</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXCURSIONS ±1H -->
+<div id="excursions" class="spg">
+  <div class="al info">
+    <div class="ali">🗺</div>
+    <div class="alb"><strong>Excursions accessibles depuis Kaş en transport en commun</strong> — Kaş est bien desservie en dolmuş (minibus) sur la D400 (route côtière). Toutes les suggestions ci-dessous sont faisables sans voiture.</div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 20–40 min depuis Kaş (dolmuş direct)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kekova — Kayak de mer (excursion organisée)</div>
+        <div class="exc-detail">Transfert inclus depuis Kaş vers Üçağız · Ruines lyciennes submergées · Planifié J1 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">~30 min minibus</span><span class="exc-price">~55–65€ journée</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kalkan — Village blanc perché</div>
+        <div class="exc-detail">Dolmuş depuis Kaş vers l'ouest · Village de villégiature (tatil köyü) élégant accroché à la falaise, ruelles blanches, restaurants avec vue sur la mer. Moins authentique que Kaş mais très joli.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">30 min · ~3€</span><span class="exc-price">Gratuit (village)</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Kastellorizo (Meis) — Île grecque à 3 km</div>
+        <div class="exc-detail">Ferry (feribot) quotidien depuis le port de Kaş · Petite île grecque déserte, village coloré, ambiance hors du temps. Journée en Grèce sans passeport (carte d'identité suffit pour citoyens UE) ! Vérifier les horaires ferry à l'avance.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">~20 min ferry</span><span class="exc-price">~15–20€ A/R ferry</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 40–60 min depuis Kaş (dolmuş)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Myra + Aziz Nikola Kilisesi (Église Saint-Nicolas) — Demre</div>
+        <div class="exc-detail">Dolmuş Kaş → Demre · Nécropole rupestre lycienne spectaculaire + tombeau du vrai Père Noël · Planifié J2 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">40 min · ~3€</span><span class="exc-price">~11€/site</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Patara — 18 km de plage sauvage + ruines lyciennes</div>
+        <div class="exc-detail">Dolmuş Kaş → Patara village + navette → plage · La plus longue plage sauvage de Turquie (18 km de sable fin), site de nidification des tortues Caretta (Deniz kaplumbağası), ruines de la cité lycienne de Patara (capitale de la Ligue Lycienne) dont un arc de triomphe.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">45 min · ~4€</span><span class="exc-price">~5€ entrée</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Üçağız — Village de pêcheurs au bord de Kekova</div>
+        <div class="exc-detail">Dolmuş depuis Kaş · Petit village de pêcheurs (balıkçı köyü) tranquille, point de départ des excursions Kekova. Vue directe sur l'île et les ruines. Restaurants de poisson sur l'eau. Tombes lyciennes dans les rues du village.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">30 min · ~3€</span><span class="exc-price">Gratuit</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 1h depuis Kaş</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Xanthos + Letoon (UNESCO)</div>
+        <div class="exc-detail">Bus vers Kinik + marche · Ancienne capitale de la Lycie (région historique), Tombeau des Harpies. Letoon = sanctuaire UNESCO avec 3 temples. Combinaison classique avec Patara dans la même journée.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h · ~5€</span><span class="exc-price">~5–8€/site</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Plongée sous-marine (tüplü dalış) à Kaş</div>
+        <div class="exc-detail">Kaş est réputée pour la plongée — eaux très claires, ruines sous-marines, amphorae (amphores) antiques visibles, canyons sous-marins. Nombreux centres de plongée dans le village. Niveau débutant possible avec baptême (introductory dive).</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">Depuis Kaş port</span><span class="exc-price">~40–60€ baptême</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box" style="background:var(--rbg);border-color:#cc6040">
+    <div class="exc-title" style="color:var(--rt)">⚠️ Déconseillé sans voiture depuis Kaş</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Saklikent depuis Kaş</div>
+        <div class="exc-detail">Possible mais long et compliqué (2h de trajet en dolmuş + correspondances). Bien mieux fait depuis Fethiye (étape précédente, 45 min direct). Ne pas tenter depuis Kaş.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist" style="background:var(--rbg);color:var(--rt)">Déjà fait depuis Fethiye</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PÉPITES -->
+<div id="pep" class="spg">
+  <div class="al info" style="margin-bottom:12px">
+    <div class="ali">📅</div>
+    <div class="alb"><strong>Code couleur</strong> — <span style="background:#dbeafe;color:#1e3a5f;border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">Date et heure prévues</span> dans le planning · <span style="background:var(--gobg);border:1px solid #c8a020;color:var(--got);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">À prévoir</span> si pas encore planifié</div>
+  </div>
+  <div class="gems">
+    <div class="gem">
+      <div class="gem-t">Kayak de mer sur les ruines de Kekova</div>
+      <div class="gem-p">~55–65€/pers · Journée complète · Déjeuner inclus</div>
+      <div class="gem-d">Pagayer au-dessus de maisons lyciennes submergées dans une eau turquoise transparente. Ruines visibles sous la surface à quelques centimètres. Expérience unique et inoubliable — le point culminant des activités nautiques du voyage.</div>
+      <div class="gem-when gem-planned">📅 J1 · 10 août · 9h (journée entière)</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kaya mezarları (nécropole rupestre) de Myra</div>
+      <div class="gem-p">~11€ · 40 min de Kaş en dolmuş</div>
+      <div class="gem-d">Tombeaux (mezar) taillés dans une falaise verticale rouge-orangée, façades sculptées imitant des maisons lyciennes. L'un des sites archéologiques les plus spectaculaires et photographiables de Turquie.</div>
+      <div class="gem-when gem-planned">📅 J2 · 11 août · 9h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Coucher de soleil sur le port de Kaş face à Kastellorizo</div>
+      <div class="gem-p">Gratuit · Port de Kaş</div>
+      <div class="gem-d">L'île grecque de Kastellorizo (Meis) à 3 km, les bateaux de pêche, la lumière dorée sur les rochers. L'un des plus beaux couchers de soleil du voyage. Dîner de poisson (balık) sur le port avec cette vue.</div>
+      <div class="gem-when gem-planned">📅 J1 · 10 août · 19h30 (après retour kayak)</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kastellorizo (Meis) — Une journée en Grèce</div>
+      <div class="gem-p">~15–20€ A/R ferry · Carte d'identité UE suffit</div>
+      <div class="gem-d">La plus petite île grecque habitée, à 3 km de Kaş. Village coloré, quelques restaurants, ambiance très calme. Une heure en Grèce sans avion — expérience insolite et mémorable.</div>
+      <div class="gem-when gem-todo">À prévoir · Si temps disponible entre J1 et J2</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tiyatro antique (Théâtre grec) de Kaş</div>
+      <div class="gem-p">Gratuit · Dans les rues du village</div>
+      <div class="gem-d">Petit théâtre hellénistique du 2e siècle av. J.-C. directement dans les ruelles du village, avec vue sur la mer. Souvent vide, ouvert 24h/24. Beau le soir quand les lumières du port brillent en dessous.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 soir · 5 min à pied du port</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Patara — 18 km de plage sauvage</div>
+      <div class="gem-p">~5€ entrée · 45 min de Kaş</div>
+      <div class="gem-d">La plus longue plage (plaj) sauvage de Turquie, site de nidification des tortues Caretta, ruines lyciennes à l'entrée dont un arc de triomphe. Presque déserte comparée aux plages touristiques.</div>
+      <div class="gem-when gem-todo">À prévoir · Si J1 libre ou après-midi J2</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ruelles de Kaş le soir</div>
+      <div class="gem-p">Gratuit · Village authentique</div>
+      <div class="gem-d">Kaş est l'un des rares villages côtiers turcs encore vraiment authentique — pas envahi par le tourisme de masse. Les ruelles pavées (taş yol) le soir, les restaurants de poisson, les boutiques d'artisanat. Atmosphère unique sur la côte turque.</div>
+      <div class="gem-when gem-planned">📅 J1 · 10 août · Après dîner au port</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Simena Kalesi (Château de Simena) — Kaleköy</div>
+      <div class="gem-p">Inclus dans le kayak Kekova</div>
+      <div class="gem-d">Château médiéval (ortaçağ kalesi) perché sur la colline du village de Kaleköy, accessible uniquement à pied depuis le village (pas de route). Vue panoramique sur Kekova et les ruines submergées. Visité pendant l'excursion kayak.</div>
+      <div class="gem-when gem-planned">📅 J1 · 10 août · Pendant l'excursion kayak</div>
+    </div>
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
+
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">🎵 Musique, street art & culture underground</span></div>
+    <div class="gem">
+      <div class="gem-t">Echo Bar (Sarniç) Kaş — musique live</div>
+      <div class="gem-p">Entrée libre · Port de Kaş</div>
+      <div class="gem-d">Bar installé dans une ancienne citerne (sarnıç) lycienne du côté droit du port de Kaş — acoustique naturelle unique dans la pierre antique, musique live le soir. Vue sur le port depuis la terrasse. L'une des adresses les plus authentiques de la côte lycienne pour écouter de la musique.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J2 · Côté droit du port face à la mer</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Kaş — ruelles peintes</div>
+      <div class="gem-p">Gratuit · Ruelles du village</div>
+      <div class="gem-d">Kaş a développé une petite scène street art dans ses ruelles — murales sur les maisons en pierre, stencils sur les escaliers. Quelques artistes locaux ont commencé à peindre les murs depuis 2020. Rien de comparable à Istanbul mais une touche colorée dans le village lycien.</div>
+      <div class="gem-when gem-todo">À prévoir · En se baladant dans Kaş · Quartier derrière le port</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Concerts de musique turque à Kaş</div>
+      <div class="gem-p">~5–10€ · Bars du port</div>
+      <div class="gem-d">Plusieurs bars du port de Kaş proposent de la musique live le soir en saison — saz, bağlama (luth turc à long manche), musique folklorique anatolienne ou pop turque. Ambiance locale et détendue, très différent des clubs touristiques. Demander sur place quel bar joue ce soir.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirées au port de Kaş</div>
+    </div>
+  
+    <div class="gem">
+      <div class="gem-t">Bar à musique live Kaş — port de nuit</div>
+      <div class="gem-p">~5–10€ boissons · Port de Kaş</div>
+      <div class="gem-d">Plusieurs petits bars autour du port de Kaş proposent de la musique live le soir en saison — rock turc, alternatif, parfois électro. Les bars sur les toits des ruelles derrière le port sont les meilleurs spots. Demander sur place quel bar joue ce soir.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J2 · Explorer les ruelles du port</div>
+    </div>
+  </div>
+</div>
+      <div class="gem-p">Gratuit · En plein cœur du village</div>
+      <div class="gem-d">Petit théâtre grec du 2e siècle av. J.-C. posé directement dans les rochers au-dessus du village — vue sur la mer et sur l'île grecque de Kastellorizo. Quasi aucune signalisation, on le tombe dessus en se promenant. Gratuit et désert.</div>
+      <div class="gem-when gem-todo">À prévoir · En balade dans Kaş · 15 min</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kastellorizo (Meis) — île grecque</div>
+      <div class="gem-p">Ferry ~15–20€ A/R · 30 min</div>
+      <div class="gem-d">L'île grecque la plus proche de Turquie — à 5 km seulement de Kaş. Maisons colorées néoclassiques, port minuscule, tavernes de poisson. Carte d'identité UE suffit. Un déjeuner en Grèce depuis la Turquie — expérience unique.</div>
+      <div class="gem-when gem-todo">À prévoir · Départ matinal depuis le port de Kaş</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Üçağız & village de Kaleköy</div>
+      <div class="gem-p">Dolmuş ~3€ + bateau ~5€ · 30 km</div>
+      <div class="gem-d">Village lacustre accessible en bateau depuis Üçağız — les maisons sont construites au milieu des ruines lyciennes submergées. Pas de route, uniquement accessible en bateau. Ambiance hors du temps totale. Le site de Kekova vu depuis la terre.</div>
+      <div class="gem-when gem-todo">À prévoir · Dolmuş Kaş → Üçağız · Demi-journée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Plongée à Kaş</div>
+      <div class="gem-p">~35–50€ la plongée · Plusieurs clubs</div>
+      <div class="gem-d">Kaş est réputée pour la plongée — visibilité de 20 à 30m, épaves d'avions et de bateaux, amphores antiques au fond. Plusieurs clubs certifiés PADI sur le port. Baptême de plongée possible sans expérience.</div>
+      <div class="gem-when gem-todo">À prévoir · Matin J1 ou J2 avant Myra</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tombes lyciennes dans les rues de Kaş</div>
+      <div class="gem-p">Gratuit · Dans les ruelles</div>
+      <div class="gem-d">Des sarcophages lyciens du 4e siècle av. J.-C. sont posés directement dans les ruelles et les jardins de Kaş — certains servent de décorations de jardin chez les habitants. La ville antique est littéralement sous les pieds.</div>
+      <div class="gem-when gem-todo">À prévoir · En se promenant dans Kaş · Partout</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Köyceğiz + lac thermal</div>
+      <div class="gem-p">~10€ bain thermal · 80 km</div>
+      <div class="gem-d">Lac naturel relié à la mer par le delta de Dalyan — des sources thermales chaudes (40°C) sortent directement du lac. Baignade thermale dans un lac naturel. Combinable avec Dalyan et les tortues.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion longue · Journée depuis Kaş</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kalkan — village blanc perché</div>
+      <div class="gem-p">Dolmuş ~2€ · 30 min de Kaş</div>
+      <div class="gem-d">Village ottoman blanc à flanc de colline avec des maisons en pierre rénovées en villas et hôtels de charme. Vue plongeante sur la mer depuis les terrasses. Plus huppé et calme que Kaş. Bon spot pour un dîner de poisson.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J2</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Port de Kaş au lever du soleil</div>
+      <div class="gem-p">Gratuit · 6h du matin</div>
+      <div class="gem-d">Le port de Kaş au lever du soleil avec les gulets endormis, les pêcheurs qui préparent leurs filets et Kastellorizo dans la brume de l'aube — l'une des images les plus belles de la côte lycienne. Personne debout à 6h.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel matin</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Patara — tortues et ruines</div>
+      <div class="gem-p">~5€ · Dolmuş depuis Kaş · 45 min</div>
+      <div class="gem-d">18 km de plage sauvage protégée (lieu de ponte des tortues Caretta caretta) + site archéologique lycien avec un amphithéâtre, un arc de triomphe et une avenue à colonnes. Idéalement depuis Kaş — plus proche que depuis Fethiye.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion journée depuis Kaş</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Çukurbağ yarımadası (presqu'île)</div>
+      <div class="gem-p">Gratuit · À pied depuis Kaş</div>
+      <div class="gem-d">Presqu'île qui s'avance dans la mer juste à côté de Kaş — sentier côtier de 4 km avec des criques sauvages accessibles uniquement à pied. Eau cristalline, aucune infrastructure, aucun touriste. Le paradis à 20 min à pied du centre.</div>
+      <div class="gem-when gem-todo">À prévoir · Après-midi J1 après l'arrivée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Restaurant de toit-terrasse à Kaş</div>
+      <div class="gem-p">~15–20€ dîner · Vue sur Kastellorizo</div>
+      <div class="gem-d">Plusieurs restaurants avec terrasses sur les toits offrent une vue directe sur l'île grecque de Kastellorizo illuminée la nuit. Le coucher du soleil depuis un toit avec un verre de Efes Bira (bière turque) en regardant la Grèce — moment inoubliable.</div>
+      <div class="gem-when gem-todo">À prévoir · Dîner J1 à l'arrivée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Antioche sur le Cragos — ruines oubliées</div>
+      <div class="gem-p">Gratuit · Accessible à pied depuis Kaş</div>
+      <div class="gem-d">Ruines d'une cité hellénistique dans les collines derrière Kaş — remparts, tours, citernes creusées dans le roc. Complètement ignorée des touristes. Accessible par un sentier depuis le village. Prévoir 2h et de l'eau.</div>
+      <div class="gem-when gem-todo">À prévoir · Tôt le matin J1 ou J2</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PIÈGES -->
+<div id="pie" class="spg">
+  <div class="wb"><div class="wbt">⛵ Excursion bateau Kekova vs kayak</div><p>Les excursions en tekne (bateau de bois) à fond de verre vers Kekova sont beaucoup moins chères (~15–20€) mais infiniment moins immersives. On ne voit les ruines que depuis le pont du bateau, par un hublot. Le kayak (~55–65€) permet de pagayer directement au-dessus des ruines à quelques centimètres. La différence d'expérience justifie largement la différence de prix.</p></div>
+  <div class="wb"><div class="wbt">🌊 Nager dans la zone protégée de Kekova</div><p>Kekova est une zone naturelle protégée (doğal sit alanı). Il est interdit de plonger (dalmak) ou de prendre des objets dans la zone des ruines. Les excursions officielles respectent ces règles — éviter les opérateurs qui proposent la "plongée sur les ruines".</p></div>
+  <div class="wb"><div class="wbt">🚌 Horaires de bus vers Antalya</div><p>Vérifier les horaires de bus Kaş → Antalya la veille sur obilet.com — certains bus partent très tôt le matin. Prévoir de quitter Myra/Demre assez tôt pour ne pas rater le dernier bus convenable vers Antalya.</p></div>
+  <div class="wb"><div class="wbt">💶 Myra + Église Saint-Nicolas = deux billets séparés</div><p>Myra (400 TL) et l'Église Saint-Nicolas (400 TL) sont deux sites distincts avec deux billets d'entrée séparés. Les deux valent le détour mais prévoir ~22€ total pour les deux sites. La visite complète des deux prend ~3h.</p></div>
+</div>
+
+<!-- PRATIQUE -->
+<div id="pra" class="spg">
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Tarifs & activités — confirmés 2026</div>
+    <div class="fr"><div><div class="fn">Kayak de mer Kekova — Journée complète</div><div class="fsb">Transfert depuis Kaş + guide + déjeuner + équipement · Sea Kayak Türkiye</div></div><span class="fp">~55–65€/pers</span></div>
+    <div class="fr"><div><div class="fn">Myra (Mire antique) — Nécropole + Théâtre</div><div class="fsb">400 TL / ~11€ · Ouvert 9h–19h30 en été</div></div><span class="fp">~11€/pers</span></div>
+    <div class="fr"><div><div class="fn">Aziz Nikola Kilisesi (Église Saint-Nicolas)</div><div class="fsb">400 TL / ~11€ · Demre centre · Billet séparé</div></div><span class="fp">~11€/pers</span></div>
+    <div class="fr"><div><div class="fn">Patara — Plage sauvage + ruines lyciennes</div><div class="fsb">200 TL / ~5€ · 45 min de Kaş en dolmuş</div></div><span class="fp">~5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Ferry Kaş → Kastellorizo (Meis, Grèce)</div><div class="fsb">Quotidien · Carte d'identité UE suffit</div></div><span class="fp">~15–20€ A/R</span></div>
+    <div class="fr"><div><div class="fn">Baptême de plongée (tüplü dalış) à Kaş</div><div class="fsb">Nombreux centres dans le village · Eaux très claires</div></div><span class="fp">~40–60€</span></div>
+
+    <div class="slbl">Transports locaux depuis Kaş</div>
+    <div class="fr"><div><div class="fn">Dolmuş Kaş → Demre (pour Myra)</div><div class="fsb">Depuis Kaş Otogarı · Fréquent · ~40 min</div></div><span class="fp">~3€</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Kaş → Patara village</div><div class="fsb">Depuis Kaş Otogarı · ~45 min</div></div><span class="fp">~4€</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Kaş → Kalkan</div><div class="fsb">~30 min vers l'ouest</div></div><span class="fp">~3€</span></div>
+    <div class="fr"><div><div class="fn">Bus Kaş → Antalya (transit sortant)</div><div class="fsb">Kamil Koç · ~4h · Réserver sur obilet.com</div></div><span class="fp">~10€/pers</span></div>
+
+    <div class="slbl">Applis & liens</div>
+    <div class="ar"><div class="ai2">🛶</div><div><div class="an"><a href="https://www.seakayakturkiye.com/fr" target="_blank">Sea Kayak Türkiye</a></div><div class="ad">Opérateur référence kayak Kekova · Réservation en ligne · Transfert Kaş inclus</div></div><span class="ab2">Essentiel</span></div>
+    <div class="ar"><div class="ai2">🚌</div><div><div class="an"><a href="https://www.obilet.com" target="_blank">obilet.com</a></div><div class="ad">Bus Kaş → Antalya · Vérifier horaires et réserver la veille</div></div><span class="ab2">Essentiel</span></div>
+    <div class="ar"><div class="ai2">🗺</div><div><div class="an">Google Maps hors-ligne</div><div class="ad">Télécharger région Kaş/Antalya · Utile pour Myra et Patara</div></div><span class="ab2">Essentiel</span></div>
+  </div>
+
+  <div class="lgrid">
+    <a href="https://www.seakayakturkiye.com/fr" target="_blank" class="lcard"><span class="lico">🛶</span><div><div class="lnm">Sea Kayak Türkiye</div><div class="lul">Kayak Kekova</div></div></a>
+    <a href="https://demre.net/myra" target="_blank" class="lcard"><span class="lico">🏛</span><div><div class="lnm">Myra guide 2026</div><div class="lul">demre.net</div></div></a>
+    <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">Bus Kaş → Antalya</div><div class="lul">obilet.com</div></div></a>
+    <a href="https://www.booking.com/city/tr/kas.fr.html" target="_blank" class="lcard"><span class="lico">🏨</span><div><div class="lnm">Hébergements Kaş</div><div class="lul">booking.com</div></div></a>
+    <a href="https://www.lonelyplanet.com/turkey/kas" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Lonely Planet Kaş</div><div class="lul">lonelyplanet.com</div></div></a>
+    <a href="https://www.routard.com/guide_voyage_lieu/11296-kas.htm" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Routard Kaş</div><div class="lul">routard.com</div></div></a>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+function showSub(id,btn){
+  document.querySelectorAll('.spg').forEach(p=>p.classList.remove('vis'));
+  document.querySelectorAll('.snb').forEach(b=>b.classList.remove('on'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('vis');
+  if(btn)btn.classList.add('on');
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.snb');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>

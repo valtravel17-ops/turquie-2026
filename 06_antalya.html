@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antalya — Guide complet · 11–17 août</title>
+<style>
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr p{font-size:13px;color:var(--t2)}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
+.pill.gn{background:var(--gbg);border-color:var(--gn2);color:var(--gt)}
+.pill.bl{background:var(--bbg);border-color:var(--bl);color:var(--bt)}
+.pill.rd{background:var(--rbg);border-color:var(--rd);color:var(--rt)}
+.pill.pu{background:var(--pubg);border-color:var(--pu);color:var(--put)}
+.pill.go{background:var(--gobg);border-color:var(--go);color:var(--got)}
+
+.transit-in{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
+.ti-title{font-size:12px;font-weight:600;color:var(--put);margin-bottom:8px}
+.ti-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.ti-row{background:rgba(255,255,255,.7);border-radius:8px;padding:6px 10px;font-size:11px}
+.ti-l{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.ti-v{color:var(--put);font-weight:500}
+
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+
+.dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
+.dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.dh .ds{font-size:12px;color:var(--t2);margin-bottom:8px}
+.dgeo{display:block;width:fit-content;background:var(--bbg);border:1px solid var(--bl);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--bt);margin-bottom:5px}
+.dbudg{font-size:12px;color:var(--t2);margin-top:5px}
+.dbudg strong{color:var(--gn)}
+.dtot{display:flex;justify-content:space-between;align-items:center;background:var(--s1);border-radius:var(--r);padding:8px 13px;margin-top:10px;font-size:12px;color:var(--t2)}
+.dtot strong{color:var(--tx)}
+
+.blk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;margin-bottom:6px}
+.bh{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.tm{background:var(--s1);border:1px solid var(--bd2);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--t2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.bt2{font-size:13px;font-weight:500;color:var(--tx);flex:1}
+.ptag{font-size:11px;border-radius:20px;padding:2px 9px;white-space:nowrap;font-weight:500;flex-shrink:0}
+.free{background:#dcfce7;color:#155724}
+.paid{background:var(--rbg);color:var(--rt)}
+.cheap{background:var(--bbg);color:var(--bt)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.th{background:var(--pubg);color:var(--put);border-color:var(--pu)}
+.tn{background:var(--gbg);color:var(--gt);border-color:var(--gn2)}
+.tb{background:var(--bbg);color:var(--bt);border-color:var(--bl)}
+.ta{background:var(--gobg);color:var(--got);border-color:#c8a020}
+.bdesc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:5px}
+.btip{font-size:11px;color:var(--t3);border-left:2px solid var(--gn2);padding-left:8px;margin-top:6px;line-height:1.5}
+.bln{font-size:11px;margin-top:5px}
+
+.excursion-box{background:var(--gobg);border:1px solid #c8a020;border-radius:var(--r);padding:11px 14px;margin-bottom:8px}
+.exc-title{font-size:12px;font-weight:600;color:var(--got);margin-bottom:8px}
+.exc-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.07)}
+.exc-row:last-child{border-bottom:none}
+.exc-left{flex:1}
+.exc-name{font-size:12px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.exc-detail{font-size:11px;color:var(--t2);line-height:1.5}
+.exc-right{text-align:right;flex-shrink:0}
+.exc-dist{background:var(--s1);border-radius:20px;padding:2px 9px;font-size:10px;color:var(--t2);display:block;margin-bottom:3px;white-space:nowrap}
+.exc-price{font-size:10px;color:var(--gn);font-weight:600;white-space:nowrap}
+
+.ts{display:flex;align-items:flex-start;gap:8px;padding:6px 0 6px 8px;margin:4px 0;border-left:2px dashed var(--bd2)}
+.tsi{width:24px;height:24px;border-radius:50%;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tst{flex:1;font-size:11px;color:var(--t2)}
+.tsm{color:var(--tx);font-size:12px;font-weight:500}
+.tsd{background:var(--bbg);color:var(--bt);border-radius:20px;padding:1px 7px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tsp{background:var(--gbg);color:var(--gt);border-radius:20px;padding:1px 7px;font-size:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+.depart{background:var(--rbg);border:1px solid var(--rd);border-radius:var(--r);padding:13px 15px;margin-top:14px}
+.depart-t{font-size:13px;font-weight:600;color:var(--rt);margin-bottom:10px}
+.depart-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:6px}
+.depart-r{background:rgba(255,255,255,.75);border-radius:8px;padding:7px 10px;font-size:11px}
+.depart-l{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.depart-v{color:var(--rt);font-weight:500}
+
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+.gems{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gem{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.gem-t{font-size:12px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.gem-p{font-size:11px;color:var(--gn);font-weight:500;margin-bottom:4px}
+.gem-d{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.gem-when{font-size:10px;padding:2px 9px;border-radius:20px;display:inline-block;font-weight:500}
+.gem-planned{background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd}
+.gem-todo{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+
+.wb{background:var(--rbg);border:1px solid #cc6040;border-radius:var(--r);padding:10px 13px;margin-bottom:7px}
+.wbt{font-size:12px;font-weight:600;color:var(--rt);margin-bottom:3px}
+.wb p{font-size:12px;color:var(--rt)}
+
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+.ar{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.ar:last-child{border-bottom:none}
+.ai2{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--s1);border:1px solid var(--bd)}
+.an{font-size:13px;font-weight:500;color:var(--tx)}
+.an a{color:var(--bl);border-bottom:1px dotted var(--bl)}
+.ad{font-size:11px;color:var(--t2);margin-top:1px}
+.ab2{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--gbg);color:var(--gt);white-space:nowrap;flex-shrink:0}
+
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
+</style>
+</head>
+<body>
+
+<!-- PROMPT -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 6/6 : Antalya (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 06_antalya.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Antalya (11–17 août, 6 nuits)</strong> du voyage Turquie 2026, couple, transport en commun uniquement. C'est la dernière étape du voyage.<br><br>
+      <strong>Arrivée :</strong> Bus Kaş → Antalya · ~4h · ~10€/pers · Kamil Koç · Soirée du 11 août<br><br>
+      <strong>Base logistique :</strong> Loger dans Kaleiçi (vieille ville ottomane dans les remparts romains) — quartier idéal, tout à pied, authentique. Éviter les hôtels des zones balnéaires (Konyaaltı, Lara) — trop loin de tout.<br><br>
+      <strong>Activités clés :</strong> Rafting Köprülü Kanyonu (meilleur spot de Turquie, ~37€/pers tout compris, transfert depuis Antalya inclus) · Aspendos/Perge/Side (excursion journée ~70€/pers) · Termessos (cité perchée 1 050m, bus 506 depuis Antalya) · Kaleiçi (vieille ville ottomane, gratuit) · Plages de Konyaaltı et Lara<br><br>
+      <strong>Départ vol :</strong> AYT (aéroport Antalya) le 17 août · À l'aéroport à 5h30 · Tramway AntRay T1 depuis Kaleiçi (~25 min, ~1€) ou taksici (taxi) BiTaksi (~8–10€) si avant 5h du matin
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>🌊 Antalya</h1>
+  <p>11–17 août · 6 nuits · Étape 6/6 — Dernière étape · Vol retour le 17 août</p>
+  <div class="hdr-meta">
+    <span class="pill rd">34–40°C · Très chaud</span>
+    <span class="pill pu">Kaleiçi (vieille ville)</span>
+    <span class="pill gn">Rafting Köprülü ⭐⭐</span>
+    <span class="pill bl">Aspendos · Termessos</span>
+    <span class="pill go">Côte turquoise · Plages</span>
+  </div>
+</div>
+
+<!-- TRANSIT ENTRANT -->
+<div class="transit-in">
+  <div class="ti-title">🚌 Transit entrant — Kaş → Antalya · Soirée du 11 août</div>
+  <div class="ti-grid">
+    <div class="ti-row"><div class="ti-l">Compagnie</div><div class="ti-v">Kamil Koç</div></div>
+    <div class="ti-row"><div class="ti-l">Départ</div><div class="ti-v">Kaş Otogarı (gare routière) · 14h–16h</div></div>
+    <div class="ti-row"><div class="ti-l">Arrivée</div><div class="ti-v">Antalya Otogarı · soirée du 11 août</div></div>
+    <div class="ti-row"><div class="ti-l">Durée / Prix</div><div class="ti-v">~4h · ~10€/pers</div></div>
+    <div class="ti-row"><div class="ti-l">Hébergement</div><div class="ti-v">Dans Kaleiçi (vieille ville) · <a href="https://www.booking.com/district/tr/antalya/kaleici.fr.html" target="_blank">Booking Kaleiçi</a></div></div>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<div class="snav">
+  <button class="snb on" onclick="showSub('j1',this)">J1 · 12 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · 13 août</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · 14 août ⭐⭐⭐</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · 15 août</button>
+  <button class="snb" onclick="showSub('j5',this)">J5 · 16 août</button>
+  <button class="snb" onclick="showSub('j6',this)">J6 · 17 août · Départ</button>
+  <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
+  <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
+  <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
+  <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
+</div>
+
+<div class="cnt">
+
+<!-- J1 -->
+<div id="j1" class="spg vis">
+  <div class="dh">
+    <h2>Jour 1 — 12 août · Kaleiçi — La vieille ville ottomane</h2>
+    <div class="ds">Arrivée la veille en soirée · Journée tranquille de découverte du quartier</div>
+    <div class="dgeo">📍 Tout à pied dans Kaleiçi · Plage Mermerli accessible depuis les remparts</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~10–20€</strong></div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Kaleiçi — Vieille ville ottomane dans les remparts romains</span><span class="ptag free">Gratuit</span></div>
+    <div class="tags"><span class="tag th">Remparts romains · Époque hellénistique</span><span class="tag tn">Ruelles ottomanes · Maisons restaurées</span><span class="tag">Tout à pied</span></div>
+    <div class="bdesc">Kaleiçi (littéralement "intérieur du château") est la vieille ville d'Antalya, entourée de remparts (surlar) romains du 2e siècle. Ruelles pavées (taş sokak) sinueuses, maisons ottomanes restaurées en hôtels boutique et restaurants, Kesik Minare (Minaret Tronqué — ancienne cathédrale byzantine devenue mosquée), Hadrian Kapısı (Arc de Triomphe de l'Empereurtrajan Hadrien, intact depuis 130 ap. J.-C.), İvan Mermerli (plage de galets accessible via un escalier dans les remparts), vieux port (liman) de plaisance.<br><br>Se promener sans plan précis dans les ruelles — c'est le meilleur moyen de découvrir le quartier.</div>
+    <div class="btip">💡 L'Arc d'Hadrien (Hadrien Kapısı) est l'un des arcs de triomphe romains les mieux conservés au monde — et il est en plein milieu d'une rue, complètement gratuit. Construit en l'honneur de la visite de l'empereur Hadrien en 130 ap. J.-C.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Plage Mermerli ou Konyaaltı + musée archéologique</span><span class="ptag cheap">Musée ~5€ · Plage gratuite</span></div>
+    <div class="bdesc">Deux options pour l'après-midi : la plage de Mermerli (galets, petite, dans les remparts, ambiance locale) ou la grande plage de sable de Konyaaltı (tramway AntRay T1 depuis Kaleiçi, gratuite). L'Antalya Arkeoloji Müzesi (Musée archéologique d'Antalya) est l'un des meilleurs de Turquie — statues, sarcophages, mosaïques des cités lyciennes et pamphyliennes. À 3 km de Kaleiçi (tramway).</div>
+    <div class="btip">💡 Le musée archéologique d'Antalya vaut vraiment le détour si vous aimez l'antiquité — toutes les trouvailles de Perge, Aspendos, Termessos, Side y sont regroupées.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~10–20€</strong></div>
+</div>
+
+<!-- J2 -->
+<div id="j2" class="spg">
+  <div class="dh">
+    <h2>Jour 2 — 13 août · Aspendos · Perge · Side</h2>
+    <div class="ds">3 sites antiques en une journée · Tour organisé recommandé · Journée complète</div>
+    <div class="dgeo">📍 Tour organisé depuis Antalya · Transfert inclus · Retour en soirée</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~70€</strong> (tour avec entrées et déjeuner)</div>
+  </div>
+
+  <div class="al info">
+    <div class="ali">🏛</div>
+    <div class="alb"><strong>Tour organisé vivement recommandé</strong> — Aspendos, Perge et Side sont difficiles à combiner sans voiture en une journée. Les tours organisés depuis Antalya (~70€/pers, entrées + déjeuner inclus) sont la solution idéale. Départ ~8h, retour ~18h.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Perge — Capitale de la Pamphylie (région antique)</span><span class="ptag paid">Inclus dans le tour</span></div>
+    <div class="tags"><span class="tag th">Cité gréco-romaine · Capitale de la Pamphylie</span><span class="tag">Stade 12 000 places · Remparts hellénistiques</span></div>
+    <div class="bdesc">Perge (Perga) était la capitale de la Pamphylie (région côtière antique entre Lycie et Cilicie). Stade (stadyum) de 12 000 places très bien conservé, porte monumentale hellénistique (propylon), rues à colonnades (sütunlu cadde), agora (place publique), thermes romains, acropole. Saint Paul y prêcha lors de son premier voyage missionnaire en 46 ap. J.-C.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">11h</span><span class="bt2">Aspendos — Le théâtre romain le mieux conservé au monde</span><span class="ptag paid">Inclus dans le tour</span></div>
+    <div class="tags"><span class="tag th">Théâtre romain 15 000 places · 2e siècle ap. J.-C.</span><span class="tag tn">Le mieux conservé au monde · Encore utilisé</span></div>
+    <div class="bdesc">Le tiyatro (théâtre) d'Aspendos est universellement reconnu comme le théâtre romain le mieux conservé au monde. Construit au 2e siècle ap. J.-C. sous l'empereur Marc Aurèle, 15 000 places, acoustique parfaite — encore utilisé aujourd'hui pour des concerts et le festival international d'opéra et ballet d'Antalya (juillet–août). La façade scénique (scaenae frons) à 3 étages est quasiment intacte. Spectaculaire.</div>
+    <div class="btip">💡 Si un spectacle ou concert a lieu à Aspendos pendant votre séjour (probable en août — festival), c'est l'une des expériences les plus mémorables possibles en Turquie. Vérifier le programme.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Side — Port antique + Temple d'Apollon face à la mer</span><span class="ptag paid">Inclus dans le tour</span></div>
+    <div class="tags"><span class="tag th">Cité portuaire antique · Temple d'Apollon face à la mer</span><span class="tag">Plage · Station balnéaire animée</span></div>
+    <div class="bdesc">Side (littéralement "grenade" en langue anatolienne antique) est une ancienne cité portuaire (liman kenti) de Pamphylie. Le Apollon Tapınağı (Temple d'Apollon, 2e siècle ap. J.-C.) avec ses colonnes restantes au bord de la Méditerranée au coucher du soleil est l'une des images les plus iconiques de Turquie. Grand tiyatro (théâtre) de 15 000 places, musée archéologique. Side est aussi une station balnéaire animée — baignade sur les plages de sable après la visite.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~70€ (tour · entrées + déjeuner inclus)</strong></div>
+</div>
+
+<!-- J3 -->
+<div id="j3" class="spg">
+  <div class="dh">
+    <h2>Jour 3 — 14 août · Rafting Köprülü Kanyonu ⭐⭐⭐</h2>
+    <div class="ds">L'expérience canoë/rafting ultime du voyage · Journée entière · Transfert inclus depuis Antalya</div>
+    <div class="dgeo">📍 Prise en charge à l'hôtel à Kaleiçi · ~1h30 de transfert · Köprülü Kanyon Milli Parkı (parc national)</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~37€</strong> tout compris</div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">🚣</div>
+    <div class="alb"><strong>Expérience canoë/rafting n°3 et meilleure du voyage</strong> — Köprülü Kanyonu est le meilleur spot de rafting de Turquie. Rapides de classe II–III dans des gorges calcaires spectaculaires. Tarif 2026 confirmé : ~1 400 TL (~37€/pers) tout compris — parcours 14 km + repas + équipement + transferts locaux + assurance.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Rafting Köprülü Kanyonu — Journée complète</span><span class="ptag paid">~37€/pers tout compris</span></div>
+    <div class="tags"><span class="tag tn">Meilleur rafting de Turquie</span><span class="tag th">Gorges calcaires · Köprüçay rivière</span><span class="tag">Rapides classe II–III · 14 km</span><span class="tag">Accessible débutants</span></div>
+    <div class="bdesc">Le Köprüçay (rivière Eurymédon antique) traverse le Köprülü Kanyon Milli Parkı (Parc National de Köprülü Canyon) dans des gorges calcaires aux parois vertigineuses. Parcours de 14 km de rafting avec rapides de classe II et III — accessibles aux débutants complets, sensations garanties.<br><br>L'excursion depuis Antalya inclut : prise en charge à l'hôtel à Kaleiçi (~1h30 de trajet), équipement complet (can yeleği = gilet de sauvetage, kask = casque, kürek = pagaie), guide accompagnateur dans chaque embarcation, öğle yemeği (déjeuner chaud) au bord de la rivière sous les pins, transfert retour à Antalya en fin d'après-midi.<br><br>Dans le parc : ponts romains antiques enjambant le canyon, dont le Oluk Köprüsü (Pont du Gouttière, époque romaine), village antique de Selge (Zerk) sur les hauteurs.</div>
+    <div class="btip">💡 Réserver la veille par téléphone ou WhatsApp avec un opérateur local — la prise en charge se fait à l'hôtel. Emporter : maillot de bain, serviette, vêtements de rechange, sandales fermées ou chaussures aquatiques. Tout le reste est fourni.</div>
+    <div class="bln"><a href="https://www.novaraft.com/" target="_blank">novaraft.com</a> · <a href="https://www.raftingo.com/" target="_blank">raftingo.com</a> — opérateurs recommandés</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~37€ (tout compris · prix 2026 confirmé)</strong></div>
+</div>
+
+<!-- J4 -->
+<div id="j4" class="spg">
+  <div class="dh">
+    <h2>Jour 4 — 15 août · Termessos — La cité perchée</h2>
+    <div class="ds">Cité antique à 1 050m dans la montagne · Randonnée · Accessible en bus depuis Antalya</div>
+    <div class="dgeo">📍 Bus 506 depuis Antalya centre → arrêt Termessos + ~9 km de montée (taxi ou marche) · ~45 min au total</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong></div>
+  </div>
+
+  <div class="al warn">
+    <div class="ali">🥾</div>
+    <div class="alb"><strong>Termessos = randonnée physique</strong> — Le site est à 1 050m d'altitude dans les Toros Dağları (montagnes du Taurus). Depuis l'entrée du parc national, 9 km de montée (route asphaltée), puis marche 35–45 min jusqu'au théâtre. Chaussures de marche (yürüyüş ayakkabısı) indispensables. Emporter 2L d'eau minimum. Y aller tôt le matin avant la chaleur.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Termessos — Cité lycienne perchée à 1 050m dans les pins</span><span class="ptag paid">Entrée parc national · ~3–5€</span></div>
+    <div class="tags"><span class="tag th">Cité lycienne · Jamais conquise par Alexandre le Grand</span><span class="tag">1 050m d'altitude · Forêt de cèdres</span><span class="tag tn">Site quasi-désert · Atmosphère unique</span></div>
+    <div class="bdesc">Termessos est l'une des cités antiques les plus impressionnantes et les moins connues de Turquie. Perchée à 1 050m dans les Toros Dağları (montagnes du Taurus), elle est la seule cité que Alexandre le Grand n'a jamais réussi à conquérir — il renonça après avoir vu les défenses naturelles.<br><br>À voir : Büyük Tiyatro (Grand Théâtre, 4 000 places, vue à 360° sur les montagnes et la mer Méditerranée au loin), Kral mezarları (tombeaux royaux), remparts cyclopéens, gymnase (gymnasion), agora. Site entièrement envahi par la végétation — ruines entre les cèdres, atmosphère mystérieuse et hors du temps. Quasi-désert comparé à Aspendos ou Éphèse.</div>
+    <div class="btip">💡 L'accès en transport en commun : bus 506 depuis le centre d'Antalya jusqu'à la D685 (route de Termessos), puis 9 km de montée. À pied c'est long (~2h) mais possible sous les pins. En taxi depuis l'entrée du parc : négocier ~150–200 TL aller-retour. Certains taxis attendent sur place.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Retour Antalya · Plage Konyaaltı · Ballade port</span><span class="ptag free">Gratuit</span></div>
+    <div class="bdesc">Retour à Antalya après la randonnée. Baignade sur la plage de Konyaaltı (galets, eau très claire, tramway T1 direct depuis Kaleiçi). Soirée tranquille dans les ruelles de Kaleiçi — avant-dernière soirée du voyage.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15–20€</strong></div>
+</div>
+
+<!-- J5 -->
+<div id="j5" class="spg">
+  <div class="dh">
+    <h2>Jour 5 — 16 août · Land of Legends + Dîner d'adieu</h2>
+    <div class="ds">Parc aquatique et d'attractions · Journée détente et sensations · Dîner d'adieu le soir · Préparer les bagages</div>
+    <div class="dgeo">📍 Land of Legends · Belek · ~40 min depuis Antalya · Navette ou dolmuş</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~60–90€</strong></div>
+  </div>
+
+  <div class="al warn">
+    <div class="ali">✈️</div>
+    <div class="alb"><strong>Vol demain matin très tôt — préparer les bagages ce soir</strong> — Départ AYT le 17 août. Il faut être à l'aéroport à 5h30. Préparer tous les bagages et régler l'hébergement après le dîner. Mettre le réveil. Ne pas rentrer trop tard du parc.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Land of Legends Theme Park — Belek</span><span class="ptag paid">~50–80€/pers selon formule</span></div>
+    <div class="tags"><span class="tag tn">Parc aquatique + attractions · Belek</span><span class="tag">40 min d'Antalya · Navette ou dolmuş</span><span class="tag tb">Eau · Toboggans · Manèges</span></div>
+    <div class="bdesc">Land of Legends (Efsaneler Diyarı) est le plus grand parc de loisirs de Turquie, situé à Belek (~40 km à l'est d'Antalya). Deux zones principales :<br><br>• Su parkı (parc aquatique) : toboggans géants, rivière lente, piscines à vagues, zones de baignade. Idéal pour une journée de détente après 5 jours d'activités intenses.<br><br>• Tema parkı (parc à thème) : manèges, attractions, spectacles. Ambiance festive.<br><br>Formules différentes selon les zones — vérifier les tarifs actuels sur le site officiel avant d'y aller.</div>
+    <div class="btip">💡 Y aller dès l'ouverture (9h) pour profiter des toboggans avant les files d'attente. Emporter : maillots de bain, serviettes, crème solaire. En août tout est vendu plus cher sur place — apporter snacks et eau. Navette depuis certains hôtels de Kaleiçi possible — se renseigner à la réception.</div>
+    <div class="bln"><a href="https://www.landoflegends.com.tr" target="_blank">landoflegends.com.tr</a> — tarifs et horaires officiels</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">Soir</span><span class="bt2">Retour Kaleiçi · Dîner d'adieu · Bagages</span><span class="ptag cheap">Dîner ~20–30€/pers</span></div>
+    <div class="bdesc">Retour à Antalya en fin d'après-midi. Dernier dîner du voyage dans un balık restoranı (restaurant de poisson) du vieux port de Kaleiçi — levrek (loup de mer), çipura (dorade), baklava (dessert au miel et pistaches) en dessert. Préparer les bagages après le dîner. Coucher tôt — réveil à 4h30 demain matin.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~50–80€ parc + ~25€ dîner</strong></div>
+</div>
+
+<!-- J6 / DÉPART -->
+<div id="j6" class="spg">
+  <div class="dh">
+    <h2>Jour 6 — 17 août · Départ AYT · Vol retour</h2>
+    <div class="ds">Réveil 4h30 · À l'aéroport à 5h30 · Fin du voyage</div>
+    <div class="dgeo">📍 Kaleiçi → Aéroport AYT · Tramway AntRay T1 (si ouvert) ou taxi BiTaksi</div>
+    <div class="dbudg"></div>
+  </div>
+
+  <div class="al danger">
+    <div class="ali">⏰</div>
+    <div class="alb"><strong>Réveil 4h30 — Être à AYT à 5h30 minimum</strong> — Vérifier l'heure d'ouverture du tramway AntRay T1 la veille. Si le premier tramway part trop tard, prendre un taksici (taxi) via BiTaksi — ~8–10€ depuis Kaleiçi vers l'aéroport (~20 min à cette heure).</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">4h30</span><span class="bt2">Réveil · Bagages · Départ vers l'aéroport</span></div>
+    <div class="bdesc">Deux options pour l'aéroport AYT (Antalya Havalimanı) depuis Kaleiçi :<br><br>• Tramway AntRay T1 : depuis l'arrêt Kaleiçi/İsmetpaşa jusqu'à l'arrêt Havalimanı (aéroport) · ~25 min · ~1€ · Vérifier l'heure du premier départ la veille<br><br>• Taksici (taxi) via BiTaksi : ~8–10€ · ~20 min · Option si avant 5h ou si tramway pas encore en service à cette heure</div>
+    <div class="btip">💡 Vérifier la veille au soir l'heure exacte du premier AntRay T1 — en août les horaires peuvent commencer vers 5h. Si incertitude, réserver le taksici (taxi) la veille via BiTaksi pour être sûr d'arriver à l'heure.</div>
+  </div>
+
+  <div class="depart">
+    <div class="depart-t">✈️ Vol retour — 17 août 2026 · Aéroport AYT Antalya</div>
+    <div class="depart-g">
+      <div class="depart-r"><div class="depart-l">À l'aéroport</div><div class="depart-v">5h30 minimum</div></div>
+      <div class="depart-r"><div class="depart-l">Transport option 1</div><div class="depart-v">Tramway AntRay T1 · ~25 min · ~1€</div></div>
+      <div class="depart-r"><div class="depart-l">Transport option 2</div><div class="depart-v">Taksici (taxi) BiTaksi · ~8–10€ · ~20 min</div></div>
+      <div class="depart-r"><div class="depart-l">Réveil conseillé</div><div class="depart-v">4h30</div></div>
+      <div class="depart-r"><div class="depart-l">Bagages préparés</div><div class="depart-v">La veille au soir (soir du 16 août)</div></div>
+      <div class="depart-r"><div class="depart-l">Note CPAP</div><div class="depart-v">Appareil médical (apnée du sommeil) en bagage cabine · Lettre médicale recommandée</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXCURSIONS ±1H -->
+<div id="excursions" class="spg">
+  <div class="al info">
+    <div class="ali">🗺</div>
+    <div class="alb"><strong>Excursions accessibles depuis Antalya en transport en commun</strong> — Antalya est une grande ville avec tramway (AntRay), dolmuş et bus locaux. La plupart des sites antiques sont accessibles en transport + taxi depuis la route principale.</div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 20–40 min depuis Kaleiçi (tramway ou dolmuş)</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Plage Konyaaltı (galets · eau claire)</div>
+        <div class="exc-detail">Tramway AntRay T1 depuis Kaleiçi · Longue plage de galets, eau très claire, infrastructures complètes (douches, café). Très fréquentée mais belle.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">20 min tramway · ~1€</span><span class="exc-price">Gratuite</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Antalya Arkeoloji Müzesi (Musée archéologique)</div>
+        <div class="exc-detail">Tramway T1 · L'un des meilleurs musées archéologiques de Turquie — statues, sarcophages et mosaïques de Perge, Aspendos, Termessos, Side. Climatisé — idéal les jours de grosse chaleur.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">20 min tramway · ~1€</span><span class="exc-price">~5€</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Düden Şelalesi (Chutes du Düden supérieur)</div>
+        <div class="exc-detail">Dolmuş depuis Kaleiçi · Cascade tombant dans un parc verdoyant — fraîcheur bienvenue en août. Très locale, peu de touristes étrangers. Les Düden inférieures tombent directement dans la mer Méditerranée (bateau).</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">30 min dolmuş · ~2€</span><span class="exc-price">Gratuit</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 45–60 min depuis Antalya</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Termessos — Cité perchée à 1 050m</div>
+        <div class="exc-detail">Bus 506 + 9 km de montée · Planifié J4 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">45 min · ~3€ bus</span><span class="exc-price">~3–5€ parc</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Köprülü Kanyonu — Rafting (excursion organisée)</div>
+        <div class="exc-detail">Transfert depuis hôtel inclus · Planifié J2 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h30 transfert inclus</span><span class="exc-price">~37€ tout compris</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Phaselis — Cité antique sur 3 baies</div>
+        <div class="exc-detail">Dolmuş vers Kemer + dolmuş vers Phaselis · Cité romaine sur une presqu'île avec 3 baies turquoise. Ruines dans la pinède directement au bord de la mer. Baignade possible. Moins connu qu'Aspendos mais magnifique.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h · ~5€ dolmuş</span><span class="exc-price">~5€ entrée</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Plage de Lara (plage de sable · plus belle plage d'Antalya)</div>
+        <div class="exc-detail">Dolmuş depuis Kaleiçi vers l'est · Longue plage de sable fin à 12 km d'Antalya. Plus belle que Konyaaltı. Falaises de poudingue (conglomérat) rouges à l'ouest de la plage.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">30 min dolmuş · ~2€</span><span class="exc-price">Gratuite</span></div>
+    </div>
+  </div>
+
+  <div class="excursion-box">
+    <div class="exc-title">⏱ 1h–1h30 depuis Antalya</div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Perge + Aspendos + Side (tour organisé journée)</div>
+        <div class="exc-detail">Tour depuis Antalya · Transfert inclus · Planifié J3 ✓</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">Tour journée inclus</span><span class="exc-price">~70€ tout compris</span></div>
+    </div>
+    <div class="exc-row">
+      <div class="exc-left">
+        <div class="exc-name">Olimpos (Olympos) + Çıralı — Feux éternels de Chimère</div>
+        <div class="exc-detail">Bus depuis Antalya otogar vers Finike/Adrasan · Cité antique romaine enfouie sous les lauriers-roses, plage sauvage de Çıralı, Yanartaş (Feux de la Chimère = flammes naturelles de méthane jaillissant du rocher depuis l'Antiquité). Inoubliable la nuit.</div>
+      </div>
+      <div class="exc-right"><span class="exc-dist">1h30 bus · ~6€</span><span class="exc-price">~3€ Yanartaş</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PÉPITES -->
+<div id="pep" class="spg">
+  <div class="al info" style="margin-bottom:12px">
+    <div class="ali">📅</div>
+    <div class="alb"><strong>Code couleur</strong> — <span style="background:#dbeafe;color:#1e3a5f;border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">Date et heure prévues</span> dans le planning · <span style="background:var(--gobg);border:1px solid #c8a020;color:var(--got);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">À prévoir</span> si pas encore planifié</div>
+  </div>
+  <div class="gems">
+    <div class="gem">
+      <div class="gem-t">Rafting Köprülü Kanyonu</div>
+      <div class="gem-p">~37€/pers tout compris · Journée entière</div>
+      <div class="gem-d">Le meilleur spot de rafting de Turquie. Rapides II–III dans des gorges calcaires, ponts romains antiques, déjeuner au bord de la rivière. L'expérience aquatique ultime du voyage — encore mieux qu'à Saklıkent.</div>
+      <div class="gem-when gem-planned">📅 J2 · 13 août · Journée entière</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Théâtre d'Aspendos — Le mieux conservé au monde</div>
+      <div class="gem-p">Inclus dans le tour ~70€ · 45 km d'Antalya</div>
+      <div class="gem-d">15 000 places, façade scénique à 3 étages intacte depuis le 2e siècle ap. J.-C. Encore utilisé pour des concerts. Si un spectacle a lieu en août — aller absolument. L'un des plus beaux sites antiques du monde.</div>
+      <div class="gem-when gem-planned">📅 J3 · 14 août · Matinée</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Termessos — La cité qui a résisté à Alexandre</div>
+      <div class="gem-p">~3–5€ parc national · Bus 506 depuis Antalya</div>
+      <div class="gem-d">Cité perchée à 1 050m dans les cèdres. Théâtre avec vue sur la mer et les montagnes. Quasi-déserte. La seule cité qu'Alexandre le Grand n'a jamais pu prendre. Atmosphère mystérieuse et hors du temps.</div>
+      <div class="gem-when gem-planned">📅 J4 · 15 août · 9h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Hadrien Kapısı (Arc de Triomphe d'Hadrien)</div>
+      <div class="gem-p">Gratuit · Kaleiçi · 1 min à pied</div>
+      <div class="gem-d">Arc de triomphe romain intact depuis 130 ap. J.-C., au milieu des ruelles de Kaleiçi. Construit pour la visite de l'Empereur Hadrien. L'un des arcs romains les mieux conservés au monde — complètement gratuit et sans foule.</div>
+      <div class="gem-when gem-planned">📅 J1 · 12 août · 9h (dans Kaleiçi)</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Temple d'Apollon de Side au coucher du soleil</div>
+      <div class="gem-p">Inclus dans le tour · Side</div>
+      <div class="gem-d">Colonnes du temple d'Apollon face à la Méditerranée au coucher du soleil — l'image la plus iconique de la côte turquoise. Lumière dorée sur le marbre blanc et la mer bleue.</div>
+      <div class="gem-when gem-planned">📅 J3 · 14 août · Fin d'après-midi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Yanartaş — Feux de la Chimère (Olympos)</div>
+      <div class="gem-p">~3€ · 1h30 de bus depuis Antalya</div>
+      <div class="gem-d">Flammes naturelles de méthane jaillissant du rocher depuis l'Antiquité — le mythe de la Chimère (monstre crachant le feu) vient de ce lieu. Magnifique la nuit. Mentionné par Homère dans l'Iliade.</div>
+      <div class="gem-when gem-todo">À prévoir · Si J5 disponible · Préférable la nuit</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Dîner d'adieu dans le vieux port de Kaleiçi</div>
+      <div class="gem-p">~20–30€/pers · Kaleiçi port</div>
+      <div class="gem-d">Dernier dîner du voyage dans un balık restoranı (restaurant de poisson) au bord du vieux port ottoman. Levrek (loup de mer), baklava, çay (thé turc). Meilleure façon de clore 21 nuits en Turquie.</div>
+      <div class="gem-when gem-planned">📅 J5 · 16 août · Soir</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Phaselis — Ruines romaines au bord de la mer</div>
+      <div class="gem-p">~5€ · 1h depuis Antalya</div>
+      <div class="gem-d">Cité romaine sur une presqu'île avec 3 baies turquoise, ruines dans la pinède directement au bord de la mer, baignade possible entre les colonnes. Moins connu qu'Aspendos — quasi désert en comparaison.</div>
+      <div class="gem-when gem-todo">À prévoir · Si journée libre disponible</div>
+    </div>
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
+
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">🎵 Musique, street art & culture underground</span></div>
+    <div class="gem">
+      <div class="gem-t">Sponge Pub Kaleiçi — live music chaque soir</div>
+      <div class="gem-p">Entrée libre · Kaleiçi vieille ville</div>
+      <div class="gem-d">Le bar de musique live le plus connu de Kaleiçi — concerts chaque soir de rock, pop turque, alternatif dans une ambiance de vieille ville ottomane. Mélange de locaux, expats et backpackers. Ouvert de midi jusqu'à tôt le matin. Idéal pour finir une soirée après le dîner dans les ruelles.</div>
+      <div class="gem-when gem-todo">À prévoir · Chaque soir à Kaleiçi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">No 14 Kaleiçi — cour ottomane & live music</div>
+      <div class="gem-p">~10–20€ repas/boissons · Kaleiçi</div>
+      <div class="gem-d">Bar-restaurant dans une cour ottomane couverte de parasols colorés — murs en pierre, guirlandes lumineuses, musique live qui donne une ambiance unique aux ruelles du soir. L'un des spots les plus photographiés et les plus appréciés de Kaleiçi. Arriver tôt pour avoir une bonne table.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J5 · Dans Kaleiçi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Kaleiçi — murs de la vieille ville</div>
+      <div class="gem-p">Gratuit · Ruelles Kaleiçi</div>
+      <div class="gem-d">Les ruelles de Kaleiçi cachent plusieurs fresques murales sur les vieux murs ottomans — mix d'art contemporain turc et de motifs traditionnels anatoliens. Moins développé qu'Istanbul mais quelques pépites à trouver en s'écartant des rues touristiques. Explorer les impasses au nord de la Porte d'Hadrien.</div>
+      <div class="gem-when gem-todo">À prévoir · En se baladant dans Kaleiçi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ayna concert live — 15 août Antalya</div>
+      <div class="gem-p">~15–25€ · Holly Stone Performance Hall Antalya</div>
+      <div class="gem-d">Ayna est l'un des groupes de rock alternatif turc les plus cultes — et ils jouent à Antalya le 15 août 2026 au Holly Stone. Concert dans la scène rock locale turque pour voir l'énergie d'un public qui connaît chaque parole par cœur. Vérifier sur songkick.com ou bandsintown pour les billets.</div>
+      <div class="gem-when gem-todo">À prévoir · 15 août 2026 · songkick.com · Antalya</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Mem Ararat — concert world music 20 août</div>
+      <div class="gem-p">~15–20€ · Aktüel Açıkhava Sahnesi, Antalya</div>
+      <div class="gem-d">Mem Ararat est un musicien kurde-arménien qui joue une world music profonde entre folk anatolien et méditerranéen. Concert en plein air à Antalya le 20 août. Un peu après votre départ mais à vérifier pour les dates exactes — vérifier sur songkick.com.</div>
+      <div class="gem-when gem-todo">À vérifier · 20 août 2026 · aktüel açıkhava sahnesi · songkick</div>
+    </div>
+  
+    <div class="gem">
+      <div class="gem-t">Ally's Rock Bar — scène rock/alternatif Kaleiçi</div>
+      <div class="gem-p">Entrée libre · Kaleiçi</div>
+      <div class="gem-d">Le bar rock et alternatif de référence d'Antalya — foule locale fidèle, playlists rock soignées, nuits de groupes live. Pas de dress code, atmosphère authentique loin des clubs commerciaux. L'endroit où aller pour du vrai rock avec des locaux.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel soir à Kaleiçi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Hangar Bar — open-air près d'Olympos</div>
+      <div class="gem-p">~1h30 de bus depuis Antalya · Olympos/Çıralı</div>
+      <div class="gem-d">Bar open-air dans un cadre bohème près du village d'Olympos parmi les arbres anciens — concerts, soirées électroniques, ambiance backpackers alternative très différente des clubs d'Antalya. Si vous faites une excursion à Phaselis, Olympos est sur la route. Vaut le détour pour une nuit.</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion + nuit à Olympos · Bus depuis Antalya</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Kaleiçi — impasses nord de la Porte d'Hadrien</div>
+      <div class="gem-p">Gratuit · Kaleiçi vieille ville</div>
+      <div class="gem-d">Les impasses au nord de la Porte d'Hadrien cachent des fresques murales locales et quelques pièces de graffiti politique sur les vieux murs ottomans. Rien de comparable à Istanbul mais une scène qui grandit. Explorer les ruelles en partant d'Hesapçı Sokak vers le nord.</div>
+      <div class="gem-when gem-todo">À prévoir · En se baladant dans Kaleiçi</div>
+    </div>
+  </div>
+</div>
+      <div class="gem-p">~5€ · 60 km d'Antalya · Bus 555</div>
+      <div class="gem-d">Cité lycienne sur une presqu'île avec 3 plages de pins directement dans les ruines — aqueduc, théâtre, agora. Baignade entre les colonnes antiques. L'un des sites les plus romantiques de Turquie. Bus 555 depuis Antalya.</div>
+      <div class="gem-when gem-todo">À prévoir · Combinable avec Termessos J4</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Cascades de Düden Lara</div>
+      <div class="gem-p">Gratuit · 12 km d'Antalya</div>
+      <div class="gem-d">Chutes d'eau qui tombent directement dans la Méditerranée depuis une falaise de 40m — depuis un bateau on peut passer dessous. Vue unique. Dolmuş depuis Antalya ou bateau depuis le port (option plus spectaculaire).</div>
+      <div class="gem-when gem-todo">À prévoir · Après-midi libre · Combinable avec plage Lara</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Vieille ville Kaleiçi — coucher de soleil</div>
+      <div class="gem-p">Gratuit · Vue sur la Méditerranée</div>
+      <div class="gem-d">Les remparts romains de Kaleiçi au coucher du soleil avec la mer et les montagnes du Taurus en arrière-plan — l'une des vues les plus spectaculaires de Turquie. Le vieux port romain (Hidirlık Kulesi) est le meilleur point de vue.</div>
+      <div class="gem-when gem-todo">À prévoir · Tous les soirs · Gratuit</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Plage de Konyaaltı</div>
+      <div class="gem-p">Gratuit (plage publique) · 3 km du centre</div>
+      <div class="gem-d">Grande plage de galets avec vue sur la chaîne du Taurus enneigée (même en août !) en arrière-plan. Tramway T2 depuis Kaleiçi. Certains secteurs sont payants (~5€) avec chaises longues, la partie publique est gratuite.</div>
+      <div class="gem-when gem-todo">À prévoir · J6 après-midi avant le dîner d'adieu</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Musée d'Antalya — sculptures romaines</div>
+      <div class="gem-p">~5€ · L'un des meilleurs musées de Turquie</div>
+      <div class="gem-d">Collection de sculptures romaines parmi les plus riches du monde — statues colossales de Perge, sarcophages, galerie des empereurs romains. Climatisé (refuge parfait en pleine chaleur) et souvent vide de touristes l'après-midi.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 après-midi après Kaleiçi</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Side — temple d'Apollon face à la mer</div>
+      <div class="gem-p">~5€ · 75 km · Bus depuis Antalya</div>
+      <div class="gem-d">Cité antique sur une presqu'île avec un temple d'Apollon dont les colonnes se reflètent dans la Méditerranée au coucher du soleil — image postcardissime absolue. Combinable avec Aspendos et Perge en un tour.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 tour Aspendos/Perge/Side</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Canyon de Köprülü en vélo</div>
+      <div class="gem-p">~10–15€ location vélo · 90 km</div>
+      <div class="gem-d">Certains prestataires de rafting proposent aussi des descentes à VTT dans le canyon de Köprülü avant ou après le rafting. La route longeant le canyon est spectaculaire — dénivelé raisonnable, ombragée par la forêt.</div>
+      <div class="gem-when gem-todo">À prévoir · Option combo avec le rafting J3</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Hamam dans Kaleiçi</div>
+      <div class="gem-p">~20–35€ · Balık Pazarı Hamamı</div>
+      <div class="gem-d">Vieux hamam dans les ruelles de Kaleiçi — kese (gommage) + köpük (massage savon) dans un bâtiment ottoman du 18e siècle. Beaucoup moins cher et plus authentique que les spas des hôtels-resorts. Parfait en soirée après les visites.</div>
+      <div class="gem-when gem-todo">À prévoir · Soirée J1 ou J5</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Aspendos — son et lumière</div>
+      <div class="gem-p">~15–20€ · Juillet-août seulement</div>
+      <div class="gem-d">Des spectacles de danse et musique turque traditionnelle sont organisés dans le théâtre romain d'Aspendos en juillet-août le soir. Voir un spectacle dans un théâtre de 2000 ans encore en activité — expérience hors normes. Vérifier les dates à l'arrivée.</div>
+      <div class="gem-when gem-todo">À prévoir · Soir J2 si spectacle programmé</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Vieille ville la nuit — çay bağçesi</div>
+      <div class="gem-p">~1–2€ le thé · Kaleiçi</div>
+      <div class="gem-d">Les jardins de thé (çay bahçesi) dans les ruelles de Kaleiçi la nuit — tables sous les orangers, lumières tamisées, musique turque douce. Les locaux y restent jusqu'à minuit. L'ambiance la plus ottomane possible sans quitter la ville.</div>
+      <div class="gem-when gem-todo">À prévoir · Chaque soir après dîner</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Perge — cité romaine méconnue</div>
+      <div class="gem-p">~5€ · 17 km d'Antalya · Bus</div>
+      <div class="gem-d">Grande cité romaine avec une avenue à colonnes de 300m, des thermes, une agora et un stade de 12 000 places. Moins spectaculaire qu'Aspendos mais plus intime et quasi déserte. Combinable en demi-journée avec Aspendos.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 avec Aspendos et Side</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Marché paysan de Kaleiçi — mercredi</div>
+      <div class="gem-p">Gratuit · Derrière la gare routière</div>
+      <div class="gem-d">Marché hebdomadaire très local derrière la gare routière d'Antalya — producteurs locaux, olives, fromages tulum, figues sèches, oranges de la région. Rien de touristique. Demander à l'hôtel l'emplacement exact.</div>
+      <div class="gem-when gem-todo">À prévoir · Mercredi 13 août matin</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PIÈGES -->
+<div id="pie" class="spg">
+  <div class="wb"><div class="wbt">🏨 Loger hors de Kaleiçi</div><p>Beaucoup d'hôtels bon marché se trouvent à Konyaaltı (plage à l'ouest) ou Lara (à l'est). Pratique pour la plage, mais loin de tout le reste — il faudra prendre le tramway ou un taxi pour chaque sortie. Kaleiçi est à 5 min à pied du port, du musée archéologique, de l'Arc d'Hadrien. Rester dans Kaleiçi.</p></div>
+  <div class="wb"><div class="wbt">⚡ Vol de retour très tôt le 17 août</div><p>Le vol part tôt — ne pas sous-estimer le trajet jusqu'à l'aéroport AYT. Vérifier la veille l'heure du premier tramway AntRay T1. Si doute, réserver un taksici (taxi) via BiTaksi la veille pour 4h30–5h du matin. Préparer les bagages le soir du 16 août sans exception.</p></div>
+  <div class="wb"><div class="wbt">🚌 Termessos sans eau ni nourriture</div><p>Au-delà de l'entrée du Parc National de Termessos, il n'y a aucun café, aucun restaurant, aucun distributeur d'eau. Emporter 2L d'eau minimum par personne et des snacks. La montée depuis la route dure 45 min à pied sous le soleil.</p></div>
+  <div class="wb"><div class="wbt">💰 Tours Aspendos/Perge/Side avec arrêts shopping</div><p>Certains tours bon marché depuis Antalya incluent des arrêts forcés dans des bijouteries ou magasins de cuir. Éviter ces tours — choisir un opérateur qui propose "no shopping stops". Les entrées et le déjeuner doivent être inclus dans le prix.</p></div>
+</div>
+
+<!-- PRATIQUE -->
+<div id="pra" class="spg">
+  <div class="card">
+    <div class="slbl" style="margin-top:0">Tarifs & activités — confirmés 2026</div>
+    <div class="fr"><div><div class="fn">Rafting Köprülü Kanyonu — Journée complète</div><div class="fsb">Parcours 14 km + repas + équipement + transferts + assurance · 2026 confirmé</div></div><span class="fp">~37€/pers (1 400 TL)</span></div>
+    <div class="fr"><div><div class="fn">Tour Perge + Aspendos + Side</div><div class="fsb">Transfert + entrées + déjeuner inclus · Depuis Antalya · Journée complète</div></div><span class="fp">~70€/pers</span></div>
+    <div class="fr"><div><div class="fn">Termessos — Entrée Parc National</div><div class="fsb">Bus 506 depuis Antalya + 9 km de montée</div></div><span class="fp">~3–5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Antalya Arkeoloji Müzesi (Musée)</div><div class="fsb">Tramway T1 depuis Kaleiçi · Climatisé</div></div><span class="fp">~5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Phaselis — Cité antique + plage</div><div class="fsb">1h depuis Antalya · Dolmuş</div></div><span class="fp">~5€/pers</span></div>
+    <div class="fr"><div><div class="fn">Yanartaş (Feux de la Chimère) — Olympos</div><div class="fsb">1h30 depuis Antalya · Bus otogar</div></div><span class="fp">~3€/pers</span></div>
+
+    <div class="slbl">Transports locaux Antalya</div>
+    <div class="fr"><div><div class="fn">Tramway AntRay T1</div><div class="fsb">Kaleiçi ↔ Plage Konyaaltı ↔ Otogar (gare routière) ↔ Aéroport AYT</div></div><span class="fp">~1€/trajet</span></div>
+    <div class="fr"><div><div class="fn">Bus 506 → Termessos</div><div class="fsb">Depuis le centre d'Antalya · Descendre D685 · 9 km montée jusqu'aux ruines</div></div><span class="fp">~1€</span></div>
+    <div class="fr"><div><div class="fn">Taksici (taxi) BiTaksi — Aéroport AYT</div><div class="fsb">Depuis Kaleiçi · ~20 min · Utile si avant 5h du matin</div></div><span class="fp">~8–10€</span></div>
+
+    <div class="slbl">Départ aéroport — 17 août</div>
+    <div class="fr"><div><div class="fn">À l'aéroport AYT minimum</div></div><span class="fp">5h30</span></div>
+    <div class="fr"><div><div class="fn">Option 1 : Tramway AntRay T1</div><div class="fsb">Vérifier heure 1er départ la veille · ~25 min</div></div><span class="fp">~1€</span></div>
+    <div class="fr"><div><div class="fn">Option 2 : Taxi BiTaksi</div><div class="fsb">Réserver la veille · Départ 4h45 depuis Kaleiçi</div></div><span class="fp">~8–10€</span></div>
+
+    <div class="slbl">Applis & liens</div>
+    <div class="ar"><div class="ai2">🚣</div><div><div class="an"><a href="https://www.novaraft.com/" target="_blank">Novaraft</a> · <a href="https://www.raftingo.com/" target="_blank">Raftingo</a></div><div class="ad">Opérateurs rafting Köprülü Kanyonu · Réserver par WhatsApp la veille</div></div><span class="ab2">Essentiel</span></div>
+    <div class="ar"><div class="ai2">🚕</div><div><div class="an"><a href="https://www.bitaksi.com.tr" target="_blank">BiTaksi</a></div><div class="ad">Taksici (taxi) officiel · Réserver le taxi aéroport la veille pour 4h45</div></div><span class="ab2">Essentiel</span></div>
+    <div class="ar"><div class="ai2">🗺</div><div><div class="an">Google Maps hors-ligne</div><div class="ad">Télécharger région Antalya · Bus 506 vers Termessos · Tramway T1</div></div><span class="ab2">Essentiel</span></div>
+  </div>
+
+  <div class="lgrid">
+    <a href="https://www.novaraft.com/" target="_blank" class="lcard"><span class="lico">🚣</span><div><div class="lnm">Novaraft</div><div class="lul">Rafting Köprülü 2026</div></div></a>
+    <a href="https://www.raftingo.com/" target="_blank" class="lcard"><span class="lico">🚣</span><div><div class="lnm">Raftingo</div><div class="lul">Rafting Köprülü 2026</div></div></a>
+    <a href="https://www.booking.com/district/tr/antalya/kaleici.fr.html" target="_blank" class="lcard"><span class="lico">🏨</span><div><div class="lnm">Hébergements Kaleiçi</div><div class="lul">booking.com</div></div></a>
+    <a href="https://www.bitaksi.com.tr" target="_blank" class="lcard"><span class="lico">🚕</span><div><div class="lnm">BiTaksi</div><div class="lul">Taxi aéroport</div></div></a>
+    <a href="https://www.lonelyplanet.com/turkey/antalya" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Lonely Planet Antalya</div><div class="lul">lonelyplanet.com</div></div></a>
+    <a href="https://www.routard.com/guide_voyage_lieu/434-antalya.htm" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Routard Antalya</div><div class="lul">routard.com</div></div></a>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+function showSub(id,btn){
+  document.querySelectorAll('.spg').forEach(p=>p.classList.remove('vis'));
+  document.querySelectorAll('.snb').forEach(b=>b.classList.remove('on'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('vis');
+  if(btn)btn.classList.add('on');
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.snb');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>

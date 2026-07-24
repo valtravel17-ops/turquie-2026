@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Istanbul — Guide complet · 27–30 juillet</title>
+<style>
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;--s2:#e8e4dc;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+/* PROMPT replié par défaut */
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+
+/* HEADER */
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr p{font-size:13px;color:var(--t2)}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
+.pill.gn{background:var(--gbg);border-color:var(--gn2);color:var(--gt)}
+.pill.bl{background:var(--bbg);border-color:var(--bl);color:var(--bt)}
+.pill.rd{background:var(--rbg);border-color:var(--rd);color:var(--rt)}
+.pill.pu{background:var(--pubg);border-color:var(--pu);color:var(--put)}
+
+/* HOTEL BOX */
+.hotel-box{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
+.hotel-title{font-size:12px;font-weight:600;color:var(--gn);margin-bottom:6px}
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.hotel-row{font-size:12px;color:var(--gt)}
+.hotel-row span{color:var(--t3);display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1px}
+
+/* SUB NAV */
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+/* CONTENT */
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+
+/* DAY HERO */
+.dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
+.dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.dh .ds{font-size:12px;color:var(--t2);margin-bottom:8px}
+.dgeo{display:inline-flex;align-items:center;gap:5px;background:var(--bbg);border:1px solid var(--bl);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--bt);margin-bottom:5px}
+.dbudg{font-size:12px;color:var(--t2);margin-top:5px}
+.dbudg strong{color:var(--gn)}
+.dtot{display:flex;justify-content:space-between;align-items:center;background:var(--s1);border-radius:var(--r);padding:8px 13px;margin-top:10px;font-size:12px;color:var(--t2)}
+.dtot strong{color:var(--tx)}
+
+/* BLOCKS */
+.blk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;margin-bottom:6px}
+.bh{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.tm{background:var(--s1);border:1px solid var(--bd2);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--t2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.bt2{font-size:13px;font-weight:500;color:var(--tx);flex:1}
+.ptag{font-size:11px;border-radius:20px;padding:2px 9px;white-space:nowrap;font-weight:500;flex-shrink:0}
+.free{background:#dcfce7;color:#155724}
+.paid{background:var(--rbg);color:var(--rt)}
+.cheap{background:var(--bbg);color:var(--bt)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.th{background:var(--pubg);color:var(--put);border-color:var(--pu)}
+.tn{background:var(--gbg);color:var(--gt);border-color:var(--gn2)}
+.tb{background:var(--bbg);color:var(--bt);border-color:var(--bl)}
+.ta{background:var(--gobg);color:var(--got);border-color:#c8a020}
+.bdesc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:5px}
+.btip{font-size:11px;color:var(--t3);border-left:2px solid var(--gn2);padding-left:8px;margin-top:6px;line-height:1.5}
+.bln{font-size:11px;margin-top:5px}
+
+/* TRANSIT STEPS */
+.ts{display:flex;align-items:flex-start;gap:8px;padding:6px 0 6px 8px;margin:2px 0;border-left:2px dashed var(--bd2)}
+.tsi{width:24px;height:24px;border-radius:50%;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tst{flex:1;font-size:11px;color:var(--t2)}
+.tsm{color:var(--tx);font-size:12px;font-weight:500}
+.tsd{background:var(--bbg);color:var(--bt);border-radius:20px;padding:1px 7px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tsp{background:var(--gbg);color:var(--gt);border-radius:20px;padding:1px 7px;font-size:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+/* TRANSIT CARD */
+.tc{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:13px 15px;margin-bottom:14px}
+.tct{font-size:13px;font-weight:600;color:var(--put);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.tcg{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:6px}
+.tcr{background:rgba(255,255,255,.75);border-radius:8px;padding:7px 10px;font-size:11px}
+.tcl{color:var(--t3);margin-bottom:2px;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+.tcv{color:var(--put);font-weight:500}
+.tc-warn{background:var(--rbg);border:1px solid var(--rd);border-radius:8px;padding:7px 11px;font-size:11px;color:var(--rt);margin-top:8px;display:flex;align-items:center;gap:6px}
+
+/* ALERTS */
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+/* GEO CARD */
+.geo{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 14px;margin-bottom:12px}
+.geot{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin-bottom:7px}
+.gr{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2);padding:2px 0}
+.gd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.gl{width:1px;height:14px;background:var(--bd2);margin-left:3px}
+.gti{margin-left:auto;color:var(--t3);font-size:10px;white-space:nowrap}
+
+/* GEMS */
+.gems{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gem{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.gem-t{font-size:12px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.gem-p{font-size:11px;color:var(--gn);font-weight:500;margin-bottom:4px}
+.gem-d{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.gem-when{font-size:10px;padding:2px 9px;border-radius:20px;display:inline-block;font-weight:500}
+.gem-planned{background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd}
+.gem-todo{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+
+/* WARN BOXES */
+.wb{background:var(--rbg);border:1px solid #cc6040;border-radius:var(--r);padding:10px 13px;margin-bottom:7px}
+.wbt{font-size:12px;font-weight:600;color:var(--rt);margin-bottom:3px}
+.wb p{font-size:12px;color:var(--rt)}
+
+/* FOOD */
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:500;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+/* CARD */
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+
+/* LINKS */
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.hotel-box{margin:10px 14px 0}}
+</style>
+</head>
+<body>
+
+<!-- PROMPT BASE44 — replié par défaut -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 1/6 : Istanbul (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 01_istanbul.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Istanbul (27–30 juillet, 3 nuits)</strong> du voyage Turquie 27 juillet – 17 août 2026, pour un couple voyageant en transport en commun uniquement.<br><br>
+      <strong>Hôtel :</strong> Sultanahmet La Petite Hotel · Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul · 3 nuits (arrivée soir 27, départ bus de nuit 30 juil)<br><br>
+      <strong>Bus de nuit confirmé :</strong> Pamukkale Turizm · Départ 23h15 · 35,25€/pers · Terminal Esenler (Büyük İstanbul Otogarı) → Terminal Selçuk Atatürk Bulvarı · 8h15 de trajet<br><br>
+      <strong>Points clés :</strong> Sainte-Sophie gratuite depuis 2020 · Topkapi fermé le mardi (planifié jeudi 30 ✓) · Istanbulkart (carte transport rechargeable) à acheter dès l'aéroport · Prises électriques Type F identiques à la France (pas d'adaptateur) · Fortuneo Fospho = 0 frais à l'étranger · Retirer des lires turques (TRY) aux distributeurs Ziraat Bankası ou İş Bankası uniquement<br><br>
+      <strong>Structure :</strong> 3 journées détaillées + onglet bus de nuit + pépites avec dates prévues + pièges & arnaques + infos pratiques
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="hdr">
+  <h1>🕌 Istanbul</h1>
+  <p>27–30 juillet · 3 nuits · Étape 1 sur 6</p>
+  <div class="hdr-meta">
+    <span class="pill rd">28–34°C · Humide</span>
+    <span class="pill pu">Sultanahmet (quartier historique)</span>
+    <span class="pill gn">Tout à pied J1 et J3</span>
+    <span class="pill bl">Tram T1 + Ferry pour J2</span>
+  </div>
+</div>
+
+<!-- HOTEL -->
+<div class="hotel-box">
+  <div class="hotel-title">🏨 Hôtel — 3 nuits (arrivée 27 juil soir · départ bus 30 juil 23h15)</div>
+  <div class="hotel-grid">
+    <div class="hotel-row"><span>Nom</span>Sultanahmet La Petite Hotel</div>
+    <div class="hotel-row"><span>Adresse</span>Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul</div>
+    <div class="hotel-row"><span>Quartier</span>Sultanahmet — 5 min à pied de Sainte-Sophie</div>
+    <div class="hotel-row"><span>Check-out</span>30 juillet · laisser bagages jusqu'au soir</div>
+  </div>
+</div>
+
+<!-- SUB NAV -->
+<div class="snav">
+  <button class="snb on" onclick="showSub('j1',this)">J1 · 28 juil</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · 29 juil</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · 30 juil</button>
+  <button class="snb" onclick="showSub('bus',this)">🚌 Bus de nuit</button>
+  <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
+  <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
+  <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
+</div>
+
+<div class="cnt">
+
+<!-- J1 -->
+<div id="j1" class="spg vis">
+  <div class="dh">
+    <h2>Jour 1 — 28 juillet · Sultanahmet</h2>
+    <div class="ds">Cœur historique · Tout à pied depuis l'hôtel · Rythme tranquille</div>
+    <div class="dgeo">📍 Rayon max 20 min à pied depuis l'hôtel · Aucun transport payant</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~12–18€</strong> (quasi tout gratuit)</div>
+  </div>
+
+  <div class="al warn">
+    <div class="ali">ℹ️</div>
+    <div class="alb"><strong>Arrivée le 27 soir</strong> — Le 27 juillet c'est uniquement l'arrivée et l'installation. Première vraie journée = le 28 à partir de 9h.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Mosquée Bleue (Sultan Ahmet Camii)</span><span class="ptag free">Gratuit</span></div>
+    <div class="tags"><span class="tag th">Patrimoine</span><span class="tag">Foulard (voile) obligatoire</span><span class="tag">45 min</span><span class="tag">5 min à pied de l'hôtel</span></div>
+    <div class="bdesc">6 minarets (tours d'appel à la prière), 20 000 carreaux d'Iznik (céramiques turquoise). Foulard fourni à l'entrée mais mieux d'avoir le sien. Fermée ~30 min pendant les 5 namaz (prières quotidiennes) — vérifier la veille sur l'app Pray Watch.</div>
+    <div class="btip">💡 Rester dans la cour (avlu) extérieure si fermée à l'arrivée — toujours accessible et très belle au soleil du matin.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">À pied — traverser le parc Sultan Ahmet</div></div><span class="tsd">3 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">10h</span><span class="bt2">Citerne de Théodose (Şerefiye Sarnıcı)</span><span class="ptag cheap">~1,32€</span></div>
+    <div class="tags"><span class="tag th">Byzantine 5e siècle</span><span class="tag tn">Pépite méconnue</span><span class="tag">45 min</span></div>
+    <div class="bdesc">Citerne (réservoir d'eau souterrain) byzantine du 5e siècle, quasi-inconnue des touristes. Colonnes romaines, eau au sol, éclairage tamisé. 10× moins chère et objectivement plus belle que la Citerne Basilique (Yerebatan Sarnıcı) bondée.</div>
+    <div class="btip">💡 Éviter la Citerne Basilique (Yerebatan Sarnıcı) à ~15€ — bondée, trop mise en scène, pas la peine quand Şerefiye existe.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">À pied — même place Sultan Ahmet</div></div><span class="tsd">3 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">11h</span><span class="bt2">Sainte-Sophie (Ayasofya)</span><span class="ptag free">Gratuit depuis 2020</span></div>
+    <div class="tags"><span class="tag th">UNESCO</span><span class="tag">Foulard obligatoire</span><span class="tag">1h</span></div>
+    <div class="bdesc">Redevenue mosquée en 2020 — entrée gratuite. Dôme de 55m, mosaïques (décorations en tesselles) byzantines du 6e siècle coexistant avec calligraphies islamiques. Réserver un créneau en ligne pour éviter la queue en août.</div>
+    <div class="btip">💡 Les mosaïques byzantines sont parfois voilées pendant les namaz (prières) — y aller entre deux prières pour tout voir.</div>
+    <div class="bln"><a href="https://ayasofyacamii.gov.tr/" target="_blank">ayasofyacamii.gov.tr</a> — créneaux en ligne</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">Descente vers Eminönü (quartier du port) en longeant le bord de mer</div><div>Vue sur la mer de Marmara</div></div><span class="tsd">12 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">13h</span><span class="bt2">Déjeuner — Balık ekmek (sandwich poisson) au pont de Galata</span><span class="ptag cheap">3–4€</span></div>
+    <div class="bdesc">Sandwich au maquereau grillé servi sur des tekne (bateaux) amarrés au pont de Galata. Institution absolue d'Istanbul. Manger debout face au Boğaz (Bosphore). Accompagner d'un ayran (yaourt salé battu, ~0,80€) ou şalgam (jus de navet fermenté épicé).</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">Montée à pied vers la Süleymaniye</div><div>Quartier de Vefa · 10–12 min de montée</div></div><span class="tsd">15 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">14h30</span><span class="bt2">Mosquée Süleymaniye + jardin panoramique</span><span class="ptag free">Gratuit</span></div>
+    <div class="tags"><span class="tag th">Chef-d'œuvre ottoman · Sinan 1557</span><span class="tag">Foulard</span><span class="tag">45 min</span></div>
+    <div class="bdesc">Plus majestueuse et bien moins bondée que la Mosquée Bleue. Construite par l'architecte Sinan (le Michel-Ange ottoman) en 1557. Le hazire (jardin arrière) offre la meilleure vue panoramique sur la Corne d'Or (Haliç) d'Istanbul — quasi aucun touriste. Türbe (tombeau) de Soliman le Magnifique dans le jardin.</div>
+    <div class="btip">💡 Le türbe (tombeau) de Soliman et celui de l'architecte Sinan sont dans le jardin — gratuits et souvent vides.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">Descente vers le Kapalıçarşı (Grand Bazar)</div><div>Rue Uzunçarşı Caddesi · boutiques d'artisanat</div></div><span class="tsd">10 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">16h</span><span class="bt2">Kapalıçarşı (Grand Bazar) + Mısır Çarşısı (Bazar aux épices)</span><span class="ptag free">Entrée gratuite</span></div>
+    <div class="tags"><span class="tag th">Depuis 1455</span><span class="tag ta">Shopping · Négociation</span><span class="tag">1h30</span></div>
+    <div class="bdesc">Kapalıçarşı (marché couvert) : 4 400 boutiques, 60 rues depuis 1455. Se promener avant d'acheter — négocier 30–40% du prix annoncé est normal. Le Mısır Çarşısı (Bazar aux épices, 10 min à pied) est plus petit et moins écrasant, meilleurs prix pour le çay (thé), épices, lokum (loukoums). Ferment à 19h.</div>
+    <div class="btip">💡 Ne jamais payer le premier prix — commencer à 50% du prix annoncé, c'est attendu et fait partie du jeu.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚋</div><div class="tst"><div class="tsm">Tramway T1 retour hôtel</div><div>Arrêt Çemberlitaş → Sultanahmet · Istanbulkart (carte transport)</div></div><span class="tsd">10 min</span><span class="tsp">~0,50€</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">18h30</span><span class="bt2">Vapür (ferry public) Bosphore au coucher du soleil</span><span class="ptag cheap">~0,50€</span></div>
+    <div class="bdesc">Vapür (ferry public) Eminönü → Üsküdar (rive asiatique, 20 min aller-retour). Vue sur Sainte-Sophie, Kız Kulesi (Tour de Léandre), palais du Bosphore. Coucher de soleil magique. Éviter absolument les croisières privées proposées sur les quais (~15–25€) — le vapür fait la même chose pour 0,50€.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">20h</span><span class="bt2">Dîner — Rue Küçük Ayasofya (près hôtel)</span><span class="ptag cheap">8–14€/pers</span></div>
+    <div class="bdesc">Restaurants locaux honnêtes en bas de l'hôtel. Éviter ceux avec rabatteurs (vendeurs agressifs) à l'entrée. Essayer : menemen (œufs brouillés aux tomates et poivrons), kuzu tandır (agneau braisé), imam bayıldı (aubergine farcie à l'huile d'olive).</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~12–18€</strong></div>
+</div>
+
+<!-- J2 -->
+<div id="j2" class="spg">
+  <div class="dh">
+    <h2>Jour 2 — 29 juillet · Karaköy · Galata · Istiklal</h2>
+    <div class="ds">Rive nord (Beyoğlu) · Quartiers créatifs · Vie locale · Rythme détendu</div>
+    <div class="dgeo">📍 Tramway T1 → Karaköy (5 min) · puis tout à pied</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~20–35€</strong></div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">✅</div>
+    <div class="alb"><strong>Topkapi fermé le mardi — reporté au J3 (jeudi 30 juillet)</strong> — Le 29 juillet 2026 est un mercredi. Topkapi est fermé uniquement le mardi — tout va bien, la visite est prévue le 30.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚋</div><div class="tst"><div class="tsm">Tramway T1 hôtel → arrêt Karaköy</div><div>Direction Kabataş · Istanbulkart (carte transport rechargeable)</div></div><span class="tsd">5 min</span><span class="tsp">~0,50€</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Karaköy — Baklava Güllüoğlu + galeries d'art</span><span class="ptag cheap">Baklava ~3€</span></div>
+    <div class="tags"><span class="tag tn">Quartier créatif</span><span class="tag">Street art</span><span class="tag">Galeries libres</span></div>
+    <div class="bdesc">Commencer par <a href="https://www.karakoyguluoglu.com/" target="_blank">Karaköy Güllüoğlu</a> — la meilleure baklava (pâtisserie feuilletée au miel et pistaches) d'Istanbul avec un çay (thé turc). Puis galeries d'art indépendantes (ANNA, Mixer), concept stores, street art dans les impasses.</div>
+    <div class="btip">💡 Le çay (thé turc en verre tulipe) se boit partout à 0,30–1€ dans un çay bahçesi (jardin à thé). Arrêt quasi-obligatoire à chaque pause.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">Montée à pied vers la Tour de Galata</div><div>Rue Galip Dede — luthiers et instruments de musique turcs traditionnels</div></div><span class="tsd">10 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">10h</span><span class="bt2">Galata Kulesi (Tour de Galata) — Vue panoramique</span><span class="ptag paid">~15€</span></div>
+    <div class="tags"><span class="tag th">Tour génoise 14e siècle</span><span class="tag">Vue 360°</span><span class="tag">30 min</span></div>
+    <div class="bdesc">Tour génoise (construite par les marchands de Gênes) de 67m. Vue à 360° sur Istanbul : Boğaz (Bosphore), Haliç (Corne d'Or), Ayasofya (Sainte-Sophie), Topkapı. Réserver en ligne pour éviter la file en août.</div>
+    <div class="btip">💡 Alternative gratuite : terrasses de certains cafés autour de la tour proposent une vue quasi-identique pour le prix d'une consommation (~3–5€).</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">À pied vers Istiklal Caddesi (rue Istiklal)</div></div><span class="tsd">5 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">11h</span><span class="bt2">Istiklal Caddesi (rue Istiklal) + Pasajlar (passages couverts)</span><span class="ptag free">Gratuit</span></div>
+    <div class="tags"><span class="tag th">Architecture Belle Époque</span><span class="tag tn">Culture</span><span class="tag">1h</span></div>
+    <div class="bdesc">Grande artère piétonne de 1,4 km. Explorer les pasajlar (passages couverts) Belle Époque cachés derrière la rue : Çiçek Pasajı (Passage des Fleurs, brasseries), Hazzopulo Pasajı, Atlas Pasajı — architecture 19e siècle extraordinaire. Librairie Homer Kitabevi pour livres en français et anglais.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">13h</span><span class="bt2">Déjeuner — Nevizade Sokak (ruelle des meyhane)</span><span class="ptag cheap">10–15€/pers</span></div>
+    <div class="bdesc">Rue des meyhane (tavernes turques traditionnelles). Meze (petites entrées à partager) : haydari (yaourt à l'ail), acılı ezme (purée de poivrons épicée), patlıcan salatası (caviar d'aubergine), cacık (tzatziki turc). Ambiance détendue le midi.</div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">15h</span><span class="bt2">Quartier Cihangir — çay et vue sur le Bosphore</span><span class="ptag cheap">2–5€</span></div>
+    <div class="bdesc">Quartier bohème (artistique) derrière Istiklal. Cafés indépendants avec terrasses sur le Boğaz (Bosphore). Antiquaires, galeries, librairies d'occasion. Idéal pour une pause en milieu d'après-midi.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚋</div><div class="tst"><div class="tsm">Tramway T1 retour depuis Karaköy → hôtel</div></div><span class="tsd">5 min</span><span class="tsp">~0,50€</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">20h</span><span class="bt2">Dîner — Küçük Ayasofya ou bord de mer</span><span class="ptag cheap">10–15€/pers</span></div>
+    <div class="bdesc">Restaurants de poisson (balık) face à la mer de Marmara ou ruelles autour de l'hôtel. Essayer lahmacun (pizza turque fine à la viande hachée) ou pide (pain turc garni au four).</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~20–35€</strong></div>
+</div>
+
+<!-- J3 -->
+<div id="j3" class="spg">
+  <div class="dh">
+    <h2>Jour 3 — 30 juillet · Topkapi & Kadıköy · Départ bus de nuit</h2>
+    <div class="ds">Matin : Topkapı Sarayı · Après-midi : côté asiatique · 23h15 : bus de nuit vers Selçuk</div>
+    <div class="dgeo">📍 Matin à pied · Après-midi vapür (ferry) vers Kadıköy · Soir métro → Esenler Otogarı</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~55–70€ + bus 35,25€</strong></div>
+  </div>
+
+  <div class="al ok">
+    <div class="ali">✅</div>
+    <div class="alb"><strong>Topkapi ouvert le jeudi 30 juillet</strong> — Kapalı (fermé) uniquement le mardi. Réserver sur <a href="https://muze.gov.tr/muze-detay?sectionId=TKP01&distId=TKP" target="_blank">muze.gov.tr</a> pour éviter la file.</div>
+  </div>
+
+  <div class="geo">
+    <div class="geot">Carte mentale du Jour 3</div>
+    <div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel Sultanahmet<span class="gti">9h30 départ</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--gn2)"></span>Topkapı Sarayı (Palais de Topkapi) · 10 min à pied<span class="gti">9h30–13h30</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--bl)"></span>Eminönü (port) · 10 min à pied<span class="gti">13h30</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--bl)"></span>Vapür (ferry) → Kadıköy (rive asiatique)<span class="gti">20 min · ~0,50€</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--go)"></span>Kadıköy Çarşısı (marché) + balade<span class="gti">14h30–17h</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--bl)"></span>Vapür retour → Eminönü · tramway → hôtel<span class="gti">17h</span></div>
+    <div class="gl"></div>
+    <div class="gr"><span class="gd" style="background:var(--rd)"></span>Esenler Otogarı (gare routière) · Métro M1<span class="gti">22h30 · bus 23h15</span></div>
+  </div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">9h30</span><span class="bt2">Topkapı Sarayı (Palais de Topkapi) + Harem</span><span class="ptag paid">~50€/pers avec Harem</span></div>
+    <div class="tags"><span class="tag th">UNESCO · Résidence des sultans 400 ans</span><span class="tag">Réserver en ligne</span><span class="tag">3h30–4h</span><span class="tag">10 min à pied de l'hôtel</span></div>
+    <div class="bdesc">Résidence des sultans ottomans pendant 400 ans. Le Harem (~15€ supplément) est incontournable : daireler (appartements privés) des sultans, carrelages Iznik extraordinaires, hamamlar (bains turcs) royaux. Hazine (Trésor impérial) = bijoux et armes uniques au monde. Arriver à 9h30 — bondé dès 11h en août.</div>
+    <div class="btip">💡 Réserver sur muze.gov.tr divise la file par 3 en août. Sans réservation = 45 min de queue minimum sous le soleil.</div>
+    <div class="bln"><a href="https://muze.gov.tr/muze-detay?sectionId=TKP01&distId=TKP" target="_blank">muze.gov.tr</a> — réservation officielle</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚶</div><div class="tst"><div class="tsm">Descente vers Eminönü en longeant le mur du palais</div></div><span class="tsd">10 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">13h30</span><span class="bt2">Déjeuner rapide Eminönü</span><span class="ptag cheap">6–10€/pers</span></div>
+    <div class="bdesc">Lokanta (cantine locale) autour d'Eminönü — pointer du doigt dans les vitrines. Mercimek çorbası (soupe de lentilles), şehriyeli pilav (riz aux vermicelles), köfte (boulettes de viande). Simple, rapide, excellent.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">⛴</div><div class="tst"><div class="tsm">Vapür (ferry public) Eminönü → Kadıköy</div><div>Débarcadère côté Eminönü · Istanbulkart</div></div><span class="tsd">20 min</span><span class="tsp">~0,50€</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">14h30</span><span class="bt2">Kadıköy Çarşısı (marché couvert) + quartier Moda</span><span class="ptag free">Gratuit</span></div>
+    <div class="tags"><span class="tag tn">Très local · Rive asiatique</span><span class="tag">Peu de touristes</span></div>
+    <div class="bdesc">Le quartier le plus authentique d'Istanbul, rive asiatique. Kadıköy Çarşısı (marché couvert) : peynir (fromages affinés), zeytin (olives marinées), sucuk (saucisse épicée turque), épices. Street art et galeries indépendantes dans les ruelles. Rue Moda : cafés avec vue sur le Boğaz (Bosphore).</div>
+    <div class="btip">💡 Çiya Sofrası dans le marché : cuisine anatolienne (de l'Anatolie, cœur de la Turquie) authentique, réputée dans tout Istanbul, très abordable.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">⛴</div><div class="tst"><div class="tsm">Vapür retour Kadıköy → Eminönü · Tramway → hôtel</div></div><span class="tsd">25 min</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">17h</span><span class="bt2">Hôtel — bagages + dîner léger</span><span class="ptag free">—</span></div>
+    <div class="bdesc">Préparer les valises pour le bus de nuit. Dîner léger ~19h — éviter les plats lourds avant 8h15 de trajet. Récupérer les bagages laissés à la réception.</div>
+  </div>
+
+  <div class="ts"><div class="tsi">🚇</div><div class="tst"><div class="tsm">Métro M2 → Yenikapı · Métro M1 → Esenler Otogarı (gare routière)</div><div>Monter à Sultanahmet · changer à Yenikapı</div></div><span class="tsd">25 min</span><span class="tsp">~1€</span></div>
+
+  <div class="blk">
+    <div class="bh"><span class="tm">22h30</span><span class="bt2">Esenler Otogarı — Départ bus Pamukkale Turizm vers Selçuk</span><span class="ptag paid">35,25€/pers · confirmé</span></div>
+    <div class="tags"><span class="tag">Pamukkale Turizm</span><span class="tag">Départ 23h15</span><span class="tag">8h15 de trajet</span></div>
+    <div class="bdesc">Bus depuis Esenler Otogarı (Büyük İstanbul Otogarı, grande gare routière d'Istanbul) direction Selçuk. Arrivée au Terminal Selçuk — Atatürk Bulvarı tôt le matin du 31 juillet. Bus ottobüs (autobus longue distance) turc : WiFi, klimali (climatisé), ikram (eau et snacks offerts), sièges inclinables.</div>
+    <div class="btip">💡 Arriver à l'otogar (gare routière) 45 min avant (22h30). Emporter : mont (veste légère — clim forte dans les bus), göz maskesi (masque de nuit), kulak tıkacı (bouchons d'oreilles). CPAP (appareil apnée) dans la sacoche médicale en cabine.</div>
+  </div>
+
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~55–70€ + bus 35,25€</strong></div>
+</div>
+
+<!-- BUS DE NUIT -->
+<div id="bus" class="spg">
+  <div class="tc">
+    <div class="tct">🚌 Bus de nuit Istanbul → Selçuk · Nuit du 30 juillet</div>
+    <div class="tcg">
+      <div class="tcr"><div class="tcl">Compagnie</div><div class="tcv">Pamukkale Turizm</div></div>
+      <div class="tcr"><div class="tcl">Départ</div><div class="tcv">23h15</div></div>
+      <div class="tcr"><div class="tcl">Terminal départ</div><div class="tcv">Esenler Otogarı (Büyük İstanbul Otogarı)</div></div>
+      <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Terminal Selçuk — Atatürk Bulvarı · tôt le 31 juil</div></div>
+      <div class="tcr"><div class="tcl">Durée</div><div class="tcv">8h15</div></div>
+      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">35,25€ avec bagages</div></div>
+      <div class="tcr"><div class="tcl">Réservation</div><div class="tcv"><a href="https://www.obilet.com" target="_blank">obilet.com</a> · CB acceptée · en anglais</div></div>
+      <div class="tcr"><div class="tcl">Accès otogar depuis hôtel</div><div class="tcv">Métro M2 → Yenikapı · Métro M1 → Esenler · ~25 min · ~1€</div></div>
+    </div>
+    <div class="tc-warn">⚠️ Réserver dès que possible — août = haute saison, places limitées sur les bus de nuit.</div>
+  </div>
+
+  <div class="al info">
+    <div class="ali">💡</div>
+    <div class="alb"><strong>Confort pour la nuit de bus</strong> — Emporter : veste légère (clim forte à bord), masque de nuit, bouchons d'oreilles, snacks légers. L'appareil CPAP (apnée du sommeil) dans la sacoche médicale compte comme bagage médical — souvent exempté du quota.</div>
+  </div>
+</div>
+
+<!-- PÉPITES -->
+<div id="pep" class="spg">
+  <div class="al info" style="margin-bottom:12px">
+    <div class="ali">📅</div>
+    <div class="alb"><strong>Code couleur</strong> — <span style="background:#dbeafe;color:#1e3a5f;border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">Date et heure prévues</span> quand c'est dans le planning · <span style="background:var(--gobg);border:1px solid #c8a020;color:var(--got);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:500">À prévoir</span> quand ce n'est pas encore planifié</div>
+  </div>
+  <div class="gems">
+    <div class="gem">
+      <div class="gem-t">Citerne de Théodose (Şerefiye Sarnıcı)</div>
+      <div class="gem-p">1,32€ · Byzantine 5e siècle</div>
+      <div class="gem-d">Vraie citerne à voir — quasi déserte, 10× moins chère que la Basilique, atmosphère hors du temps.</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 10h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ferry public (vapür) — Bosphore au coucher du soleil</div>
+      <div class="gem-p">~0,50€ · Ferry Eminönü → Üsküdar (rive asiatique, 20 min)</div>
+      <div class="gem-d">Même vue que les croisières à 25€. Le ferry public fait exactement la même chose pour presque rien.</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 18h30</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Jardin de la Süleymaniye</div>
+      <div class="gem-p">Gratuit · Vue sur la Corne d'Or</div>
+      <div class="gem-d">Meilleure vue panoramique sur la Haliç (Corne d'Or), tombeau Soliman, quasi aucun touriste.</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 14h30</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Kadıköy (quartier) — rive asiatique</div>
+      <div class="gem-p">Ferry public (vapür) ~0,50€ · Très local, peu de touristes</div>
+      <div class="gem-d">Marché, street art, galeries, ambiance 100% locale — très peu de touristes.</div>
+      <div class="gem-when gem-planned">📅 J3 · 30 juil · 14h30</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Pont de Galata au coucher du soleil</div>
+      <div class="gem-p">Gratuit · Photo iconique</div>
+      <div class="gem-d">Pêcheurs, Sainte-Sophie en fond, Corne d'Or dorée. Photo iconique d'Istanbul.</div>
+      <div class="gem-when gem-todo">À prévoir · J1 soir en passant</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Pasajlar (passages Belle Époque)</div>
+      <div class="gem-p">Gratuit · Istiklal</div>
+      <div class="gem-d">Architecture 19e siècle cachée derrière la grande artère. Çiçek Pasajı, Atlas Pasajı.</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · 11h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Baklava Güllüoğlu</div>
+      <div class="gem-p">~3€ plateau · Karaköy</div>
+      <div class="gem-d">Meilleure baklava (pâtisserie feuilletée) d'Istanbul selon les locaux. Ouvert tôt le matin.</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · 9h</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Rue Galip Dede</div>
+      <div class="gem-p">Gratuit · Entre Galata et Istiklal</div>
+      <div class="gem-d">Luthiers et sazlar (instruments traditionnels turcs). Ambiance musicale unique.</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · en passant vers Galata</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Quartier Fener & Balat</div>
+      <div class="gem-p">Gratuit · Maisons ottomanes colorées</div>
+      <div class="gem-d">Evler (maisons) ottomanes colorées, synagogues, kiliseler (églises orthodoxes), street art. Très peu de touristes.</div>
+      <div class="gem-when gem-todo">À prévoir · Si temps disponible J1 ou J2</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Hamam (bain turc traditionnel)</div>
+      <div class="gem-p">~30–60€/pers · Çemberlitaş Hamamı</div>
+      <div class="gem-d">Expérience culturelle incontournable. Kese (gommage au gant) + savonnage + détente. Idéal avant le bus de nuit du J3.</div>
+      <div class="gem-when gem-todo">À prévoir · J3 · 30 juil · 16h (avant bus)</div>
+    </div>
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
+    <div class="gem">
+      <div class="gem-t">Quartier Fener & Balat</div>
+      <div class="gem-p">Gratuit · Rive Corne d'Or</div>
+      <div class="gem-d">Maisons ottomanes colorées, synagogues, église orthodoxe grecque, street art dans les ruelles. Le vrai visage d'Istanbul populaire — quasi aucun touriste étranger.</div>
+      <div class="gem-when gem-todo">À prévoir · 30 min de tram depuis Sultanahmet</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ortaköy — mosquée baroque sur le Bosphore</div>
+      <div class="gem-p">Gratuit · Photo iconique</div>
+      <div class="gem-d">Petite mosquée du 19e siècle posée au bord du Bosphore avec le pont suspendu en arrière-plan. Kumpir (pomme de terre farcie garnie) obligatoire sur place — spécialité du quartier.</div>
+      <div class="gem-when gem-todo">À prévoir · 20 min en bus depuis Beşiktaş</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Café Mandabatmaz</div>
+      <div class="gem-p">~1–2€ · Ruelle Olivia Geçidi, Beyoğlu</div>
+      <div class="gem-d">Minuscule café de ruelle qui prépare le meilleur Türk kahvesi (café turc) d'Istanbul depuis 60 ans. 4 tables, patron bougon, café parfait. Caché derrière Istiklal — les locaux y viennent exprès.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 après la Tour de Galata</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Mısır Çarşısı (Bazar aux épices)</div>
+      <div class="gem-p">Gratuit entrée · Eminönü</div>
+      <div class="gem-d">Plus petit et plus authentique que le Grand Bazar. Épices, thés, loukoums, noix. Juste à côté du ferry Bosphore — idéal pour ramener des cadeaux à petit prix.</div>
+      <div class="gem-when gem-todo">À prévoir · En passant vers le ferry J1</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Ferry jusqu'à Anadolu Kavağı</div>
+      <div class="gem-p">~2€ A/R · 1h30 depuis Eminönü</div>
+      <div class="gem-d">Ferry public qui remonte tout le Bosphore jusqu'au bout — forteresses génoises, villages de pêcheurs. La version locale des croisières privées à 40€. Journée entière depuis Eminönü.</div>
+      <div class="gem-when gem-todo">À prévoir · Départ tôt le matin · Journée entière</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Büyükada (Île des Princes)</div>
+      <div class="gem-p">Ferry ~5€ A/R · 1h depuis Kabataş</div>
+      <div class="gem-d">Grande île sans voitures dans la mer de Marmara — calèches et vélos uniquement. Villas ottomanes en bois, plages calmes, atmosphère hors du temps.</div>
+      <div class="gem-when gem-todo">À prévoir · Si 4e nuit sur Istanbul</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Pierre Loti Tepesi</div>
+      <div class="gem-p">Télécabine ~2€ · Vue sur la Corne d'Or</div>
+      <div class="gem-d">Colline avec un café historique fréquenté par Pierre Loti au 19e siècle. Vue exceptionnelle sur la Haliç (Corne d'Or) et les cimetières ottomans. Ambiance mélancolique unique.</div>
+      <div class="gem-when gem-todo">À prévoir · Télécabine depuis Eyüp</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Galeries d'art contemporain Karaköy</div>
+      <div class="gem-p">Gratuit · ANNA, Mixer, Versus</div>
+      <div class="gem-d">Galeries d'art indépendantes dans d'anciens entrepôts portuaires. Entrée libre, ambiance branchée très locale. Voir les expos en cours sur leurs Instagrams.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 matin en passant à Karaköy</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tünel — 2e plus vieux métro du monde</div>
+      <div class="gem-p">~0,50€ · 90 secondes de trajet</div>
+      <div class="gem-d">Inauguré en 1875, le Tünel est le 2e plus vieux métro souterrain du monde après Londres. 2 stations — 90 secondes entre Karaköy et le bas d'Istiklal. Petite expérience historique.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 en montant vers Istiklal</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Çiya Sofrası — cuisine anatolienne</div>
+      <div class="gem-p">~12–18€ repas · Kadıköy marché</div>
+      <div class="gem-d">Restaurant légendaire dans le marché de Kadıköy — cuisine anatolienne avec des plats qui changent chaque jour, certains introuvables ailleurs. Cité dans le New York Times. Arriver tôt.</div>
+      <div class="gem-when gem-todo">À prévoir · J3 déjeuner après le marché Kadıköy</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Tramway historique d'Istiklal</div>
+      <div class="gem-p">~0,50€ · Sur Istiklal uniquement</div>
+      <div class="gem-d">Petit tramway rouge historique qui remonte et descend la rue Istiklal — vestige du tramway d'Istanbul d'avant 1960. Monter pour une partie de la rue, petite expérience sympa.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 sur Istiklal</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Nargile dans un kahvehane</div>
+      <div class="gem-p">~5–8€ · Vieux cafés de Sultanahmet</div>
+      <div class="gem-d">Les kahvehane (cafés traditionnels turcs) autour de Sultanahmet proposent le nargile (chicha turc) sur des banquettes basses avec thé et backgammon. Expérience ottomane authentique, très populaire entre locaux le soir.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel soir</div>
+    </div>
+  
+    <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">🎵 Musique, street art & culture underground</span></div>
+    <div class="gem">
+      <div class="gem-t">Blind Istanbul — jazz & concerts live</div>
+      <div class="gem-p">~10–25€ entrée · Beyoğlu</div>
+      <div class="gem-d">LA salle de concert underground d'Istanbul — jazz, world music, électro, concerts intimes dans une cave. Programme varié toute l'année avec des artistes locaux et internationaux. Vérifier le programme sur leur Insta ou songkick.com avant de partir.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel soir à Istanbul · songkick.com/venues/4433220-blind</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Kadıköy — Yeldeğirmeni</div>
+      <div class="gem-p">Gratuit · Quartier asiatique</div>
+      <div class="gem-d">Le quartier de Yeldeğirmeni à Kadıköy est un musée à ciel ouvert — des dizaines de murales géantes sur les immeubles créées lors du festival Mural Istanbul. Artistes turcs et internationaux, œuvres engagées et colorées sur des thèmes sociaux. Les ruelles autour de Karakolhane Caddesi sont les plus denses.</div>
+      <div class="gem-when gem-todo">À prévoir · J3 après-midi après le marché Kadıköy</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Street art Karaköy — volets et ruelles</div>
+      <div class="gem-p">Gratuit · Quartier Karaköy/Galata</div>
+      <div class="gem-d">Karaköy a une scène street art différente de Kadıköy — pas de grandes murales mais des centaines de volets de boutiques peints, stencils, tags sur les ruelles pavées autour de Galata. L'artiste turc Highero et le Français Guaté Mao y ont laissé des traces. Rue Hoca Tahsin Sokak est particulièrement dense.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 en remontant depuis Karaköy vers Galata</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Hayal Kahvesi — concerts live depuis 1990</div>
+      <div class="gem-p">~5–15€ · Beyoğlu/Şişhane</div>
+      <div class="gem-d">La salle de concert mythique d'Istanbul — ouverte depuis 1990, elle a lancé des dizaines de groupes turcs. Rock, jazz, alternatif, world music. Concerts presque chaque soir. L'une des meilleures adresses pour voir de la musique live turque authentique dans une petite salle intimiste.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel soir · hayalkahvesi.com.tr</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">SATTAS — reggae turc en live</div>
+      <div class="gem-p">Variable selon dates · Beyoğlu</div>
+      <div class="gem-d">SATTAS est le groupe de reggae-dub turc le plus connu — ils jouent régulièrement à Istanbul en août. Ambiance roots, foule locale engagée. Vérifier leurs dates sur Shazam Events ou leur Instagram — ils jouaient encore à Frankhan (Beyoğlu) en juillet 2025.</div>
+      <div class="gem-when gem-todo">À prévoir · Vérifier dates sur Shazam Events Istanbul Reggae</div>
+    </div>
+  
+    <div class="gem">
+      <div class="gem-t">Dorock Heavy Metal Club — concerts chaque soir</div>
+      <div class="gem-p">~5–10€ entrée · Kameriye Sk, Beyoğlu (off Istiklal)</div>
+      <div class="gem-d">Le club métal culte d'Istanbul, 3 étages, groupes live chaque soir — thrash, doom, death, classic metal. Bières pas chères, foule locale de metalheads. Ouvert depuis des années, concerts quasi chaque soir. Vérifier le programme sur bandsintown.com.</div>
+      <div class="gem-when gem-todo">À prévoir · N'importe quel soir à Istanbul</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Minimüzikhol — le plus vieux club underground d'Istanbul</div>
+      <div class="gem-p">~10–15€ · Beyoğlu</div>
+      <div class="gem-d">Le club underground historique d'Istanbul — techno, électro, house expérimental dans une ambiance sombre et authentique. C'est là que la scène électronique locale a grandi depuis les années 90. Consulter leur programme sur RA (ra.co/istanbul) avant d'y aller.</div>
+      <div class="gem-when gem-todo">À prévoir · Vendredi ou samedi soir · minimuzikhol.club</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Klein — électro/techno underground Karaköy</div>
+      <div class="gem-p">~15€ · Karaköy</div>
+      <div class="gem-d">La salle de référence de la scène électronique underground d'Istanbul — décor kitsch et décadent, DJ internationaux et locaux, techno minimal et house. Ouvert vendredi et samedi de 23h à 4h. Vérifier le programme sur RA (ra.co/istanbul).</div>
+      <div class="gem-when gem-todo">À prévoir · Vendredi ou samedi · ra.co/istanbul</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Babylon Bomonti — world music, jazz, hip-hop</div>
+      <div class="gem-p">~10–20€ · Bomonti, Şişli</div>
+      <div class="gem-d">La salle de concert la plus éclectique d'Istanbul — jazz anatolien, hip-hop turc, world music, électro. Dans une ancienne brasserie rénovée dans le quartier de Bomonti. Programmation de qualité et très variée. Le meilleur endroit pour découvrir la musique turque contemporaine.</div>
+      <div class="gem-when gem-todo">À prévoir · Vérifier programme sur babylon.com.tr</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Salon İKSV — indie rock et électro curated</div>
+      <div class="gem-p">~10–20€ · Beyoğlu, next to Şişhane Metro</div>
+      <div class="gem-d">La salle la mieux programmée d'Istanbul — rock indé, électro, jazz, avec un line-up soigneusement sélectionné par la Fondation d'art. Capacité 400 personnes, concerts intimes. Billets sur Biletix, souvent complet. Consulter iksv.org pour le programme de fin juillet–août.</div>
+      <div class="gem-when gem-todo">À prévoir · Billets sur biletix.com · iksv.org</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Pixie Underground — bass music, dubstep, DnB</div>
+      <div class="gem-p">Variable · Istanbul</div>
+      <div class="gem-d">Le seul club d'Istanbul entièrement dédié à la bass music — dubstep, jungle, DnB, dub. Scène de niche très locale. Pour ceux qui veulent du son lourd et de la musique vraiment underground.</div>
+      <div class="gem-when gem-todo">À prévoir · Vérifier sur RA ou leur Instagram</div>
+    </div>
+    <div class="gem">
+      <div class="gem-t">Graffiti Yüksek Kaldırım Street — Galata</div>
+      <div class="gem-p">Gratuit · Galata, entre Karaköy et Tour</div>
+      <div class="gem-d">La rue Yüksek Kaldırım qui monte vers la Tour de Galata est couverte de graffitis, stencils et tags depuis des années. Certains travaux d'artistes reconnus comme Highero (personnages cartoon) et Guaté Mao (stencils politiques). Montée à faire en regardant les murs de près.</div>
+      <div class="gem-when gem-todo">À prévoir · J2 en montant vers la Tour de Galata</div>
+    </div>
+  </div>
+</div>
+
+<!-- PIÈGES -->
+<div id="pie" class="spg">
+  <div class="wb"><div class="wbt">🪄 Arnaque du cirage de chaussures (boyacı)</div><p>Un boyacı (cireur de chaussures) "laisse tomber" sa brosse devant vous. Il vous cire puis réclame 20–30€. Refuser dès le début — ne pas laisser commencer.</p></div>
+  <div class="wb"><div class="wbt">🍺 Arnaque du bar avec de faux "amis locaux"</div><p>Un homme sympa vous aborde et vous invite dans "son bar favori". Addition de 200–500€. Très fréquent à Beyoğlu (quartier Istiklal). Refuser toute invitation spontanée de ce type.</p></div>
+  <div class="wb"><div class="wbt">🚕 Taksici (taxi) sans compteur</div><p>Toujours exiger le taksi saatı (compteur) ou utiliser l'app BiTaksi. Aéroport IST → Sultanahmet = ~15–20€, pas 50€. Ne jamais accepter un prix fixe avant de monter.</p></div>
+  <div class="wb"><div class="wbt">⛴ Fausses croisières Bosphore sur les quais</div><p>Des rabatteurs proposent des "croisières Bosphore" à 15–25€ sur les quais d'Eminönü. Le vapür (ferry public) fait exactement la même chose pour 0,50€ — passer devant sans s'arrêter.</p></div>
+  <div class="wb"><div class="wbt">🍽 Restorans (restaurants) sans menü (menu) affiché</div><p>Autour de Sainte-Sophie, certains restaurants n'affichent pas les prix. Toujours demander le menü (carte avec prix) avant de commander. Un restaurant honnête l'a toujours affiché.</p></div>
+  <div class="wb"><div class="wbt">💱 Döviz bürosu (bureaux de change) touristiques</div><p>Taux catastrophiques sur Istiklal et autour de Sultanahmet. Retirer des lires turques (TRY) uniquement aux distributeurs Ziraat Bankası ou İş Bankası. Éviter les machines Euronet et DnB qui ajoutent des frais cachés.</p></div>
+  <div class="wb"><div class="wbt">🎟 Faux rehberler (guides) devant Topkapi</div><p>"Guides officiels" à l'entrée de Topkapi — non officiels, prix exorbitants. L'audioguide officiel est disponible à l'intérieur uniquement.</p></div>
+</div>
+
+<!-- PRATIQUE -->
+<div id="pra" class="spg">
+  <div class="card">
+    <div class="slbl">Transport Istanbul</div>
+    <div class="al info" style="margin-bottom:10px">
+      <div class="ali">🎫</div>
+      <div class="alb"><strong>Istanbulkart</strong> (carte de transport rechargeable) — ~5€ à l'achat. Valable métro, tramway, otobüs (bus), vapür (ferry). Économise ~30% vs tickets individuels. Acheter dès l'aéroport le 27 juillet à l'arrivée.</div>
+    </div>
+    <div class="fr"><div><div class="fn">Aéroport IST → Sultanahmet</div><div class="fsb">Métro M1 depuis IST → Aksaray · Tramway T1 → Sultanahmet</div></div><span class="fp">45 min · ~1,5€</span></div>
+    <div class="fr"><div><div class="fn">Taksiler (taxis)</div><div class="fsb">App BiTaksi — prix fixe, officiel, pas d'arnaque</div></div><span class="fp"><a href="https://www.bitaksi.com.tr" target="_blank">bitaksi.com.tr</a></span></div>
+    <div class="fr"><div><div class="fn">Esenler Otogarı (gare routière)</div><div class="fsb">Métro M2 → Yenikapı · Métro M1 → Esenler</div></div><span class="fp">~25 min · ~1€</span></div>
+
+    <div class="slbl">Horaires clés</div>
+    <div class="fr"><div><div class="fn">Ayasofya (Sainte-Sophie)</div></div><span class="fp">9h–17h · fermée pendant namaz (prières)</span></div>
+    <div class="fr"><div><div class="fn">Topkapı Sarayı (Palais Topkapi)</div></div><span class="fp">9h–18h · KAPALI (fermé) le MARDI</span></div>
+    <div class="fr"><div><div class="fn">Sultanahmet Camii (Mosquée Bleue)</div></div><span class="fp">Ouverte entre les namaz (prières) uniquement</span></div>
+    <div class="fr"><div><div class="fn">Kapalıçarşı (Grand Bazar)</div></div><span class="fp">9h–19h · fermé dimanche</span></div>
+    <div class="fr"><div><div class="fn">Şerefiye Sarnıcı (Citerne Théodose)</div></div><span class="fp">9h–18h30 · tous les jours</span></div>
+
+    <div class="slbl">Yemek (Nourriture) incontournable</div>
+    <div class="fr"><div><div class="fn">Simit</div><div class="fsb">Bagel au sésame vendu partout dans la rue</div></div><span class="fp">~0,50€</span></div>
+    <div class="fr"><div><div class="fn">Balık ekmek</div><div class="fsb">Sandwich poisson grillé — pont de Galata</div></div><span class="fp">~3–4€</span></div>
+    <div class="fr"><div><div class="fn">Çay</div><div class="fsb">Thé turc noir en verre tulipe — partout, toujours</div></div><span class="fp">~0,30–1€</span></div>
+    <div class="fr"><div><div class="fn">Baklava Güllüoğlu</div><div class="fsb">Plateau mixte baklava — Karaköy</div></div><span class="fp">~3€</span></div>
+    <div class="fr"><div><div class="fn">Ayran</div><div class="fsb">Yaourt salé battu — essentiel contre la chaleur</div></div><span class="fp">~0,80€</span></div>
+    <div class="fr"><div><div class="fn">Kumpir</div><div class="fsb">Pomme de terre farcie (garnitures multiples) — Ortaköy</div></div><span class="fp">~4€</span></div>
+
+    <div class="slbl">Banka & Para (Banque & Argent)</div>
+    <div class="al ok" style="margin-bottom:8px"><div class="ali">✅</div><div class="alb"><strong>Fortuneo Fospho</strong> — Pas de frais à l'étranger. Payer en lires turques (TRY) partout avec la carte. Parfait pour ce voyage.</div></div>
+    <div class="al warn"><div class="ali">⚠️</div><div class="alb"><strong>Retraits en espèces</strong> — Utiliser uniquement les distributeurs Ziraat Bankası ou İş Bankası (banques officielles turques). Éviter absolument les distributeurs Euronet et DnB qui pratiquent des frais cachés et des taux catastrophiques.</div></div>
+
+    <div class="slbl">Liens officiels</div>
+    <div class="lgrid">
+      <a href="https://muze.gov.tr/muze-detay?sectionId=TKP01&distId=TKP" target="_blank" class="lcard"><span class="lico">🏛</span><div><div class="lnm">Topkapi — réservation</div><div class="lul">muze.gov.tr</div></div></a>
+      <a href="https://ayasofyacamii.gov.tr/" target="_blank" class="lcard"><span class="lico">🕌</span><div><div class="lnm">Sainte-Sophie</div><div class="lul">ayasofyacamii.gov.tr</div></div></a>
+      <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">Réserver le bus</div><div class="lul">obilet.com</div></div></a>
+      <a href="https://www.bitaksi.com.tr" target="_blank" class="lcard"><span class="lico">🚕</span><div><div class="lnm">BiTaksi — taxi officiel</div><div class="lul">bitaksi.com.tr</div></div></a>
+      <a href="https://www.lonelyplanet.com/turkey/istanbul" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Lonely Planet Istanbul</div><div class="lul">lonelyplanet.com</div></div></a>
+      <a href="https://www.routard.com/guide_voyage_lieu/3453-istanbul.htm" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Routard Istanbul</div><div class="lul">routard.com</div></div></a>
+    </div>
+  </div>
+</div>
+
+
+</div><!-- /cnt -->
+
+
+<script>
+function showSub(id,btn){
+  document.querySelectorAll('.spg').forEach(p=>p.classList.remove('vis'));
+  document.querySelectorAll('.snb').forEach(b=>b.classList.remove('on'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('vis');
+  if(btn)btn.classList.add('on');
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var first=document.querySelector('.snb');
+  if(first)first.click();
+});
+</script>
+</body>
+</html>
