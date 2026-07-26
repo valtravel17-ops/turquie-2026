@@ -22,12 +22,12 @@ a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
 /* PROMPT replié par défaut */
-.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
-.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+
+
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
@@ -230,23 +230,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 </div>
 
 
-<!-- PROMPT BASE44 — replié par défaut -->
-<div class="pw">
-  <button class="ptog" id="ptog" onclick="togglePrompt()">
-    <span>📋 Prompt Base44 — Étape 1/6 : Istanbul (cliquer pour déplier)</span>
-    <span class="parr" id="parr">▼</span>
-  </button>
-  <div class="pbod" id="pbod">
-    <div class="plbl">Transmission Base44 — Fichier 01_istanbul.html</div>
-    <div class="pbox">
-      <strong>Bonjour Base44,</strong><br><br>
-      Ce fichier contient le guide complet de l'étape <strong>Istanbul (27–30 juillet, 3 nuits)</strong> du voyage Turquie 27 juillet – 17 août 2026, pour un couple voyageant en transport en commun uniquement.<br><br>
-      <strong>Hôtel :</strong> Sultanahmet La Petite Hotel · Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul · 3 nuits (arrivée soir 27, départ bus de nuit 30 juil)<br><br>
-      <strong>Bus de nuit confirmé :</strong> Pamukkale Turizm · Départ 23h15 · 35,25€/pers · Terminal Esenler (Büyük İstanbul Otogarı) → Terminal Selçuk Atatürk Bulvarı · 8h15 de trajet<br><br>
-      <strong>Points clés :</strong> Sainte-Sophie gratuite depuis 2020 · Topkapi fermé le mardi (planifié jeudi 30 ✓) · Istanbulkart (carte transport rechargeable) à acheter dès l'aéroport · Prises électriques Type F identiques à la France (pas d'adaptateur) · Fortuneo Fospho = 0 frais à l'étranger · Retirer des lires turques (TRY) aux distributeurs Ziraat Bankası ou İş Bankası uniquement<br><br>
-      <strong>Structure :</strong> 3 journées détaillées + onglet bus de nuit + pépites avec dates prévues + pièges & arnaques + infos pratiques
-    </div>
-  </div>
+
 </div>
 
 <!-- HEADER -->
@@ -261,7 +245,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <span class="hotel-toggle-left">🏨 🏨 Hôtel — 3 nuits (arrivée 27 juil soir · départ bus 30 juil 23h15)</span>
     <span class="hotel-toggle-icon">▼</span>
   </div>
-  <div class="hotel-grid">
+  <div class="hotel-grid" style="display:none">
     <div class="hotel-row"><span>Nom</span>Sultanahmet La Petite Hotel</div>
 <div class="hotel-row"><span>Adresse</span>Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul</div>
 <div class="hotel-row"><span>Quartier</span>Sultanahmet — 5 min à pied de Sainte-Sophie</div>
@@ -285,26 +269,13 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <div class="cnt">
 
 <!-- J1 -->
-<div class="hotel-card" style="background:#fff;border-radius:12px;padding:14px;margin:12px 16px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid #27ae60">
-  <div class="hotel-toggle" id="htoggle-01_istanbul" onclick="toggleHotel('01_istanbul')">
-    <div class="htitle">🏨 Hôtel réservé · Voir les détails</div>
     <span class="harrow" id="harrow-01_istanbul">▼</span>
   </div>
   <div class="hotel-body" id="hbody-01_istanbul">
     
   </div>
 </div>
-  <div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Nom</span><span style="color:#1a1916;font-weight:600">Sultanahmet La Petite Hotel</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Adresse</span><span style="color:#1a1916;font-weight:400">Kücükayasofya Mah., Aksakal Sokak No. 21, Sultanahmet, Fatih, Istanbul</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Téléphone</span><span style="color:#1a1916;font-weight:400">+90 535 288 41 58</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Arrivée</span><span style="color:#1a1916;font-weight:400">27 juillet (lundi) · check-in à partir de 14h00</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Départ</span><span style="color:#1a1916;font-weight:400">30 juillet (jeudi) · check-out avant 12h00</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Prix</span><span style="color:#1a1916;font-weight:600">94,89€ pour 2 · petit-déjeuner NON inclus</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Confirmation</span><span style="color:#1a1916;font-weight:600">5654.375.012 · Code confidentiel : 1757</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Notes</span><span style="color:#e74c3c;font-weight:400">⚠️ Quiet hours 22h–10h · Pas de parking · Escaliers uniquement (pas d'ascenseur)</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Annulation</span><span style="color:#e74c3c;font-weight:400">⚠️ Annulation : deadline 25 juillet dépassée — engagement total 94,89€</span></div>
-<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Bagages</span><span style="color:#e74c3c;font-weight:400">⚠️ Check-out 12h · Bus de nuit 23h15 → laisser bagages à l'hôtel ou consigne</span></div>
-
+  
 </div>
 <div id="j1" class="spg vis">
   <div class="dh">

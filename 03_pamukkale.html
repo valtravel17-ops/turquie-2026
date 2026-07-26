@@ -21,12 +21,12 @@ body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;li
 a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
-.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
-.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+
+
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
@@ -223,24 +223,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 </div>
 
 
-<!-- PROMPT -->
-<div class="pw">
-  <button class="ptog" id="ptog" onclick="togglePrompt()">
-    <span>📋 Prompt Base44 — Étape 3/6 : Pamukkale (cliquer pour déplier)</span>
-    <span class="parr" id="parr">▼</span>
-  </button>
-  <div class="pbod" id="pbod">
-    <div class="plbl">Transmission Base44 — Fichier 03_pamukkale.html</div>
-    <div class="pbox">
-      <strong>Bonjour Base44,</strong><br><br>
-      Ce fichier contient le guide complet de l'étape <strong>Pamukkale (3–5 août, 2 nuits)</strong> du voyage Turquie 27 juillet – 17 août 2026, couple, transport en commun uniquement.<br><br>
-      <strong>Arrivée :</strong> Bus Selçuk → Denizli (~3h) + dolmuş (minibus collectif) Denizli → Pamukkale (~20 min) · Soir du 3 août · ~13€/pers<br><br>
-      <strong>Base logistique :</strong> Loger dans le village de Pamukkale (pas à Denizli) — à 5 min à pied des terrasses · Hotels et pensions avec piscines thermales souvent incluses<br><br>
-      <strong>Tarifs 2026 confirmés :</strong> Entrée Pamukkale + Hierapolis (site combiné UNESCO) = 30€/pers · Piscine antique de Cléopâtre (Antique Pool) = +13€/pers · Horaires : 8h–21h (entrée sud 6h–23h)<br><br>
-      <strong>Point important :</strong> Les terrasses (travertins = formations calcaires blanches) peuvent être partiellement vides de leur eau en haute saison — le site gère les niveaux d'eau pour préserver la blancheur du calcaire. Vérifier les avis récents sur Google Maps avant la visite.<br><br>
-      <strong>Prochain transit :</strong> Bus Denizli → Fethiye · ~3h30 · ~12€/pers · Kamil Koç · Soir du 5 août
-    </div>
-  </div>
+
 </div>
 
 <!-- HEADER -->
@@ -268,7 +251,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <span class="hotel-toggle-left">🏨 Pamukkale village · 3–5 août · 2 nuits</span>
     <span class="hotel-toggle-icon">▼</span>
   </div>
-  <div class="hotel-grid">
+  <div class="hotel-grid" style="display:none">
       <div class="hotel-row warn"><span>Statut</span>⚠️ À réserver — rester DANS le village (pas à Denizli)</div>
       <div class="hotel-row"><span>Budget</span>~35€/nuit pour 2 · petit-déjeuner inclus recommandé</div>
       <div class="hotel-row"><span>Conseil</span>Choisir un hôtel avec piscine thermale privée — plusieurs options dans le village</div>

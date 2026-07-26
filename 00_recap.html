@@ -22,12 +22,12 @@ a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
 /* PROMPT replié */
-.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
-.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+
+
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
@@ -151,59 +151,7 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 
-<!-- PROMPT BASE44 — replié par défaut -->
-<div class="pw">
-  <button class="ptog" id="ptog" onclick="togglePrompt()">
-    <span>📋 Prompt Base44 — Fichier récapitulatif global (cliquer pour déplier)</span>
-    <span class="parr" id="parr">▼</span>
-  </button>
-  <div class="pbod" id="pbod">
-    <div class="plbl">Transmission Base44 — Fichier 00_recap.html</div>
-    <div class="pbox">
-      <strong>Bonjour Base44,</strong><br><br>
-      Voici le guide complet du voyage Turquie 27 juillet – 17 août 2026, couple, transport en commun uniquement. Il se compose de <strong>7 fichiers HTML</strong> à intégrer dans l'application comme suit :<br><br>
 
-      <strong>Structure des 7 fichiers :</strong><br>
-      — <strong>00_recap.html</strong> → Page d'accueil / tableau de bord (ce fichier) : planning global, budget, météo, apps, banque, sécurité, bagages<br>
-      — <strong>01_istanbul.html</strong> → Guide étape Istanbul · 27–30 juillet · 3 nuits<br>
-      — <strong>02_selcuk.html</strong> → Guide étape Selçuk/Éphèse · 30 juil–3 août · 4 nuits<br>
-      — <strong>03_pamukkale.html</strong> → Guide étape Pamukkale · 3–5 août · 2 nuits<br>
-      — <strong>04_fethiye.html</strong> → Guide étape Fethiye/Ölüdeniz · 5–9 août · 4 nuits<br>
-      — <strong>05_kas.html</strong> → Guide étape Kaş · 9–11 août · 2 nuits<br>
-      — <strong>06_antalya.html</strong> → Guide étape Antalya · 11–17 août · 6 nuits · Vol retour le 17<br><br>
-
-      <strong>Instructions d'intégration :</strong><br>
-      1. Chaque fichier est autonome et complet — ne pas fusionner leur contenu<br>
-      2. Conserver la navigation par onglets (journées + excursions + pépites + pièges + pratique) de chaque guide<br>
-      3. Le prompt Base44 replié en haut de chaque fichier peut être supprimé une fois intégré<br>
-      4. Les couleurs et styles CSS sont intégrés dans chaque fichier — fond clair, texte foncé, pas de fond noir<br>
-      5. Les termes turcs sont systématiquement traduits entre parenthèses dans chaque fichier<br><br>
-
-      <strong>Informations clés transversales :</strong><br>
-      — Couple · Transport en commun uniquement (bus, dolmuş, tramway, ferry) · Zéro voiture<br>
-      — Fortuneo Fospho = 0 frais à l'étranger · Toujours payer en TRY (lires turques)<br>
-      — Retraits espèces : Ziraat Bankası ou İş Bankası uniquement · Éviter absolument Euronet et DnB<br>
-      — VPN (NordVPN ou ExpressVPN) à installer et tester avant le départ depuis la France<br>
-      — SIM locale Turkcell ou Vodafone TR à acheter à l'aéroport IST dès l'arrivée (~25€/30Go/30j)<br>
-      — Prises turques = Type F identiques à la France · Aucun adaptateur nécessaire<br>
-      — CPAP (appareil apnée du sommeil) = bagage médical · Contacter les compagnies avant le départ<br>
-      — Réservation bus inter-villes : obilet.com (en anglais, CB acceptée)<br>
-      — Taxi officiel : BiTaksi (prix fixe, pas d'arnaque)<br><br>
-
-      <strong>3 expériences nautiques phares du voyage (dans l'ordre) :</strong><br>
-      — Saklıkent Kanyonu (marche aquatique canyon glacé, Fethiye) · ~6,50€ · J3 Fethiye<br>
-      — Kekova kayak de mer (ruines lyciennes submergées, Kaş) · ~55–65€ · J1 Kaş<br>
-      — Köprülü Kanyonu rafting (meilleur spot Turquie, Antalya) · ~37€ · J2 Antalya<br><br>
-
-      <strong>Tarifs importants corrigés par rapport aux sources classiques :</strong><br>
-      — Éphèse : 40€ (pas ~10€) · Prix fixés en euros depuis mars 2024<br>
-      — Maisons en Terrasse Éphèse : +15€ (pas +8€)<br>
-      — Pamukkale site combiné : 30€ (pas ~8€)<br>
-      — Piscine de Cléopâtre : +13€ (pas ~1€)<br>
-      — Parapente Babadağ (Fethiye) : ~150€ (pas 45–60€)<br>
-      — Rafting Köprülü : ~37€ tout compris (pas 13–17€)
-    </div>
-  </div>
 </div>
 
 <!-- HEADER -->
@@ -222,12 +170,10 @@ a:hover{border-bottom-color:transparent}
 <!-- SUB NAV -->
 <div class="snav">
   <button class="snb on" onclick="showSub('planning',this)">📅 Planning</button>
-  <button class="snb" onclick="showSub('budget',this)">💶 Budget</button>
   <button class="snb" onclick="showSub('meteo',this)">🌡 Météo</button>
   <button class="snb" onclick="showSub('apps',this)">📱 Applis</button>
   <button class="snb" onclick="showSub('banque',this)">💳 Banque & argent</button>
   <button class="snb" onclick="showSub('secu',this)">🔒 Sécurité</button>
-  <button class="snb" onclick="showSub('bagages',this)">🧳 Bagages</button>
   <button class="snb" onclick="showSub('conseils',this)">💡 Conseils généraux</button>
 </div>
 
@@ -359,53 +305,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- BUDGET -->
-<div id="budget" class="spg">
-  <div class="al warn">
-    <div class="ali">ℹ️</div>
-    <div class="alb"><strong>Budget estimatif par personne pour 21 nuits</strong> — Ces chiffres sont des estimations. La Turquie est très abordable mais les prix varient selon la saison (août = haute saison).</div>
-  </div>
-  <div class="budget-grid">
-    <div class="budget-card">
-      <div class="budget-val">~420€</div>
-      <div class="budget-lbl">Transports inter-villes</div>
-      <div class="budget-detail">Bus, dolmuş (minibus), ferry</div>
-    </div>
-    <div class="budget-card">
-      <div class="budget-val">~600€</div>
-      <div class="budget-lbl">Hébergement</div>
-      <div class="budget-detail">21 nuits · ~30–80€/nuit moy.</div>
-    </div>
-    <div class="budget-card">
-      <div class="budget-val">~320€</div>
-      <div class="budget-lbl">Entrées & activités</div>
-      <div class="budget-detail">Sites, kayak, parapente, rafting</div>
-    </div>
-    <div class="budget-card">
-      <div class="budget-val">~380€</div>
-      <div class="budget-lbl">Repas & vie courante</div>
-      <div class="budget-detail">~18€/jour · très abordable</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="slbl" style="margin-top:0">Détail transports confirmés</div>
-    <div class="fr"><div><div class="fn">Bus Istanbul → Selçuk · Pamukkale Turizm</div><div class="fsb">Bus de nuit · 23h15 · 8h15 de trajet · confirmé</div></div><span class="fp">35,25€/pers</span></div>
-    <div class="fr"><div><div class="fn">Bus Selçuk → Pamukkale (via Denizli)</div><div class="fsb">Bus + dolmuş (minibus) · ~3h30</div></div><span class="fp">~13€/pers</span></div>
-    <div class="fr"><div><div class="fn">Bus Denizli → Fethiye</div><div class="fsb">Direct · ~3h30 · Kamil Koç</div></div><span class="fp">~12€/pers</span></div>
-    <div class="fr"><div><div class="fn">Dolmuş (minibus) Fethiye → Kaş</div><div class="fsb">Route côtière · ~2h</div></div><span class="fp">~6€/pers</span></div>
-    <div class="fr"><div><div class="fn">Bus Kaş → Antalya</div><div class="fsb">Route côtière · ~4h · Kamil Koç</div></div><span class="fp">~10€/pers</span></div>
-    <div class="fr"><div><div class="fn">Tramway AntRay vers aéroport AYT</div><div class="fsb">Depuis Kaleiçi (centre) · 25 min</div></div><span class="fp">~1€</span></div>
-
-    <div class="slbl">Activités coûteuses à prévoir</div>
-    <div class="fr"><div><div class="fn">Parapente tandem depuis Babadağ (mont)</div><div class="fsb">Vol ~20–30 min · Ölüdeniz</div></div><span class="fp">~85–130€/pers</span></div>
-    <div class="fr"><div><div class="fn">Rafting Köprülü Kanyonu (canyon)</div><div class="fsb">Excursion journée + navette · Antalya</div></div><span class="fp">~35–55€/pers</span></div>
-    <div class="fr"><div><div class="fn">Kayak de mer Kekova</div><div class="fsb">Journée · Kaş</div></div><span class="fp">~40–60€/pers</span></div>
-    <div class="fr"><div><div class="fn">Land of Legends (parc aquatique)</div><div class="fsb">Belek · ~40 min d'Antalya</div></div><span class="fp">~50–80€/pers</span></div>
-    <div class="fr"><div><div class="fn">Tour des 12 Adalar (îles) · Fethiye</div><div class="fsb">Journée en bateau · repas inclus</div></div><span class="fp">~13€/pers</span></div>
-  </div>
-</div>
-
-<!-- MÉTÉO -->
 <div id="meteo" class="spg">
   <div class="al warn">
     <div class="ali">🌡</div>
@@ -614,78 +513,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- BAGAGES -->
-<div id="bagages" class="spg">
-  <div class="al info">
-    <div class="ali">🧳</div>
-    <div class="alb"><strong>Allocation bagages Vueling (aller) / EasyJet + SunExpress (retour)</strong> — 1 valise soute 20kg + 1 bagage cabine 10kg (aller seulement) + 1 sac perso 40×30×20cm 4kg (aller et retour) + sacoche médicale CPAP (appareil apnée du sommeil, souvent exempté).</div>
-  </div>
-
-  <div class="al warn">
-    <div class="ali">⚠️</div>
-    <div class="alb"><strong>Retour différent de l'aller</strong> — Au retour (EasyJet + SunExpress), pas de bagage cabine 10kg. Tout doit rentrer dans la valise soute (20kg dont ~3kg de valise vide = 17kg utiles) + sac perso 4kg + sacoche CPAP.</div>
-  </div>
-
-  <div class="card">
-    <div class="slbl" style="margin-top:0">Valise soute commune (20 kg · objectif départ ~14 kg)</div>
-    <div class="bag-section">
-      <div class="bag-title">Vêtements — lui <span class="bag-limit">~3 kg</span></div>
-      <div class="bag-row"><span class="bag-item">T-shirts / polos légers synthétiques (sèchent vite) × 6</span><span class="bag-weight">~0,6 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Shorts / pantalons légers × 3</span><span class="bag-weight">~0,6 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Sous-vêtements × 7</span><span class="bag-weight">~0,3 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Chaussettes × 4</span><span class="bag-weight">~0,2 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Maillots de bain × 2</span><span class="bag-weight">~0,2 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Tenue soirée / visite mosquée × 1</span><span class="bag-weight">~0,3 kg</span></div>
-    </div>
-    <div class="bag-section">
-      <div class="bag-title">Vêtements — elle <span class="bag-limit">~2 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Robes / tops légers × 6</span><span class="bag-weight">~0,6 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Shorts / pantalon léger × 2</span><span class="bag-weight">~0,3 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Sous-vêtements + soutiens × 7</span><span class="bag-weight">~0,4 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Maillots de bain × 2</span><span class="bag-weight">~0,3 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Foulard léger (pour les camii = mosquées) × 1</span><span class="bag-weight">~0,1 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Tenue soirée × 1</span><span class="bag-weight">~0,2 kg</span></div>
-    </div>
-    <div class="bag-section">
-      <div class="bag-title">Chaussures <span class="bag-limit">~0,7 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Chaussures de marche (portées dans l'avion — aucun poids valise)</span><span class="bag-weight bag-free">0 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Sandales légères lui × 1 paire</span><span class="bag-weight">~0,4 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Sandales légères elle × 1 paire</span><span class="bag-weight">~0,3 kg</span></div>
-    </div>
-    <div class="bag-section">
-      <div class="bag-title">Toilette & santé <span class="bag-limit">~1,5 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Crème solaire 50+</span><span class="bag-weight bag-free">À acheter sur place</span></div>
-      <div class="bag-row"><span class="bag-item">Shampoing / gel douche solide</span><span class="bag-weight bag-free">À acheter sur place</span></div>
-      <div class="bag-row"><span class="bag-item">Déodorant, dentifrice, brosse à dents × 2</span><span class="bag-weight">~0,3 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Rasoir, coton, petits soins</span><span class="bag-weight">~0,2 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Trousse pharmacie (antidiarrhéiques, paracétamol, électrolytes, pansements, répulsif)</span><span class="bag-weight">~0,4 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Serviette microfibre × 2</span><span class="bag-weight">~0,4 kg</span></div>
-    </div>
-    <div class="bag-section">
-      <div class="bag-title">Divers <span class="bag-limit">~0,5 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Adaptateur secteur</span><span class="bag-weight bag-free">Inutile ! Prises Type F identiques à la France</span></div>
-      <div class="bag-row"><span class="bag-item">Cadenas pour la valise × 1</span><span class="bag-weight">~0,1 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Sac à dos pliable léger (excursions)</span><span class="bag-weight">~0,2 kg</span></div>
-      <div class="bag-row"><span class="bag-item">Marge souvenirs (épices, ceramiques...)</span><span class="bag-weight">~3 kg réservés</span></div>
-    </div>
-    <div style="background:var(--gbg);border:1px solid var(--gn2);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--gt);margin-top:8px">
-      <strong>Total valise estimé au départ : ~11–12 kg</strong> · Marge souvenirs : ~3 kg · Total retour : ~14–15 kg ✅
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="slbl" style="margin-top:0">Sacoche médicale CPAP (aller ET retour)</div>
-    <div class="bag-row"><span class="bag-item">Appareil CPAP (apnée du sommeil) + masque</span><span class="bag-weight">~1,3 kg</span></div>
-    <div class="bag-row"><span class="bag-item">Câble + adaptateur universel</span><span class="bag-weight">~0,3 kg</span></div>
-    <div class="bag-row"><span class="bag-item">iPad + chargeur</span><span class="bag-weight">~0,7 kg</span></div>
-    <div class="bag-row"><span class="bag-item">Chargeurs téléphones × 2 + câbles</span><span class="bag-weight">~0,4 kg</span></div>
-    <div class="bag-row"><span class="bag-item">Batterie externe (obligatoirement en cabine, jamais en soute)</span><span class="bag-weight">~0,3 kg</span></div>
-    <div style="background:var(--bbg);border:1px solid var(--bl);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--bt);margin-top:8px">
-      <strong>⚠️ Contacter Vueling et EasyJet avant le départ</strong> pour déclarer le dispositif médical CPAP et obtenir la confirmation écrite de l'exemption de poids. Une ordonnance ou lettre du médecin peut être demandée. Prises turques = Type F (identiques à la France) — pas d'adaptateur pour le CPAP.
-    </div>
-  </div>
-</div>
-
-<!-- CONSEILS GÉNÉRAUX -->
 <div id="conseils" class="spg">
   <div class="card">
     <div class="slbl" style="margin-top:0">Culture & savoir-vivre en Turquie</div>
