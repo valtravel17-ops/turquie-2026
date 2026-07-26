@@ -180,14 +180,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -216,6 +208,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -248,10 +244,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">💧</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Pamukkale · Hierapolis</div>
     <div class="hdr-sub">3–5 août · 2 nuits · Étape 3 sur 6 · 32–40°C · Caniculaire · Travertins UNESCO</div>
   </div>
 </div>
@@ -285,8 +277,8 @@ a:hover{border-bottom-color:transparent}
   </div>
 </div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 4 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 5 août + départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Mar. 4 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Mer. 5 août + départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -298,7 +290,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 4 août · Travertins & Hierapolis</h2>
+    <h2>Jour 1 — Mardi 4 août · Travertins & Hierapolis</h2>
     <div class="ds">Le grand site du jour · Matin tôt sur les terrasses · Hierapolis l'après-midi</div>
     <div class="dgeo">📍 Tout à pied depuis l'hébergement · Le site est à 5 min du village</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~45–55€</strong> (entrée + piscine Cléopâtre)</div>
@@ -352,7 +344,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 5 août · Laodicée + départ Fethiye le soir</h2>
+    <h2>Jour 2 — Mercredi 5 août · Laodicée + départ Fethiye le soir</h2>
     <div class="ds">Matinée tranquille : Laodicée · Après-midi libre · Bus de soirée vers Fethiye</div>
     <div class="dgeo">📍 Dolmuş (minibus) ou taxi vers Laodicée · Bus ~19h–20h depuis Denizli otogarı</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–30€ + bus ~12€</strong></div>
@@ -477,7 +469,7 @@ a:hover{border-bottom-color:transparent}
 <div class="transit-banner">
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · 5 août soir (18h30)</div>
+    <div class="transit-banner-title">🚌 Départ · Mercredi 5 août soir (18h30)</div>
     <div class="transit-banner-detail">Dolmuş Pamukkale → Denizli (~2€) + Bus Denizli → Fethiye (~3h30, ~12€)<br>Départ Denizli 19h-20h · Arrivée Fethiye ~23h</div>
   </div>
 </div>
@@ -491,49 +483,49 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Kleopatra Havuzu (Piscine antique de Cléopâtre)</div>
       <div class="gem-p">+13€/pers · Dans le site Hierapolis</div>
       <div class="gem-d">Nager (yüzmek) parmi des colonnes romaines effondrées sous l'eau thermale à 36°C. L'une des expériences les plus uniques et mémorables de tout le voyage Turquie.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 11h30</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 11h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Coucher de soleil sur les travertins (terrasses)</div>
       <div class="gem-p">Inclus dans le billet · Entrée nord</div>
       <div class="gem-d">La lumière dorée de fin de journée transforme les terrasses blanches en dégradés de rose et orange. Le moment le plus magique du site — et les terrasses sont souvent mieux remplies d'eau.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 18h30</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 18h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Plutonium — "Porte de l'Enfer" d'Hierapolis</div>
       <div class="gem-p">Inclus dans le billet · Temple d'Apollon</div>
       <div class="gem-d">Fissure volcanique (yanardağ yarığı) émettant du CO2 en concentration mortelle — utilisée par les prêtres antiques d'Apollon pour "défier la mort". Des oiseaux meurent encore spontanément s'ils y entrent.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 17h (dans Hierapolis)</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 17h (dans Hierapolis)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Nekropolis d'Hierapolis</div>
       <div class="gem-p">Inclus dans le billet · Immense nécropole</div>
       <div class="gem-d">La plus grande nécropole (mezarlık antik = cimetière antique) de Turquie : 1 200+ tombeaux romains dans un état remarquable, étirés sur 2 km. Atmosphère irréelle à l'aube ou au coucher du soleil.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 17h (dans Hierapolis)</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 17h (dans Hierapolis)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Piscine thermale de l'hébergement</div>
       <div class="gem-p">Souvent incluse dans le prix de l'hôtel</div>
       <div class="gem-d">La plupart des hôtels du village de Pamukkale ont leur propre havuz (piscine) d'eau thermale. Baignade thermale gratuite en dehors du site officiel — idéal pour la pause de l'après-midi.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 15h (pause chaleur)</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 15h (pause chaleur)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Laodicea (Laodikeia) quasi-déserte</div>
       <div class="gem-p">~5–8€ · 15 km de Pamukkale</div>
       <div class="gem-d">Cité antique des 7 Églises de l'Apocalypse (Kıyamet Kitabı = Livre de l'Apocalypse), deux théâtres, fouilles actives, quasi aucun touriste. Contraste total avec Pamukkale bondé.</div>
-      <div class="gem-when gem-planned">📅 J2 · 5 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J2 · Mercredi 5 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Marche pieds nus (yalınayak) sur les travertins</div>
       <div class="gem-p">Inclus dans le billet · Expérience sensorielle</div>
       <div class="gem-d">Pas seulement un site à photographier — sentir l'eau chaude (sıcak su) thermale sur les pieds, le calcaire doux sous les orteils, l'air chaud. Une expérience physique et sensorielle rare.</div>
-      <div class="gem-when gem-planned">📅 J1 · 4 août · 9h15</div>
+      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 9h15</div>
     </div>
     <div class="gem">
       <div class="gem-t">Montgolfière (balon) au lever du soleil</div>
       <div class="gem-p">~100–130€/pers · Option premium</div>
       <div class="gem-d">Vol en mongolfière (sıcak hava balonu = ballon à air chaud) au-dessus des terrasses blanches et d'Hierapolis au lever du soleil. Expérience mémorable mais chère. Réserver à l'avance.</div>
-      <div class="gem-when gem-todo">À prévoir · J1 · 4 août · 6h (si intéressé)</div>
+      <div class="gem-when gem-todo">À prévoir · J1 · Mardi 4 août · 6h (si intéressé)</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>

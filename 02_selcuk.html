@@ -189,14 +189,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -225,6 +217,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -256,10 +252,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">🏛</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Selçuk · Éphèse</div>
     <div class="hdr-sub">31 juillet – 3 août · 3 nuits hôtel · 4 journées · Étape 2 sur 6 · 33–38°C · Très chaud · Sec · Éphèse (Efes) UNESCO</div>
   </div>
 </div>
@@ -279,10 +271,10 @@ a:hover{border-bottom-color:transparent}
 
 <!-- SUB NAV -->
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 31 juil</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 1er août</button>
-  <button class="snb" onclick="showSub('j3',this)">J3 · 2 août</button>
-  <button class="snb" onclick="showSub('j4',this)">J4 · 3 août + départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Ven. 31</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Sam. 1er août</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · Dim. 2 août</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · Lun. 3 août + départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -319,7 +311,7 @@ a:hover{border-bottom-color:transparent}
 </div>
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 31 juillet · Arrivée & Selçuk</h2>
+    <h2>Jour 1 — Vendredi 31 juillet · Arrivée & Selçuk</h2>
     <div class="ds">Journée tranquille · Arrivée fatiguée après nuit de bus · Ne pas surcharger</div>
     <div class="dgeo">📍 Tout à pied dans Selçuk · Aucun transport nécessaire</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~8–15€</strong></div>
@@ -367,7 +359,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 1er août · Éphèse (Efes) & Meryemana</h2>
+    <h2>Jour 2 — Samedi 1er août · Éphèse (Efes) & Meryemana</h2>
     <div class="ds">Journée phare du séjour · Départ à 9h pile · Quitter Éphèse avant midi</div>
     <div class="dgeo">📍 Dolmuş (minibus) Selçuk → Éphèse · 5 min · ~1€ · Puis taxi vers Meryemana</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~70–80€</strong> (entrées payantes en euros)</div>
@@ -421,7 +413,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — 2 août · Şirince matin & Parc Dilek (criques) après-midi</h2>
+    <h2>Jour 3 — Dimanche 2 août · Şirince matin & Parc Dilek (criques) après-midi</h2>
     <div class="ds">Village ottoman tôt le matin · Criques turquoise sauvages l'après-midi · Journée équilibrée</div>
     <div class="dgeo">📍 Dolmuş Selçuk → Şirince (15 min) · Retour Selçuk → Dolmuş vers Güzelçamlı (Parc Dilek, 30 km)</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15–25€</strong></div>
@@ -455,7 +447,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J4 -->
 <div id="j4" class="spg">
   <div class="dh">
-    <h2>Jour 4 — 3 août · Priene · Milet · Didymes + départ Pamukkale</h2>
+    <h2>Jour 4 — Lundi 3 août · Priene · Milet · Didymes + départ Pamukkale</h2>
     <div class="ds">3 sites antiques méconnus le matin · Bus de soir vers Pamukkale via Denizli</div>
     <div class="dgeo">📍 Tour organisé depuis Selçuk (recommandé) · Bus soir Selçuk → Denizli + dolmuş → Pamukkale</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~40–55€ (sites + tour + bus)</strong></div>
@@ -599,7 +591,7 @@ a:hover{border-bottom-color:transparent}
 <div class="transit-banner">
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · 3 août soir</div>
+    <div class="transit-banner-title">🚌 Départ · Lundi 3 août soir</div>
     <div class="transit-banner-detail">Bus Selçuk → Denizli (~3h, ~11€) + dolmuş → Pamukkale (~20 min, ~2€)<br>Réserver sur obilet.com</div>
   </div>
 </div>
@@ -613,31 +605,31 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Mosquée İsabey</div>
       <div class="gem-p">Gratuite · Selçuk centre</div>
       <div class="gem-d">Joyau seldjoukide (ottoman médiéval) de 1375, construite avec les colonnes récupérées d'Éphèse. Quasi-personne. L'une des plus belles mosquées d'Anatolie.</div>
-      <div class="gem-when gem-planned">📅 J1 · 31 juil · 10h (avec Basilique Saint-Jean)</div>
+      <div class="gem-when gem-planned">📅 J1 · Ven. 31 · 10h (avec Basilique Saint-Jean)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Şirince avant 10h</div>
       <div class="gem-p">Gratuit (entrée) · Dolmuş 15 min · ~2€</div>
       <div class="gem-d">Le village est méconnaissable avant l'arrivée des cars. Lumière dorée, coqs qui chantent, boulangers qui ouvrent. Atmosphère authentique qui disparaît dès 11h.</div>
-      <div class="gem-when gem-planned">📅 J3 · 2 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J3 · Dimanche 2 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Crique Kavakburnu — Parc Dilek (parc national)</div>
       <div class="gem-p">~3€ entrée parc · 6 km de l'entrée</div>
       <div class="gem-d">La crique (küçük koy) la plus sauvage du parc national, quasi-déserte même en août. Eau cristalline turquoise, snorkeling exceptionnel sur les fonds rocheux.</div>
-      <div class="gem-when gem-planned">📅 J3 · 2 août · 12h30</div>
+      <div class="gem-when gem-planned">📅 J3 · Dimanche 2 août · 12h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Temple d'Artémis au coucher du soleil</div>
       <div class="gem-p">Gratuit · 10 min à pied du centre</div>
       <div class="gem-d">L'unique colonne (sütun) prend une lumière dorée magnifique en fin de journée. La cigogne (leylek) y niche souvent. Contempler une merveille du monde disparue.</div>
-      <div class="gem-when gem-planned">📅 J1 · 31 juil · 19h (balade du soir)</div>
+      <div class="gem-when gem-planned">📅 J1 · Ven. 31 · 19h (balade du soir)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Priene — "Éphèse sans touristes"</div>
       <div class="gem-p">~5–8€ · 1h depuis Selçuk (tour)</div>
       <div class="gem-d">Site hellénistique (grec ancien) sur la colline, vue panoramique sur la plaine du Méandre, ruines authentiques non reconstituées. Souvent quasi-désert.</div>
-      <div class="gem-when gem-planned">📅 J4 · 3 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J4 · Lundi 3 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Pazar (marché) de Selçuk le samedi</div>
@@ -649,13 +641,13 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Maisons en Terrasse d'Éphèse (Terrace Houses)</div>
       <div class="gem-p">+15€ en supplément · Dans Éphèse</div>
       <div class="gem-d">Les demeures (ev) romaines les mieux préservées du monde — fresques, mosaïques, plomberie encore visible, hypocaustes (chauffage par le sol). À ne pas sauter même si payant.</div>
-      <div class="gem-when gem-planned">📅 J2 · 1er août · 9h (dans la visite d'Éphèse)</div>
+      <div class="gem-when gem-planned">📅 J2 · Samedi 1er août · 9h (dans la visite d'Éphèse)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Coucher de soleil depuis la citadelle d'Ayasuluk</div>
       <div class="gem-p">Inclus dans billet Basilique · 15 min à pied</div>
       <div class="gem-d">Vue à 360° sur la plaine du Méandre, les marécages, la côte égéenne au loin. Très peu de monde en fin de journée.</div>
-      <div class="gem-when gem-todo">À prévoir · J1 · 31 juil · vers 19h30</div>
+      <div class="gem-when gem-todo">À prévoir · J1 · Ven. 31 · vers 19h30</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>

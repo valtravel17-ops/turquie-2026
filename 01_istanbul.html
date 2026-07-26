@@ -187,14 +187,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -223,6 +215,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -254,10 +250,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">🕌</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Istanbul</div>
     <div class="hdr-sub">27–30 juillet · 3 nuits · Étape 1 sur 6 · 28–34°C · Humide · Sultanahmet (quartier historique)</div>
   </div>
 </div>
@@ -281,9 +273,9 @@ a:hover{border-bottom-color:transparent}
 
 <!-- SUB NAV -->
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 28 juil</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 29 juil</button>
-  <button class="snb" onclick="showSub('j3',this)">J3 · 30 juil</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Lun. 28</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Mar. 29</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · Jeu. 30</button>
   <button class="snb" onclick="showSub('bus',this)">🚌 Bus de nuit</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -316,7 +308,7 @@ a:hover{border-bottom-color:transparent}
 </div>
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 28 juillet · Sultanahmet</h2>
+    <h2>Jour 1 — Lundi 28 juillet · Sultanahmet</h2>
     <div class="ds">Cœur historique · Tout à pied depuis l'hôtel · Rythme tranquille</div>
     <div class="dgeo">📍 Rayon max 20 min à pied depuis l'hôtel · Aucun transport payant</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~12–18€</strong> (quasi tout gratuit)</div>
@@ -396,7 +388,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 29 juillet · Karaköy · Galata · Istiklal</h2>
+    <h2>Jour 2 — Mardi 29 juillet · Karaköy · Galata · Istiklal</h2>
     <div class="ds">Rive nord (Beyoğlu) · Quartiers créatifs · Vie locale · Rythme détendu</div>
     <div class="dgeo">📍 Tramway T1 → Karaköy (5 min) · puis tout à pied</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–35€</strong></div>
@@ -456,7 +448,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — 30 juillet · Topkapi & Kadıköy · Départ bus de nuit</h2>
+    <h2>Jour 3 — Jeudi 30 juillet · Topkapi & Kadıköy · Départ bus de nuit</h2>
     <div class="ds">Matin : Topkapı Sarayı · Après-midi : côté asiatique · 23h15 : bus de nuit vers Selçuk</div>
     <div class="dgeo">📍 Matin à pied · Après-midi vapür (ferry) vers Kadıköy · Soir métro → Esenler Otogarı</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~55–70€ + bus 35,25€</strong></div>
@@ -537,11 +529,14 @@ a:hover{border-bottom-color:transparent}
       <div class="tcr"><div class="tcl">Terminal départ</div><div class="tcv">Esenler Otogarı (Büyük İstanbul Otogarı)</div></div>
       <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Terminal Selçuk — Atatürk Bulvarı · tôt le 31 juil</div></div>
       <div class="tcr"><div class="tcl">Durée</div><div class="tcv">8h15</div></div>
-      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">35,25€ avec bagages</div></div>
-      <div class="tcr"><div class="tcl">Réservation</div><div class="tcv"><a href="https://www.obilet.com" target="_blank">obilet.com</a> · CB acceptée · en anglais</div></div>
+      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">34,08€ pour 2 (payé) ✅</div></div>
+      <div class="tcr"><div class="tcl">Statut</div><div class="tcv" style="color:#27ae60;font-weight:700">✅ RÉSERVÉ — Pamukkale Turizm</div></div>
+      <div class="tcr"><div class="tcl">Sièges</div><div class="tcv">Siège 14 (Ludyvine) · Siège 15 (Valentin)</div></div>
+      <div class="tcr"><div class="tcl">PNR</div><div class="tcv">196634383 (Ludyvine) · 196634384 (Valentin)</div></div>
+      <div class="tcr"><div class="tcl">Quais</div><div class="tcv">41-42-43-44 à Esenler Otogarı</div></div>
       <div class="tcr"><div class="tcl">Accès otogar depuis hôtel</div><div class="tcv">Métro M2 → Yenikapı · Métro M1 → Esenler · ~25 min · ~1€</div></div>
     </div>
-    <div class="tc-warn">⚠️ Réserver dès que possible — août = haute saison, places limitées sur les bus de nuit.</div>
+    <div class="tc-warn" style="background:#d4edda;border-color:#27ae60;color:#155724">✅ Billet confirmé · Annulation possible jusqu'à 2h avant le départ</div>
   </div>
 
   <div class="al info">
@@ -555,7 +550,7 @@ a:hover{border-bottom-color:transparent}
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
     <div class="transit-banner-title">🚌 Départ · Nuit du 30 juillet à 23h15</div>
-    <div class="transit-banner-detail">Bus de nuit Pamukkale Turizm · Esenlers → Selçuk · 35,25€/pers<br>⚠️ NON RÉSERVÉ — réserver sur obilet.com avant le départ !</div>
+    <div class="transit-banner-detail">Bus de nuit Pamukkale Turizm · Esenlers → Selçuk · 35,25€/pers<br>✅ RÉSERVÉ — Siège 14 (Ludyvine) · Siège 15 (Valentin) · PNR 196634383 / 196634384 avant le départ !</div>
   </div>
 </div>
 <div id="pep" class="spg">
@@ -568,25 +563,25 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Citerne de Théodose (Şerefiye Sarnıcı)</div>
       <div class="gem-p">1,32€ · Byzantine 5e siècle</div>
       <div class="gem-d">Vraie citerne à voir — quasi déserte, 10× moins chère que la Basilique, atmosphère hors du temps.</div>
-      <div class="gem-when gem-planned">📅 J1 · 28 juil · 10h</div>
+      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 10h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Ferry public (vapür) — Bosphore au coucher du soleil</div>
       <div class="gem-p">~0,50€ · Ferry Eminönü → Üsküdar (rive asiatique, 20 min)</div>
       <div class="gem-d">Même vue que les croisières à 25€. Le ferry public fait exactement la même chose pour presque rien.</div>
-      <div class="gem-when gem-planned">📅 J1 · 28 juil · 18h30</div>
+      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 18h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Jardin de la Süleymaniye</div>
       <div class="gem-p">Gratuit · Vue sur la Corne d'Or</div>
       <div class="gem-d">Meilleure vue panoramique sur la Haliç (Corne d'Or), tombeau Soliman, quasi aucun touriste.</div>
-      <div class="gem-when gem-planned">📅 J1 · 28 juil · 14h30</div>
+      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 14h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kadıköy (quartier) — rive asiatique</div>
       <div class="gem-p">Ferry public (vapür) ~0,50€ · Très local, peu de touristes</div>
       <div class="gem-d">Marché, street art, galeries, ambiance 100% locale — très peu de touristes.</div>
-      <div class="gem-when gem-planned">📅 J3 · 30 juil · 14h30</div>
+      <div class="gem-when gem-planned">📅 J3 · Jeu. 30 · 14h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Pont de Galata au coucher du soleil</div>
@@ -598,19 +593,19 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Pasajlar (passages Belle Époque)</div>
       <div class="gem-p">Gratuit · Istiklal</div>
       <div class="gem-d">Architecture 19e siècle cachée derrière la grande artère. Çiçek Pasajı, Atlas Pasajı.</div>
-      <div class="gem-when gem-planned">📅 J2 · 29 juil · 11h</div>
+      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · 11h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Baklava Güllüoğlu</div>
       <div class="gem-p">~3€ plateau · Karaköy</div>
       <div class="gem-d">Meilleure baklava (pâtisserie feuilletée) d'Istanbul selon les locaux. Ouvert tôt le matin.</div>
-      <div class="gem-when gem-planned">📅 J2 · 29 juil · 9h</div>
+      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Rue Galip Dede</div>
       <div class="gem-p">Gratuit · Entre Galata et Istiklal</div>
       <div class="gem-d">Luthiers et sazlar (instruments traditionnels turcs). Ambiance musicale unique.</div>
-      <div class="gem-when gem-planned">📅 J2 · 29 juil · en passant vers Galata</div>
+      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · en passant vers Galata</div>
     </div>
     <div class="gem">
       <div class="gem-t">Quartier Fener & Balat</div>
@@ -622,7 +617,7 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Hamam (bain turc traditionnel)</div>
       <div class="gem-p">~30–60€/pers · Çemberlitaş Hamamı</div>
       <div class="gem-d">Expérience culturelle incontournable. Kese (gommage au gant) + savonnage + détente. Idéal avant le bus de nuit du J3.</div>
-      <div class="gem-when gem-todo">À prévoir · J3 · 30 juil · 16h (avant bus)</div>
+      <div class="gem-when gem-todo">À prévoir · J3 · Jeu. 30 · 16h (avant bus)</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>

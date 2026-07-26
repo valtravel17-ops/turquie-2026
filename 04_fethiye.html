@@ -176,14 +176,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -212,6 +204,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -243,10 +239,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">🏖</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Fethiye · Ölüdeniz</div>
     <div class="hdr-sub">5–9 août · 4 nuits · Étape 4 sur 6 · 32–38°C · Chaud · Brise marine · Lagon Bleu UNESCO</div>
   </div>
 </div>
@@ -278,10 +270,10 @@ a:hover{border-bottom-color:transparent}
   </div>
 </div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 6 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 7 août · 12 îles</button>
-  <button class="snb" onclick="showSub('j3',this)">J3 · 8 août</button>
-  <button class="snb" onclick="showSub('j4',this)">J4 · 9 août + départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Jeu. 6 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Ven. 7 août · 12 îles</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · Sam. 8 août</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · Dim. 9 août + départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -293,7 +285,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 6 août · Ölüdeniz & Lagon Bleu</h2>
+    <h2>Jour 1 — Jeudi 6 août · Ölüdeniz & Lagon Bleu</h2>
     <div class="ds">Arrivée la veille au soir · Journée plage et lagon · Rythme détendu</div>
     <div class="dgeo">📍 Dolmuş (minibus) Fethiye → Ölüdeniz · 20 min · ~1,50€ · Toutes les 20 min</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15–25€</strong></div>
@@ -323,7 +315,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 7 août · Tour des 12 Adalar (îles) ⭐⭐</h2>
+    <h2>Jour 2 — Vendredi 7 août · Tour des 12 Adalar (îles) ⭐⭐</h2>
     <div class="ds">Journée en bateau · Criques isolées · Snorkeling · Déjeuner à bord</div>
     <div class="dgeo">📍 Départ port de Fethiye (Fethiye Limanı) · 10h–18h · Bateau collectif</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong> (bateau tout compris)</div>
@@ -354,7 +346,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — 8 août · Saklıkent Kanyonu (gorge aquatique) 🛶</h2>
+    <h2>Jour 3 — Samedi 8 août · Saklıkent Kanyonu (gorge aquatique) 🛶</h2>
     <div class="ds">Canyon aquatique spectaculaire · Eau glacée · Journée nature et fraîcheur</div>
     <div class="dgeo">📍 Dolmuş (minibus) depuis Fethiye Otogarı → Saklıkent · 45–60 min · ~3–4€ · Toutes les 30 min</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–30€</strong></div>
@@ -384,7 +376,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J4 -->
 <div id="j4" class="spg">
   <div class="dh">
-    <h2>Jour 4 — 9 août · Kayaköy + après-midi libre + départ Kaş 17h</h2>
+    <h2>Jour 4 — Dimanche 9 août · Kayaköy + après-midi libre + départ Kaş 17h</h2>
     <div class="ds">Matin : village fantôme grec · Après-midi libre à Fethiye · Dolmuş 17h vers Kaş · Arrivée 19h</div>
     <div class="dgeo">📍 Dolmuş Fethiye → Kayaköy (20 min) · puis dolmuş Fethiye → Kaş à 17h (2h de trajet)</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15€ + dolmuş ~6€</strong></div>
@@ -426,7 +418,7 @@ a:hover{border-bottom-color:transparent}
   <div class="dtot"><span>Budget estimé / pers.</span><strong>~15€ + dolmuş Kaş ~6€</strong></div>
 
   <div class="tc">
-    <div class="tct">🚌 Transit sortant — Fethiye → Kaş · 9 août vers 16h30–17h</div>
+    <div class="tct">🚌 Transit sortant — Fethiye → Kaş · Dimanche 9 août vers 16h30–17h</div>
     <div class="tcg">
       <div class="tcr"><div class="tcl">Transport</div><div class="tcv">Dolmuş (minibus collectif) · Route côtière D400</div></div>
       <div class="tcr"><div class="tcl">Départ conseillé</div><div class="tcv">16h30–17h depuis Fethiye Otogarı</div></div>
@@ -542,7 +534,7 @@ a:hover{border-bottom-color:transparent}
 <div class="transit-banner">
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · 9 août 16h30</div>
+    <div class="transit-banner-title">🚌 Départ · Dimanche 9 août 16h30</div>
     <div class="transit-banner-detail">Dolmuş Fethiye → Kaş · ~2h · ~6€/pers<br>Pas de réservation nécessaire · Dernier départ ~17h</div>
   </div>
 </div>
@@ -556,7 +548,7 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Parapente au-dessus du Lagon Bleu</div>
       <div class="gem-p">~15–20€/pers · Journée entière</div>
       <div class="gem-d">Criques lyciennes isolées, snorkeling dans des eaux turquoise, île aux chantiers navals byzantins abandonnés, déjeuner à bord. La meilleure journée bateau de la côte égéenne.</div>
-      <div class="gem-when gem-planned">📅 J2 · 7 août · Départ 10h port Fethiye</div>
+      <div class="gem-when gem-planned">📅 J2 · Vendredi 7 août · Départ 10h port Fethiye</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kelebekler Vadisi (Butterfly Valley)</div>
@@ -568,19 +560,19 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Saklıkent — Marche aquatique dans le canyon</div>
       <div class="gem-p">~6,50€ entrée · 45 km de Fethiye</div>
       <div class="gem-d">Eau glacée à 12°C entre des parois de 300m à peine 2m de large. En plein août avec 38°C dehors — rafraîchissement total garanti. L'une des expériences les plus uniques de Turquie.</div>
-      <div class="gem-when gem-planned">📅 J3 · 8 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J3 · Samedi 8 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kayaköy au lever du soleil ou tôt le matin</div>
       <div class="gem-p">~3–5€ entrée · 20 min dolmuş</div>
       <div class="gem-d">Village fantôme grec abandonné en 1923. Avant 9h, le site est quasi-désert et la lumière du matin donne une atmosphère irréelle aux ruines envahies par la végétation méditerranéenne.</div>
-      <div class="gem-when gem-planned">📅 J4 · 9 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J4 · Dimanche 9 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kaya mezarları (Tombes lyciennes) de Fethiye</div>
       <div class="gem-p">Gratuites · En plein centre-ville</div>
       <div class="gem-d">Tombes lyciennes (kaya mezarı = tombeau rupestre) du 4e siècle av. J.-C. taillées directement dans la falaise au-dessus de la ville. Visibles depuis les rues — belles à photographier la nuit quand elles sont illuminées.</div>
-      <div class="gem-when gem-planned">📅 J3 · 8 août · Après-midi en rentrant de Saklıkent</div>
+      <div class="gem-when gem-planned">📅 J3 · Samedi 8 août · Après-midi en rentrant de Saklıkent</div>
     </div>
     <div class="gem">
       <div class="gem-t">Dalyan — Bateaux sur la rivière + tortues</div>
@@ -598,7 +590,7 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Coucher de soleil depuis Ölüdeniz plage</div>
       <div class="gem-p">Gratuit · Plage de Belcekız</div>
       <div class="gem-d">Le soleil se couche derrière les montagnes en face du lagon — lumière dorée sur l'eau turquoise. Moment magique depuis la plage de Belcekız.</div>
-      <div class="gem-when gem-planned">📅 J1 · 6 août · 19h30</div>
+      <div class="gem-when gem-planned">📅 J1 · Jeudi 6 août · 19h30</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>

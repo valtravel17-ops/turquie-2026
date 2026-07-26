@@ -176,14 +176,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -212,6 +204,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -243,10 +239,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">⛵</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Kaş</div>
     <div class="hdr-sub">9–11 août · 2 nuits · Étape 5 sur 6 · 33–38°C · Chaud · Eau cristalline · Côte lycienne</div>
   </div>
 </div>
@@ -254,7 +246,7 @@ a:hover{border-bottom-color:transparent}
 
 <!-- TRANSIT ENTRANT -->
 <div class="transit-in">
-  <div class="ti-title">🚌 Transit entrant — Fethiye → Kaş · 9 août ~16h30–17h</div>
+  <div class="ti-title">🚌 Transit entrant — Fethiye → Kaş · Dimanche 9 août ~16h30–17h</div>
   <div class="ti-grid">
     <div class="ti-row"><div class="ti-l">Transport</div><div class="ti-v">Dolmuş (minibus collectif) · Route côtière D400</div></div>
     <div class="ti-row"><div class="ti-l">Départ</div><div class="ti-v">Fethiye Otogarı (gare routière) · 16h30–17h</div></div>
@@ -278,8 +270,8 @@ a:hover{border-bottom-color:transparent}
   </div>
 </div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 10 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 11 août + départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Lun. 10 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Mar. 11 août + départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -291,7 +283,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 10 août · Kayak de mer à Kekova ⭐⭐</h2>
+    <h2>Jour 1 — Lundi 10 août · Kayak de mer à Kekova ⭐⭐</h2>
     <div class="ds">L'expérience phare de Kaş · Kayak au-dessus des ruines lyciennes submergées · Journée complète</div>
     <div class="dgeo">📍 Minibus organisé par l'opérateur depuis Kaş → Üçağız (village) · ~30 min · Puis kayak sur Kekova</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~55–65€</strong> (kayak journée complète avec déjeuner)</div>
@@ -322,7 +314,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 11 août · Myra · Demre + départ Antalya</h2>
+    <h2>Jour 2 — Mardi 11 août · Myra · Demre + départ Antalya</h2>
     <div class="ds">Matin : Myra (nécropole rupestre + théâtre romain) · Bus de journée vers Antalya</div>
     <div class="dgeo">📍 Dolmuş (minibus) Kaş → Demre · ~40 min · ~3€ · Puis bus Kaş/Demre → Antalya l'après-midi</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–30€ + bus Antalya ~10€</strong></div>
@@ -357,7 +349,7 @@ a:hover{border-bottom-color:transparent}
   <div class="dtot"><span>Budget estimé / pers.</span><strong>~20–30€ + bus Antalya ~10€</strong></div>
 
   <div class="tc">
-    <div class="tct">🚌 Transit sortant — Kaş → Antalya · 11 août après-midi</div>
+    <div class="tct">🚌 Transit sortant — Kaş → Antalya · Mardi 11 août après-midi</div>
     <div class="tcg">
       <div class="tcr"><div class="tcl">Compagnie</div><div class="tcv">Kamil Koç · ou depuis Demre</div></div>
       <div class="tcr"><div class="tcl">Départ conseillé</div><div class="tcv">14h–16h depuis Kaş Otogarı</div></div>
@@ -459,7 +451,7 @@ a:hover{border-bottom-color:transparent}
 <div class="transit-banner">
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · 11 août après-midi</div>
+    <div class="transit-banner-title">🚌 Départ · Mardi 11 août après-midi</div>
     <div class="transit-banner-detail">Bus Kaş → Antalya · ~4h · ~10€/pers · Kamil Koç<br>Réserver sur obilet.com</div>
   </div>
 </div>
@@ -473,19 +465,19 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Kayak de mer sur les ruines de Kekova</div>
       <div class="gem-p">~55–65€/pers · Journée complète · Déjeuner inclus</div>
       <div class="gem-d">Pagayer au-dessus de maisons lyciennes submergées dans une eau turquoise transparente. Ruines visibles sous la surface à quelques centimètres. Expérience unique et inoubliable — le point culminant des activités nautiques du voyage.</div>
-      <div class="gem-when gem-planned">📅 J1 · 10 août · 9h (journée entière)</div>
+      <div class="gem-when gem-planned">📅 J1 · Lundi 10 août · 9h (journée entière)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kaya mezarları (nécropole rupestre) de Myra</div>
       <div class="gem-p">~11€ · 40 min de Kaş en dolmuş</div>
       <div class="gem-d">Tombeaux (mezar) taillés dans une falaise verticale rouge-orangée, façades sculptées imitant des maisons lyciennes. L'un des sites archéologiques les plus spectaculaires et photographiables de Turquie.</div>
-      <div class="gem-when gem-planned">📅 J2 · 11 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J2 · Mardi 11 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Coucher de soleil sur le port de Kaş face à Kastellorizo</div>
       <div class="gem-p">Gratuit · Port de Kaş</div>
       <div class="gem-d">L'île grecque de Kastellorizo (Meis) à 3 km, les bateaux de pêche, la lumière dorée sur les rochers. L'un des plus beaux couchers de soleil du voyage. Dîner de poisson (balık) sur le port avec cette vue.</div>
-      <div class="gem-when gem-planned">📅 J1 · 10 août · 19h30 (après retour kayak)</div>
+      <div class="gem-when gem-planned">📅 J1 · Lundi 10 août · 19h30 (après retour kayak)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kastellorizo (Meis) — Une journée en Grèce</div>
@@ -509,13 +501,13 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Ruelles de Kaş le soir</div>
       <div class="gem-p">Gratuit · Village authentique</div>
       <div class="gem-d">Kaş est l'un des rares villages côtiers turcs encore vraiment authentique — pas envahi par le tourisme de masse. Les ruelles pavées (taş yol) le soir, les restaurants de poisson, les boutiques d'artisanat. Atmosphère unique sur la côte turque.</div>
-      <div class="gem-when gem-planned">📅 J1 · 10 août · Après dîner au port</div>
+      <div class="gem-when gem-planned">📅 J1 · Lundi 10 août · Après dîner au port</div>
     </div>
     <div class="gem">
       <div class="gem-t">Simena Kalesi (Château de Simena) — Kaleköy</div>
       <div class="gem-p">Inclus dans le kayak Kekova</div>
       <div class="gem-d">Château médiéval (ortaçağ kalesi) perché sur la colline du village de Kaleköy, accessible uniquement à pied depuis le village (pas de route). Vue panoramique sur Kekova et les ruines submergées. Visité pendant l'excursion kayak.</div>
-      <div class="gem-when gem-planned">📅 J1 · 10 août · Pendant l'excursion kayak</div>
+      <div class="gem-when gem-planned">📅 J1 · Lundi 10 août · Pendant l'excursion kayak</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>

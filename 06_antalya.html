@@ -176,14 +176,6 @@ a:hover{border-bottom-color:transparent}
 .snb{position:relative}
 
 
-/* HEADER COMPACT */
-.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
-.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
-.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
-.hdr-info{flex:1}
-.hdr-ico{font-size:24px;flex-shrink:0}
-.hdr-meta{display:none}
-
 /* SÉPARATEUR JOURNÉE */
 .dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
 .dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
@@ -212,6 +204,10 @@ a:hover{border-bottom-color:transparent}
 .hotel-row.warn{color:#c0392b}
 .hotel-row.warn span{color:#c0392b}
 
+
+/* OVERRIDE hotel-grid caché par défaut */
+div.hotel-box > div.hotel-grid { display: none !important; }
+div.hotel-box > div.hotel-grid.open { display: block !important; }
 </style>
 </head>
 <body>
@@ -243,10 +239,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- HEADER -->
-<div class="hdr">
-  <span class="hdr-ico">🌊</span>
-  <div class="hdr-info">
-    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Antalya</div>
     <div class="hdr-sub">11–17 août · 6 nuits · Étape 6/6 — Dernière étape · Vol retour le 17 août · 34–40°C · Très chaud · Kaleiçi (vieille ville)</div>
   </div>
 </div>
@@ -279,12 +271,12 @@ a:hover{border-bottom-color:transparent}
   </div>
 </div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · 12 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · 13 août</button>
-  <button class="snb" onclick="showSub('j3',this)">J3 · 14 août ⭐⭐⭐</button>
-  <button class="snb" onclick="showSub('j4',this)">J4 · 15 août</button>
-  <button class="snb" onclick="showSub('j5',this)">J5 · 16 août</button>
-  <button class="snb" onclick="showSub('j6',this)">J6 · 17 août · Départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Mer. 12 août</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Jeu. 13 août</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · Ven. 14 août ⭐⭐⭐</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · Sam. 15 août</button>
+  <button class="snb" onclick="showSub('j5',this)">J5 · Dim. 16 août</button>
+  <button class="snb" onclick="showSub('j6',this)">J6 · Lun. 17 août · Départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
@@ -296,7 +288,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — 12 août · Kaleiçi — La vieille ville ottomane</h2>
+    <h2>Jour 1 — Mercredi 12 août · Kaleiçi — La vieille ville ottomane</h2>
     <div class="ds">Arrivée la veille en soirée · Journée tranquille de découverte du quartier</div>
     <div class="dgeo">📍 Tout à pied dans Kaleiçi · Plage Mermerli accessible depuis les remparts</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~10–20€</strong></div>
@@ -321,7 +313,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — 13 août · Aspendos · Perge · Side</h2>
+    <h2>Jour 2 — Jeudi 13 août · Aspendos · Perge · Side</h2>
     <div class="ds">3 sites antiques en une journée · Tour organisé recommandé · Journée complète</div>
     <div class="dgeo">📍 Tour organisé depuis Antalya · Transfert inclus · Retour en soirée</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~70€</strong> (tour avec entrées et déjeuner)</div>
@@ -357,7 +349,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — 14 août · Rafting Köprülü Kanyonu ⭐⭐⭐</h2>
+    <h2>Jour 3 — Vendredi 14 août · Rafting Köprülü Kanyonu ⭐⭐⭐</h2>
     <div class="ds">L'expérience canoë/rafting ultime du voyage · Journée entière · Transfert inclus depuis Antalya</div>
     <div class="dgeo">📍 Prise en charge à l'hôtel à Kaleiçi · ~1h30 de transfert · Köprülü Kanyon Milli Parkı (parc national)</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~37€</strong> tout compris</div>
@@ -382,7 +374,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J4 -->
 <div id="j4" class="spg">
   <div class="dh">
-    <h2>Jour 4 — 15 août · Termessos — La cité perchée</h2>
+    <h2>Jour 4 — Samedi 15 août · Termessos — La cité perchée</h2>
     <div class="ds">Cité antique à 1 050m dans la montagne · Randonnée · Accessible en bus depuis Antalya</div>
     <div class="dgeo">📍 Bus 506 depuis Antalya centre → arrêt Termessos + ~9 km de montée (taxi ou marche) · ~45 min au total</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong></div>
@@ -411,7 +403,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J5 -->
 <div id="j5" class="spg">
   <div class="dh">
-    <h2>Jour 5 — 16 août · Land of Legends + Dîner d'adieu</h2>
+    <h2>Jour 5 — Dimanche 16 août · Land of Legends + Dîner d'adieu</h2>
     <div class="ds">Parc aquatique et d'attractions · Journée détente et sensations · Dîner d'adieu le soir · Préparer les bagages</div>
     <div class="dgeo">📍 Land of Legends · Belek · ~40 min depuis Antalya · Navette ou dolmuş</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~60–90€</strong></div>
@@ -441,7 +433,7 @@ a:hover{border-bottom-color:transparent}
 <!-- J6 / DÉPART -->
 <div id="j6" class="spg">
   <div class="dh">
-    <h2>Jour 6 — 17 août · Départ AYT · Vol retour</h2>
+    <h2>Jour 6 — Lundi 17 août · Départ AYT · Vol retour</h2>
     <div class="ds">Réveil 4h30 · À l'aéroport à 5h30 · Fin du voyage</div>
     <div class="dgeo">📍 Kaleiçi → Aéroport AYT · Tramway AntRay T1 (si ouvert) ou taxi BiTaksi</div>
     <div class="dbudg"></div>
@@ -459,7 +451,7 @@ a:hover{border-bottom-color:transparent}
   </div>
 
   <div class="depart">
-    <div class="depart-t">✈️ Vol retour — 17 août 2026 · Aéroport AYT Antalya</div>
+    <div class="depart-t">✈️ Vol retour — Lundi 17 août 2026 · Aéroport AYT Antalya</div>
     <div class="depart-g">
       <div class="depart-r"><div class="depart-l">À l'aéroport</div><div class="depart-v">5h30 minimum</div></div>
       <div class="depart-r"><div class="depart-l">Transport option 1</div><div class="depart-v">Tramway AntRay T1 · ~25 min · ~1€</div></div>
@@ -558,7 +550,7 @@ a:hover{border-bottom-color:transparent}
 <div class="transit-banner">
   <span class="ti">🗺</span>
   <div class="transit-banner-content">
-    <div class="transit-banner-title">✈️ Départ · 17 août à 5h30 à AYT</div>
+    <div class="transit-banner-title">✈️ Départ · Lundi 17 août à 5h30 à AYT</div>
     <div class="transit-banner-detail">Tramway AntRay T1 → Aéroport AYT · ~25 min · ~1€/pers<br>OU Taxi BiTaksi ~8-10€ si tramway pas assez tôt<br>⚠️ Vérifier premier tramway la veille !</div>
   </div>
 </div>
@@ -572,31 +564,31 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Rafting Köprülü Kanyonu</div>
       <div class="gem-p">~37€/pers tout compris · Journée entière</div>
       <div class="gem-d">Le meilleur spot de rafting de Turquie. Rapides II–III dans des gorges calcaires, ponts romains antiques, déjeuner au bord de la rivière. L'expérience aquatique ultime du voyage — encore mieux qu'à Saklıkent.</div>
-      <div class="gem-when gem-planned">📅 J2 · 13 août · Journée entière</div>
+      <div class="gem-when gem-planned">📅 J2 · Jeudi 13 août · Journée entière</div>
     </div>
     <div class="gem">
       <div class="gem-t">Théâtre d'Aspendos — Le mieux conservé au monde</div>
       <div class="gem-p">Inclus dans le tour ~70€ · 45 km d'Antalya</div>
       <div class="gem-d">15 000 places, façade scénique à 3 étages intacte depuis le 2e siècle ap. J.-C. Encore utilisé pour des concerts. Si un spectacle a lieu en août — aller absolument. L'un des plus beaux sites antiques du monde.</div>
-      <div class="gem-when gem-planned">📅 J3 · 14 août · Matinée</div>
+      <div class="gem-when gem-planned">📅 J3 · Vendredi 14 août · Matinée</div>
     </div>
     <div class="gem">
       <div class="gem-t">Termessos — La cité qui a résisté à Alexandre</div>
       <div class="gem-p">~3–5€ parc national · Bus 506 depuis Antalya</div>
       <div class="gem-d">Cité perchée à 1 050m dans les cèdres. Théâtre avec vue sur la mer et les montagnes. Quasi-déserte. La seule cité qu'Alexandre le Grand n'a jamais pu prendre. Atmosphère mystérieuse et hors du temps.</div>
-      <div class="gem-when gem-planned">📅 J4 · 15 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J4 · Samedi 15 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Hadrien Kapısı (Arc de Triomphe d'Hadrien)</div>
       <div class="gem-p">Gratuit · Kaleiçi · 1 min à pied</div>
       <div class="gem-d">Arc de triomphe romain intact depuis 130 ap. J.-C., au milieu des ruelles de Kaleiçi. Construit pour la visite de l'Empereur Hadrien. L'un des arcs romains les mieux conservés au monde — complètement gratuit et sans foule.</div>
-      <div class="gem-when gem-planned">📅 J1 · 12 août · 9h (dans Kaleiçi)</div>
+      <div class="gem-when gem-planned">📅 J1 · Mercredi 12 août · 9h (dans Kaleiçi)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Temple d'Apollon de Side au coucher du soleil</div>
       <div class="gem-p">Inclus dans le tour · Side</div>
       <div class="gem-d">Colonnes du temple d'Apollon face à la Méditerranée au coucher du soleil — l'image la plus iconique de la côte turquoise. Lumière dorée sur le marbre blanc et la mer bleue.</div>
-      <div class="gem-when gem-planned">📅 J3 · 14 août · Fin d'après-midi</div>
+      <div class="gem-when gem-planned">📅 J3 · Vendredi 14 août · Fin d'après-midi</div>
     </div>
     <div class="gem">
       <div class="gem-t">Yanartaş — Feux de la Chimère (Olympos)</div>
@@ -608,7 +600,7 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Dîner d'adieu dans le vieux port de Kaleiçi</div>
       <div class="gem-p">~20–30€/pers · Kaleiçi port</div>
       <div class="gem-d">Dernier dîner du voyage dans un balık restoranı (restaurant de poisson) au bord du vieux port ottoman. Levrek (loup de mer), baklava, çay (thé turc). Meilleure façon de clore 21 nuits en Turquie.</div>
-      <div class="gem-when gem-planned">📅 J5 · 16 août · Soir</div>
+      <div class="gem-when gem-planned">📅 J5 · Dimanche 16 août · Soir</div>
     </div>
     <div class="gem">
       <div class="gem-t">Phaselis — Ruines romaines au bord de la mer</div>
@@ -640,10 +632,10 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-when gem-todo">À prévoir · En se baladant dans Kaleiçi</div>
     </div>
     <div class="gem">
-      <div class="gem-t">Ayna concert live — 15 août Antalya</div>
+      <div class="gem-t">Ayna concert live — Samedi 15 août Antalya</div>
       <div class="gem-p">~15–25€ · Holly Stone Performance Hall Antalya</div>
       <div class="gem-d">Ayna est l'un des groupes de rock alternatif turc les plus cultes — et ils jouent à Antalya le 15 août 2026 au Holly Stone. Concert dans la scène rock locale turque pour voir l'énergie d'un public qui connaît chaque parole par cœur. Vérifier sur songkick.com ou bandsintown pour les billets.</div>
-      <div class="gem-when gem-todo">À prévoir · 15 août 2026 · songkick.com · Antalya</div>
+      <div class="gem-when gem-todo">À prévoir · Samedi 15 août 2026 · songkick.com · Antalya</div>
     </div>
     <div class="gem">
       <div class="gem-t">Mem Ararat — concert world music 20 août</div>
@@ -770,7 +762,7 @@ a:hover{border-bottom-color:transparent}
     <div class="fr"><div><div class="fn">Bus 506 → Termessos</div><div class="fsb">Depuis le centre d'Antalya · Descendre D685 · 9 km montée jusqu'aux ruines</div></div><span class="fp">~1€</span></div>
     <div class="fr"><div><div class="fn">Taksici (taxi) BiTaksi — Aéroport AYT</div><div class="fsb">Depuis Kaleiçi · ~20 min · Utile si avant 5h du matin</div></div><span class="fp">~8–10€</span></div>
 
-    <div class="slbl">Départ aéroport — 17 août</div>
+    <div class="slbl">Départ aéroport — Lundi 17 août</div>
     <div class="fr"><div><div class="fn">À l'aéroport AYT minimum</div></div><span class="fp">5h30</span></div>
     <div class="fr"><div><div class="fn">Option 1 : Tramway AntRay T1</div><div class="fsb">Vérifier heure 1er départ la veille · ~25 min</div></div><span class="fp">~1€</span></div>
     <div class="fr"><div><div class="fn">Option 2 : Taxi BiTaksi</div><div class="fsb">Réserver la veille · Départ 4h45 depuis Kaleiçi</div></div><span class="fp">~8–10€</span></div>
