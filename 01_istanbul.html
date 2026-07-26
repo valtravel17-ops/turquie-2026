@@ -59,7 +59,7 @@ a:hover{border-bottom-color:transparent}
 .spg{display:none}.spg.vis{display:block}
 
 /* CONTENT */
-.cnt{max-width:100%;margin:0;padding:12px 16px}
+.cnt{max-width:100%;margin:0;padding:10px 14px}
 
 /* DAY HERO */
 .dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
@@ -219,6 +219,17 @@ a:hover{border-bottom-color:transparent}
 /* OVERRIDE hotel-grid caché par défaut */
 div.hotel-box > div.hotel-grid { display: none !important; }
 div.hotel-box > div.hotel-grid.open { display: block !important; }
+
+/* Marges légères sur mobile */
+.cnt{max-width:100%;margin:0;padding:10px 14px}
+/* Hotel-grid espacement */
+.hr{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px;line-height:1.4}
+.hl{color:#888;min-width:90px;flex-shrink:0;font-size:11px;padding-top:2px;text-transform:uppercase;letter-spacing:.03em}
+/* Carte mentale déroulable */
+.cm-box{margin:8px 0;border:1px solid #e0dbd4;border-radius:8px;overflow:hidden}
+.cm-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f8f5f0;cursor:pointer;font-size:12px;color:#666}
+.cm-body{display:none;padding:10px 12px}
+.cm-body.open{display:block}
 </style>
 </head>
 <body>
@@ -242,7 +253,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- HOTEL -->
 <div class="hotel-box">
   <div class="hotel-toggle" onclick="toggleHotel()">
-    <span class="hotel-toggle-left">🏨 Hôtel — 3 nuits (arrivée 27 juil soir · départ bus 30 juil 23h15)</span>
+    <span class="hotel-toggle-left">🏨 Détails infos hôtel — Istanbul · 3 nuits</span>
     <span class="hotel-toggle-icon">▼</span>
   </div>
   <div class="hotel-grid" style="display:none">
@@ -257,7 +268,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <div class="hr"><span class="hl">ANNULATION</span><span style="color:#c0392b;font-weight:400">⚠️ Deadline 25 juillet dépassée — engagement total 94,89€</span></div>
 <div class="hr"><span class="hl">BAGAGES</span><span style="color:#c0392b;font-weight:400">⚠️ Check-out 12h · Bus de nuit 23h15 → laisser bagages à l'hôtel ou consigne</span></div>
 
-<div class="hr"><span class="hl">TAXI AÉROPORT</span><a href="https://united.tech/t/HH03IZB" target="_blank" style="color:#2d6a8f;text-decoration:none">🚕 Réservation confirmée →</a></div>
+<div class="hr"><span class="hl">TAXI AÉROPORT</span><a href="https://united.tech/t/HH03IZB" target="_blank" style="color:#2d6a8f;text-decoration:none">Infos résa →</a></div>
 </div>
 
 <!-- SUB NAV -->
@@ -372,7 +383,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 
   <div class="al ok">
     <div class="ali">✅</div>
-    <div class="alb"><strong>Topkapi fermé le mardi — reporté au J3 (jeudi 30 juillet)</strong> — Le 29 juillet 2026 est un mercredi. Topkapi est fermé uniquement le mardi — tout va bien, la visite est prévue le 30.</div>
+    <div class="alb"><strong></strong> — Le 29 juillet 2026 est un mercredi. Topkapi est fermé uniquement le mardi — tout va bien, la visite est prévue le 30.</div>
   </div>
 
   <div class="ts"><div class="tsi">🚋</div><div class="tst"><div class="tsm">Tramway T1 hôtel → arrêt Karaköy</div><div>Direction Kabataş · Istanbulkart (carte transport rechargeable)</div></div><span class="tsd">5 min</span><span class="tsp">~0,50€</span></div>
@@ -505,7 +516,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="tcr"><div class="tcl">Terminal départ</div><div class="tcv">Esenler Otogarı (Büyük İstanbul Otogarı)</div></div>
       <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Terminal Selçuk — Atatürk Bulvarı · tôt le 31 juil</div></div>
       <div class="tcr"><div class="tcl">Durée</div><div class="tcv">8h15</div></div>
-      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">34,08€ pour 2 (payé) ✅</div></div>
+      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">77,50€ pour 2 ✅</div></div>
       <div class="tcr"><div class="tcl">Statut</div><div class="tcv" style="color:#27ae60;font-weight:700">✅ RÉSERVÉ — Pamukkale Turizm</div></div>
       <div class="tcr"><div class="tcl">Sièges</div><div class="tcv">Siège 14 (Ludyvine) · Siège 15 (Valentin)</div></div>
       <div class="tcr"><div class="tcl">PNR</div><div class="tcv">196634383 (Ludyvine) · 196634384 (Valentin)</div></div>
