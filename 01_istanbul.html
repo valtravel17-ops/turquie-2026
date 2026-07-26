@@ -34,8 +34,8 @@ a:hover{border-bottom-color:transparent}
 .pbox strong{color:var(--gn)}
 
 /* HEADER */
-.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
-.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+
+.hdr h1{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:3px}
 .hdr p{font-size:13px;color:var(--t2)}
 .hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
@@ -159,13 +159,70 @@ a:hover{border-bottom-color:transparent}
 .lnm{font-size:12px;font-weight:500;color:var(--tx)}
 .lul{font-size:10px;color:var(--t3)}
 
-@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.hotel-box{margin:10px 14px 0}}
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hotel-box{margin:10px 14px 0}}
 
 .site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
 .snav-btn.home{background:#1a3a5c;color:#fff}
 .snav-btn:active{opacity:.7}
 .snav-center{font-size:13px;font-weight:700;color:#1a1916;text-align:center;flex:1;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.hotel-toggle{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0}
+.hotel-toggle .htitle{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#27ae60}
+.hotel-toggle .harrow{font-size:14px;color:#27ae60;transition:transform .25s}
+.hotel-toggle.open .harrow{transform:rotate(180deg)}
+.hotel-body{display:none;margin-top:10px}
+.hotel-body.open{display:block}
+
+.page-header{background:linear-gradient(135deg,var(--hc,#1a3a5c),var(--hc2,#2d6a8f));color:#fff;padding:10px 14px 8px}
+.page-header h1{font-size:16px;font-weight:700;margin:4px 0 2px}
+.page-header p{font-size:11px;opacity:.85;margin:0}
+.page-header .transit-out{font-size:11px;opacity:.85;margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.2)}
+
+.hdr h1{font-size:16px!important;margin-bottom:2px!important}
+.hdr p{font-size:12px!important;margin-bottom:4px!important}
+.hdr-meta{margin-top:4px!important}
+
+/* === BADGE JOUR dans nav tabs === */
+.snb{position:relative}
+
+
+/* HEADER COMPACT */
+.hdr{background:#1a3a5c;padding:8px 14px;display:flex;align-items:center;gap:10px;border-bottom:none}
+.hdr h1{font-size:16px;font-weight:700;color:#fff;margin:0;line-height:1.2}
+.hdr-sub{font-size:10px;color:rgba(255,255,255,.7);margin-top:1px}
+.hdr-info{flex:1}
+.hdr-ico{font-size:24px;flex-shrink:0}
+.hdr-meta{display:none}
+
+/* SÉPARATEUR JOURNÉE */
+.dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
+.dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
+.ds{font-size:11px;color:#5a7a9a;margin:0 0 1px}
+.dgeo{font-size:10px;color:#888;margin:0}
+.dbudg{font-size:11px;font-weight:600;color:#2d6a4f;margin-top:2px}
+
+/* BANNIÈRE TRANSIT DÉPART */
+.transit-banner{background:#fff8e0;border:1px solid #f0c040;border-radius:10px;padding:10px 14px;margin:12px 0 4px;display:flex;gap:10px;align-items:flex-start}
+.transit-banner .ti{font-size:18px;flex-shrink:0;margin-top:1px}
+.transit-banner-content{}
+.transit-banner-title{font-size:12px;font-weight:700;color:#7a5a00;margin-bottom:3px}
+.transit-banner-detail{font-size:11px;color:#7a5a00;line-height:1.5}
+
+/* HOTEL RETRACTABLE */
+.hotel-box{margin:8px 0 2px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden;background:#f0faf0}
+.hotel-toggle{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;cursor:pointer;user-select:none}
+.hotel-toggle-left{font-size:12px;font-weight:600;color:#2d6a4f;display:flex;align-items:center;gap:6px}
+.hotel-toggle-icon{font-size:10px;color:#888;transition:transform .25s;display:inline-block}
+.hotel-toggle-icon.open{transform:rotate(180deg)}
+.hotel-grid{display:none;padding:0 12px 10px;background:#fff}
+.hotel-grid.open{display:block}
+.hotel-row{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #f0ece6;font-size:12px;line-height:1.4}
+.hotel-row:last-child{border-bottom:none}
+.hotel-row span{color:#888;min-width:85px;flex-shrink:0;font-size:11px;padding-top:1px}
+.hotel-row.warn{color:#c0392b}
+.hotel-row.warn span{color:#c0392b}
+
 </style>
 </head>
 <body>
@@ -198,25 +255,28 @@ a:hover{border-bottom-color:transparent}
 
 <!-- HEADER -->
 <div class="hdr">
-  <h1>🕌 Istanbul</h1>
-  <p>27–30 juillet · 3 nuits · Étape 1 sur 6</p>
-  <div class="hdr-meta">
-    <span class="pill rd">28–34°C · Humide</span>
-    <span class="pill pu">Sultanahmet (quartier historique)</span>
-    <span class="pill gn">Tout à pied J1 et J3</span>
-    <span class="pill bl">Tram T1 + Ferry pour J2</span>
+  <span class="hdr-ico">🕌</span>
+  <div class="hdr-info">
+    <div class="hdr h1" style="font-size:15px;font-weight:700;color:#fff;margin:0">Istanbul</div>
+    <div class="hdr-sub">27–30 juillet · 3 nuits · Étape 1 sur 6 · 28–34°C · Humide · Sultanahmet (quartier historique)</div>
   </div>
+</div>
 </div>
 
 <!-- HOTEL -->
 <div class="hotel-box">
-  <div class="hotel-title">🏨 Hôtel — 3 nuits (arrivée 27 juil soir · départ bus 30 juil 23h15)</div>
+  <div class="hotel-toggle" onclick="toggleHotel()">
+    <span class="hotel-toggle-left">🏨 🏨 Hôtel — 3 nuits (arrivée 27 juil soir · départ bus 30 juil 23h15)</span>
+    <span class="hotel-toggle-icon">▼</span>
+  </div>
   <div class="hotel-grid">
     <div class="hotel-row"><span>Nom</span>Sultanahmet La Petite Hotel</div>
-    <div class="hotel-row"><span>Adresse</span>Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul</div>
-    <div class="hotel-row"><span>Quartier</span>Sultanahmet — 5 min à pied de Sainte-Sophie</div>
-    <div class="hotel-row"><span>Check-out</span>30 juillet · laisser bagages jusqu'au soir</div>
+<div class="hotel-row"><span>Adresse</span>Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul</div>
+<div class="hotel-row"><span>Quartier</span>Sultanahmet — 5 min à pied de Sainte-Sophie</div>
+<div class="hotel-row"><span>Check-out</span>30 juillet · laisser bagages jusqu'au soir</div>
+
   </div>
+</div>
 </div>
 
 <!-- SUB NAV -->
@@ -234,7 +294,14 @@ a:hover{border-bottom-color:transparent}
 
 <!-- J1 -->
 <div class="hotel-card" style="background:#fff;border-radius:12px;padding:14px;margin:12px 16px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid #27ae60">
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#27ae60;margin-bottom:8px">🏨 Hôtel réservé</div>
+  <div class="hotel-toggle" id="htoggle-01_istanbul" onclick="toggleHotel('01_istanbul')">
+    <div class="htitle">🏨 Hôtel réservé · Voir les détails</div>
+    <span class="harrow" id="harrow-01_istanbul">▼</span>
+  </div>
+  <div class="hotel-body" id="hbody-01_istanbul">
+    
+  </div>
+</div>
   <div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Nom</span><span style="color:#1a1916;font-weight:600">Sultanahmet La Petite Hotel</span></div>
 <div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Adresse</span><span style="color:#1a1916;font-weight:400">Kücükayasofya Mah., Aksakal Sokak No. 21, Sultanahmet, Fatih, Istanbul</span></div>
 <div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px"><span style="color:#888;min-width:90px;flex-shrink:0">Téléphone</span><span style="color:#1a1916;font-weight:400">+90 535 288 41 58</span></div>
@@ -484,6 +551,13 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <!-- PÉPITES -->
+<div class="transit-banner">
+  <span class="ti">🗺</span>
+  <div class="transit-banner-content">
+    <div class="transit-banner-title">🚌 Départ · Nuit du 30 juillet à 23h15</div>
+    <div class="transit-banner-detail">Bus de nuit Pamukkale Turizm · Esenlers → Selçuk · 35,25€/pers<br>⚠️ NON RÉSERVÉ — réserver sur obilet.com avant le départ !</div>
+  </div>
+</div>
 <div id="pep" class="spg">
   <div class="al info" style="margin-bottom:12px">
     <div class="ali">📅</div>
@@ -772,6 +846,15 @@ window.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.snb');
   if(first)first.click();
 });
+</script>
+<script>
+function toggleHotel(){
+  var g=document.querySelector('.hotel-grid');
+  var i=document.querySelector('.hotel-toggle-icon');
+  if(!g)return;
+  var open=g.classList.toggle('open');
+  if(i){if(open)i.classList.add('open');else i.classList.remove('open');}
+}
 </script>
 </body>
 </html>
