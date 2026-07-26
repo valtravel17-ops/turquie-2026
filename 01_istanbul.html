@@ -22,20 +22,20 @@ a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
 /* PROMPT replié par défaut */
-
-
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
 .pbox strong{color:var(--gn)}
 
 /* HEADER */
-
-.hdr h1{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
 .hdr p{font-size:13px;color:var(--t2)}
 .hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
@@ -47,7 +47,7 @@ a:hover{border-bottom-color:transparent}
 /* HOTEL BOX */
 .hotel-box{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
 .hotel-title{font-size:12px;font-weight:600;color:var(--gn);margin-bottom:6px}
-.hotel-grid{display:none}
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
 .hotel-row{font-size:12px;color:var(--gt)}
 .hotel-row span{color:var(--t3);display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1px}
 
@@ -59,7 +59,7 @@ a:hover{border-bottom-color:transparent}
 .spg{display:none}.spg.vis{display:block}
 
 /* CONTENT */
-.cnt{max-width:100%;margin:0;padding:10px 14px}
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
 
 /* DAY HERO */
 .dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
@@ -159,116 +159,47 @@ a:hover{border-bottom-color:transparent}
 .lnm{font-size:12px;font-weight:500;color:var(--tx)}
 .lul{font-size:10px;color:var(--t3)}
 
-@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hotel-box{margin:10px 14px 0}}
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.hotel-box{margin:10px 14px 0}}
 
+/* Navigation */
 .site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:inline-block}
 .snav-btn.home{background:#1a3a5c;color:#fff}
-.snav-btn:active{opacity:.7}
-.snav-center{font-size:13px;font-weight:700;color:#1a1916;text-align:center;flex:1;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-.hotel-toggle{cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0}
-.hotel-toggle .htitle{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#27ae60}
-.hotel-toggle .harrow{font-size:14px;color:#27ae60;transition:transform .25s}
-.hotel-toggle.open .harrow{transform:rotate(180deg)}
-.hotel-body{display:none;margin-top:10px}
-.hotel-body.open{display:block}
-
-.page-header{background:linear-gradient(135deg,var(--hc,#1a3a5c),var(--hc2,#2d6a8f));color:#fff;padding:10px 14px 8px}
-.page-header h1{font-size:16px;font-weight:700;margin:4px 0 2px}
-.page-header p{font-size:11px;opacity:.85;margin:0}
-.page-header .transit-out{font-size:11px;opacity:.85;margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.2)}
-
-.hdr h1{font-size:16px!important;margin-bottom:2px!important}
-.hdr p{font-size:12px!important;margin-bottom:4px!important}
-.hdr-meta{margin-top:4px!important}
-
-/* === BADGE JOUR dans nav tabs === */
-.snb{position:relative}
-
-
-/* SÉPARATEUR JOURNÉE */
-.dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
-.dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
-.ds{font-size:11px;color:#5a7a9a;margin:0 0 1px}
-.dgeo{font-size:10px;color:#888;margin:0}
-.dbudg{font-size:11px;font-weight:600;color:#2d6a4f;margin-top:2px}
-
-/* BANNIÈRE TRANSIT DÉPART */
-.transit-banner{background:#fff8e0;border:1px solid #f0c040;border-radius:10px;padding:10px 14px;margin:12px 0 4px;display:flex;gap:10px;align-items:flex-start}
-.transit-banner .ti{font-size:18px;flex-shrink:0;margin-top:1px}
-.transit-banner-content{}
-.transit-banner-title{font-size:12px;font-weight:700;color:#7a5a00;margin-bottom:3px}
-.transit-banner-detail{font-size:11px;color:#7a5a00;line-height:1.5}
-
-/* HOTEL RETRACTABLE */
-.hotel-box{margin:8px 0 2px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden;background:#f0faf0}
-.hotel-toggle{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;cursor:pointer;user-select:none}
-.hotel-toggle-left{font-size:12px;font-weight:600;color:#2d6a4f;display:flex;align-items:center;gap:6px}
-.hotel-toggle-icon{font-size:10px;color:#888;transition:transform .25s;display:inline-block}
-.hotel-toggle-icon.open{transform:rotate(180deg)}
-.hotel-grid{display:none;padding:0 12px 10px;background:#fff}
-.hotel-grid.open{display:block}
-.hotel-row{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #f0ece6;font-size:12px;line-height:1.4}
+/* Hotel */
+.hotel-box{margin:8px 16px 4px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden}
+.hotel-hdr{background:#f0faf0;display:flex;align-items:center;justify-content:space-between;padding:9px 14px;cursor:pointer}
+.hotel-lbl{font-size:12px;font-weight:600;color:#2d6a4f}
+.hotel-body{display:none;padding:8px 14px;background:#fff;font-size:13px}
+.hotel-row{display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed}
 .hotel-row:last-child{border-bottom:none}
-.hotel-row span{color:#888;min-width:85px;flex-shrink:0;font-size:11px;padding-top:1px}
-.hotel-row.warn{color:#c0392b}
-.hotel-row.warn span{color:#c0392b}
-
-
-/* OVERRIDE hotel-grid caché par défaut */
-div.hotel-box > div.hotel-grid { display: none !important; }
-div.hotel-box > div.hotel-grid.open { display: block !important; }
-
-/* Marges légères sur mobile */
-.cnt{max-width:100%;margin:0;padding:10px 14px}
-/* Hotel-grid espacement */
-.hr{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px;line-height:1.4}
-.hl{color:#888;min-width:90px;flex-shrink:0;font-size:11px;padding-top:2px;text-transform:uppercase;letter-spacing:.03em}
-/* Carte mentale déroulable */
-.cm-box{margin:8px 0;border:1px solid #e0dbd4;border-radius:8px;overflow:hidden}
-.cm-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f8f5f0;cursor:pointer;font-size:12px;color:#666}
-.cm-body{display:none;padding:10px 12px}
-.cm-body.open{display:block}
+.hotel-key{color:#888;min-width:90px;font-size:11px;text-transform:uppercase;flex-shrink:0}
+/* Transit replié dans onglet */
+.transit-box{background:#f0f0ff;border:1px solid #c5caf5;border-radius:10px;overflow:hidden;margin-bottom:12px}
+.transit-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer}
+.transit-lbl{font-size:13px;font-weight:600;color:#3a3f9a}
+.transit-body{display:none;padding:0 14px 12px}
 </style>
 </head>
 <body>
 <div class="site-nav">
   <span style="width:80px"></span>
   <a class="snav-btn home" href="index.html">🏠 Accueil</a>
-  <div class="snav-center">🕌 Istanbul</div>
   <a class="snav-btn" href="02_selcuk.html">Selçuk →</a>
-</div>
-
-
-
+</div></div>
 </div>
 
 <!-- HEADER -->
-    <div class="hdr-sub">27–30 juillet · 3 nuits · Étape 1 sur 6 · 28–34°C · Humide · Sultanahmet (quartier historique)</div>
+<div class="hdr">
+  <h1>🕌 Istanbul</h1>
+  <p>27–30 juillet · 3 nuits · Étape 1 sur 6</p>
+  <div class="hdr-meta">
+    <span class="pill rd">28–34°C · Humide</span>
+    <span class="pill pu">Sultanahmet (quartier historique)</span>
+    <span class="pill gn">Tout à pied J1 et J3</span>
+    <span class="pill bl">Tram T1 + Ferry pour J2</span>
   </div>
 </div>
-</div>
 
-<!-- HOTEL -->
-<div class="hotel-box">
-  <div class="hotel-toggle" onclick="toggleHotel()">
-    <span class="hotel-toggle-left">🏨 Détails infos hôtel — Istanbul · 3 nuits</span>
-    <span class="hotel-toggle-icon">▼</span>
-  </div>
-  <div class="hotel-grid" style="display:none">
-<div class="hr"><span class="hl">NOM</span><span style="color:#1a1916;font-weight:600">Sultanahmet La Petite Hotel</span></div>
-<div class="hr"><span class="hl">ADRESSE</span><span style="color:#1a1916;font-weight:400">Kücükayasofya Mah., Aksakal Sokak No. 21, Sultanahmet, Fatih, Istanbul</span></div>
-<div class="hr"><span class="hl">TÉLÉPHONE</span><span style="color:#1a1916;font-weight:400">+90 535 288 41 58</span></div>
-<div class="hr"><span class="hl">ARRIVÉE</span><span style="color:#1a1916;font-weight:400">27 juillet (lundi) · check-in à partir de 14h00</span></div>
-<div class="hr"><span class="hl">DÉPART</span><span style="color:#1a1916;font-weight:400">30 juillet (jeudi) · check-out avant 12h00</span></div>
-<div class="hr"><span class="hl">PRIX</span><span style="color:#1a1916;font-weight:600">94,89€ pour 2 · petit-déjeuner NON inclus</span></div>
-<div class="hr"><span class="hl">CONFIRMATION</span><span style="color:#1a1916;font-weight:600">5654.375.012 · Code confidentiel : 1757</span></div>
-<div class="hr"><span class="hl">NOTES</span><span style="color:#c0392b;font-weight:400">⚠️ Quiet hours 22h–10h · Pas de parking · Escaliers uniquement (pas d'ascenseur)</span></div>
-<div class="hr"><span class="hl">ANNULATION</span><span style="color:#c0392b;font-weight:400">⚠️ Deadline 25 juillet dépassée — engagement total 94,89€</span></div>
-<div class="hr"><span class="hl">BAGAGES</span><span style="color:#c0392b;font-weight:400">⚠️ Check-out 12h · Bus de nuit 23h15 → laisser bagages à l'hôtel ou consigne</span></div>
-
-<div class="hr"><span class="hl">TAXI AÉROPORT</span><a href="https://united.tech/t/HH03IZB" target="_blank" style="color:#2d6a8f;text-decoration:none">Infos résa →</a></div>
 </div>
 
 <!-- SUB NAV -->
@@ -276,26 +207,36 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
   <button class="snb on" onclick="showSub('j1',this)">J1 · Lun. 28</button>
   <button class="snb" onclick="showSub('j2',this)">J2 · Mar. 29</button>
   <button class="snb" onclick="showSub('j3',this)">J3 · Jeu. 30</button>
-  <button class="snb" onclick="showSub('bus',this)">🚌 Bus de nuit</button>
+  <button class="snb" onclick="showSub('bus',this)">🚌 Transit</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
   <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
 </div>
 
+<div class="hotel-box">
+  <div class="hotel-hdr" onclick="var b=document.getElementById('hb_ist');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('ha_ist').textContent=open?'▼':'▲'">
+    <span class="hotel-lbl">🏨 Sultanahmet La Petite Hotel · 3 nuits</span>
+    <span id="ha_ist">▼</span>
+  </div>
+  <div id="hb_ist" class="hotel-body">
+    <div class="hotel-row"><span class="hotel-key">Adresse</span>Küçük Ayasofya, Aksakal Sokağı No:21, 34122 Fatih/İstanbul</div>
+    <div class="hotel-row"><span class="hotel-key">Tél.</span>+90 535 288 41 58</div>
+    <div class="hotel-row"><span class="hotel-key">Check-in</span>27 juil · à partir de 14h00</div>
+    <div class="hotel-row"><span class="hotel-key">Check-out</span>30 juil · avant 12h00 · laisser bagages jusqu'à 22h</div>
+    <div class="hotel-row"><span class="hotel-key">Prix</span><strong>94,89€ pour 2 · sans petit-déj.</strong></div>
+    <div class="hotel-row"><span class="hotel-key">Confirmation</span><strong>5654.375.012 · Code 1757</strong></div>
+    <div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Annulation</span><span style="color:#c0392b">⚠️ Deadline dépassée — 94,89€ engagés</span></div>
+    <div class="hotel-row"><span class="hotel-key">Taxi aérop.</span><a href="https://united.tech/t/HH03IZB" target="_blank" style="color:#2d6a8f">Infos résa →</a></div>
+  </div>
+</div>
+
+
 <div class="cnt">
 
 <!-- J1 -->
-    <span class="harrow" id="harrow-01_istanbul">▼</span>
-  </div>
-  <div class="hotel-body" id="hbody-01_istanbul">
-    
-  </div>
-</div>
-  
-</div>
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — Lundi 28 juillet · Sultanahmet</h2>
+    <h2>Jour 1 — 28 juillet · Sultanahmet</h2>
     <div class="ds">Cœur historique · Tout à pied depuis l'hôtel · Rythme tranquille</div>
     <div class="dgeo">📍 Rayon max 20 min à pied depuis l'hôtel · Aucun transport payant</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~12–18€</strong> (quasi tout gratuit)</div>
@@ -375,7 +316,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — Mardi 29 juillet · Karaköy · Galata · Istiklal</h2>
+    <h2>Jour 2 — 29 juillet · Karaköy · Galata · Istiklal</h2>
     <div class="ds">Rive nord (Beyoğlu) · Quartiers créatifs · Vie locale · Rythme détendu</div>
     <div class="dgeo">📍 Tramway T1 → Karaköy (5 min) · puis tout à pied</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–35€</strong></div>
@@ -383,7 +324,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 
   <div class="al ok">
     <div class="ali">✅</div>
-    <div class="alb"><strong></strong> — Le 29 juillet 2026 est un mercredi. Topkapi est fermé uniquement le mardi — tout va bien, la visite est prévue le 30.</div>
+    <div class="alb"><strong>Topkapi fermé le mardi — reporté au J3 (jeudi 30 juillet)</strong> — Le 29 juillet 2026 est un mercredi. Topkapi est fermé uniquement le mardi — tout va bien, la visite est prévue le 30.</div>
   </div>
 
   <div class="ts"><div class="tsi">🚋</div><div class="tst"><div class="tsm">Tramway T1 hôtel → arrêt Karaköy</div><div>Direction Kabataş · Istanbulkart (carte transport rechargeable)</div></div><span class="tsd">5 min</span><span class="tsp">~0,50€</span></div>
@@ -435,10 +376,10 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — Jeudi 30 juillet · Topkapi & Kadıköy · Départ bus de nuit</h2>
+    <h2>Jour 3 — 30 juillet · Topkapi & Kadıköy · Départ bus de nuit</h2>
     <div class="ds">Matin : Topkapı Sarayı · Après-midi : côté asiatique · 23h15 : bus de nuit vers Selçuk</div>
     <div class="dgeo">📍 Matin à pied · Après-midi vapür (ferry) vers Kadıköy · Soir métro → Esenler Otogarı</div>
-    <div class="dbudg">Budget estimé / pers. : <strong>~55–70€ + bus 35,25€</strong></div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~55–70€ + bus 77,50€ pour 2 ✅</strong></div>
   </div>
 
   <div class="al ok">
@@ -497,18 +438,24 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
   <div class="ts"><div class="tsi">🚇</div><div class="tst"><div class="tsm">Métro M2 → Yenikapı · Métro M1 → Esenler Otogarı (gare routière)</div><div>Monter à Sultanahmet · changer à Yenikapı</div></div><span class="tsd">25 min</span><span class="tsp">~1€</span></div>
 
   <div class="blk">
-    <div class="bh"><span class="tm">22h30</span><span class="bt2">Esenler Otogarı — Départ bus Pamukkale Turizm vers Selçuk</span><span class="ptag paid">35,25€/pers · confirmé</span></div>
+    <div class="bh"><span class="tm">22h30</span><span class="bt2">Esenler Otogarı — Départ bus Pamukkale Turizm vers Selçuk</span><span class="ptag paid">77,50€ pour 2 ✅ · confirmé</span></div>
     <div class="tags"><span class="tag">Pamukkale Turizm</span><span class="tag">Départ 23h15</span><span class="tag">8h15 de trajet</span></div>
     <div class="bdesc">Bus depuis Esenler Otogarı (Büyük İstanbul Otogarı, grande gare routière d'Istanbul) direction Selçuk. Arrivée au Terminal Selçuk — Atatürk Bulvarı tôt le matin du 31 juillet. Bus ottobüs (autobus longue distance) turc : WiFi, klimali (climatisé), ikram (eau et snacks offerts), sièges inclinables.</div>
     <div class="btip">💡 Arriver à l'otogar (gare routière) 45 min avant (22h30). Emporter : mont (veste légère — clim forte dans les bus), göz maskesi (masque de nuit), kulak tıkacı (bouchons d'oreilles). CPAP (appareil apnée) dans la sacoche médicale en cabine.</div>
   </div>
 
-  <div class="dtot"><span>Budget estimé / pers.</span><strong>~55–70€ + bus 35,25€</strong></div>
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~55–70€ + bus 77,50€ pour 2 ✅</strong></div>
 </div>
 
 <!-- BUS DE NUIT -->
 <div id="bus" class="spg">
-  <div class="tc">
+  <div class="transit-box">
+    <div class="transit-hdr" onclick="var b=document.getElementById('tb_ist_out');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('ta_ist_out').textContent=open?'▼':'▲'">
+      <span class="transit-lbl">🚌 Transit sortant — Bus de nuit vers Selçuk · 30 juil 23h15 ✅ RÉSERVÉ</span>
+      <span id="ta_ist_out">▼</span>
+    </div>
+    <div id="tb_ist_out" style="display:none">
+      <div class="tc">
     <div class="tct">🚌 Bus de nuit Istanbul → Selçuk · Nuit du 30 juillet</div>
     <div class="tcg">
       <div class="tcr"><div class="tcl">Compagnie</div><div class="tcv">Pamukkale Turizm</div></div>
@@ -516,28 +463,28 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="tcr"><div class="tcl">Terminal départ</div><div class="tcv">Esenler Otogarı (Büyük İstanbul Otogarı)</div></div>
       <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Terminal Selçuk — Atatürk Bulvarı · tôt le 31 juil</div></div>
       <div class="tcr"><div class="tcl">Durée</div><div class="tcv">8h15</div></div>
-      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">77,50€ pour 2 ✅</div></div>
-      <div class="tcr"><div class="tcl">Statut</div><div class="tcv" style="color:#27ae60;font-weight:700">✅ RÉSERVÉ — Pamukkale Turizm</div></div>
-      <div class="tcr"><div class="tcl">Sièges</div><div class="tcv">Siège 14 (Ludyvine) · Siège 15 (Valentin)</div></div>
-      <div class="tcr"><div class="tcl">PNR</div><div class="tcv">196634383 (Ludyvine) · 196634384 (Valentin)</div></div>
-      <div class="tcr"><div class="tcl">Quais</div><div class="tcv">41-42-43-44 à Esenler Otogarı</div></div>
+      <div class="tcr"><div class="tcl">Prix / pers.</div><div class="tcv">77,50€ pour 2 ✅ avec bagages</div></div>
+      <div class="tcr"><div class="tcl">Réservation</div><div class="tcv"><a href="https://www.obilet.com" target="_blank">obilet.com</a> · CB acceptée · en anglais</div></div>
       <div class="tcr"><div class="tcl">Accès otogar depuis hôtel</div><div class="tcv">Métro M2 → Yenikapı · Métro M1 → Esenler · ~25 min · ~1€</div></div>
     </div>
-    <div class="tc-warn" style="background:#d4edda;border-color:#27ae60;color:#155724">✅ Billet confirmé · Annulation possible jusqu'à 2h avant le départ</div>
+    <div class="tc-warn">⚠️ Réserver dès que possible — août = haute saison, places limitées sur les bus de nuit.</div>
   </div>
 
   <div class="al info">
     <div class="ali">💡</div>
     <div class="alb"><strong>Confort pour la nuit de bus</strong> — Emporter : veste légère (clim forte à bord), masque de nuit, bouchons d'oreilles, snacks légers. L'appareil CPAP (apnée du sommeil) dans la sacoche médicale compte comme bagage médical — souvent exempté du quota.</div>
   </div>
-</div>
-
-<!-- PÉPITES -->
-<div class="transit-banner">
-  <span class="ti">🗺</span>
-  <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · Nuit du 30 juillet à 23h15</div>
-    <div class="transit-banner-detail">Bus de nuit Pamukkale Turizm · Esenlers → Selçuk · 35,25€/pers<br>✅ RÉSERVÉ — Siège 14 (Ludyvine) · Siège 15 (Valentin) · PNR 196634383 / 196634384 avant le départ !</div>
+    </div>
+  </div>
+  <div class="transit-box" style="background:#f5f5ff;border-color:#ddd">
+    <div style="padding:12px 14px;font-size:13px;color:#555">
+      ℹ️ <strong>Transit entrant :</strong> 
+      <div style="margin-top:6px;font-size:12px;line-height:1.6">
+        <div>✈️ <strong>Vol 1</strong> : Bordeaux (BOD) → Barcelone (BCN) · VY2913 · 13h20 → 14h35</div>
+        <div>✈️ <strong>Vol 2</strong> : Barcelone (BCN) → Istanbul IST · VY3180 · 16h30 → 21h15</div>
+        <div>🚕 <strong>Taxi réservé</strong> depuis IST → Sultanahmet La Petite Hotel · <a href="https://united.tech/t/HH03IZB" target="_blank" style="color:#2d6a8f">Infos résa →</a></div>
+      </div>
+    </div>
   </div>
 </div>
 <div id="pep" class="spg">
@@ -550,25 +497,25 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Citerne de Théodose (Şerefiye Sarnıcı)</div>
       <div class="gem-p">1,32€ · Byzantine 5e siècle</div>
       <div class="gem-d">Vraie citerne à voir — quasi déserte, 10× moins chère que la Basilique, atmosphère hors du temps.</div>
-      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 10h</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 10h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Ferry public (vapür) — Bosphore au coucher du soleil</div>
       <div class="gem-p">~0,50€ · Ferry Eminönü → Üsküdar (rive asiatique, 20 min)</div>
       <div class="gem-d">Même vue que les croisières à 25€. Le ferry public fait exactement la même chose pour presque rien.</div>
-      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 18h30</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 18h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Jardin de la Süleymaniye</div>
       <div class="gem-p">Gratuit · Vue sur la Corne d'Or</div>
       <div class="gem-d">Meilleure vue panoramique sur la Haliç (Corne d'Or), tombeau Soliman, quasi aucun touriste.</div>
-      <div class="gem-when gem-planned">📅 J1 · Lun. 28 · 14h30</div>
+      <div class="gem-when gem-planned">📅 J1 · 28 juil · 14h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Kadıköy (quartier) — rive asiatique</div>
       <div class="gem-p">Ferry public (vapür) ~0,50€ · Très local, peu de touristes</div>
       <div class="gem-d">Marché, street art, galeries, ambiance 100% locale — très peu de touristes.</div>
-      <div class="gem-when gem-planned">📅 J3 · Jeu. 30 · 14h30</div>
+      <div class="gem-when gem-planned">📅 J3 · 30 juil · 14h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Pont de Galata au coucher du soleil</div>
@@ -580,19 +527,19 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Pasajlar (passages Belle Époque)</div>
       <div class="gem-p">Gratuit · Istiklal</div>
       <div class="gem-d">Architecture 19e siècle cachée derrière la grande artère. Çiçek Pasajı, Atlas Pasajı.</div>
-      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · 11h</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · 11h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Baklava Güllüoğlu</div>
       <div class="gem-p">~3€ plateau · Karaköy</div>
       <div class="gem-d">Meilleure baklava (pâtisserie feuilletée) d'Istanbul selon les locaux. Ouvert tôt le matin.</div>
-      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · 9h</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Rue Galip Dede</div>
       <div class="gem-p">Gratuit · Entre Galata et Istiklal</div>
       <div class="gem-d">Luthiers et sazlar (instruments traditionnels turcs). Ambiance musicale unique.</div>
-      <div class="gem-when gem-planned">📅 J2 · Mar. 29 · en passant vers Galata</div>
+      <div class="gem-when gem-planned">📅 J2 · 29 juil · en passant vers Galata</div>
     </div>
     <div class="gem">
       <div class="gem-t">Quartier Fener & Balat</div>
@@ -604,7 +551,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Hamam (bain turc traditionnel)</div>
       <div class="gem-p">~30–60€/pers · Çemberlitaş Hamamı</div>
       <div class="gem-d">Expérience culturelle incontournable. Kese (gommage au gant) + savonnage + détente. Idéal avant le bus de nuit du J3.</div>
-      <div class="gem-when gem-todo">À prévoir · J3 · Jeu. 30 · 16h (avant bus)</div>
+      <div class="gem-when gem-todo">À prévoir · J3 · 30 juil · 16h (avant bus)</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
@@ -828,15 +775,6 @@ window.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.snb');
   if(first)first.click();
 });
-</script>
-<script>
-function toggleHotel(){
-  var g=document.querySelector('.hotel-grid');
-  var i=document.querySelector('.hotel-toggle-icon');
-  if(!g)return;
-  var open=g.classList.toggle('open');
-  if(i){if(open)i.classList.add('open');else i.classList.remove('open');}
-}
 </script>
 </body>
 </html>

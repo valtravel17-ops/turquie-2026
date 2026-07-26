@@ -21,19 +21,19 @@ body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;li
 a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
-
-
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
 .pbox strong{color:var(--gn)}
 
-
-.hdr h1{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
 .hdr p{font-size:13px;color:var(--t2)}
 .hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
@@ -56,7 +56,7 @@ a:hover{border-bottom-color:transparent}
 .snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
 .spg{display:none}.spg.vis{display:block}
 
-.cnt{max-width:100%;margin:0;padding:10px 14px}
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
 
 .dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
 .dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
@@ -159,88 +159,53 @@ a:hover{border-bottom-color:transparent}
 .lnm{font-size:12px;font-weight:500;color:var(--tx)}
 .lul{font-size:10px;color:var(--t3)}
 
-@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.transit-in{margin:10px 14px 0}}
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
 
 .site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:inline-block}
 .snav-btn.home{background:#1a3a5c;color:#fff}
-.snav-btn:active{opacity:.7}
-.snav-center{font-size:13px;font-weight:700;color:#1a1916;text-align:center;flex:1;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-.page-header{background:linear-gradient(135deg,var(--hc,#1a3a5c),var(--hc2,#2d6a8f));color:#fff;padding:10px 14px 8px}
-.page-header h1{font-size:16px;font-weight:700;margin:4px 0 2px}
-.page-header p{font-size:11px;opacity:.85;margin:0}
-.page-header .transit-out{font-size:11px;opacity:.85;margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.2)}
-
-.hdr h1{font-size:16px!important;margin-bottom:2px!important}
-.hdr p{font-size:12px!important;margin-bottom:4px!important}
-.hdr-meta{margin-top:4px!important}
-
-/* === BADGE JOUR dans nav tabs === */
-.snb{position:relative}
-
-
-/* SÉPARATEUR JOURNÉE */
-.dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
-.dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
-.ds{font-size:11px;color:#5a7a9a;margin:0 0 1px}
-.dgeo{font-size:10px;color:#888;margin:0}
-.dbudg{font-size:11px;font-weight:600;color:#2d6a4f;margin-top:2px}
-
-/* BANNIÈRE TRANSIT DÉPART */
-.transit-banner{background:#fff8e0;border:1px solid #f0c040;border-radius:10px;padding:10px 14px;margin:12px 0 4px;display:flex;gap:10px;align-items:flex-start}
-.transit-banner .ti{font-size:18px;flex-shrink:0;margin-top:1px}
-.transit-banner-content{}
-.transit-banner-title{font-size:12px;font-weight:700;color:#7a5a00;margin-bottom:3px}
-.transit-banner-detail{font-size:11px;color:#7a5a00;line-height:1.5}
-
-/* HOTEL RETRACTABLE */
-.hotel-box{margin:8px 0 2px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden;background:#f0faf0}
-.hotel-toggle{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;cursor:pointer;user-select:none}
-.hotel-toggle-left{font-size:12px;font-weight:600;color:#2d6a4f;display:flex;align-items:center;gap:6px}
-.hotel-toggle-icon{font-size:10px;color:#888;transition:transform .25s;display:inline-block}
-.hotel-toggle-icon.open{transform:rotate(180deg)}
-.hotel-grid{display:none;padding:0 12px 10px;background:#fff}
-.hotel-grid.open{display:block}
-.hotel-row{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #f0ece6;font-size:12px;line-height:1.4}
-.hotel-row:last-child{border-bottom:none}
-.hotel-row span{color:#888;min-width:85px;flex-shrink:0;font-size:11px;padding-top:1px}
-.hotel-row.warn{color:#c0392b}
-.hotel-row.warn span{color:#c0392b}
-
-
-/* OVERRIDE hotel-grid caché par défaut */
-div.hotel-box > div.hotel-grid { display: none !important; }
-div.hotel-box > div.hotel-grid.open { display: block !important; }
-
-/* Marges légères sur mobile */
-.cnt{max-width:100%;margin:0;padding:10px 14px}
-/* Hotel-grid espacement */
-.hr{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px;line-height:1.4}
-.hl{color:#888;min-width:90px;flex-shrink:0;font-size:11px;padding-top:2px;text-transform:uppercase;letter-spacing:.03em}
-/* Carte mentale déroulable */
-.cm-box{margin:8px 0;border:1px solid #e0dbd4;border-radius:8px;overflow:hidden}
-.cm-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f8f5f0;cursor:pointer;font-size:12px;color:#666}
-.cm-body{display:none;padding:10px 12px}
-.cm-body.open{display:block}
 </style>
 </head>
 <body>
 <div class="site-nav">
-  <a class="snav-btn" href="02_selcuk.html">← Selcuk</a>
+  <a class="snav-btn" href="02_selcuk.html">← Selçuk</a>
   <a class="snav-btn home" href="index.html">🏠 Accueil</a>
-  <div class="snav-center">💧 Pamukkale</div>
   <a class="snav-btn" href="04_fethiye.html">Fethiye →</a>
 </div>
 
 
-
+<!-- PROMPT -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 3/6 : Pamukkale (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 03_pamukkale.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Pamukkale (3–5 août, 2 nuits)</strong> du voyage Turquie 27 juillet – 17 août 2026, couple, transport en commun uniquement.<br><br>
+      <strong>Arrivée :</strong> Bus Selçuk → Denizli (~3h) + dolmuş (minibus collectif) Denizli → Pamukkale (~20 min) · Soir du 3 août · ~13€/pers<br><br>
+      <strong>Base logistique :</strong> Loger dans le village de Pamukkale (pas à Denizli) — à 5 min à pied des terrasses · Hotels et pensions avec piscines thermales souvent incluses<br><br>
+      <strong>Tarifs 2026 confirmés :</strong> Entrée Pamukkale + Hierapolis (site combiné UNESCO) = 30€/pers · Piscine antique de Cléopâtre (Antique Pool) = +13€/pers · Horaires : 8h–21h (entrée sud 6h–23h)<br><br>
+      <strong>Point important :</strong> Les terrasses (travertins = formations calcaires blanches) peuvent être partiellement vides de leur eau en haute saison — le site gère les niveaux d'eau pour préserver la blancheur du calcaire. Vérifier les avis récents sur Google Maps avant la visite.<br><br>
+      <strong>Prochain transit :</strong> Bus Denizli → Fethiye · ~3h30 · ~12€/pers · Kamil Koç · Soir du 5 août
+    </div>
+  </div>
 </div>
 
 <!-- HEADER -->
-    <div class="hdr-sub">3–5 août · 2 nuits · Étape 3 sur 6 · 32–40°C · Caniculaire · Travertins UNESCO</div>
+<div class="hdr">
+  <h1>💧 Pamukkale · Hierapolis</h1>
+  <p>3–5 août · 2 nuits · Étape 3 sur 6</p>
+  <div class="hdr-meta">
+    <span class="pill rd">32–40°C · Caniculaire</span>
+    <span class="pill pu">Travertins UNESCO</span>
+    <span class="pill pu">Hierapolis antique</span>
+    <span class="pill gn">Piscine de Cléopâtre</span>
+    <span class="pill bl">Village de Pamukkale</span>
+    <span class="pill go">Laodicée à 15 km</span>
   </div>
-</div>
 </div>
 
 <!-- TRANSIT ENTRANT -->
@@ -254,37 +219,40 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <div class="ti-row"><div class="ti-l">Note</div><div class="ti-v">Pas de bus direct Selçuk → Pamukkale · Changement à Denizli obligatoire</div></div>
     <div class="ti-row"><div class="ti-l">Réservation</div><div class="ti-v"><a href="https://www.obilet.com" target="_blank">obilet.com</a> · Réserver la veille</div></div>
   </div>
+</div>
 
 <!-- SUB NAV -->
-<div class="hotel-box">
-  <div class="hotel-toggle" onclick="toggleHotel()">
-    <span class="hotel-toggle-left">🏨 Détails infos hôtel — Pamukkale · 2 nuits</span>
-    <span class="hotel-toggle-icon">▼</span>
-  </div>
-  <div class="hotel-grid" style="display:none">
-<div class="hr"><span class="hl">STATUT</span><span style="color:#c0392b;font-weight:400">⚠️ À réserver — rester DANS le village (pas à Denizli !)</span></div>
-<div class="hr"><span class="hl">BUDGET</span><span style="color:#1a1916;font-weight:400">~35€/nuit pour 2</span></div>
-<div class="hr"><span class="hl">ARRIVÉE</span><span style="color:#1a1916;font-weight:400">3 août soir · dolmuş depuis Denizli ~20h</span></div>
-<div class="hr"><span class="hl">DÉPART</span><span style="color:#1a1916;font-weight:400">5 août · dolmuş vers Denizli à 18h30 MAX</span></div>
-<div class="hr"><span class="hl">CONSEIL</span><span style="color:#1a1916;font-weight:400">Choisir un hôtel avec piscine thermale privée dans le village</span></div>
-</div>
-  </div>
-</div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · Mar. 4 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · Mer. 5 août + départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Mar. 4</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · 5 août + départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
   <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
 </div>
 
+<div style="margin:8px 16px 4px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden">
+  <div style="background:#f0faf0;display:flex;align-items:center;justify-content:space-between;padding:9px 14px;cursor:pointer" onclick="var g=document.getElementById('hg_03pamukkale');var open=g.style.display==='block';g.style.display=open?'none':'block';document.getElementById('ha_03pamukkale').textContent=open?'▼':'▲'">
+    <span style="font-size:12px;font-weight:600;color:#2d6a4f">🏨 Détails infos hôtel — Pamukkale · 2 nuits · À réserver</span>
+    <span id="ha_03pamukkale">▼</span>
+  </div>
+  <div id="hg_03pamukkale" style="display:none;padding:8px 14px;background:#fff">
+    <div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Statut</span><span style="font-weight:400;color:#c0392b">⚠️ À réserver — rester DANS le village (pas à Denizli !)</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Budget</span><span style="font-weight:400;color:#333">~35€/nuit pour 2</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Arrivée</span><span style="font-weight:400;color:#333">3 août soir · dolmuş depuis Denizli ~20h</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Départ</span><span style="font-weight:400;color:#c0392b">5 août · dolmuş → Denizli à 18h30 MAX</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Conseil</span><span style="font-weight:400;color:#333">Choisir un hôtel avec piscine thermale privée dans le village</span></div>
+
+  </div>
+</div>
+
+
 <div class="cnt">
 
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — Mardi 4 août · Travertins & Hierapolis</h2>
+    <h2>Jour 1 — 4 août · Travertins & Hierapolis</h2>
     <div class="ds">Le grand site du jour · Matin tôt sur les terrasses · Hierapolis l'après-midi</div>
     <div class="dgeo">📍 Tout à pied depuis l'hébergement · Le site est à 5 min du village</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~45–55€</strong> (entrée + piscine Cléopâtre)</div>
@@ -300,16 +268,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <div class="alb"><strong>Sol brûlant pieds nus obligatoire</strong> — Les chaussures sont interdites sur les terrasses blanches pour préserver le calcaire. En août, le sol peut être très chaud — prévoir chaussettes légères à enlever juste avant d'entrer, et y aller tôt le matin avant que le sol ne chauffe trop.</div>
   </div>
 
-  <div class="geo">
-    <div class="geot">Carte mentale Jour 1</div>
-    <div class="gr"><span class="gd" style="background:var(--pu)"></span>Hébergement village Pamukkale<span class="gti">9h départ</span></div>
-    <div class="gl"></div>
-    <div class="gr"><span class="gd" style="background:var(--gn2)"></span>Travertins (terrasses blanches) pieds nus + Piscine Cléopâtre<span class="gti">9h–12h30</span></div>
-    <div class="gl"></div>
-    <div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner village · Repos · Piscine hôtel<span class="gti">12h30–17h (chaleur, on souffle)</span></div>
-    <div class="gl"></div>
-    <div class="gr"><span class="gd" style="background:var(--pu)"></span>Hierapolis + coucher de soleil sur les terrasses<span class="gti">17h–19h30</span></div>
-  </div>
+  
 
   <div class="blk">
     <div class="bh"><span class="tm">9h</span><span class="bt2">Travertins (terrasses blanches) de Pamukkale + Piscine de Cléopâtre</span><span class="ptag paid">30€ + 13€ piscine</span></div>
@@ -338,7 +297,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — Mercredi 5 août · Laodicée + départ Fethiye le soir</h2>
+    <h2>Jour 2 — 5 août · Laodicée + départ Fethiye le soir</h2>
     <div class="ds">Matinée tranquille : Laodicée · Après-midi libre · Bus de soirée vers Fethiye</div>
     <div class="dgeo">📍 Dolmuş (minibus) ou taxi vers Laodicée · Bus ~19h–20h depuis Denizli otogarı</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–30€ + bus ~12€</strong></div>
@@ -460,13 +419,6 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 </div>
 
 <!-- PÉPITES -->
-<div class="transit-banner">
-  <span class="ti">🗺</span>
-  <div class="transit-banner-content">
-    <div class="transit-banner-title">🚌 Départ · Mercredi 5 août soir (18h30)</div>
-    <div class="transit-banner-detail">Dolmuş Pamukkale → Denizli (~2€) + Bus Denizli → Fethiye (~3h30, ~12€)<br>Départ Denizli 19h-20h · Arrivée Fethiye ~23h</div>
-  </div>
-</div>
 <div id="pep" class="spg">
   <div class="al info" style="margin-bottom:12px">
     <div class="ali">📅</div>
@@ -477,49 +429,49 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Kleopatra Havuzu (Piscine antique de Cléopâtre)</div>
       <div class="gem-p">+13€/pers · Dans le site Hierapolis</div>
       <div class="gem-d">Nager (yüzmek) parmi des colonnes romaines effondrées sous l'eau thermale à 36°C. L'une des expériences les plus uniques et mémorables de tout le voyage Turquie.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 11h30</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 11h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Coucher de soleil sur les travertins (terrasses)</div>
       <div class="gem-p">Inclus dans le billet · Entrée nord</div>
       <div class="gem-d">La lumière dorée de fin de journée transforme les terrasses blanches en dégradés de rose et orange. Le moment le plus magique du site — et les terrasses sont souvent mieux remplies d'eau.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 18h30</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 18h30</div>
     </div>
     <div class="gem">
       <div class="gem-t">Plutonium — "Porte de l'Enfer" d'Hierapolis</div>
       <div class="gem-p">Inclus dans le billet · Temple d'Apollon</div>
       <div class="gem-d">Fissure volcanique (yanardağ yarığı) émettant du CO2 en concentration mortelle — utilisée par les prêtres antiques d'Apollon pour "défier la mort". Des oiseaux meurent encore spontanément s'ils y entrent.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 17h (dans Hierapolis)</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 17h (dans Hierapolis)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Nekropolis d'Hierapolis</div>
       <div class="gem-p">Inclus dans le billet · Immense nécropole</div>
       <div class="gem-d">La plus grande nécropole (mezarlık antik = cimetière antique) de Turquie : 1 200+ tombeaux romains dans un état remarquable, étirés sur 2 km. Atmosphère irréelle à l'aube ou au coucher du soleil.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 17h (dans Hierapolis)</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 17h (dans Hierapolis)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Piscine thermale de l'hébergement</div>
       <div class="gem-p">Souvent incluse dans le prix de l'hôtel</div>
       <div class="gem-d">La plupart des hôtels du village de Pamukkale ont leur propre havuz (piscine) d'eau thermale. Baignade thermale gratuite en dehors du site officiel — idéal pour la pause de l'après-midi.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 15h (pause chaleur)</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 15h (pause chaleur)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Laodicea (Laodikeia) quasi-déserte</div>
       <div class="gem-p">~5–8€ · 15 km de Pamukkale</div>
       <div class="gem-d">Cité antique des 7 Églises de l'Apocalypse (Kıyamet Kitabı = Livre de l'Apocalypse), deux théâtres, fouilles actives, quasi aucun touriste. Contraste total avec Pamukkale bondé.</div>
-      <div class="gem-when gem-planned">📅 J2 · Mercredi 5 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J2 · 5 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Marche pieds nus (yalınayak) sur les travertins</div>
       <div class="gem-p">Inclus dans le billet · Expérience sensorielle</div>
       <div class="gem-d">Pas seulement un site à photographier — sentir l'eau chaude (sıcak su) thermale sur les pieds, le calcaire doux sous les orteils, l'air chaud. Une expérience physique et sensorielle rare.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mardi 4 août · 9h15</div>
+      <div class="gem-when gem-planned">📅 J1 · 4 août · 9h15</div>
     </div>
     <div class="gem">
       <div class="gem-t">Montgolfière (balon) au lever du soleil</div>
       <div class="gem-p">~100–130€/pers · Option premium</div>
       <div class="gem-d">Vol en mongolfière (sıcak hava balonu = ballon à air chaud) au-dessus des terrasses blanches et d'Hierapolis au lever du soleil. Expérience mémorable mais chère. Réserver à l'avance.</div>
-      <div class="gem-when gem-todo">À prévoir · J1 · Mardi 4 août · 6h (si intéressé)</div>
+      <div class="gem-when gem-todo">À prévoir · J1 · 4 août · 6h (si intéressé)</div>
     </div>
   
     <div style="grid-column:1/-1;border-top:1px solid var(--bd,#e5e2da);margin:8px 0;padding-top:8px"><span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3,#9a9690)">✨ Hors programme — si l'envie vient</span></div>
@@ -674,16 +626,6 @@ window.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.snb');
   if(first)first.click();
 });
-</script>
-<script>
-function toggleHotel() {
-  const grid = document.querySelector('.hotel-grid');
-  const icon = document.querySelector('.hotel-toggle-icon');
-  if (grid) {
-    grid.classList.toggle('open');
-    if (icon) icon.classList.toggle('open');
-  }
-}
 </script>
 </body>
 </html>

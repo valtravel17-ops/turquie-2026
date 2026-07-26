@@ -21,19 +21,19 @@ body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;li
 a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
 a:hover{border-bottom-color:transparent}
 
-
-
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
 .ptog:hover{color:var(--tx)}
 .parr{transition:transform .2s;font-size:10px;color:var(--t3)}
 .ptog.open .parr{transform:rotate(180deg)}
-
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
 .pbod.vis{display:block}
 .plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
 .pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
 .pbox strong{color:var(--gn)}
 
-
-.hdr h1{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
 .hdr p{font-size:13px;color:var(--t2)}
 .hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
@@ -56,7 +56,7 @@ a:hover{border-bottom-color:transparent}
 .snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
 .spg{display:none}.spg.vis{display:block}
 
-.cnt{max-width:100%;margin:0;padding:10px 14px}
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
 
 .dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
 .dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
@@ -155,88 +155,51 @@ a:hover{border-bottom-color:transparent}
 .lnm{font-size:12px;font-weight:500;color:var(--tx)}
 .lul{font-size:10px;color:var(--t3)}
 
-@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.transit-in{margin:10px 14px 0}}
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
 
 .site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:inline-block}
 .snav-btn.home{background:#1a3a5c;color:#fff}
-.snav-btn:active{opacity:.7}
-.snav-center{font-size:13px;font-weight:700;color:#1a1916;text-align:center;flex:1;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-.page-header{background:linear-gradient(135deg,var(--hc,#1a3a5c),var(--hc2,#2d6a8f));color:#fff;padding:10px 14px 8px}
-.page-header h1{font-size:16px;font-weight:700;margin:4px 0 2px}
-.page-header p{font-size:11px;opacity:.85;margin:0}
-.page-header .transit-out{font-size:11px;opacity:.85;margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.2)}
-
-.hdr h1{font-size:16px!important;margin-bottom:2px!important}
-.hdr p{font-size:12px!important;margin-bottom:4px!important}
-.hdr-meta{margin-top:4px!important}
-
-/* === BADGE JOUR dans nav tabs === */
-.snb{position:relative}
-
-
-/* SÉPARATEUR JOURNÉE */
-.dh{background:#e8f0fb;border-left:3px solid #2d6a8f;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0 6px;position:sticky;top:42px;z-index:50}
-.dh h2{font-size:13px;font-weight:700;color:#1a3a5c;margin:0 0 1px}
-.ds{font-size:11px;color:#5a7a9a;margin:0 0 1px}
-.dgeo{font-size:10px;color:#888;margin:0}
-.dbudg{font-size:11px;font-weight:600;color:#2d6a4f;margin-top:2px}
-
-/* BANNIÈRE TRANSIT DÉPART */
-.transit-banner{background:#fff8e0;border:1px solid #f0c040;border-radius:10px;padding:10px 14px;margin:12px 0 4px;display:flex;gap:10px;align-items:flex-start}
-.transit-banner .ti{font-size:18px;flex-shrink:0;margin-top:1px}
-.transit-banner-content{}
-.transit-banner-title{font-size:12px;font-weight:700;color:#7a5a00;margin-bottom:3px}
-.transit-banner-detail{font-size:11px;color:#7a5a00;line-height:1.5}
-
-/* HOTEL RETRACTABLE */
-.hotel-box{margin:8px 0 2px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden;background:#f0faf0}
-.hotel-toggle{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;cursor:pointer;user-select:none}
-.hotel-toggle-left{font-size:12px;font-weight:600;color:#2d6a4f;display:flex;align-items:center;gap:6px}
-.hotel-toggle-icon{font-size:10px;color:#888;transition:transform .25s;display:inline-block}
-.hotel-toggle-icon.open{transform:rotate(180deg)}
-.hotel-grid{display:none;padding:0 12px 10px;background:#fff}
-.hotel-grid.open{display:block}
-.hotel-row{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #f0ece6;font-size:12px;line-height:1.4}
-.hotel-row:last-child{border-bottom:none}
-.hotel-row span{color:#888;min-width:85px;flex-shrink:0;font-size:11px;padding-top:1px}
-.hotel-row.warn{color:#c0392b}
-.hotel-row.warn span{color:#c0392b}
-
-
-/* OVERRIDE hotel-grid caché par défaut */
-div.hotel-box > div.hotel-grid { display: none !important; }
-div.hotel-box > div.hotel-grid.open { display: block !important; }
-
-/* Marges légères sur mobile */
-.cnt{max-width:100%;margin:0;padding:10px 14px}
-/* Hotel-grid espacement */
-.hr{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f0ece6;font-size:13px;line-height:1.4}
-.hl{color:#888;min-width:90px;flex-shrink:0;font-size:11px;padding-top:2px;text-transform:uppercase;letter-spacing:.03em}
-/* Carte mentale déroulable */
-.cm-box{margin:8px 0;border:1px solid #e0dbd4;border-radius:8px;overflow:hidden}
-.cm-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f8f5f0;cursor:pointer;font-size:12px;color:#666}
-.cm-body{display:none;padding:10px 12px}
-.cm-body.open{display:block}
 </style>
 </head>
 <body>
 <div class="site-nav">
-  <a class="snav-btn" href="05_kas.html">← Kas</a>
+  <a class="snav-btn" href="05_kas.html">← Kaş</a>
   <a class="snav-btn home" href="index.html">🏠 Accueil</a>
-  <div class="snav-center">🌊 Antalya</div>
   <span style="width:80px"></span>
 </div>
 
 
-
+<!-- PROMPT -->
+<div class="pw">
+  <button class="ptog" id="ptog" onclick="togglePrompt()">
+    <span>📋 Prompt Base44 — Étape 6/6 : Antalya (cliquer pour déplier)</span>
+    <span class="parr" id="parr">▼</span>
+  </button>
+  <div class="pbod" id="pbod">
+    <div class="plbl">Transmission Base44 — Fichier 06_antalya.html</div>
+    <div class="pbox">
+      <strong>Bonjour Base44,</strong><br><br>
+      Ce fichier contient le guide complet de l'étape <strong>Antalya (11–17 août, 6 nuits)</strong> du voyage Turquie 2026, couple, transport en commun uniquement. C'est la dernière étape du voyage.<br><br>
+      <strong>Arrivée :</strong> Bus Kaş → Antalya · ~4h · ~10€/pers · Kamil Koç · Soirée du 11 août<br><br>
+      <strong>Base logistique :</strong> Loger dans Kaleiçi (vieille ville ottomane dans les remparts romains) — quartier idéal, tout à pied, authentique. Éviter les hôtels des zones balnéaires (Konyaaltı, Lara) — trop loin de tout.<br><br>
+      <strong>Activités clés :</strong> Rafting Köprülü Kanyonu (meilleur spot de Turquie, ~37€/pers tout compris, transfert depuis Antalya inclus) · Aspendos/Perge/Side (excursion journée ~70€/pers) · Termessos (cité perchée 1 050m, bus 506 depuis Antalya) · Kaleiçi (vieille ville ottomane, gratuit) · Plages de Konyaaltı et Lara<br><br>
+      <strong>Départ vol :</strong> AYT (aéroport Antalya) le 17 août · À l'aéroport à 5h30 · Tramway AntRay T1 depuis Kaleiçi (~25 min, ~1€) ou taksici (taxi) BiTaksi (~8–10€) si avant 5h du matin
+    </div>
+  </div>
 </div>
 
 <!-- HEADER -->
-    <div class="hdr-sub">11–17 août · 6 nuits · Étape 6/6 — Dernière étape · Vol retour le 17 août · 34–40°C · Très chaud · Kaleiçi (vieille ville)</div>
+<div class="hdr">
+  <h1>🌊 Antalya</h1>
+  <p>11–17 août · 6 nuits · Étape 6/6 — Dernière étape · Vol retour le 17 août</p>
+  <div class="hdr-meta">
+    <span class="pill rd">34–40°C · Très chaud</span>
+    <span class="pill pu">Kaleiçi (vieille ville)</span>
+    <span class="pill gn">Rafting Köprülü ⭐⭐</span>
+    <span class="pill bl">Aspendos · Termessos</span>
+    <span class="pill go">Côte turquoise · Plages</span>
   </div>
-</div>
 </div>
 
 <!-- TRANSIT ENTRANT -->
@@ -249,41 +212,44 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <div class="ti-row"><div class="ti-l">Durée / Prix</div><div class="ti-v">~4h · ~10€/pers</div></div>
     <div class="ti-row"><div class="ti-l">Hébergement</div><div class="ti-v">Dans Kaleiçi (vieille ville) · <a href="https://www.booking.com/district/tr/antalya/kaleici.fr.html" target="_blank">Booking Kaleiçi</a></div></div>
   </div>
+</div>
 
 <!-- SUB NAV -->
-<div class="hotel-box">
-  <div class="hotel-toggle" onclick="toggleHotel()">
-    <span class="hotel-toggle-left">🏨 Détails infos hôtel — Antalya · 6 nuits</span>
-    <span class="hotel-toggle-icon">▼</span>
-  </div>
-  <div class="hotel-grid" style="display:none">
-<div class="hr"><span class="hl">STATUT</span><span style="color:#c0392b;font-weight:400">⚠️ À réserver — Kaleiçi (vieille ville) recommandé</span></div>
-<div class="hr"><span class="hl">BUDGET</span><span style="color:#1a1916;font-weight:400">~35€/nuit pour 2</span></div>
-<div class="hr"><span class="hl">ARRIVÉE</span><span style="color:#1a1916;font-weight:400">11 août soir ~20h · bus depuis Kaş</span></div>
-<div class="hr"><span class="hl">DÉPART</span><span style="color:#c0392b;font-weight:400">17 août · tramway AntRay → AYT à 5h30 ⚠️</span></div>
-<div class="hr"><span class="hl">NOTE</span><span style="color:#c0392b;font-weight:400">⚠️ Vérifier premier tramway AntRay la veille du départ</span></div>
-</div>
-  </div>
-</div>
 <div class="snav">
-  <button class="snb on" onclick="showSub('j1',this)">J1 · Mer. 12 août</button>
-  <button class="snb" onclick="showSub('j2',this)">J2 · Jeu. 13 août</button>
-  <button class="snb" onclick="showSub('j3',this)">J3 · Ven. 14 août ⭐⭐⭐</button>
-  <button class="snb" onclick="showSub('j4',this)">J4 · Sam. 15 août</button>
-  <button class="snb" onclick="showSub('j5',this)">J5 · Dim. 16 août</button>
-  <button class="snb" onclick="showSub('j6',this)">J6 · Lun. 17 août · Départ</button>
+  <button class="snb on" onclick="showSub('j1',this)">J1 · Mer. 12</button>
+  <button class="snb" onclick="showSub('j2',this)">J2 · Jeu. 13</button>
+  <button class="snb" onclick="showSub('j3',this)">J3 · 14 août ⭐⭐⭐</button>
+  <button class="snb" onclick="showSub('j4',this)">J4 · Sam. 15</button>
+  <button class="snb" onclick="showSub('j5',this)">J5 · Dim. 16</button>
+  <button class="snb" onclick="showSub('j6',this)">J6 · 17 août · Départ</button>
   <button class="snb" onclick="showSub('excursions',this)">🗺 Excursions ±1h</button>
   <button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button>
   <button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button>
   <button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button>
 </div>
 
+<div style="margin:8px 16px 4px;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden">
+  <div style="background:#f0faf0;display:flex;align-items:center;justify-content:space-between;padding:9px 14px;cursor:pointer" onclick="var g=document.getElementById('hg_06antalya');var open=g.style.display==='block';g.style.display=open?'none':'block';document.getElementById('ha_06antalya').textContent=open?'▼':'▲'">
+    <span style="font-size:12px;font-weight:600;color:#2d6a4f">🏨 Détails infos hôtel — Antalya · 6 nuits · À réserver</span>
+    <span id="ha_06antalya">▼</span>
+  </div>
+  <div id="hg_06antalya" style="display:none;padding:8px 14px;background:#fff">
+    <div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Statut</span><span style="font-weight:400;color:#c0392b">⚠️ À réserver — Kaleiçi (vieille ville) recommandé</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Budget</span><span style="font-weight:400;color:#333">~35€/nuit pour 2</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Arrivée</span><span style="font-weight:400;color:#333">11 août soir ~20h · bus depuis Kaş</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Départ</span><span style="font-weight:400;color:#c0392b">17 août · tramway AntRay → AYT à 5h30 ⚠️</span></div>
+<div style="display:flex;gap:10px;padding:4px 0;border-bottom:1px solid #f5f2ed;font-size:13px"><span style="color:#888;min-width:100px;font-size:11px;text-transform:uppercase">Note</span><span style="font-weight:400;color:#c0392b">⚠️ Vérifier premier tramway AntRay la veille du départ</span></div>
+
+  </div>
+</div>
+
+
 <div class="cnt">
 
 <!-- J1 -->
 <div id="j1" class="spg vis">
   <div class="dh">
-    <h2>Jour 1 — Mercredi 12 août · Kaleiçi — La vieille ville ottomane</h2>
+    <h2>Jour 1 — 12 août · Kaleiçi — La vieille ville ottomane</h2>
     <div class="ds">Arrivée la veille en soirée · Journée tranquille de découverte du quartier</div>
     <div class="dgeo">📍 Tout à pied dans Kaleiçi · Plage Mermerli accessible depuis les remparts</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~10–20€</strong></div>
@@ -308,7 +274,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J2 -->
 <div id="j2" class="spg">
   <div class="dh">
-    <h2>Jour 2 — Jeudi 13 août · Aspendos · Perge · Side</h2>
+    <h2>Jour 2 — 13 août · Aspendos · Perge · Side</h2>
     <div class="ds">3 sites antiques en une journée · Tour organisé recommandé · Journée complète</div>
     <div class="dgeo">📍 Tour organisé depuis Antalya · Transfert inclus · Retour en soirée</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~70€</strong> (tour avec entrées et déjeuner)</div>
@@ -344,7 +310,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J3 -->
 <div id="j3" class="spg">
   <div class="dh">
-    <h2>Jour 3 — Vendredi 14 août · Rafting Köprülü Kanyonu ⭐⭐⭐</h2>
+    <h2>Jour 3 — 14 août · Rafting Köprülü Kanyonu ⭐⭐⭐</h2>
     <div class="ds">L'expérience canoë/rafting ultime du voyage · Journée entière · Transfert inclus depuis Antalya</div>
     <div class="dgeo">📍 Prise en charge à l'hôtel à Kaleiçi · ~1h30 de transfert · Köprülü Kanyon Milli Parkı (parc national)</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~37€</strong> tout compris</div>
@@ -369,7 +335,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J4 -->
 <div id="j4" class="spg">
   <div class="dh">
-    <h2>Jour 4 — Samedi 15 août · Termessos — La cité perchée</h2>
+    <h2>Jour 4 — 15 août · Termessos — La cité perchée</h2>
     <div class="ds">Cité antique à 1 050m dans la montagne · Randonnée · Accessible en bus depuis Antalya</div>
     <div class="dgeo">📍 Bus 506 depuis Antalya centre → arrêt Termessos + ~9 km de montée (taxi ou marche) · ~45 min au total</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong></div>
@@ -398,7 +364,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J5 -->
 <div id="j5" class="spg">
   <div class="dh">
-    <h2>Jour 5 — Dimanche 16 août · Land of Legends + Dîner d'adieu</h2>
+    <h2>Jour 5 — 16 août · Land of Legends + Dîner d'adieu</h2>
     <div class="ds">Parc aquatique et d'attractions · Journée détente et sensations · Dîner d'adieu le soir · Préparer les bagages</div>
     <div class="dgeo">📍 Land of Legends · Belek · ~40 min depuis Antalya · Navette ou dolmuş</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~60–90€</strong></div>
@@ -428,7 +394,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 <!-- J6 / DÉPART -->
 <div id="j6" class="spg">
   <div class="dh">
-    <h2>Jour 6 — Lundi 17 août · Départ AYT · Vol retour</h2>
+    <h2>Jour 6 — 17 août · Départ AYT · Vol retour</h2>
     <div class="ds">Réveil 4h30 · À l'aéroport à 5h30 · Fin du voyage</div>
     <div class="dgeo">📍 Kaleiçi → Aéroport AYT · Tramway AntRay T1 (si ouvert) ou taxi BiTaksi</div>
     <div class="dbudg"></div>
@@ -446,7 +412,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
   </div>
 
   <div class="depart">
-    <div class="depart-t">✈️ Vol retour — Lundi 17 août 2026 · Aéroport AYT Antalya</div>
+    <div class="depart-t">✈️ Vol retour — 17 août 2026 · Aéroport AYT Antalya</div>
     <div class="depart-g">
       <div class="depart-r"><div class="depart-l">À l'aéroport</div><div class="depart-v">5h30 minimum</div></div>
       <div class="depart-r"><div class="depart-l">Transport option 1</div><div class="depart-v">Tramway AntRay T1 · ~25 min · ~1€</div></div>
@@ -542,13 +508,6 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
 </div>
 
 <!-- PÉPITES -->
-<div class="transit-banner">
-  <span class="ti">🗺</span>
-  <div class="transit-banner-content">
-    <div class="transit-banner-title">✈️ Départ · Lundi 17 août à 5h30 à AYT</div>
-    <div class="transit-banner-detail">Tramway AntRay T1 → Aéroport AYT · ~25 min · ~1€/pers<br>OU Taxi BiTaksi ~8-10€ si tramway pas assez tôt<br>⚠️ Vérifier premier tramway la veille !</div>
-  </div>
-</div>
 <div id="pep" class="spg">
   <div class="al info" style="margin-bottom:12px">
     <div class="ali">📅</div>
@@ -559,31 +518,31 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Rafting Köprülü Kanyonu</div>
       <div class="gem-p">~37€/pers tout compris · Journée entière</div>
       <div class="gem-d">Le meilleur spot de rafting de Turquie. Rapides II–III dans des gorges calcaires, ponts romains antiques, déjeuner au bord de la rivière. L'expérience aquatique ultime du voyage — encore mieux qu'à Saklıkent.</div>
-      <div class="gem-when gem-planned">📅 J2 · Jeudi 13 août · Journée entière</div>
+      <div class="gem-when gem-planned">📅 J2 · 13 août · Journée entière</div>
     </div>
     <div class="gem">
       <div class="gem-t">Théâtre d'Aspendos — Le mieux conservé au monde</div>
       <div class="gem-p">Inclus dans le tour ~70€ · 45 km d'Antalya</div>
       <div class="gem-d">15 000 places, façade scénique à 3 étages intacte depuis le 2e siècle ap. J.-C. Encore utilisé pour des concerts. Si un spectacle a lieu en août — aller absolument. L'un des plus beaux sites antiques du monde.</div>
-      <div class="gem-when gem-planned">📅 J3 · Vendredi 14 août · Matinée</div>
+      <div class="gem-when gem-planned">📅 J3 · 14 août · Matinée</div>
     </div>
     <div class="gem">
       <div class="gem-t">Termessos — La cité qui a résisté à Alexandre</div>
       <div class="gem-p">~3–5€ parc national · Bus 506 depuis Antalya</div>
       <div class="gem-d">Cité perchée à 1 050m dans les cèdres. Théâtre avec vue sur la mer et les montagnes. Quasi-déserte. La seule cité qu'Alexandre le Grand n'a jamais pu prendre. Atmosphère mystérieuse et hors du temps.</div>
-      <div class="gem-when gem-planned">📅 J4 · Samedi 15 août · 9h</div>
+      <div class="gem-when gem-planned">📅 J4 · 15 août · 9h</div>
     </div>
     <div class="gem">
       <div class="gem-t">Hadrien Kapısı (Arc de Triomphe d'Hadrien)</div>
       <div class="gem-p">Gratuit · Kaleiçi · 1 min à pied</div>
       <div class="gem-d">Arc de triomphe romain intact depuis 130 ap. J.-C., au milieu des ruelles de Kaleiçi. Construit pour la visite de l'Empereur Hadrien. L'un des arcs romains les mieux conservés au monde — complètement gratuit et sans foule.</div>
-      <div class="gem-when gem-planned">📅 J1 · Mercredi 12 août · 9h (dans Kaleiçi)</div>
+      <div class="gem-when gem-planned">📅 J1 · 12 août · 9h (dans Kaleiçi)</div>
     </div>
     <div class="gem">
       <div class="gem-t">Temple d'Apollon de Side au coucher du soleil</div>
       <div class="gem-p">Inclus dans le tour · Side</div>
       <div class="gem-d">Colonnes du temple d'Apollon face à la Méditerranée au coucher du soleil — l'image la plus iconique de la côte turquoise. Lumière dorée sur le marbre blanc et la mer bleue.</div>
-      <div class="gem-when gem-planned">📅 J3 · Vendredi 14 août · Fin d'après-midi</div>
+      <div class="gem-when gem-planned">📅 J3 · 14 août · Fin d'après-midi</div>
     </div>
     <div class="gem">
       <div class="gem-t">Yanartaş — Feux de la Chimère (Olympos)</div>
@@ -595,7 +554,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-t">Dîner d'adieu dans le vieux port de Kaleiçi</div>
       <div class="gem-p">~20–30€/pers · Kaleiçi port</div>
       <div class="gem-d">Dernier dîner du voyage dans un balık restoranı (restaurant de poisson) au bord du vieux port ottoman. Levrek (loup de mer), baklava, çay (thé turc). Meilleure façon de clore 21 nuits en Turquie.</div>
-      <div class="gem-when gem-planned">📅 J5 · Dimanche 16 août · Soir</div>
+      <div class="gem-when gem-planned">📅 J5 · 16 août · Soir</div>
     </div>
     <div class="gem">
       <div class="gem-t">Phaselis — Ruines romaines au bord de la mer</div>
@@ -627,10 +586,10 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
       <div class="gem-when gem-todo">À prévoir · En se baladant dans Kaleiçi</div>
     </div>
     <div class="gem">
-      <div class="gem-t">Ayna concert live — Samedi 15 août Antalya</div>
+      <div class="gem-t">Ayna concert live — 15 août Antalya</div>
       <div class="gem-p">~15–25€ · Holly Stone Performance Hall Antalya</div>
       <div class="gem-d">Ayna est l'un des groupes de rock alternatif turc les plus cultes — et ils jouent à Antalya le 15 août 2026 au Holly Stone. Concert dans la scène rock locale turque pour voir l'énergie d'un public qui connaît chaque parole par cœur. Vérifier sur songkick.com ou bandsintown pour les billets.</div>
-      <div class="gem-when gem-todo">À prévoir · Samedi 15 août 2026 · songkick.com · Antalya</div>
+      <div class="gem-when gem-todo">À prévoir · 15 août 2026 · songkick.com · Antalya</div>
     </div>
     <div class="gem">
       <div class="gem-t">Mem Ararat — concert world music 20 août</div>
@@ -757,7 +716,7 @@ div.hotel-box > div.hotel-grid.open { display: block !important; }
     <div class="fr"><div><div class="fn">Bus 506 → Termessos</div><div class="fsb">Depuis le centre d'Antalya · Descendre D685 · 9 km montée jusqu'aux ruines</div></div><span class="fp">~1€</span></div>
     <div class="fr"><div><div class="fn">Taksici (taxi) BiTaksi — Aéroport AYT</div><div class="fsb">Depuis Kaleiçi · ~20 min · Utile si avant 5h du matin</div></div><span class="fp">~8–10€</span></div>
 
-    <div class="slbl">Départ aéroport — Lundi 17 août</div>
+    <div class="slbl">Départ aéroport — 17 août</div>
     <div class="fr"><div><div class="fn">À l'aéroport AYT minimum</div></div><span class="fp">5h30</span></div>
     <div class="fr"><div><div class="fn">Option 1 : Tramway AntRay T1</div><div class="fsb">Vérifier heure 1er départ la veille · ~25 min</div></div><span class="fp">~1€</span></div>
     <div class="fr"><div><div class="fn">Option 2 : Taxi BiTaksi</div><div class="fsb">Réserver la veille · Départ 4h45 depuis Kaleiçi</div></div><span class="fp">~8–10€</span></div>
@@ -793,16 +752,6 @@ window.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.snb');
   if(first)first.click();
 });
-</script>
-<script>
-function toggleHotel() {
-  const grid = document.querySelector('.hotel-grid');
-  const icon = document.querySelector('.hotel-toggle-icon');
-  if (grid) {
-    grid.classList.toggle('open');
-    if (icon) icon.classList.toggle('open');
-  }
-}
 </script>
 </body>
 </html>
