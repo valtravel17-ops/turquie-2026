@@ -5,44 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇹🇷 Guide Turquie 2026</title>
 <style>
-:root{--bg:#f5f2ed;--surface:#fff;--border:#e5e2da;--text:#1a1916;--t2:#5a5751;--blue:#1a3a5c;--r:14px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding-bottom:30px}
-.hero{background:linear-gradient(135deg,#1a3a5c,#2d6a8f);color:#fff;padding:32px 20px 24px;text-align:center}
-.hero .flag{font-size:44px;margin-bottom:10px}
-.hero h1{font-size:24px;font-weight:700;margin-bottom:6px}
-.hero p{font-size:13px;opacity:.85}
-.section{padding:20px 16px 0}
-.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:12px}
-.etape-card{background:var(--surface);border-radius:var(--r);padding:16px;margin-bottom:10px;text-decoration:none;display:flex;align-items:center;gap:14px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-left:4px solid #ddd;transition:transform .1s}
-.etape-card:active{transform:scale(.98)}
-.etape-card .ico{font-size:28px;flex-shrink:0}
-.etape-card .info{flex:1}
-.etape-card .nom{font-weight:700;font-size:15px;color:var(--text)}
-.etape-card .dates{font-size:12px;color:var(--t2);margin-top:3px}
-.etape-card .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+body{background:#f5f2ed;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding-bottom:30px}
+.top{background:linear-gradient(135deg,#1a3a5c,#2d6a8f);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100}
+.top-ico{font-size:20px}
+.top-title{font-size:14px;font-weight:700}
+.top-sub{font-size:11px;opacity:.8}
+.section{padding:16px 16px 0}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
+.card{background:#fff;border-radius:14px;padding:16px;margin-bottom:10px;text-decoration:none;display:flex;align-items:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-left:4px solid #ddd}
+.card:active{opacity:.85}
+.card-ico{font-size:26px;flex-shrink:0}
+.card-info{flex:1}
+.card-nom{font-weight:700;font-size:15px;color:#1a1916}
+.card-dates{font-size:12px;color:#666;margin-top:3px}
+.card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .tag{font-size:10px;padding:2px 8px;border-radius:20px;background:#f0ece6;color:#666}
-.etape-card .chev{font-size:20px;color:#ccc;flex-shrink:0}
-.outils-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.outil-card{background:var(--surface);border-radius:var(--r);padding:14px 12px;text-decoration:none;display:block;box-shadow:0 1px 3px rgba(0,0,0,.07);border-top:3px solid #ddd;transition:transform .1s}
-.outil-card:active{transform:scale(.97)}
-.outil-card .oe{font-size:24px;margin-bottom:6px}
-.outil-card .ol{font-weight:700;font-size:14px;color:var(--text)}
-.outil-card .os{font-size:11px;color:var(--t2);margin-top:3px}
-.budget-box{background:#1a3a5c;border-radius:var(--r);padding:16px;color:#fff;margin-bottom:10px}
-.budget-box .bl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:8px}
-.budget-box .bv{font-size:24px;font-weight:700}
-.budget-box .bs{font-size:12px;opacity:.7;margin-top:4px}
-
-.hero-mini{background:linear-gradient(135deg,#1a3a5c,#2d6a8f);color:#fff;padding:10px 16px;font-size:13px;text-align:center;letter-spacing:.01em}
+.chev{font-size:20px;color:#ccc;flex-shrink:0}
 </style>
 </head>
 <body>
-<div class="hero-mini">🇹🇷 <strong>Guide Turquie 2026</strong> · 27 juil – 17 août · Valentin &amp; Ludyvine</div>
-<h1>Guide Turquie 2026</h1>
-  <p>27 juillet – 17 août · 21 nuits · Valentin & Ludyvine</p>
+
+<div class="top">
+  <span class="top-ico">🇹🇷</span>
+  <div>
+    <div class="top-title">Guide Turquie 2026</div>
+    <div class="top-sub">27 juil – 17 août · 21 nuits · Valentin & Ludyvine</div>
+  </div>
 </div>
 
+<div class="section">
+  <div class="section-label">6 étapes · 21 nuits</div>
+
+  <a class="card" href="01_istanbul.html" style="border-left-color:#1a6b8a">
+    <div class="card-ico">🕌</div>
+    <div class="card-info">
+      <div class="card-nom">Istanbul</div>
+      <div class="card-dates">27–30 juillet · 3 nuits hôtel · 4 journées</div>
+      <div class="card-tags">
+        <span class="tag">Sultanahmet</span>
+        <span class="tag">Bosphore</span>
+        <span class="tag">Kadıköy</span>
+        <span class="tag">Street art</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="02_selcuk.html" style="border-left-color:#6b4a1a">
+    <div class="card-ico">🏛️</div>
+    <div class="card-info">
+      <div class="card-nom">Selçuk / Éphèse</div>
+      <div class="card-dates">31 juil – 3 août · 3 nuits hôtel · 4 journées</div>
+      <div class="card-tags">
+        <span class="tag">Éphèse UNESCO</span>
+        <span class="tag">Şirince</span>
+        <span class="tag">Parc Dilek</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="03_pamukkale.html" style="border-left-color:#2d6a8f">
+    <div class="card-ico">💧</div>
+    <div class="card-info">
+      <div class="card-nom">Pamukkale</div>
+      <div class="card-dates">3–5 août · 2 nuits hôtel · 2 journées</div>
+      <div class="card-tags">
+        <span class="tag">Travertins UNESCO</span>
+        <span class="tag">Hierapolis</span>
+        <span class="tag">Piscine Cléopâtre</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="04_fethiye.html" style="border-left-color:#1a7a4a">
+    <div class="card-ico">🏖️</div>
+    <div class="card-info">
+      <div class="card-nom">Fethiye / Ölüdeniz</div>
+      <div class="card-dates">5–9 août · 4 nuits hôtel · 4 journées</div>
+      <div class="card-tags">
+        <span class="tag">Lagon Bleu</span>
+        <span class="tag">12 îles</span>
+        <span class="tag">Saklıkent canyon</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="05_kas.html" style="border-left-color:#1a4a7a">
+    <div class="card-ico">⛵</div>
+    <div class="card-info">
+      <div class="card-nom">Kaş</div>
+      <div class="card-dates">9–11 août · 2 nuits hôtel · 2 journées</div>
+      <div class="card-tags">
+        <span class="tag">Kayak Kekova ⭐⭐⭐</span>
+        <span class="tag">Myra</span>
+        <span class="tag">Kastellorizo</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="06_antalya.html" style="border-left-color:#7a1a3a">
+    <div class="card-ico">🌊</div>
+    <div class="card-info">
+      <div class="card-nom">Antalya</div>
+      <div class="card-dates">11–17 août · 6 nuits hôtel · 6 journées</div>
+      <div class="card-tags">
+        <span class="tag">Rafting Köprülü ⭐⭐⭐</span>
+        <span class="tag">Aspendos</span>
+        <span class="tag">Termessos</span>
+      </div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+
+  <a class="card" href="00_recap.html" style="border-left-color:#888;margin-top:6px">
+    <div class="card-ico">🗺️</div>
+    <div class="card-info">
+      <div class="card-nom">Récap général</div>
+      <div class="card-dates">Planning · Transports · Budget · Apps indispensables</div>
+    </div>
+    <div class="chev">›</div>
+  </a>
 
 </div>
 </body>
