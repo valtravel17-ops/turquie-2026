@@ -23,48 +23,9 @@ body{background:#f5f2ed;font-family:'Segoe UI',system-ui,sans-serif;min-height:1
 .tag{font-size:10px;padding:2px 8px;border-radius:20px;background:#f0ece6;color:#666}
 .chev{font-size:20px;color:#ccc;flex-shrink:0}
 
-.conv-box{margin:12px 0;border:1px solid #d4c9b0;border-radius:12px;overflow:hidden;background:#fdfbf6}
-.conv-hdr{background:#f5f0e4;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer}
-.conv-lbl{font-size:13px;font-weight:700;color:#7a6534}
-.conv-body{display:none;padding:14px}
-.conv-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.conv-row label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;min-width:52px;flex-shrink:0}
-.conv-row input{flex:1;min-width:0;padding:11px 12px;font-size:17px;font-weight:600;border:1px solid #ddd6c8;border-radius:8px;background:#fff;color:#1a1916;-webkit-appearance:none}
-.conv-row input:focus{outline:none;border-color:#7a6534;box-shadow:0 0 0 2px rgba(122,101,52,.15)}
-.conv-swap{text-align:center;font-size:18px;color:#b5a67e;margin:-4px 0 6px}
-.conv-rate{font-size:11px;color:#999;text-align:center;padding-top:8px;border-top:1px solid #efe9db;line-height:1.6}
-.conv-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.conv-quick button{flex:1;min-width:62px;padding:7px 4px;font-size:12px;font-weight:600;border:1px solid #ddd6c8;border-radius:7px;background:#fff;color:#7a6534;cursor:pointer}
-.conv-quick button:active{background:#f5f0e4}
 </style>
 </head>
 <body>
-<div class="conv-box">
-  <div class="conv-hdr" onclick="var b=document.getElementById('cvidx');var o=b.style.display==='block';b.style.display=o?'none':'block';document.getElementById('cvidx_a').textContent=o?'▼':'▲'">
-    <span class="conv-lbl">💱 Convertisseur € ⇄ TL</span>
-    <span id="cvidx_a">▼</span>
-  </div>
-  <div id="cvidx" class="conv-body">
-    <div class="conv-row">
-      <label for="cvidx_eur">Euro</label>
-      <input id="cvidx_eur" type="text" inputmode="decimal" autocomplete="off" placeholder="0" oninput="cvE('cvidx')">
-    </div>
-    <div class="conv-swap">⇅</div>
-    <div class="conv-row">
-      <label for="cvidx_try">Lire TL</label>
-      <input id="cvidx_try" type="text" inputmode="decimal" autocomplete="off" placeholder="0" oninput="cvT('cvidx')">
-    </div>
-    <div class="conv-quick">
-      <button type="button" onclick="cvSet('cvidx',100)">100 TL</button>
-      <button type="button" onclick="cvSet('cvidx',250)">250 TL</button>
-      <button type="button" onclick="cvSet('cvidx',500)">500 TL</button>
-      <button type="button" onclick="cvSet('cvidx',1000)">1000 TL</button>
-    </div>
-    <div class="conv-rate">1 € = 53,53 TL · 100 TL ≈ 1,87 €<br>Taux bancaire constaté — vérifier le jour J</div>
-  </div>
-</div>
-
-
 <div class="top">
   <span class="top-ico">🇹🇷</span>
   <div>
@@ -171,68 +132,5 @@ body{background:#f5f2ed;font-family:'Segoe UI',system-ui,sans-serif;min-height:1
   </a>
 
 </div>
-<script>
-var CV_RATE = 53.53;
-
-// Auto-reparation : force les champs en type=text des le chargement,
-// pour qu'une valeur avec virgule ne soit jamais rejetee par le navigateur.
-function cvHeal(){
-  var f = document.querySelectorAll('.conv-row input');
-  for (var i = 0; i < f.length; i++){
-    if (f[i].getAttribute('type') !== 'text'){
-      f[i].setAttribute('type', 'text');
-    }
-    f[i].setAttribute('inputmode', 'decimal');
-  }
-}
-if (document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', cvHeal);
-} else {
-  cvHeal();
-}
-
-function cvNum(s){
-  if (s === null || s === undefined) return NaN;
-  s = String(s).trim().replace(/\s/g, '').replace(',', '.');
-  if (s === '') return NaN;
-  var n = parseFloat(s);
-  return isFinite(n) ? n : NaN;
-}
-
-// Ecrit une valeur en respectant le type reel du champ :
-// virgule si le champ est textuel, point s'il est encore numerique.
-function cvWrite(el, val){
-  if (!el) return;
-  var r = Math.round(val * 100) / 100;
-  var t = (el.getAttribute('type') || 'text').toLowerCase();
-  el.value = (t === 'number') ? String(r) : String(r).replace('.', ',');
-}
-
-function cvE(id){
-  var e = document.getElementById(id + '_eur');
-  var t = document.getElementById(id + '_try');
-  if (!e || !t) return;
-  var n = cvNum(e.value);
-  if (isNaN(n)) { t.value = ''; return; }
-  cvWrite(t, n * CV_RATE);
-}
-
-function cvT(id){
-  var e = document.getElementById(id + '_eur');
-  var t = document.getElementById(id + '_try');
-  if (!e || !t) return;
-  var n = cvNum(t.value);
-  if (isNaN(n)) { e.value = ''; return; }
-  cvWrite(e, n / CV_RATE);
-}
-
-function cvSet(id, tl){
-  var t = document.getElementById(id + '_try');
-  if (!t) return;
-  cvHeal();
-  t.value = String(tl);
-  cvT(id);
-}
-</script>
 </body>
 </html>
