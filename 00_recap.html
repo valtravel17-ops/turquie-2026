@@ -141,6 +141,20 @@ a:hover{border-bottom-color:transparent}
 .site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
 .snav-btn.home{background:#1a3a5c;color:#fff}
+
+.conv-box{margin:12px 0;border:1px solid #d4c9b0;border-radius:12px;overflow:hidden;background:#fdfbf6}
+.conv-hdr{background:#f5f0e4;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer}
+.conv-lbl{font-size:13px;font-weight:700;color:#7a6534}
+.conv-body{display:none;padding:14px}
+.conv-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.conv-row label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;min-width:52px;flex-shrink:0}
+.conv-row input{flex:1;min-width:0;padding:11px 12px;font-size:17px;font-weight:600;border:1px solid #ddd6c8;border-radius:8px;background:#fff;color:#1a1916;-webkit-appearance:none}
+.conv-row input:focus{outline:none;border-color:#7a6534;box-shadow:0 0 0 2px rgba(122,101,52,.15)}
+.conv-swap{text-align:center;font-size:18px;color:#b5a67e;margin:-4px 0 6px}
+.conv-rate{font-size:11px;color:#999;text-align:center;padding-top:8px;border-top:1px solid #efe9db;line-height:1.6}
+.conv-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.conv-quick button{flex:1;min-width:62px;padding:7px 4px;font-size:12px;font-weight:600;border:1px solid #ddd6c8;border-radius:7px;background:#fff;color:#7a6534;cursor:pointer}
+.conv-quick button:active{background:#f5f0e4}
 </style>
 </head>
 <body>
@@ -481,7 +495,7 @@ a:hover{border-bottom-color:transparent}
     <div class="fr"><div><div class="fn">❌ Bureaux de change (döviz bürosu) touristiques</div><div class="fsb">Surtout autour de Sultanahmet et Istiklal — taux très mauvais</div></div><span class="fp">À éviter</span></div>
 
     <div class="slbl">Monnaie & paiements</div>
-    <div class="fr"><div><div class="fn">Monnaie locale</div><div class="fsb">TRY = Türk Lirası (lire turque) · ~37–38 TL pour 1€ en 2026</div></div><span class="fp">Toujours payer en TRY</span></div>
+    <div class="fr"><div><div class="fn">Monnaie locale</div><div class="fsb">TRY = Türk Lirası (lire turque) · ~53,53 TL pour 1€ (taux bancaire constaté) · 100 TL ≈ 1,87€ · 500 TL ≈ 9,34€ · 1000 TL ≈ 18,68€</div></div><span class="fp">Toujours payer en TRY</span></div>
     <div class="fr"><div><div class="fn">Paiement carte</div><div class="fsb">Très répandu dans les villes et hôtels · Moins dans les villages et dolmuş</div></div><span class="fp">Fortuneo Fospho ✅</span></div>
     <div class="fr"><div><div class="fn">Espèces indispensables</div><div class="fsb">Dolmuş (minibus), marchés locaux, petits vendeurs de rue, pourboires</div></div><span class="fp">Garder ~50 TL sur soi</span></div>
     <div class="fr"><div><div class="fn">Pourboire (bahşiş)</div><div class="fsb">Non obligatoire mais apprécié · ~10% dans les restos, quelques TL pour les porteurs</div></div><span class="fp">Optionnel</span></div>
@@ -552,7 +566,33 @@ a:hover{border-bottom-color:transparent}
   </div>
 </div>
 
-</div><!-- /cnt -->
+</div>
+
+<div class="conv-box">
+  <div class="conv-hdr" onclick="var b=document.getElementById('cvrec');var o=b.style.display==='block';b.style.display=o?'none':'block';document.getElementById('cvrec_a').textContent=o?'▼':'▲'">
+    <span class="conv-lbl">💱 Convertisseur € ⇄ TL</span>
+    <span id="cvrec_a">▼</span>
+  </div>
+  <div id="cvrec" class="conv-body">
+    <div class="conv-row">
+      <label for="cvrec_eur">Euro</label>
+      <input id="cvrec_eur" type="number" inputmode="decimal" placeholder="0" oninput="cvE('cvrec')">
+    </div>
+    <div class="conv-swap">⇅</div>
+    <div class="conv-row">
+      <label for="cvrec_try">Lire TL</label>
+      <input id="cvrec_try" type="number" inputmode="decimal" placeholder="0" oninput="cvT('cvrec')">
+    </div>
+    <div class="conv-quick">
+      <button onclick="cvSet('cvrec',100)">100 TL</button>
+      <button onclick="cvSet('cvrec',250)">250 TL</button>
+      <button onclick="cvSet('cvrec',500)">500 TL</button>
+      <button onclick="cvSet('cvrec',1000)">1000 TL</button>
+    </div>
+    <div class="conv-rate">1 € = 53,53 TL · 100 TL ≈ 1,87 €<br>Taux bancaire constaté — vérifier le jour J</div>
+  </div>
+</div>
+<!-- /cnt -->
 
 
 <script>
@@ -567,6 +607,28 @@ window.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.snb');
   if(first)first.click();
 });
+</script>
+<script>
+var CV_RATE = 53.53;
+function cvFmt(v){ return (Math.round(v*100)/100).toString().replace('.', ','); }
+function cvE(id){
+  var e = document.getElementById(id+'_eur');
+  var t = document.getElementById(id+'_try');
+  if(e.value === ''){ t.value = ''; return; }
+  var n = parseFloat(e.value.replace(',','.'));
+  t.value = isNaN(n) ? '' : cvFmt(n * CV_RATE);
+}
+function cvT(id){
+  var e = document.getElementById(id+'_eur');
+  var t = document.getElementById(id+'_try');
+  if(t.value === ''){ e.value = ''; return; }
+  var n = parseFloat(t.value.replace(',','.'));
+  e.value = isNaN(n) ? '' : cvFmt(n / CV_RATE);
+}
+function cvSet(id, tl){
+  document.getElementById(id+'_try').value = tl;
+  cvT(id);
+}
 </script>
 </body>
 </html>
