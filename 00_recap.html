@@ -142,6 +142,7 @@ a:hover{border-bottom-color:transparent}
 .snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:flex;align-items:center;gap:5px;white-space:nowrap}
 .snav-btn.home{background:#1a3a5c;color:#fff}
 
+
 .conv-box{margin:12px 0;border:1px solid #d4c9b0;border-radius:12px;overflow:hidden;background:#fdfbf6}
 .conv-hdr{background:#f5f0e4;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer}
 .conv-lbl{font-size:13px;font-weight:700;color:#7a6534}
@@ -576,22 +577,24 @@ a:hover{border-bottom-color:transparent}
   <div id="cvrec" class="conv-body">
     <div class="conv-row">
       <label for="cvrec_eur">Euro</label>
-      <input id="cvrec_eur" type="number" inputmode="decimal" placeholder="0" oninput="cvE('cvrec')">
+      <input id="cvrec_eur" type="text" inputmode="decimal" autocomplete="off" placeholder="0" oninput="cvE('cvrec')">
     </div>
     <div class="conv-swap">⇅</div>
     <div class="conv-row">
       <label for="cvrec_try">Lire TL</label>
-      <input id="cvrec_try" type="number" inputmode="decimal" placeholder="0" oninput="cvT('cvrec')">
+      <input id="cvrec_try" type="text" inputmode="decimal" autocomplete="off" placeholder="0" oninput="cvT('cvrec')">
     </div>
     <div class="conv-quick">
-      <button onclick="cvSet('cvrec',100)">100 TL</button>
-      <button onclick="cvSet('cvrec',250)">250 TL</button>
-      <button onclick="cvSet('cvrec',500)">500 TL</button>
-      <button onclick="cvSet('cvrec',1000)">1000 TL</button>
+      <button type="button" onclick="cvSet('cvrec',100)">100 TL</button>
+      <button type="button" onclick="cvSet('cvrec',250)">250 TL</button>
+      <button type="button" onclick="cvSet('cvrec',500)">500 TL</button>
+      <button type="button" onclick="cvSet('cvrec',1000)">1000 TL</button>
     </div>
     <div class="conv-rate">1 € = 53,53 TL · 100 TL ≈ 1,87 €<br>Taux bancaire constaté — vérifier le jour J</div>
   </div>
 </div>
+
+
 <!-- /cnt -->
 
 
@@ -610,23 +613,64 @@ window.addEventListener('DOMContentLoaded',function(){
 </script>
 <script>
 var CV_RATE = 53.53;
-function cvFmt(v){ return (Math.round(v*100)/100).toString().replace('.', ','); }
+
+// Auto-reparation : force les champs en type=text des le chargement,
+// pour qu'une valeur avec virgule ne soit jamais rejetee par le navigateur.
+function cvHeal(){
+  var f = document.querySelectorAll('.conv-row input');
+  for (var i = 0; i < f.length; i++){
+    if (f[i].getAttribute('type') !== 'text'){
+      f[i].setAttribute('type', 'text');
+    }
+    f[i].setAttribute('inputmode', 'decimal');
+  }
+}
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', cvHeal);
+} else {
+  cvHeal();
+}
+
+function cvNum(s){
+  if (s === null || s === undefined) return NaN;
+  s = String(s).trim().replace(/\s/g, '').replace(',', '.');
+  if (s === '') return NaN;
+  var n = parseFloat(s);
+  return isFinite(n) ? n : NaN;
+}
+
+// Ecrit une valeur en respectant le type reel du champ :
+// virgule si le champ est textuel, point s'il est encore numerique.
+function cvWrite(el, val){
+  if (!el) return;
+  var r = Math.round(val * 100) / 100;
+  var t = (el.getAttribute('type') || 'text').toLowerCase();
+  el.value = (t === 'number') ? String(r) : String(r).replace('.', ',');
+}
+
 function cvE(id){
-  var e = document.getElementById(id+'_eur');
-  var t = document.getElementById(id+'_try');
-  if(e.value === ''){ t.value = ''; return; }
-  var n = parseFloat(e.value.replace(',','.'));
-  t.value = isNaN(n) ? '' : cvFmt(n * CV_RATE);
+  var e = document.getElementById(id + '_eur');
+  var t = document.getElementById(id + '_try');
+  if (!e || !t) return;
+  var n = cvNum(e.value);
+  if (isNaN(n)) { t.value = ''; return; }
+  cvWrite(t, n * CV_RATE);
 }
+
 function cvT(id){
-  var e = document.getElementById(id+'_eur');
-  var t = document.getElementById(id+'_try');
-  if(t.value === ''){ e.value = ''; return; }
-  var n = parseFloat(t.value.replace(',','.'));
-  e.value = isNaN(n) ? '' : cvFmt(n / CV_RATE);
+  var e = document.getElementById(id + '_eur');
+  var t = document.getElementById(id + '_try');
+  if (!e || !t) return;
+  var n = cvNum(t.value);
+  if (isNaN(n)) { e.value = ''; return; }
+  cvWrite(e, n / CV_RATE);
 }
+
 function cvSet(id, tl){
-  document.getElementById(id+'_try').value = tl;
+  var t = document.getElementById(id + '_try');
+  if (!t) return;
+  cvHeal();
+  t.value = String(tl);
   cvT(id);
 }
 </script>

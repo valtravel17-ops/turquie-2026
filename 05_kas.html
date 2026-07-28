@@ -177,19 +177,6 @@ a:hover{border-bottom-color:transparent}
 .garr{font-size:11px;color:#888}
 
 
-.conv-box{margin:12px 0;border:1px solid #d4c9b0;border-radius:12px;overflow:hidden;background:#fdfbf6}
-.conv-hdr{background:#f5f0e4;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer}
-.conv-lbl{font-size:13px;font-weight:700;color:#7a6534}
-.conv-body{display:none;padding:14px}
-.conv-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.conv-row label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;min-width:52px;flex-shrink:0}
-.conv-row input{flex:1;min-width:0;padding:11px 12px;font-size:17px;font-weight:600;border:1px solid #ddd6c8;border-radius:8px;background:#fff;color:#1a1916;-webkit-appearance:none}
-.conv-row input:focus{outline:none;border-color:#7a6534;box-shadow:0 0 0 2px rgba(122,101,52,.15)}
-.conv-swap{text-align:center;font-size:18px;color:#b5a67e;margin:-4px 0 6px}
-.conv-rate{font-size:11px;color:#999;text-align:center;padding-top:8px;border-top:1px solid #efe9db;line-height:1.6}
-.conv-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.conv-quick button{flex:1;min-width:62px;padding:7px 4px;font-size:12px;font-weight:600;border:1px solid #ddd6c8;border-radius:7px;background:#fff;color:#7a6534;cursor:pointer}
-.conv-quick button:active{background:#f5f0e4}
 </style>
 </head>
 <body>
@@ -207,32 +194,6 @@ a:hover{border-bottom-color:transparent}
 </div>
 
 <div class="hotel-box"><div class="hotel-hdr" onclick="var b=document.getElementById('hkas');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('hkas_a').textContent=open?'▼':'▲'"><span class="hotel-lbl">🏨 Hôtel Kaş · 2 nuits · ⚠️ À réserver</span><span id="hkas_a">▼</span></div><div id="hkas" class="hotel-body"><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Statut</span><span style="color:#c0392b">⚠️ À réserver — Kaş centre, proche du port</span></div><div class="hotel-row"><span class="hotel-key">Budget</span><span>~35€/nuit pour 2</span></div><div class="hotel-row"><span class="hotel-key">Check-in</span><span>9 août soir ~18h30</span></div><div class="hotel-row"><span class="hotel-key">Check-out</span><span>11 août · bus vers Antalya ~14h–16h</span></div></div></div>
-
-<div class="conv-box">
-  <div class="conv-hdr" onclick="var b=document.getElementById('cvkas');var o=b.style.display==='block';b.style.display=o?'none':'block';document.getElementById('cvkas_a').textContent=o?'▼':'▲'">
-    <span class="conv-lbl">💱 Convertisseur € ⇄ TL</span>
-    <span id="cvkas_a">▼</span>
-  </div>
-  <div id="cvkas" class="conv-body">
-    <div class="conv-row">
-      <label for="cvkas_eur">Euro</label>
-      <input id="cvkas_eur" type="number" inputmode="decimal" placeholder="0" oninput="cvE('cvkas')">
-    </div>
-    <div class="conv-swap">⇅</div>
-    <div class="conv-row">
-      <label for="cvkas_try">Lire TL</label>
-      <input id="cvkas_try" type="number" inputmode="decimal" placeholder="0" oninput="cvT('cvkas')">
-    </div>
-    <div class="conv-quick">
-      <button onclick="cvSet('cvkas',100)">100 TL</button>
-      <button onclick="cvSet('cvkas',250)">250 TL</button>
-      <button onclick="cvSet('cvkas',500)">500 TL</button>
-      <button onclick="cvSet('cvkas',1000)">1000 TL</button>
-    </div>
-    <div class="conv-rate">1 € = 53,53 TL · 100 TL ≈ 1,87 €<br>Taux bancaire constaté — vérifier le jour J</div>
-  </div>
-</div>
-
 
 <div class="snav"><button class="snb on" onclick="showSub('j1',this)">J1 · Lun. 10</button><button class="snb" onclick="showSub('j2',this)">J2 · Mar. 11</button><button class="snb" onclick="showSub('transit',this)">🚌 Transit</button><button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button><button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button><button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button></div>
 
@@ -538,27 +499,5 @@ function showSub(id, btn) {
 }
 </script>
 
-<script>
-var CV_RATE = 53.53;
-function cvFmt(v){ return (Math.round(v*100)/100).toString().replace('.', ','); }
-function cvE(id){
-  var e = document.getElementById(id+'_eur');
-  var t = document.getElementById(id+'_try');
-  if(e.value === ''){ t.value = ''; return; }
-  var n = parseFloat(e.value.replace(',','.'));
-  t.value = isNaN(n) ? '' : cvFmt(n * CV_RATE);
-}
-function cvT(id){
-  var e = document.getElementById(id+'_eur');
-  var t = document.getElementById(id+'_try');
-  if(t.value === ''){ e.value = ''; return; }
-  var n = parseFloat(t.value.replace(',','.'));
-  e.value = isNaN(n) ? '' : cvFmt(n / CV_RATE);
-}
-function cvSet(id, tl){
-  document.getElementById(id+'_try').value = tl;
-  cvT(id);
-}
-</script>
 </body>
 </html>
