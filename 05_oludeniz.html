@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ölüdeniz — Turquie 2026</title>
+<style>
+
+:root{
+  --bg:#f5f3ef;--sf:#fff;--s1:#f0ede8;
+  --bd:#ddd9d0;--bd2:#c8c3b8;
+  --tx:#1c1a17;--t2:#56524a;--t3:#96917f;
+  --gn:#1f5c3a;--gn2:#2d7a50;--gbg:#e6f4ec;--gt:#154429;
+  --rd:#a03318;--rbg:#fce8e0;--rt:#7a2510;
+  --bl:#1a4f7a;--bbg:#e3eef8;--bt:#123858;
+  --go:#7a5c0a;--gobg:#fdf0c8;--got:#5a4208;
+  --pu:#4a3490;--pubg:#edeafc;--put:#2e2068;
+  --r:10px;--f:'Segoe UI',system-ui,sans-serif
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);font-size:14px;line-height:1.6}
+a{color:var(--bl);text-decoration:none;border-bottom:1px dotted var(--bl)}
+a:hover{border-bottom-color:transparent}
+
+.pw{background:var(--s1);border-bottom:1px solid var(--bd2)}
+.ptog{width:100%;background:none;border:none;color:var(--t2);font-size:11px;padding:9px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:var(--f)}
+.ptog:hover{color:var(--tx)}
+.parr{transition:transform .2s;font-size:10px;color:var(--t3)}
+.ptog.open .parr{transform:rotate(180deg)}
+.pbod{display:none;padding:14px 20px 16px;border-top:1px solid var(--bd)}
+.pbod.vis{display:block}
+.plbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gn2);margin-bottom:7px}
+.pbox{background:var(--gbg);border:1px solid var(--gn2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--gt);line-height:1.7}
+.pbox strong{color:var(--gn)}
+
+.hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:18px 22px}
+.hdr h1{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.hdr p{font-size:13px;color:var(--t2)}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2)}
+.pill.gn{background:var(--gbg);border-color:var(--gn2);color:var(--gt)}
+.pill.bl{background:var(--bbg);border-color:var(--bl);color:var(--bt)}
+.pill.rd{background:var(--rbg);border-color:var(--rd);color:var(--rt)}
+.pill.pu{background:var(--pubg);border-color:var(--pu);color:var(--put)}
+.pill.go{background:var(--gobg);border-color:var(--go);color:var(--got)}
+
+.transit-in{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:12px 16px;margin:14px 22px 0}
+.ti-title{font-size:12px;font-weight:600;color:var(--put);margin-bottom:8px}
+.ti-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.ti-row{background:rgba(255,255,255,.7);border-radius:8px;padding:6px 10px;font-size:11px}
+.ti-l{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.ti-v{color:var(--put);font-weight:500}
+
+.snav{display:flex;flex-wrap:wrap;gap:5px;padding:14px 22px;border-bottom:1px solid var(--bd);background:var(--sf)}
+.snb{font-size:11px;padding:5px 13px;border-radius:20px;border:1px solid var(--bd2);background:var(--s1);color:var(--t2);cursor:pointer;font-family:var(--f);transition:all .15s}
+.snb:hover{border-color:var(--gn2);color:var(--gn)}
+.snb.on{background:var(--gn);border-color:var(--gn);color:#fff;font-weight:500}
+.spg{display:none}.spg.vis{display:block}
+
+.cnt{max-width:860px;margin:0 auto;padding:18px 22px}
+
+.dh{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin-bottom:14px}
+.dh h2{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:3px}
+.dh .ds{font-size:12px;color:var(--t2);margin-bottom:8px}
+.dgeo{display:block;width:fit-content;background:var(--bbg);border:1px solid var(--bl);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--bt);margin-bottom:5px}
+.dbudg{font-size:12px;color:var(--t2);margin-top:5px}
+.dbudg strong{color:var(--gn)}
+.dtot{display:flex;justify-content:space-between;align-items:center;background:var(--s1);border-radius:var(--r);padding:8px 13px;margin-top:10px;font-size:12px;color:var(--t2)}
+.dtot strong{color:var(--tx)}
+
+.blk{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;margin-bottom:6px}
+.bh{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.tm{background:var(--s1);border:1px solid var(--bd2);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--t2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.bt2{font-size:13px;font-weight:500;color:var(--tx);flex:1 1 55%;min-width:150px}
+.ptag{font-size:11px;border-radius:20px;padding:2px 9px;font-weight:500;flex-shrink:0;max-width:100%;white-space:normal;text-align:right;line-height:1.35}
+.free{background:#dcfce7;color:#155724}
+.paid{background:var(--rbg);color:var(--rt)}
+.cheap{background:var(--bbg);color:var(--bt)}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--s1);color:var(--t2);border:1px solid var(--bd)}
+.th{background:var(--pubg);color:var(--put);border-color:var(--pu)}
+.tn{background:var(--gbg);color:var(--gt);border-color:var(--gn2)}
+.tb{background:var(--bbg);color:var(--bt);border-color:var(--bl)}
+.ta{background:var(--gobg);color:var(--got);border-color:#c8a020}
+.bdesc{font-size:12px;color:var(--t2);line-height:1.65;margin-bottom:5px}
+.btip{font-size:11px;color:var(--t3);border-left:2px solid var(--gn2);padding-left:8px;margin-top:6px;line-height:1.5}
+.bln{font-size:11px;margin-top:5px}
+
+.excursion-box{background:var(--gobg);border:1px solid #c8a020;border-radius:var(--r);padding:11px 14px;margin-bottom:8px}
+.exc-title{font-size:12px;font-weight:600;color:var(--got);margin-bottom:8px}
+.exc-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.07)}
+.exc-row:last-child{border-bottom:none}
+.exc-left{flex:1}
+.exc-name{font-size:12px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.exc-detail{font-size:11px;color:var(--t2);line-height:1.5}
+.exc-right{text-align:right;flex-shrink:0}
+.exc-dist{background:var(--s1);border-radius:20px;padding:2px 9px;font-size:10px;color:var(--t2);display:block;margin-bottom:3px;white-space:nowrap}
+.exc-price{font-size:10px;color:var(--gn);font-weight:600;white-space:nowrap}
+
+.ts{display:flex;align-items:flex-start;gap:8px;padding:6px 0 6px 8px;margin:2px 0;border-left:2px dashed var(--bd2)}
+.tsi{width:24px;height:24px;border-radius:50%;background:var(--s1);border:1px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tst{flex:1;font-size:11px;color:var(--t2)}
+.tsm{color:var(--tx);font-size:12px;font-weight:500}
+.tsd{background:var(--bbg);color:var(--bt);border-radius:20px;padding:1px 7px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tsp{background:var(--gbg);color:var(--gt);border-radius:20px;padding:1px 7px;font-size:10px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+.tc{background:var(--pubg);border:1px solid var(--pu);border-radius:var(--r);padding:13px 15px;margin-top:14px}
+.tct{font-size:13px;font-weight:600;color:var(--put);margin-bottom:10px}
+.tcg{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:6px}
+.tcr{background:rgba(255,255,255,.75);border-radius:8px;padding:7px 10px;font-size:11px}
+.tcl{color:var(--t3);font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.tcv{color:var(--put);font-weight:500}
+
+.al{border-radius:var(--r);padding:10px 14px;margin-bottom:10px;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.ali{font-size:15px;flex-shrink:0;margin-top:1px}
+.alb strong{display:block;font-weight:600;margin-bottom:2px}
+.warn{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+.info{background:var(--bbg);border:1px solid var(--bl);color:var(--bt)}
+.ok{background:var(--gbg);border:1px solid var(--gn2);color:var(--gt)}
+.danger{background:var(--rbg);border:1px solid var(--rd);color:var(--rt)}
+
+.gems{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.gem{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 13px}
+.gem-t{font-size:12px;font-weight:600;color:var(--tx);margin-bottom:2px}
+.gem-p{font-size:11px;color:var(--gn);font-weight:500;margin-bottom:4px}
+.gem-d{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:6px}
+.gem-when{font-size:10px;padding:2px 9px;border-radius:20px;display:inline-block;font-weight:500}
+.gem-planned{background:#dbeafe;color:#1e3a5f;border:1px solid #93c5fd}
+.gem-todo{background:var(--gobg);border:1px solid #c8a020;color:var(--got)}
+
+.wb{background:var(--rbg);border:1px solid #cc6040;border-radius:var(--r);padding:10px 13px;margin-bottom:7px}
+.wbt{font-size:12px;font-weight:600;color:var(--rt);margin-bottom:3px}
+.wb p{font-size:12px;color:var(--rt)}
+
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:10px}
+.slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:14px 0 7px}
+.slbl:first-child{margin-top:0}
+.fr{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--bd)}
+.fr:last-child{border-bottom:none}
+.fn{font-weight:500;color:var(--tx)}
+.fsb{font-size:11px;color:var(--t2);margin-top:1px}
+.fp{color:var(--gn);font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px;flex-shrink:0}
+
+.ar{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.ar:last-child{border-bottom:none}
+.ai2{width:34px;height:34px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--s1);border:1px solid var(--bd)}
+.an{font-size:13px;font-weight:500;color:var(--tx)}
+.an a{color:var(--bl);border-bottom:1px dotted var(--bl)}
+.ad{font-size:11px;color:var(--t2);margin-top:1px}
+.ab2{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--gbg);color:var(--gt);white-space:nowrap;flex-shrink:0}
+
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:6px;margin-top:8px}
+.lcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:9px 12px;display:flex;align-items:center;gap:7px;text-decoration:none;border-bottom:none;transition:border-color .15s}
+.lcard:hover{border-color:var(--gn2)}
+.lico{font-size:16px;flex-shrink:0}
+.lnm{font-size:12px;font-weight:500;color:var(--tx)}
+.lul{font-size:10px;color:var(--t3)}
+
+@media(max-width:600px){.cnt{padding:12px 14px}.snav{padding:10px 14px}.hdr{padding:14px}.transit-in{margin:10px 14px 0}}
+
+.site-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e2da;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.snav-btn{background:#f0ece6;border:none;border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;color:#333;display:inline-block}
+.snav-btn.home{background:#1a3a5c;color:#fff}
+.hotel-box{margin:10px 0;border:1px solid #c8e6c9;border-radius:10px;overflow:hidden}
+.hotel-hdr{background:#f0faf0;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer}
+.hotel-lbl{font-size:12px;font-weight:600;color:#2d6a4f}
+.hotel-body{display:none;padding:10px 14px;background:#fff;font-size:13px}
+.hotel-row{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f5f2ed}
+.hotel-row:last-child{border-bottom:none}
+.hotel-key{color:#888;min-width:100px;font-size:11px;text-transform:uppercase;flex-shrink:0}
+.transit-box{background:#f0f0ff;border:1px solid #c5caf5;border-radius:10px;overflow:hidden;margin-bottom:10px}
+.transit-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;gap:10px}
+.transit-lbl{font-size:13px;font-weight:600;color:#3a3f9a}
+.geo-wrap{margin:10px 0}
+.geo-btn{width:100%;background:#f5f0e8;border:1px solid #ddd6c8;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;cursor:pointer;color:#6b5a3a;display:flex;justify-content:space-between;align-items:center;text-align:left}
+.geo-btn:hover{background:#ede8de}
+.garr{font-size:11px;color:#888}
+
+
+
+/* Cartes mentales */
+.geo{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 14px;margin-bottom:12px}
+.geot{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin-bottom:7px}
+.gr{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2);padding:2px 0}
+.gd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.gl{width:1px;height:14px;background:var(--bd2);margin-left:3px}
+.gti{margin-left:auto;color:var(--t3);font-size:10px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="site-nav"><a class="snav-btn" href="04_fethiye.html">← Fethiye</a><a class="snav-btn home" href="index.html">🏠 Accueil</a><a class="snav-btn" href="06_antalya.html">Antalya →</a></div>
+<div class="hdr"><h1>🏖️ Ölüdeniz</h1><p>8–10 août · 2 nuits · Étape 5 sur 7</p><div class="hdr-meta"><span class="pill bl">Lagon Bleu</span><span class="pill pu">Parapente Babadağ</span><span class="pill gn">Plage de Belcekız</span><span class="pill go">Vallée des Papillons</span><span class="pill rd">30–35°C</span></div></div>
+<div class="hotel-box"><div class="hotel-hdr" onclick="var b=document.getElementById('holu');var o=b.style.display==='block';b.style.display=o?'none':'block';document.getElementById('holu_a').textContent=o?'▼':'▲'"><span class="hotel-lbl">🏨 Hôtel Ölüdeniz · 2 nuits · ⚠️ À réserver</span><span id="holu_a">▼</span></div><div id="holu" class="hotel-body"><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Statut</span><span style="color:#c0392b">⚠️ À réserver — Ölüdeniz village, à pied de la plage</span></div><div class="hotel-row"><span class="hotel-key">Budget</span><span>~40–60€/nuit pour 2 (plus cher que Fethiye)</span></div><div class="hotel-row"><span class="hotel-key">Check-in</span><span>8 août après-midi · dolmuş depuis Fethiye</span></div><div class="hotel-row"><span class="hotel-key">Check-out</span><span>10 août matin · bus vers Antalya</span></div><div class="hotel-row"><span class="hotel-key">Conseil</span><span>Ölüdeniz village plutôt que Hisarönü/Ovacık — plus proche de la plage</span></div></div></div>
+<div class="snav"><button class="snb on" onclick="showSub('j1',this)">J1 · Sam. 8</button><button class="snb" onclick="showSub('j2',this)">J2 · Dim. 9</button><button class="snb" onclick="showSub('j3',this)">J3 · Lun. 10</button><button class="snb" onclick="showSub('transit',this)">🚌 Transit</button><button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button><button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button><button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button></div>
+<div class="cnt">
+<div id="j1" class="spg vis"><div class="dh"><h2>Jour 1 — Samedi 8 août · Arrivée &amp; Belcekız</h2><div class="ds">Installation en début d'après-midi · Première baignade · Coucher de soleil sur la plage</div><div class="dgeo">📍 Tout à pied dans Ölüdeniz village</div><div class="dbudg">Budget estimé / pers. : <strong>~15–25€</strong></div></div><div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmolu1');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 1 <span class="garr">▼</span></button><div id="cmolu1" class="geo" style="display:none"><div class="geot">Carte mentale Jour 1 · Samedi 8 août · Arrivée Ölüdeniz</div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Arrivée depuis Fethiye · dolmuş<span class="gti">~15h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Installation · dépôt des sacs<span class="gti">15h30</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Plage de Belcekız · baignade<span class="gti">16h–19h · Gratuit</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Parapentes qui atterrissent sur le sable<span class="gti">17h–19h · spectacle gratuit</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dîner · front de mer d'Ölüdeniz<span class="gti">20h</span></div></div></div><div class="al ok"><div class="ali">🪂</div><div class="alb"><strong>Le spectacle des parapentes</strong> — En fin d'après-midi, des dizaines de voiles descendent de Babadağ et atterrissent directement sur la plage de Belcekız. C'est gratuit, permanent, et l'une des images les plus marquantes d'Ölüdeniz. Bon moment pour décider si vous tentez le vol le lendemain.</div></div><div class="blk"><div class="bh"><span class="tm">16h</span><span class="bt2">Plage de Belcekız</span><span class="ptag free">Gratuit</span></div><div class="tags"><span class="tag">Plage publique</span><span class="tag">Galets et sable</span><span class="tag">Transats payants</span></div><div class="bdesc">La grande plage d'Ölüdeniz, en arc de cercle face à la mer. Accès libre, contrairement au Lagon Bleu. Eau claire, pente douce. Transats et parasol autour de 15–22€ la journée, mais on peut poser sa serviette gratuitement.</div><div class="btip">💡 Chaussures d'eau utiles : le fond est caillôuteux par endroits.</div></div><div class="dtot"><span>Budget estimé / pers.</span><strong>~15–25€</strong></div></div>
+<div id="j2" class="spg"><div class="dh"><h2>Jour 2 — Dimanche 9 août · Lagon Bleu &amp; option parapente</h2><div class="ds">Le Mavi Lügün · Journée la plus emblématique de la côte lycienne</div><div class="dgeo">📍 Lagon à 10 min à pied du village · Vallée des Papillons en bateau</div><div class="dbudg">Budget estimé / pers. : <strong>~20–30€</strong> (hors parapente)</div></div><div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmolu2');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 2 <span class="garr">▼</span></button><div id="cmolu2" class="geo" style="display:none"><div class="geot">Carte mentale Jour 2 · Dimanche 9 août · Lagon Bleu</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel Ölüdeniz<span class="gti">9h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Mavi Lügün · Lagon Bleu · parc naturel<span class="gti">9h30–13h · ~5€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner au lagon ou retour village<span class="gti">13h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Option : bateau → Vallée des Papillons<span class="gti">14h · ~10–15€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Option : parapente depuis Babadağ<span class="gti">~75–150€/pers</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dernier dîner à Ölüdeniz<span class="gti">20h</span></div></div></div><div class="blk">
+    <div class="bh"><span class="tm">9h</span><span class="bt2">Dolmuş vers Ölüdeniz + Mavi Lagün (Lagon Bleu)</span><span class="ptag paid">~5€ entrée lagon</span></div>
+    <div class="tags"><span class="tag th">L'une des plus belles plages de Méditerranée</span><span class="tag tn">Eau turquoise 28°C</span><span class="tag">Parc naturel protégé</span></div>
+    <div class="bdesc">Ölüdeniz (littéralement "mer morte" en turc — eau calme et protégée) et son Mavi Lagün (Lagon Bleu) sont classés parmi les plus belles plages de Méditerranée. Eau turquoise cristalline dans une baie fermée par une langue de sable. Le lagon est une zone protégée (doğal park = parc naturel) — petite entrée payante pour y accéder. La grande plage de Belcekız à côté est gratuite.</div>
+    <div class="btip">💡 Le Mavi Lagün (lagon) est dans la zone protégée payante (~5€). La plage de Belcekız juste à côté est gratuite et tout aussi belle. Arriver tôt — bondé après 11h en août.</div>
+  </div><div class="blk">
+    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Plage libre · Baignade · Flânerie Ölüdeniz village</span><span class="ptag free">Gratuit</span></div>
+    <div class="bdesc">Après-midi entièrement libre sur la plage. Le petit köy (village) d'Ölüdeniz a quelques restaurants, cafés et boutiques d'activités (kayak, plongée, excursions) — idéal pour repérer et réserver le tour des 12 îles pour le lendemain depuis le port de Fethiye.</div>
+    <div class="btip">💡 Le soir, aller dîner à Fethiye centre plutôt qu'à Ölüdeniz — restaurants locaux bien meilleurs et moins chers, ambiance port animée.</div>
+  </div><div class="blk"><div class="bh"><span class="tm">Option</span><span class="bt2">Parapente depuis Babadağ</span><span class="ptag paid">~75–150€/pers</span></div><div class="tags"><span class="tag">1 969 m d'altitude</span><span class="tag">Vol 25–40 min</span><span class="tag">Aucune expérience requise</span></div><div class="bdesc">Ölüdeniz est <strong>le site de parapente le plus réputé de Turquie</strong> et l'un des plus fréquentés au monde. Minibus jusqu'au sommet de Babadağ (~30 min), briefing, puis vol en tandem avec un pilote licencié. Descente au-dessus du Lagon Bleu et atterrissage sur le sable de Belcekız. Les thermiques côtiers permettent des vols de 25 à 40 minutes, plus longs que la plupart des sites européens.</div><div class="btip">💡 Les vols du matin sont plus calmes, ceux de l'après-midi plus sportifs avec les thermiques.</div><div class="btip">⚠️ Prix très variable selon l'opérateur et la saison : comparer sur place. Vidéo et photos généralement en supplément. Réserver auprès d'un opérateur licencié.</div></div><div class="blk"><div class="bh"><span class="tm">Option</span><span class="bt2">Vallée des Papillons</span><span class="ptag cheap">~10–15€/pers</span></div><div class="tags"><span class="tag">Bateau depuis Belcekız</span><span class="tag">Crique encaissée</span><span class="tag">Cascade</span></div><div class="bdesc">Crique accessible uniquement par la mer, enserrée entre deux falaises de 350 m. Navettes en bateau depuis la plage de Belcekız plusieurs fois par jour. Sentier jusqu'à une cascade à l'intérieur de la vallée.</div><div class="btip">⚠️ Vérifier l'heure du dernier bateau retour avant de partir.</div></div><div class="dtot"><span>Budget estimé / pers.</span><strong>~20–30€</strong></div></div>
+<div id="j3" class="spg"><div class="dh"><h2>Jour 3 — Lundi 10 août · Départ vers Antalya</h2><div class="ds">Matin libre · Trajet simple de ~4h · Arrivée Antalya en fin d'après-midi</div><div class="dgeo">📍 Dolmuş → Fethiye Otogar · puis bus → Antalya</div><div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong></div></div><div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmolu3');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 3 <span class="garr">▼</span></button><div id="cmolu3" class="geo" style="display:none"><div class="geot">Carte mentale Jour 3 · Lundi 10 août · Ölüdeniz → Antalya</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel · check-out<span class="gti">~10h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Dernière baignade à Belcekız<span class="gti">10h–11h30</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner au village<span class="gti">12h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş Ölüdeniz → Fethiye Otogar<span class="gti">13h · ~25 min</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--rd)"></span>Bus Fethiye → Antalya · route côtière<span class="gti">14h · ~3h30 · ~10–14€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Arrivée Antalya · installation Kaleiçi<span class="gti">~18h</span></div></div></div><div class="al warn"><div class="ali">🚌</div><div class="alb"><strong>Ligne bien desservie</strong> — Plusieurs compagnies font Fethiye → Antalya avec des départs échelonnés dans la journée, pour 10 à 14€. Réservable sur <a href="https://www.obilet.com" target="_blank">obilet.com</a> ou directement au guichet de l'otogar. Viser un départ vers 13h–14h.</div></div><div class="blk"><div class="bh"><span class="tm">13h</span><span class="bt2">Dolmuş Ölüdeniz → Fethiye Otogar</span><span class="ptag cheap">40–50 TL/pers</span></div><div class="tags"><span class="tag">25 min</span><span class="tag">Toutes les 10–15 min</span><span class="tag">Espèces</span></div><div class="bdesc">Le dolmuş part du centre d'Ölüdeniz et dessert directement l'otogar de Fethiye, où partent les bus interurbains. Viser l'otogar 30 min avant le départ du bus.</div></div><div class="blk"><div class="bh"><span class="tm">14h</span><span class="bt2">Bus Fethiye → Antalya</span><span class="ptag cheap">~10–14€/pers</span></div><div class="tags"><span class="tag">~3h30</span><span class="tag">Route côtière</span><span class="tag">Batı Antalya Tur / Fethiye Seyahat</span></div><div class="bdesc">La route longe la côte lycienne et passe par Kalkan et Kaş — l'un des plus beaux trajets routiers de Turquie, avec la Méditerranée en contrebas presque tout du long. Nombreux virages : à éviter si vous êtes sujet au mal des transports.</div><div class="btip">💡 Côté droit dans le sens Fethiye → Antalya pour la vue sur la mer.</div><div class="btip">⚠️ Le bus arrive à l'otogar d'Antalya, à ~4 km du centre. Tramway AntRay ou taxi BiTaksi (~10–15€) vers Kaleiçi.</div></div><div class="dtot"><span>Budget estimé / pers.</span><strong>~15–20€</strong></div></div>
+<div id="transit" class="spg"><div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tolu_in');var o=b.style.display==='block';b.style.display=o?'none':'block'"><span class="transit-lbl">🚌 Transit entrant — Dolmuş Fethiye → Ölüdeniz · 8 août</span><span>▼</span></div><div id="tolu_in" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>🚐 <strong>Dolmuş Fethiye → Ölüdeniz :</strong> 25–30 min · 40–50 TL/pers</div><div>⏰ Toutes les 10–15 min · premier 7h · dernier ~1h du matin en été</div><div>📍 Dessert Ovacık et Hisarönü avant Ölüdeniz</div><div style="margin-top:4px">ℹ️ Aucune réservation · espèces acceptées</div></div></div><div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tolu_out');var o=b.style.display==='block';b.style.display=o?'none':'block'"><span class="transit-lbl">🚌 Transit sortant — Ölüdeniz → Antalya · 10 août · ~4h</span><span>▼</span></div><div id="tolu_out" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>✅ <strong>Trajet simple</strong> — un dolmuş puis un bus, tous deux très fréquents</div><div style="margin-top:6px">🚐 <strong>1. Dolmuş Ölüdeniz → Fethiye Otogar :</strong> ~25 min · 40–50 TL/pers · toutes les 10–15 min</div><div>🚌 <strong>2. Bus Fethiye → Antalya :</strong> ~3h30 · ~10–14€/pers</div><div style="margin-top:6px">🎫 <strong>Compagnies :</strong> Batı Antalya Tur, Fethiye Seyahat · 5 départs/jour · <a href="https://www.obilet.com" target="_blank" style="color:#2d6a8f">obilet.com</a></div><div>🗺️ <strong>Route côtière</strong> via Kaş et Kalkan — très beaux paysages, virages nombreux</div><div style="margin-top:6px">⏰ <strong>~4h porte à porte</strong> · partir vers 13h pour arriver avant la nuit</div><div>💡 Réserver la veille sur obilet par confort — sinon billet à l'otogar, il y a des départs toute la journée</div></div></div></div>
+<div id="pep" class="spg"><div class="card"><div class="slbl" style="margin-top:0">⭐ À ne pas manquer</div><div class="fr"><div><div class="fn">Le Lagon Bleu (Mavi Lügün)</div><div class="fsb">Parc naturel protégé · eau turquoise · l'image emblématique de la Turquie</div></div><span class="fp">~5€</span></div><div class="fr"><div><div class="fn">Parapente depuis Babadağ</div><div class="fsb">1 969 m · site mondialement réputé · atterrissage sur la plage</div></div><span class="fp">~75–150€</span></div><div class="fr"><div><div class="fn">Vallée des Papillons</div><div class="fsb">Crique entre deux falaises · accessible seulement en bateau</div></div><span class="fp">~10–15€</span></div><div class="fr"><div><div class="fn">Coucher de soleil à Belcekız</div><div class="fsb">Les parapentes atterrissent au même moment</div></div><span class="fp">Gratuit</span></div></div></div>
+<div id="pie" class="spg"><div class="wb"><div class="wbt">💸 Ölüdeniz est plus cher que Fethiye</div><p>Restaurants, transats, boissons : comptez 30 à 50 % de plus qu'à Fethiye centre. Pour les repas, s'éloigner de quelques rues du front de mer change beaucoup le prix.</p></div><div class="wb"><div class="wbt">🪂 Parapente : ne pas payer d'avance dans la rue</div><p>Les rabatteurs sur la plage proposent des prix attractifs. Passer par un opérateur licencié avec bureau physique, vérifier que la vidéo est bien incluse ou non, et ne régler qu'après confirmation du vol — les vols sont parfois annulés pour cause de vent.</p></div><div class="wb"><div class="wbt">🏖️ Le Lagon Bleu est payant, la plage ne l'est pas</div><p>Le Mavi Lügün est un parc naturel à entrée contrôlée (~5€). La grande plage de Belcekız, elle, est en accès libre — seuls les transats sont payants.</p></div><div class="wb"><div class="wbt">🚌 Le bus part de Fethiye, pas d'Ölüdeniz</div><p>Les bus interurbains partent de l'otogar de Fethiye. Le dolmuş depuis Ölüdeniz y mène en 25 min pour moins d'1€, toutes les 10–15 min — aucune difficulté, mais il faut le savoir.</p></div></div>
+<div id="pra" class="spg"><div class="card"><div class="slbl" style="margin-top:0">Tarifs Ölüdeniz 2026</div><div class="fr"><div><div class="fn">Entrée Lagon Bleu</div><div class="fsb">Parc naturel · accès piéton</div></div><span class="fp">~5€/pers</span></div><div class="fr"><div><div class="fn">Transats + parasol</div><div class="fsb">À la journée · lagon ou Belcekız</div></div><span class="fp">800–1200 TL</span></div><div class="fr"><div><div class="fn">Parapente tandem</div><div class="fsb">Vol 25–40 min depuis Babadağ</div></div><span class="fp">~75–150€</span></div><div class="fr"><div><div class="fn">Bateau Vallée des Papillons</div><div class="fsb">Aller-retour depuis Belcekız</div></div><span class="fp">~10–15€</span></div><div class="fr"><div><div class="fn">Dolmuş Ölüdeniz ↔ Fethiye</div><div class="fsb">25–30 min · toutes les 10–15 min</div></div><span class="fp">40–50 TL</span></div><div class="fr"><div><div class="fn">Bus Fethiye → Antalya</div><div class="fsb">~3h30 · obilet.com</div></div><span class="fp">~10–14€</span></div></div><div class="card"><div class="slbl" style="margin-top:0">Bon à savoir</div><div class="fr"><div><div class="fn">Chaussures d'eau</div><div class="fsb">Belcekız et le lagon sont caillouteux</div></div><span class="fp">Utile</span></div><div class="fr"><div><div class="fn">Dernier dolmuş vers Fethiye</div><div class="fsb">Vers 1h du matin en été</div></div><span class="fp">Souple</span></div><div class="fr"><div><div class="fn">Saison parapente</div><div class="fsb">Avril à novembre · août = haute saison</div></div><span class="fp">Réserver</span></div></div></div>
+</div>
+<script>
+function showSub(id, btn) {
+  var pages = document.querySelectorAll('.spg');
+  for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('vis'); }
+  var btns = document.querySelectorAll('.snb');
+  for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('on'); }
+  var el = document.getElementById(id);
+  if (el) el.classList.add('vis');
+  if (btn) btn.classList.add('on');
+  window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>

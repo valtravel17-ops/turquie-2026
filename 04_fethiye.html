@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌊 Fethiye · Ölüdeniz — Turquie 2026</title>
+<title>🌊 Fethiye — Turquie 2026</title>
 <style>
 
 :root{
@@ -177,6 +177,14 @@ a:hover{border-bottom-color:transparent}
 .garr{font-size:11px;color:#888}
 
 
+
+/* Cartes mentales */
+.geo{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 14px;margin-bottom:12px}
+.geot{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin-bottom:7px}
+.gr{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--t2);padding:2px 0}
+.gd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.gl{width:1px;height:14px;background:var(--bd2);margin-left:3px}
+.gti{margin-left:auto;color:var(--t3);font-size:10px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -184,174 +192,96 @@ a:hover{border-bottom-color:transparent}
 <div class="site-nav">
   <a class="snav-btn" href="03_pamukkale.html">← Pamukkale</a>
   <a class="snav-btn home" href="index.html">🏠 Accueil</a>
-  <a class="snav-btn" href="05_kas.html">Kaş →</a>
+  <a class="snav-btn" href="05_oludeniz.html">Ölüdeniz →</a>
 </div>
 
 <div class="hdr">
-  <h1>🌊 Fethiye · Ölüdeniz</h1>
-  <p>5–9 août · 4 nuits · Étape 4 sur 6</p>
+  <h1>🌊 Fethiye</h1>
+  <p>5–8 août · 3 nuits · Étape 4 sur 7</p>
   <div class="hdr-meta"><span class="pill rd">30–35°C · Chaud</span><span class="pill bl">Lagon Bleu</span><span class="pill gn">Tour 12 îles</span><span class="pill pu">Canyon Saklıkent</span><span class="pill go">Kayaköy village fantôme</span></div>
 </div>
 
-<div class="hotel-box"><div class="hotel-hdr" onclick="var b=document.getElementById('hfet');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('hfet_a').textContent=open?'▼':'▲'"><span class="hotel-lbl">🏨 Hôtel Fethiye / Ölüdeniz · 4 nuits · ⚠️ À réserver</span><span id="hfet_a">▼</span></div><div id="hfet" class="hotel-body"><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Statut</span><span style="color:#c0392b">⚠️ À réserver — Ölüdeniz (proche lagon) ou Fethiye centre</span></div><div class="hotel-row"><span class="hotel-key">Budget</span><span>~35€/nuit pour 2</span></div><div class="hotel-row"><span class="hotel-key">Check-in</span><span>5 août soir ~23h</span></div><div class="hotel-row"><span class="hotel-key">Check-out</span><span>9 août matin · dolmuş vers Kaş 16h30</span></div><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Note</span><span style="color:#c0392b">⚠️ Prévenir l'hôtel de l'arrivée tardive</span></div></div></div>
+<div class="hotel-box"><div class="hotel-hdr" onclick="var b=document.getElementById('hfet');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('hfet_a').textContent=open?'▼':'▲'"><span class="hotel-lbl">🏨 Hôtel Fethiye / Ölüdeniz · 4 nuits · ⚠️ À réserver</span><span id="hfet_a">▼</span></div><div id="hfet" class="hotel-body"><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Statut</span><span style="color:#c0392b">⚠️ À réserver — Fethiye centre (port, marché, dolmuş)</span></div><div class="hotel-row"><span class="hotel-key">Budget</span><span>~35€/nuit pour 2</span></div><div class="hotel-row"><span class="hotel-key">Check-in</span><span>5 août soir ~23h</span></div><div class="hotel-row"><span class="hotel-key">Check-out</span><span>8 août · dolmuş vers Ölüdeniz après-midi</span></div><div class="hotel-row"><span class="hotel-key" style="color:#c0392b">Note</span><span style="color:#c0392b">⚠️ Prévenir l'hôtel de l'arrivée tardive</span></div></div></div>
 
-<div class="snav"><button class="snb on" onclick="showSub('j1',this)">J1 · Jeu. 6</button><button class="snb" onclick="showSub('j2',this)">J2 · Ven. 7</button><button class="snb" onclick="showSub('j3',this)">J3 · Sam. 8</button><button class="snb" onclick="showSub('j4',this)">J4 · Dim. 9</button><button class="snb" onclick="showSub('transit',this)">🚌 Transit</button><button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button><button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button><button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button></div>
+<div class="snav"><button class="snb on" onclick="showSub('j1',this)">J1 · Jeu. 6</button><button class="snb" onclick="showSub('j2',this)">J2 · Ven. 7</button><button class="snb" onclick="showSub('j3',this)">J3 · Sam. 8</button><button class="snb" onclick="showSub('transit',this)">🚌 Transit</button><button class="snb" onclick="showSub('pep',this)">⭐ Pépites</button><button class="snb" onclick="showSub('pie',this)">⚠️ Pièges</button><button class="snb" onclick="showSub('pra',this)">ℹ️ Pratique</button></div>
 
 <div class="cnt">
 
 <div id="j1" class="spg vis">
 <div class="dh">
-    <h2>Jour 1 — 6 août · Ölüdeniz & Lagon Bleu</h2>
-    <div class="ds">Arrivée la veille au soir · Journée plage et lagon · Rythme détendu</div>
-    <div class="dgeo">📍 Dolmuş (minibus) Fethiye → Ölüdeniz · 20 min · ~1,50€ · Toutes les 20 min</div>
-    <div class="dbudg">Budget estimé / pers. : <strong>~15–25€</strong></div>
+    <h2>Jour 1 — Jeudi 6 août · Tour des 12 îles</h2>
+    <div class="ds">Journée entière en gulet · Criques isolées · Déjeuner à bord inclus</div>
+    <div class="dgeo">📍 Départ du port de Fethiye · à pied ou dolmuş depuis le centre</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~25–35€</strong></div>
   </div>
-<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet1');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 1 <span class="garr">▼</span></button><div id="cmfet1" class="geo" style="display:none"><div class="geot">Carte mentale Jour 1 · Jeudi 6 août · Ölüdeniz & Lagon Bleu</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel<span class="gti">8h30 départ</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş Fethiye → Ölüdeniz<span class="gti">9h · ~1,50€ · 20 min</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Plage Belcekız + Lagon Bleu (Mavi Lügün)<span class="gti">9h30–13h · entrée ~5€ + transat 800–1200 TL (15–22€) si loué</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner sur place<span class="gti">13h · ~10€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Snorkeling · baignade · farniente<span class="gti">14h–17h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş retour Fethiye<span class="gti">17h30 · ~1,50€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dîner Fethiye centre<span class="gti">19h30</span></div></div></div>
-
-
-  <div class="al warn">
-    <div class="ali">😴</div>
-    <div class="alb"><strong>Arrivée la veille tard (22h30–23h30)</strong> — Journée J1 volontairement légère. Plage, lagon, décompression. C'est Ölüdeniz — c'est fait pour ça.</div>
-  </div>
-
-  <div class="blk">
-    <div class="bh"><span class="tm">9h</span><span class="bt2">Dolmuş vers Ölüdeniz + Mavi Lagün (Lagon Bleu)</span><span class="ptag paid">~5€ entrée lagon</span></div>
-    <div class="tags"><span class="tag th">L'une des plus belles plages de Méditerranée</span><span class="tag tn">Eau turquoise 28°C</span><span class="tag">Parc naturel protégé</span></div>
-    <div class="bdesc">Ölüdeniz (littéralement "mer morte" en turc — eau calme et protégée) et son Mavi Lagün (Lagon Bleu) sont classés parmi les plus belles plages de Méditerranée. Eau turquoise cristalline dans une baie fermée par une langue de sable. Le lagon est une zone protégée (doğal park = parc naturel) — petite entrée payante pour y accéder. La grande plage de Belcekız à côté est gratuite.</div>
-    <div class="btip">💡 Le Mavi Lagün (lagon) est dans la zone protégée payante (~5€). La plage de Belcekız juste à côté est gratuite et tout aussi belle. Arriver tôt — bondé après 11h en août.</div>
-  </div>
-
-  <div class="blk">
-    <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Plage libre · Baignade · Flânerie Ölüdeniz village</span><span class="ptag free">Gratuit</span></div>
-    <div class="bdesc">Après-midi entièrement libre sur la plage. Le petit köy (village) d'Ölüdeniz a quelques restaurants, cafés et boutiques d'activités (kayak, plongée, excursions) — idéal pour repérer et réserver le tour des 12 îles pour le lendemain depuis le port de Fethiye.</div>
-    <div class="btip">💡 Le soir, aller dîner à Fethiye centre plutôt qu'à Ölüdeniz — restaurants locaux bien meilleurs et moins chers, ambiance port animée.</div>
-  </div>
-
-  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15–25€</strong></div>
-</div>
-
-<div id="j2" class="spg">
-<div class="dh">
-    <h2>Jour 2 — 7 août · Tour des 12 Adalar (îles) ⭐⭐</h2>
-    <div class="ds">Journée en bateau · Criques isolées · Snorkeling · Déjeuner à bord</div>
-    <div class="dgeo">📍 Départ port de Fethiye (Fethiye Limanı) · 10h–18h · Bateau collectif</div>
-    <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong> (bateau tout compris)</div>
-  </div>
-<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet2');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 2 <span class="garr">▼</span></button><div id="cmfet2" class="geo" style="display:none"><div class="geot">Carte mentale Jour 2 · Vendredi 7 août · Tour des 12 îles</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel<span class="gti">8h30 départ</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş → port de Fethiye<span class="gti">9h · ~1,50€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Embarquement gulet · Tour des 12 Adalar<span class="gti">9h30–18h · ~20€/pers</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner à bord · criques isolées · snorkeling<span class="gti">inclus</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Retour port Fethiye<span class="gti">18h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dîner Fethiye centre<span class="gti">19h30</span></div></div></div>
-
+<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet1');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 1 <span class="garr">▼</span></button><div id="cmfet1" class="geo" style="display:none"><div class="geot">Carte mentale Jour 1 · Jeudi 6 août · Tour des 12 Adalar</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel Fethiye<span class="gti">8h30 (arrivée tardive la veille)</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Port de Fethiye · embarquement<span class="gti">9h30</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Tour des 12 îles · criques · snorkeling<span class="gti">9h30–18h · ~20€/pers</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner à bord<span class="gti">13h · inclus</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Retour port de Fethiye<span class="gti">18h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dîner Fethiye centre · marché aux poissons<span class="gti">19h30</span></div></div></div>
 
   <div class="al info">
-    <div class="ali">⛵</div>
-    <div class="alb"><strong>Réserver la veille au port de Fethiye</strong> — Le tour des On İki Ada (douze îles) part chaque matin à 10h depuis le port. Prix fixe ~15–20€/pers selon les bateaux, déjeuner souvent inclus. Plusieurs bateaux proposent la même chose — comparer et choisir le moins chargé. Apporter crème solaire, masque et tuba.</div>
+    <div class="ali">⛴</div>
+    <div class="alb"><strong>Journée parfaite pour un lendemain d'arrivée tardive</strong> — Vous êtes arrivés vers 23h la veille. Le bateau ne demande aucun effort : on s'installe, on se baigne, on mange à bord. Crème solaire indispensable, la réverbération sur l'eau brûle.</div>
   </div>
 
-  <div class="blk">
+<div class="blk">
     <div class="bh"><span class="tm">9h30</span><span class="bt2">Départ port de Fethiye — embarquement</span><span class="ptag cheap">~15–20€/pers tout compris</span></div>
     <div class="tags"><span class="tag tn">Journée entière en mer</span><span class="tag">Déjeuner inclus</span><span class="tag th">Criques lyciennes</span></div>
     <div class="bdesc">Le tour des On İki Ada (douze îles) est la journée bateau classique de Fethiye — et pour une bonne raison. Le bateau navigue de crique en crique le long de la côte lycienne : Yassıcalar Adaları, Tersane Adası (île aux chantiers navals byzantins abandonnés), Domuz Adası, Kızıl Ada. Plusieurs arrêts baignade et snorkeling dans des eaux turquoise de 5 à 20m de fond. Déjeuner chaud servi à bord vers 13h.</div>
     <div class="btip">💡 Apporter masque et tuba — la visibilité sous-marine sur certaines criques est exceptionnelle. Crème solaire waterproof obligatoire : 8h de soleil direct sur l'eau.</div>
     <div class="bln"><a href="https://www.fethiye12islands.com/" target="_blank">fethiye12islands.com</a> — infos sur le tour</div>
-  </div>
-
-  <div class="blk">
+  </div><div class="blk">
     <div class="bh"><span class="tm">18h</span><span class="bt2">Retour port · Dîner à Fethiye centre</span><span class="ptag cheap">10–15€/pers</span></div>
     <div class="bdesc">Retour au port vers 18h. Dîner dans le vieux centre de Fethiye (Eski Çarşı = vieux marché) plutôt qu'à Ölüdeniz — bien moins cher, plus animé, excellents restaurants de poisson autour du port. Les tombes lyciennes rupestres illuminées en soirée valent le détour (gratuites depuis la rue).</div>
     <div class="btip">💡 Les tombes lyciennes (kaya mezarları) taillées dans la falaise au-dessus de Fethiye centre sont une pépite souvent oubliée — visibles et illuminées le soir depuis la rue, entrée gratuite.</div>
   </div>
-
-  <div class="dtot"><span>Budget estimé / pers.</span><strong>~25–35€ (bateau + dîner)</strong></div>
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~25–35€</strong></div>
 </div>
 
-<div id="j3" class="spg">
+<div id="j2" class="spg">
 <div class="dh">
-    <h2>Jour 3 — 8 août · Saklıkent Kanyonu (gorge aquatique) 🛶</h2>
-    <div class="ds">Canyon aquatique spectaculaire · Eau glacée · Journée nature et fraîcheur</div>
-    <div class="dgeo">📍 Dolmuş (minibus) depuis Fethiye Otogarı → Saklıkent · 45–60 min · ~3–4€ · Toutes les 30 min</div>
+    <h2>Jour 2 — Vendredi 7 août · Canyon de Saklıkent</h2>
+    <div class="ds">Marche dans l'eau glacée · Le contraste absolu avec la chaleur · Retour vieille ville</div>
+    <div class="dgeo">📍 Dolmuş Fethiye Otogar → Saklıkent · 45–60 min · toutes les 30 min</div>
     <div class="dbudg">Budget estimé / pers. : <strong>~20–30€</strong></div>
   </div>
-<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet3');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 3 <span class="garr">▼</span></button><div id="cmfet3" class="geo" style="display:none"><div class="geot">Carte mentale Jour 3 · Samedi 8 août · Canyon Saklıkent</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel<span class="gti">8h30 départ</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş Fethiye → Saklıkent<span class="gti">9h · ~3€ · 45 min</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Canyon Saklıkent · marche aquatique · eau 4°C<span class="gti">10h–13h · ~6€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner truite fraîche sur plateformes<span class="gti">13h · ~10€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş retour Fethiye<span class="gti">15h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Repos + dîner<span class="gti">16h30+</span></div></div></div>
+<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet2');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 2 <span class="garr">▼</span></button><div id="cmfet2" class="geo" style="display:none"><div class="geot">Carte mentale Jour 2 · Vendredi 7 août · Canyon Saklıkent</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel Fethiye<span class="gti">8h30 départ</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş Otogar → Saklıkent<span class="gti">9h · ~3–4€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Canyon Saklıkent · marche aquatique · eau 4°C<span class="gti">10h–13h · ~6€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner truite sur plateformes du canyon<span class="gti">13h · ~10€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş retour Fethiye<span class="gti">15h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Vieille ville · tombes lyciennes · amphithéâtre<span class="gti">16h30 · Gratuit</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Dîner Fethiye<span class="gti">19h30</span></div></div></div>
 
-
-  <div class="al ok">
-    <div class="ali">🛶</div>
-    <div class="alb"><strong>Expérience canoë/kayak n°1 de Fethiye</strong> — Saklıkent n'est pas du kayak à proprement parler mais une marche aquatique dans un canyon d'eau glacée entre des falaises de 300m. Eau à 12°C en pleine chaleur d'août — rafraîchissant et physique. Parfait pour les amateurs de nature et d'aventure en rivière.</div>
-  </div>
-
-  <div class="blk">
+<div class="blk">
     <div class="bh"><span class="tm">9h</span><span class="bt2">Saklıkent Kanyonu (Gorge de Saklıkent)</span><span class="ptag paid">250 TL / ~4,67€ entrée</span></div>
     <div class="tags"><span class="tag tn">Canyon aquatique · Eau à 12°C</span><span class="tag th">18 km · Parois 300m</span><span class="tag">45 km de Fethiye · Dolmuş direct</span></div>
     <div class="bdesc">Saklıkent (littéralement "ville cachée" en turc) est un canyon (kanyon) taillé dans le calcaire par la rivière Karaçay. Les parois (duvarlar) atteignent 300m de hauteur et se resserrent par endroits à 2–4m de largeur seulement. Marcher dans le lit de la rivière, eau glacée jusqu'aux genoux/à la taille, entre des falaises vertigineuses. Les premiers kilomètres se font sur une passerelle (tahta köprü = pont en bois) en bord de falaise, puis on entre dans l'eau froide.<br><br>Des activités supplémentaires disponibles sur place : tyrolienne (tirolyen = zip-line), tubing (flotteur gonflable sur la rivière), rafting sur la rivière après la sortie du canyon.</div>
     <div class="btip">💡 Prendre des chaussures aquatiques (su ayakkabısı) ou sandales qui restent aux pieds dans l'eau — le fond est glissant. On peut en louer sur place pour quelques TL. Le dolmuş (minibus) depuis Fethiye part de l'otogar (gare routière) — dernier retour ~19h30, vérifier l'heure sur place.</div>
     <div class="bln"><a href="https://www.fethiyetours.com/best-of-fethiye/saklikent-gorge/" target="_blank">fethiyetours.com</a> — guide complet Saklıkent 2026</div>
-  </div>
-
-  <div class="blk">
+  </div><div class="blk">
     <div class="bh"><span class="tm">Après-midi</span><span class="bt2">Retour Fethiye · Balade vieille ville · Tombes lyciennes</span><span class="ptag free">Gratuit</span></div>
     <div class="bdesc">Retour en dolmuş vers Fethiye. Se promener dans le vieux Fethiye : Kaya mezarları (tombes rupestres lyciennes) taillées dans la falaise au-dessus de la ville — visibles depuis les rues, entrée gratuite. Çarşı (marché local) et port de Fethiye animé le soir. Dîner de poisson (balık) sur le front de mer.</div>
   </div>
-
   <div class="dtot"><span>Budget estimé / pers.</span><strong>~20–30€</strong></div>
 </div>
 
-<div id="j4" class="spg">
+<div id="j3" class="spg">
 <div class="dh">
-    <h2>Jour 4 — 9 août · Kayaköy + après-midi libre + départ Kaş 17h</h2>
-    <div class="ds">Matin : village fantôme grec · Après-midi libre à Fethiye · Dolmuş 17h vers Kaş · Arrivée 19h</div>
-    <div class="dgeo">📍 Dolmuş Fethiye → Kayaköy (20 min) · puis dolmuş Fethiye → Kaş à 17h (2h de trajet)</div>
-    <div class="dbudg">Budget estimé / pers. : <strong>~15€ + dolmuş ~6€</strong></div>
+    <h2>Jour 3 — Samedi 8 août · Kayaköy + transfert Ölüdeniz</h2>
+    <div class="ds">Village fantôme le matin · Installation à Ölüdeniz l'après-midi</div>
+    <div class="dgeo">📍 Le même dolmuş dessert Kayaköy puis Ölüdeniz · aucun détour</div>
+    <div class="dbudg">Budget estimé / pers. : <strong>~15–20€</strong></div>
   </div>
-<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet4');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 4 <span class="garr">▼</span></button><div id="cmfet4" class="geo" style="display:none"><div class="geot">Carte mentale Jour 4 · Dimanche 9 août · Kayaköy + départ Kaş</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel · check-out · bagages<span class="gti">9h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş → Kayaköy (village fantôme)<span class="gti">9h30 · ~2€ · 15 min</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Kayaköy · maisons grecques abandonnées 1923<span class="gti">10h–12h · ~6€ (à confirmer)</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş retour Fethiye<span class="gti">12h30</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner Fethiye · récupérer bagages<span class="gti">13h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--rd)"></span>Dolmuş Fethiye → Kaş<span class="gti">16h30–17h · ~6€/pers</span></div></div></div>
-
+<div class="geo-wrap"><button class="geo-btn" onclick="var b=document.getElementById('cmfet3');var open=b.style.display==='block';b.style.display=open?'none':'block';this.querySelector('.garr').textContent=open?'▼':'▲'">🗺️ Carte mentale — Jour 3 <span class="garr">▼</span></button><div id="cmfet3" class="geo" style="display:none"><div class="geot">Carte mentale Jour 3 · Samedi 8 août · Kayaköy + Ölüdeniz</div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Hôtel Fethiye · check-out · bagages<span class="gti">9h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş Fethiye → Kayaköy · 15 min<span class="gti">9h30 · ~2€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Kayaköy · village grec abandonné en 1923<span class="gti">10h–12h · ~6€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--go)"></span>Déjeuner à Kayaköy ou retour Fethiye<span class="gti">12h30</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--bl)"></span>Dolmuş → Ölüdeniz · via Ovacık et Hisarönü<span class="gti">14h · ~1,50€</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--pu)"></span>Installation à Ölüdeniz<span class="gti">15h</span></div><div class="gl"></div><div class="gr"><span class="gd" style="background:var(--gn2)"></span>Plage de Belcekız · première baignade<span class="gti">16h–19h</span></div></div></div>
 
   <div class="al ok">
-    <div class="ali">💡</div>
-    <div class="alb"><strong>Partir à 16h30–17h vers Kaş</strong> — 2h de dolmuş sur la route côtière D400 = arrivée à Kaş vers 18h30–19h, encore de jour. Temps de s'installer et de découvrir le village au coucher du soleil. Toute la journée reste disponible avant le départ.</div>
+    <div class="ali">🚌</div>
+    <div class="alb"><strong>Transfert sans effort</strong> — La ligne de dolmuş Fethiye → Ölüdeniz passe par Ovacık et Hisarönü, et celle de Kayaköy emprunte le même axe. Environ <strong>40–50 TL</strong> le trajet, toutes les 10 à 15 minutes, de 7h à 1h du matin en été. Aucune réservation.</div>
   </div>
 
-  <div class="blk">
+<div class="blk">
     <div class="bh"><span class="tm">9h</span><span class="bt2">Kayaköy — Village fantôme grec abandonné en 1923</span><span class="ptag cheap">~3–5€</span></div>
     <div class="tags"><span class="tag th">Village grec abandonné · Échange de populations 1923</span><span class="tag">20 min de Fethiye · Dolmuş direct</span><span class="tag tn">Peu touristique · Atmosphère unique</span></div>
     <div class="bdesc">Kayaköy (anciennement Levissi en grec) était un village grec orthodoxe de 3 500 habitants jusqu'en 1923. Lors de l'échange forcé de populations (nüfus mübadelesi) entre Grèce et Turquie, tous les résidents grecs durent partir. Le village fut ensuite abandonné et jamais réoccupé — il reste aujourd'hui tel quel, des centaines d'evler (maisons) en pierre avec leurs kiliseler (églises) effondrées, envahies par la végétation méditerranéenne. Atmosphère hors du temps, mélancolique et fascinante.</div>
     <div class="btip">💡 Kayaköy a inspiré le roman "Les oiseaux sans ailes" de Louis de Bernières (2004) — magnifique pour s'immerger dans l'histoire de ce village avant ou pendant le voyage.</div>
-  </div>
-
-  <div class="blk">
-    <div class="bh"><span class="tm">11h30</span><span class="bt2">Retour Fethiye · Déjeuner · Après-midi libre</span><span class="ptag cheap">Repas ~10€</span></div>
-    <div class="bdesc">Retour à Fethiye. Déjeuner tranquille dans une lokanta (restaurant local) du port. Après-midi libre : balade sur le front de mer, çarşı (marché) de Fethiye, kaya mezarları (tombes lyciennes) illuminées en fin de journée. Récupérer les bagages à l'hébergement vers 16h.</div>
-  </div>
-
-  <div class="ts">
-    <div class="tsi">🚌</div>
-    <div class="tst">
-      <div class="tsm">Dolmuş (minibus) Fethiye Otogarı → Kaş · Route côtière D400</div>
-      <div>Paysages côtiers magnifiques · Falaises, criques, mer turquoise tout le long</div>
-    </div>
-    <span class="tsd">~2h</span>
-    <span class="tsp">~6€/pers</span>
-  </div>
-
-  <div class="blk">
-    <div class="bh"><span class="tm">16h30–17h</span><span class="bt2">Départ dolmuş vers Kaş · Arrivée ~18h30–19h</span><span class="ptag paid">~6€/pers</span></div>
-    <div class="bdesc">Dolmuş (minibus collectif) depuis Fethiye Otogarı (gare routière) en direction de Kaş sur la D400 (route côtière). 2h de trajet avec des vues époustouflantes sur la côte lycienne. Arrivée à Kaş en fin d'après-midi — encore de jour pour s'installer et explorer le village au coucher du soleil.</div>
-    <div class="btip">💡 Vérifier l'heure exacte du dernier dolmuş direct à l'otogar (gare routière) de Fethiye le matin. En haute saison, départs généralement toutes les 30–60 min jusqu'en soirée.</div>
-  </div>
-
-  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15€ + dolmuş Kaş ~6€</strong></div>
-
-  <div class="tc">
-    <div class="tct">🚌 Transit sortant — Fethiye → Kaş · 9 août vers 16h30–17h</div>
-    <div class="tcg">
-      <div class="tcr"><div class="tcl">Transport</div><div class="tcv">Dolmuş (minibus collectif) · Route côtière D400</div></div>
-      <div class="tcr"><div class="tcl">Départ conseillé</div><div class="tcv">16h30–17h depuis Fethiye Otogarı</div></div>
-      <div class="tcr"><div class="tcl">Arrivée</div><div class="tcv">Kaş · ~18h30–19h · Encore de jour</div></div>
-      <div class="tcr"><div class="tcl">Durée / Prix</div><div class="tcv">~2h · ~6€/pers</div></div>
-      <div class="tcr"><div class="tcl">Note</div><div class="tcv">Pas besoin de réserver — dolmuş fréquent en saison</div></div>
-    </div>
-  </div>
+  </div><div class="blk"><div class="bh"><span class="tm">14h</span><span class="bt2">Transfert vers Ölüdeniz</span><span class="ptag cheap">~1,50€/pers</span></div><div class="tags"><span class="tag">Dolmuş toutes les 10–15 min</span><span class="tag">25–30 min</span><span class="tag">Espèces</span></div><div class="bdesc">Récupérer les bagages à Fethiye puis prendre le dolmuş Ölüdeniz depuis la station centrale. Il dessert Ovacık et Hisarönü avant de descendre sur Ölüdeniz — dire au chauffeur où vous logez, il vous déposera au plus près.</div><div class="btip">💡 Tarif 2026 : 40–50 TL par personne. Le paiement se fait en espèces ou par carte Muğla Kent Kart — les chauffeurs acceptent encore le liquide sur les lignes touristiques.</div></div>
+  <div class="dtot"><span>Budget estimé / pers.</span><strong>~15–20€</strong></div>
 </div>
 
 <div id="transit" class="spg">
-<div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tfet_in');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('tfet_in_a').textContent=open?'▼':'▲'"><span class="transit-lbl">🚌 Transit entrant — Bus Denizli → Fethiye · 5 août soir · ⚠️ À réserver</span><span id="tfet_in_a">▼</span></div><div id="tfet_in" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>🚌 <strong>Bus Denizli → Fethiye :</strong> Kamil Koç · ~3h30 · ~12€/pers · obilet.com</div><div>⏰ <strong>Départ :</strong> 19h–20h · Arrivée Fethiye otogar ~22h30–23h30</div><div>🚕 <strong>Otogar → hôtel :</strong> taxi ~5–10€ ou dolmuş si encore en service</div><div style="color:#c0392b;margin-top:4px">⚠️ Prévenir l'hôtel de l'arrivée tardive</div></div></div><div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tfet_out');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('tfet_out_a').textContent=open?'▼':'▲'"><span class="transit-lbl">🚌 Transit sortant — Dolmuş Fethiye → Kaş · 9 août ~16h30</span><span id="tfet_out_a">▼</span></div><div id="tfet_out" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>🚐 <strong>Dolmuş Fethiye → Kaş :</strong> route côtière D400 · ~2h · ~6€/pers</div><div>⏰ <strong>Départ :</strong> Fethiye otogar 16h30–17h · Arrivée Kaş ~18h30–19h</div><div>ℹ️ Pas de réservation nécessaire · départs fréquents · payer à bord</div></div></div>
+<div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tfet_in');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('tfet_in_a').textContent=open?'▼':'▲'"><span class="transit-lbl">🚌 Transit entrant — Bus Denizli → Fethiye · 5 août soir · ⚠️ À réserver</span><span id="tfet_in_a">▼</span></div><div id="tfet_in" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>🚌 <strong>Bus Denizli → Fethiye :</strong> Kamil Koç · ~3h30 · ~12€/pers · obilet.com</div><div>⏰ <strong>Départ :</strong> 19h–20h · Arrivée Fethiye otogar ~22h30–23h30</div><div>🚕 <strong>Otogar → hôtel :</strong> taxi ~5–10€ ou dolmuş si encore en service</div><div style="color:#c0392b;margin-top:4px">⚠️ Prévenir l'hôtel de l'arrivée tardive</div></div></div><div class="transit-box"><div class="transit-hdr" onclick="var b=document.getElementById('tfet_out');var open=b.style.display==='block';b.style.display=open?'none':'block';document.getElementById('tfet_out_a').textContent=open?'▼':'▲'"><span class="transit-lbl">🚌 Transit sortant — Dolmuş Fethiye → Ölüdeniz · 8 août après-midi</span><span id="tfet_out_a">▼</span></div><div id="tfet_out" style="display:none;padding:10px 14px;font-size:13px;line-height:1.8"><div>🚐 <strong>Dolmuş Fethiye → Ölüdeniz :</strong> route côtière D400 · ~2h · ~6€/pers</div><div>⏰ <strong>Départ :</strong> toutes les 10–15 min · 25–30 min de trajet</div><div>ℹ️ Pas de réservation nécessaire · départs fréquents · payer à bord</div></div></div>
 </div>
 
 <div id="pep" class="spg">
@@ -460,7 +390,7 @@ a:hover{border-bottom-color:transparent}
       <div class="gem-t">Patara — 18 km de plage sauvage</div>
       <div class="gem-p">~5€ entrée · 75 km de Fethiye</div>
       <div class="gem-d">La plus longue plage sauvage de Turquie — protégée car lieu de ponte des tortues Caretta caretta. Ruines lyciennes juste à côté (amphithéâtre, arc de triomphe). Dolmuş depuis Fethiye via Eşen.</div>
-      <div class="gem-when gem-todo">À prévoir · Excursion journée · Meilleure base depuis Kaş</div>
+      <div class="gem-when gem-todo">À prévoir · Excursion journée depuis Fethiye</div>
     </div>
     <div class="gem">
       <div class="gem-t">Tombes lyciennes rupestres de Fethiye</div>
@@ -543,7 +473,7 @@ a:hover{border-bottom-color:transparent}
     <div class="fr"><div><div class="fn">Dolmuş Fethiye → Ölüdeniz</div><div class="fsb">Toutes les 20 min en haute saison · Depuis centre Fethiye</div></div><span class="fp">~1,50€</span></div>
     <div class="fr"><div><div class="fn">Dolmuş Fethiye → Saklıkent</div><div class="fsb">Depuis Fethiye Otogarı · Toutes les 30 min · Dernier retour ~19h30</div></div><span class="fp">~3–4€</span></div>
     <div class="fr"><div><div class="fn">Dolmuş Fethiye → Kayaköy</div><div class="fsb">Depuis le centre de Fethiye · Fréquent</div></div><span class="fp">~2€</span></div>
-    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Kaş (transit sortant)</div><div class="fsb">Route côtière D400 · Paysages magnifiques</div></div><span class="fp">~6€/pers · ~2h</span></div>
+    <div class="fr"><div><div class="fn">Dolmuş Fethiye → Ölüdeniz (transit sortant)</div><div class="fsb">Route côtière D400 · Paysages magnifiques</div></div><span class="fp">~6€/pers · ~2h</span></div>
 
     <div class="slbl">Applis & liens</div>
     <div class="ar"><div class="ai2">🗺</div><div><div class="an">Google Maps + Yandex Maps hors-ligne</div><div class="ad">Télécharger région Fethiye/Ölüdeniz · Yandex meilleur pour les dolmuş</div></div><span class="ab2">Essentiel</span></div>
@@ -556,7 +486,7 @@ a:hover{border-bottom-color:transparent}
     <a href="https://www.booking.com/city/tr/fethiye.fr.html" target="_blank" class="lcard"><span class="lico">🏨</span><div><div class="lnm">Hébergements Fethiye</div><div class="lul">booking.com</div></div></a>
     <a href="https://www.lonelyplanet.com/turkey/fethiye" target="_blank" class="lcard"><span class="lico">📖</span><div><div class="lnm">Lonely Planet Fethiye</div><div class="lul">lonelyplanet.com</div></div></a>
     <a href="https://www.routard.com/guide_voyage_lieu/11291-fethiye.htm" target="_blank" class="lcard"><span class="lico">🗺</span><div><div class="lnm">Routard Fethiye</div><div class="lul">routard.com</div></div></a>
-    <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">obilet.com</div><div class="lul">Bus Fethiye → Kaş</div></div></a>
+    <a href="https://www.obilet.com" target="_blank" class="lcard"><span class="lico">🚌</span><div><div class="lnm">obilet.com</div><div class="lul">Dolmuş Fethiye → Ölüdeniz</div></div></a>
   </div>
 
 </div>
@@ -577,4 +507,4 @@ function showSub(id, btn) {
 </script>
 
 </body>
-</html>
+</html><div>🚌 <strong>Dolmuş Fethiye → Ölüdeniz :</strong> toutes les 10–15 min · 25–30 min · 40–50 TL/pers</div><div>⏰ <strong>Premier départ 7h · dernier vers 1h du matin</strong> en été — aucune contrainte d'horaire</div><div>📍 Il dessert Ovacık et Hisarönü avant Ölüdeniz · dire au chauffeur où vous logez</div><div style="margin-top:4px">ℹ️ Aucune réservation · espèces ou Muğla Kent Kart</div>>
